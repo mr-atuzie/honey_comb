@@ -57,7 +57,7 @@ const Register = () => {
               Honey comb fxd
             </p>
 
-            <h2 className="text-xl lg:text-4xl font-bold  text-green-700 ">
+            <h2 className="text-2xl lg:text-4xl font-bold  text-green-700 ">
               Create your Account
             </h2>
 
