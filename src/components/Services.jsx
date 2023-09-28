@@ -39,12 +39,12 @@ const Services = () => {
             <div className=" my-6">
               <div className="flex gap-3 items-center">
                 <MdVerified className="text-yellow-500" />
-                <h3 className=" text-green-600  font-semibold text-xl capitalize">
+                <h3 className=" text-green-600  font-semibold lg:text-xl capitalize">
                   Buy
                   <span className=" text-yellow-500"> invest</span> and grow
                 </h3>
               </div>
-              <p className="   text-sm lg:text-base ">
+              <p className="   text-xs lg:text-base ">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
                 commodi a fugiat. Eaque amet temporibus sit, quis provident
                 possimus distinctio mollitia cum excepturi. Eveniet, veritatis.
@@ -54,7 +54,7 @@ const Services = () => {
             <div>
               <div className="flex gap-3 items-center">
                 <MdVerified className="text-yellow-500" />
-                <h3 className=" text-green-600  font-semibold text-xl capitalize">
+                <h3 className=" text-green-600  font-semibold lg:text-xl capitalize">
                   Getting New <span className=" text-yellow-500"> money</span>{" "}
                   at <span className=" text-yellow-500"> ease</span>
                 </h3>
@@ -69,7 +69,7 @@ const Services = () => {
             <div className=" my-6">
               <div className="flex gap-3 items-center">
                 <MdVerified className="text-yellow-500" />
-                <h3 className=" text-green-600  font-semibold text-xl capitalize">
+                <h3 className=" text-green-600  font-semibold lg:text-xl capitalize">
                   <span className=" text-yellow-500">Advance</span> your chance
                   with minimum risk
                 </h3>
