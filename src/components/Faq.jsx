@@ -8,7 +8,7 @@ const Faq = () => {
   const [f5, setF5] = useState(false);
   return (
     <div>
-      <div className=" w-[80%] mx-auto py-20">
+      <div className=" w-[90%] lg:w-[80%] mx-auto py-10 lg:py-20">
         <div className=" text-center flex flex-col justify-center items-center ">
           <div className="text-center  text-green-600 text-lg lg:text-3xl font-semibold capitalize ">
             Frequently Asked Questions
@@ -19,7 +19,7 @@ const Faq = () => {
         <div className=" lg:w-[60%] mx-auto my-10">
           <div className="w-full shadow-md mb-6">
             <div className=" bg-green-50 w-full p-3 flex items-center justify-between">
-              <h2 className=" font-medium text-lg text-green-700 tracking-wide  capitalize">
+              <h2 className=" font-medium lg:text-lg text-green-700 lg:tracking-wide  capitalize">
                 How do i sign up?
               </h2>
 
@@ -40,7 +40,7 @@ const Faq = () => {
               )}
             </div>
             {f1 && (
-              <div className=" p-3">
+              <div className=" p-3 text-sm">
                 <p>
                   {" "}
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
@@ -52,7 +52,7 @@ const Faq = () => {
           </div>
           <div className="w-full shadow-md mb-6">
             <div className=" bg-green-50 w-full p-3 flex items-center justify-between">
-              <h2 className=" font-medium text-lg text-green-700 tracking-wide  capitalize">
+              <h2 className=" font-medium lg:text-lg text-green-700 lg:tracking-wide  capitalize">
                 How Much do i get back?
               </h2>
 
@@ -73,7 +73,7 @@ const Faq = () => {
               )}
             </div>
             {f2 && (
-              <div className=" p-3">
+              <div className=" p-3 text-sm">
                 <p>
                   {" "}
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
@@ -85,7 +85,7 @@ const Faq = () => {
           </div>
           <div className="w-full shadow-md mb-6">
             <div className=" bg-green-50 w-full p-3 flex items-center justify-between">
-              <h2 className=" font-medium text-lg text-green-700 tracking-wide  capitalize">
+              <h2 className=" font-medium lg:text-lg text-green-700 lg:tracking-wide  capitalize">
                 When can i get my money back?
               </h2>
 
@@ -106,7 +106,7 @@ const Faq = () => {
               )}
             </div>
             {f3 && (
-              <div className=" p-3">
+              <div className=" p-3 text-sm">
                 <p>
                   {" "}
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
@@ -118,7 +118,7 @@ const Faq = () => {
           </div>
           <div className="w-full shadow-md mb-6">
             <div className=" bg-green-50 w-full p-3 flex items-center justify-between">
-              <h2 className=" font-medium text-lg text-green-700 tracking-wide  capitalize">
+              <h2 className=" font-medium lg:text-lg text-green-700 lg:tracking-wide  capitalize">
                 How Much do i get back?
               </h2>
 
@@ -139,7 +139,7 @@ const Faq = () => {
               )}
             </div>
             {f4 && (
-              <div className=" p-3">
+              <div className=" p-3 text-sm">
                 <p>
                   {" "}
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
@@ -151,7 +151,7 @@ const Faq = () => {
           </div>
           <div className="w-full shadow-md mb-6">
             <div className=" bg-green-50 w-full p-3 flex items-center justify-between">
-              <h2 className=" font-medium text-lg text-green-700 tracking-wide  capitalize">
+              <h2 className=" font-medium lg:text-lg text-green-700 lg:tracking-wide  capitalize">
                 When can i withdraw my Intrest
               </h2>
 
@@ -172,7 +172,7 @@ const Faq = () => {
               )}
             </div>
             {f5 && (
-              <div className=" p-3">
+              <div className=" p-3 text-sm">
                 <p>
                   {" "}
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
