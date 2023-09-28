@@ -113,7 +113,7 @@ const Register = () => {
 
           <div className=" my-5">
             <label
-              className=" text-gray-800 text-xs lg:text-sm"
+              className="  text-green-600 text-xs lg:text-sm"
               htmlFor="password"
             >
               Confirm Password
