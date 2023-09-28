@@ -57,17 +57,17 @@ const Register = () => {
               Honey comb fxd
             </p>
 
-            <h2 className="text-2xl lg:text-4xl font-bold  text-green-700 ">
+            <h2 className="text-2xl lg:text-4xl font-bold  text-green-700 my-3 ">
               Create your Account
             </h2>
 
-            <p className=" text-gray-500  text-sm lg:my-4">
+            <p className=" text-gray-500  text-sm  lg:my-4">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi
               quasi, dolorem saepe sapiente culpa illum.
             </p>
           </div>
 
-          <div className=" mb-5">
+          <div className=" my-5">
             <label className="  text-xs lg:text-sm mb-2" htmlFor="text">
               Name
             </label>
