@@ -15,7 +15,7 @@ const Packages = () => {
         <div className=" grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3  gap-10 mt-10">
           <div className="bg-white p-4 md:p-7 h-fit shadow-md rounded-md hover:scale-105">
             <div className=" flex flex-col justify-center items-center">
-              <h1 className=" text-red-500 text-lg font-semibold tracking-wide uppercase">
+              <h1 className=" text-red-500 lg:text-lg font-semibold tracking-wide uppercase">
                 basic
               </h1>
               <div className=" text-yellow-500 flex items-center">
@@ -25,7 +25,9 @@ const Packages = () => {
                   65,000
                 </h2>
               </div>
-              <p className=" capitalize text-gray-800 text-xs">Pay per momth</p>
+              <p className=" capitalize text-gray-800 text-xs font-medium">
+                Pay per momth
+              </p>
             </div>
 
             <ul className=" mt-5">
@@ -65,7 +67,7 @@ const Packages = () => {
 
           <div className=" bg-white p-4 md:p-7 h-fit shadow-md rounded-md hover:scale-105">
             <div className=" flex flex-col justify-center items-center">
-              <h1 className=" text-lg text-orange-500 font-semibold tracking-wide uppercase">
+              <h1 className=" lg:text-lg text-orange-500 font-semibold tracking-wide uppercase">
                 platinum
               </h1>
               <div className=" text-green-600 flex items-center">
@@ -74,7 +76,9 @@ const Packages = () => {
                   1, 600,000
                 </h2>
               </div>
-              <p className="text-xs capitalize text-gray-800">Pay for 2 Year</p>
+              <p className="text-xs capitalize text-gray-800 font-medium">
+                Pay for 2 Year
+              </p>
             </div>
 
             <ul className=" mt-5">
@@ -142,7 +146,7 @@ const Packages = () => {
 
           <div className=" bg-yellow-500 p-4 md:p-7 h-fit shadow-md rounded-md ">
             <div className=" flex flex-col justify-center items-center">
-              <h1 className=" text-start lg:text-lg font-semibold text-green-700    uppercase">
+              <h1 className=" text-sm lg:text-lg font-semibold text-green-700    uppercase">
                 Calculate Earning
               </h1>
               <div className=" flex items-center text-white">
