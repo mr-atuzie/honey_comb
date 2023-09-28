@@ -12,7 +12,7 @@ const Terms = () => {
         </div>
 
         <div className=" lg:w-[50%] mx-auto mt-10">
-          <p className=" text-white">
+          <p className=" text-white text-sm lg:text-base text-center">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis
             exercitationem vel voluptas illum debitis? Alias libero beatae
             sapiente quis tempore impedit reprehenderit, facilis adipisci
@@ -34,8 +34,8 @@ const Terms = () => {
             dolore.
           </p>
 
-          <div className=" flex justify-center items-center mt-5">
-            <button className=" bg-white text-green-700 py-3 px-5 rounded-md  ">
+          <div className=" flex justify-center items-center mt-10">
+            <button className=" text-sm lg:text-lg bg-white text-green-700 py-3 px-5 rounded-md  ">
               Download File
             </button>
           </div>
