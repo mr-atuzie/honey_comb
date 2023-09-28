@@ -11,7 +11,7 @@ const Dashboard = () => {
 
       <Header />
 
-      <div className="  pb-24 lg:pl-24  pt-32 h-screen  lg:ml-48">
+      <div className="  pb-24 lg:pl-24  lg:pt-32 h-screen  lg:ml-48">
         <div className=" hidden lg:flex justify-between px-16">
           <div className="  p-2 w-[60%]">
             {/* card */}
