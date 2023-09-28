@@ -135,7 +135,7 @@ const Packages = () => {
               </li>
             </ul>
 
-            <button className="text-white bg-green-700  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4">
+            <button className="text-white text-sm lg:text-lg bg-green-700  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4">
               start platinum plan
             </button>
           </div>
@@ -153,7 +153,7 @@ const Packages = () => {
               </div>
             </div>
 
-            <div className="mt-6">
+            <div className="mt-3">
               <form>
                 <div className=" mb-5">
                   <label
@@ -164,7 +164,7 @@ const Packages = () => {
                   </label>
 
                   <input
-                    className="border p-3.5 block w-full"
+                    className="border p-2.5 block w-full"
                     type="email"
                     name="email"
                     placeholder="Enter amount"
@@ -179,7 +179,7 @@ const Packages = () => {
                   </label>
                   <select
                     id="duration"
-                    className="bg-white border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-3.5  "
+                    className="bg-white border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  "
                   >
                     <option selected>Choose Duration</option>
                     <option value="US">1 week</option>
@@ -189,7 +189,7 @@ const Packages = () => {
                   </select>
                 </div>
 
-                <button className="text-white bg-green-700  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4">
+                <button className="text-white text-sm lg:text-base bg-green-700  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4">
                   Calculate Intrest
                 </button>
               </form>
