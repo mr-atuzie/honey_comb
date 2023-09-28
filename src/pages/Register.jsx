@@ -119,7 +119,7 @@ const Register = () => {
               Confirm Password
             </label>
             <input
-              className="border p-2.5 lg:p-3.5  block w-full"
+              className="border p-2.5 lg:p-3.5  block w-full placeholder:text-sm lg:placeholder:text-base"
               type="password"
               name="password"
               placeholder="Retype password"

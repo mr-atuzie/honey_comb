@@ -26,7 +26,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <div className="lg:w-[60%">
+      <div className=" my-16 lg:w-[60%">
         <form className="w-[80%] lg:w-[50%] mx-auto mb-16">
           <div className="">
             <p className=" text-sm lg:text-lg uppercase font-semibold text-yellow-500 lg:mb-4">
@@ -34,7 +34,7 @@ const Login = () => {
             </p>
 
             <h2 className="text-2xl lg:text-4xl font-bold  text-green-700 my-2 ">
-              Create your Account
+              Log into your Account
             </h2>
 
             <p className=" text-gray-900  text-sm  lg:my-4">
@@ -44,15 +44,12 @@ const Login = () => {
           </div>
 
           <div className=" my-5">
-            <label
-              className=" text-green-600 font-medium text-xs lg:text-sm"
-              htmlFor="email"
-            >
+            <label className="  font-medium text-xs lg:text-sm" htmlFor="email">
               Email
             </label>
 
             <input
-              className="border p-2.5 lg:p-3.5 block w-full"
+              className="border p-2.5 lg:p-3.5 block w-full placeholder:text-sm lg:placeholder:text-base"
               type="email"
               name="email"
               placeholder="Enter your email"
@@ -61,13 +58,13 @@ const Login = () => {
 
           <div className=" my-5">
             <label
-              className=" text-green-600 font-medium text-xs lg:text-sm"
+              className=" font-medium text-xs lg:text-sm"
               htmlFor="password"
             >
               Password
             </label>
             <input
-              className="border p-2.5 lg:p-3.5 block w-full"
+              className="border p-2.5 lg:p-3.5 block w-full placeholder:text-sm lg:placeholder:text-base"
               type="password"
               name="password"
               placeholder="Enter your password"
