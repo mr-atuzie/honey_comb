@@ -12,10 +12,10 @@ const About = () => {
       <Navbar />
       <Banner
         img={
-          "https://www.stjohnsunited.org/wp-content/uploads/Family-Pg-1-1600x600.jpg"
+          "https://cdn.financebuzz.com/images/2020/08/07/values-based-investing.jpg"
         }
         heading={"About us"}
-        text={"  about us - who we are?"}
+        text={"   who we are?"}
       />
       <div className=" w-[90%] lg:w-[80%] mx-auto py-16">
         <div className=" flex flex-col lg:flex-row justify-between items-center">
@@ -77,7 +77,7 @@ const About = () => {
             />
           </div>
         </div>
-        <div className=" flex flex-col lg:flex-row-reverse justify-between items-center">
+        <div className=" my-10 flex flex-col lg:flex-row-reverse justify-between items-center">
           <div className=" lg:w-[50%]">
             <div className="mb-8">
               <h1 className=" text-green-600 font-semibold text-4xl tracking-wide capitalize">
