@@ -20,7 +20,7 @@ const Navbar = () => {
     <div className=" p-4 absolute top-0 z-40  w-full   ">
       <div className=" w-[90%] lg:w-[80%] mx-auto  flex justify-between items-center">
         <div className="flex items-center gap-36">
-          <p className=" uppercase font-semibold text-yellow-500">
+          <p className=" text-sm lg:text-base uppercase font-semibold text-yellow-500">
             Honey comb fxd
           </p>
 
@@ -54,24 +54,28 @@ const Navbar = () => {
 
         <button
           onClick={handleNav}
-          className="   cursor-pointer pr-4 rounded-full  z-50  md:hidden"
+          className="   cursor-pointer pr-4 rounded-full  z-40  md:hidden"
         >
           {nav ? <IoCloseOutline size={30} /> : <HiOutlineBars3 size={30} />}
         </button>
       </div>
       {nav && (
         <div className=" p-6 z-40 duration-300 flex flex-col fixed  shadow-md bg-green-50 top-0 right-0  w-[80vw] h-screen">
-          <p className=" uppercase font-semibold text-yellow-500">
-            Honey comb fxd
-          </p>
+          <div className=" flex justify-between items-center">
+            <p className=" text-sm lg:text-base uppercase font-semibold text-yellow-500">
+              Honey comb fxd
+            </p>
 
-          <ul className=" mt-11   ">
+            <button onClick={handleNav} className="   cursor-pointer "></button>
+          </div>
+
+          <ul className=" mt-7   ">
             {links.map(({ id, link, name }) => {
               return (
                 <Link to={link} onClick={() => setNav(!nav)}>
                   <li
                     key={id}
-                    className=" px-4 cursor-pointer  capitalize py-4   hover:scale-105 duration-200"
+                    className=" text-sm lg:text-base cursor-pointer  capitalize py-2   hover:scale-105 duration-200"
                   >
                     {name}
                   </li>
@@ -81,7 +85,7 @@ const Navbar = () => {
           </ul>
 
           <Link to={"/register"}>
-            <button className=" border-2 border-yellow-500 text-sm lg:text-base rounded bg-green-700 mt-8 text-white px-6 py-2.5 lg:py-3 capitalize hover:bg-white hover:text-black hover:border-2 hover:border-black ">
+            <button className=" border-2 border-yellow-500 text-sm lg:text-base rounded bg-green-700 mt-6 text-white px-6 py-2.5 lg:py-3 capitalize hover:bg-white hover:text-black hover:border-2 hover:border-black ">
               Register
             </button>
           </Link>
