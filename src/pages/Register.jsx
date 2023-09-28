@@ -52,7 +52,7 @@ const Register = () => {
       </div>
       <div className="lg:w-[60%]">
         <form className="w-[80%] lg:w-[50%] mx-auto mb-16">
-          <div className=" my-16">
+          <div className="">
             <p className=" text-sm lg:text-lg uppercase font-semibold text-yellow-500 lg:mb-4">
               Honey comb fxd
             </p>
@@ -73,7 +73,7 @@ const Register = () => {
             </label>
 
             <input
-              className="border p-2.5 lg:p-3.5  block w-full"
+              className="border p-2.5 lg:p-3.5  block w-full placeholder:text-sm lg:placeholder:text-base"
               type="text"
               name="text"
               placeholder="Enter your name"
@@ -89,7 +89,7 @@ const Register = () => {
             </label>
 
             <input
-              className="border p-2.5 lg:p-3.5 block w-full"
+              className="border p-2.5 lg:p-3.5 block w-full  placeholder:text-sm lg:placeholder:text-base"
               type="email"
               name="email"
               placeholder="Enter your email"
@@ -104,7 +104,7 @@ const Register = () => {
               Password
             </label>
             <input
-              className="border p-2.5 lg:p-3.5 block w-full"
+              className="border p-2.5 lg:p-3.5 block w-full  placeholder:text-sm lg:placeholder:text-base"
               type="password"
               name="password"
               placeholder="Enter your password"
@@ -113,7 +113,7 @@ const Register = () => {
 
           <div className=" my-5">
             <label
-              className="  text-green-600 text-xs lg:text-sm"
+              className="  text-green-600 font-medium text-xs lg:text-sm"
               htmlFor="password"
             >
               Confirm Password
@@ -134,7 +134,7 @@ const Register = () => {
           </div>
 
           <button
-            className=" w-full text-center py-2.5 lg:py-3.5 my-4 bg-green-700 text-white "
+            className="border-2 border-yellow-500 w-full text-center py-2.5 lg:py-3.5 my-4 bg-green-700 text-white "
             type="submit"
           >
             Sign up
