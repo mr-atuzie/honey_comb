@@ -28,7 +28,7 @@ const Register = () => {
   // };
 
   return (
-    <div className=" w-full   h-screen flex flex-row-reverse">
+    <div className=" w-full   h-screen lg:flex lg:flex-row-reverse">
       <div className="m-6 rounded-lg relative w-[40%] hidden lg:flex justify-center items-center flex-col ">
         <video
           src={vid}

@@ -54,7 +54,7 @@ const Navbar = () => {
 
         <button
           onClick={handleNav}
-          className="   cursor-pointer pr-4 rounded-full  z-40  md:hidden"
+          className=" text-white  cursor-pointer pr-4 rounded-full  z-40  md:hidden"
         >
           {nav ? <IoCloseOutline size={30} /> : <HiOutlineBars3 size={30} />}
         </button>
