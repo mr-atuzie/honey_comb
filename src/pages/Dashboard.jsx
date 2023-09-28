@@ -5,7 +5,7 @@ import { BsEyeSlash } from "react-icons/bs";
 
 const Dashboard = () => {
   return (
-    <div className=" relative bg-green-100">
+    <div className=" relative lg:bg-green-100">
       <DashboardNav />
 
       <Header />

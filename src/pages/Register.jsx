@@ -124,7 +124,7 @@ const Register = () => {
             </p>
           </div>
 
-          <Link to={"/dashbaord"}>
+          <Link to={"/dashboard"}>
             <button
               className="border-2 border-yellow-500 rounded w-full text-center py-2.5 lg:py-3.5 my-4 bg-green-700 text-white "
               type="submit"

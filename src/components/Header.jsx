@@ -1,6 +1,5 @@
 import React from "react";
-import { TbBellRingingFilled } from "react-icons/tb";
-import { BsFillChatDotsFill } from "react-icons/bs";
+import { IoIosNotifications } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -31,21 +30,13 @@ const Header = () => {
 
         <div className=" flex items-center gap-4 lg:gap-7">
           <Link to={"/notification"}>
-            <div className=" flex items-center">
-              <div className=" border-2 border-yellow-500 bg-green-500 text-white p-2 h-fit rounded-lg">
-                <TbBellRingingFilled size={20} className=" " />
+            <div className=" flex items-center relative">
+              <div className=" border-2 border-yellow-500 bg-green-500 text-white p-2 h-fit rounded-full">
+                <IoIosNotifications size={20} className=" " />
               </div>
+
+              <div className=" absolute w-1 h-1 bg-red-600 top-0 right-1"></div>
               <p className=" font-medium hidden lg:block ml-1">Notifications</p>
-            </div>
-          </Link>
-
-          <Link to={"/chats"}>
-            <div className=" flex items-center">
-              <div className=" border-2 border-yellow-500 bg-green-500 text-white p-2 h-fit rounded-lg">
-                <BsFillChatDotsFill size={20} className="" />
-              </div>
-
-              <p className=" font-medium hidden lg:block ml-1">Chat</p>
             </div>
           </Link>
 
