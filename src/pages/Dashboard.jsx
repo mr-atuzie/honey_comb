@@ -2,6 +2,7 @@ import React from "react";
 import DashboardNav from "../components/DashboardNav";
 import Header from "../components/Header";
 import { BsEyeSlash } from "react-icons/bs";
+import { BsArrowDownShort, BsArrowUpShort } from "react-icons/bs";
 
 const Dashboard = () => {
   return (
@@ -120,37 +121,53 @@ const Dashboard = () => {
           </div>
           <div className=" bg-red-50 p-2 w-[35%]"></div>
         </div>
-        <div className=" lg:hidden mt-10">
-          <div className="  flex overflow-x-scroll gap-10">
-            <div className=" bg-green-600 w-[380px]  p-7 rounded shadow-lg">
-              <div className=" flex justify-between items-center">
-                <p className=" font-medium text-white uppercase">investment</p>
-
-                <div className="bg-green-800 text-white p-2 items-center flex justify-center rounded-full">
-                  <BsEyeSlash size={20} />
-                </div>
+        <div className=" lg:hidden mt-3 p-5">
+          <div className=" p-3 rounded-lg my-6 bg-black shadow-xl">
+            <div className="flex flex-col justify-center">
+              <p className=" text-xs text-white  uppercase font-medium">
+                Account Balance
+              </p>
+              <div className=" text-white text-2xl flex items-center gap-1 font-light">
+                <span className=" text-sm">$</span>
+                <p>1685</p>
               </div>
-              <div className=" text-white text-4xl my-4 font-semibold">
-                {" "}
-                &#8358; 55,000
-              </div>
-
-              <p className=" text-sm text-white font-medium">34 transactions</p>
             </div>
-            <div className=" bg-yellow-400 w-[380px]  p-7 rounded shadow-lg">
-              <div className=" flex justify-between items-center">
-                <p className=" font-medium text-white  uppercase">Intrest</p>
 
-                <div className="bg-yellow-800 text-white p-2 items-center flex justify-center rounded-full">
-                  <BsEyeSlash size={20} />
+            <div className=" my-6 flex gap-4">
+              <button className="flex text-sm justify-center gap-1 bg-gray-800 px-4  text-white capitalize items-center rounded-md py-2.5">
+                <BsArrowUpShort /> buy
+              </button>
+
+              <button className="text-sm flex justify-center gap-1 bg-gray-800 px-4  text-white capitalize items-center rounded-md py-2.5">
+                <BsArrowDownShort />
+                withdraw
+              </button>
+            </div>
+
+            <div className=" flex items-center gap-3">
+              <div className=" text-white flex flex-col justify-center items-center">
+                <p className=" text-xs capitalize font-medium">income</p>
+                <div className=" text-sm text-white text flex items-center gap-1 font-light">
+                  <span className=" text-xs">$</span>
+                  <p>2790</p>
                 </div>
               </div>
-              <div className=" text-white text-4xl my-4 font-semibold">
-                {" "}
-                &#8358; 12,690
+
+              <div className=" text-white flex flex-col justify-center items-center">
+                <p className=" text-xs capitalize font-medium">outcome</p>
+                <div className=" text-sm text-white text flex items-center gap-1 font-light">
+                  <span className=" text-xs">$</span>
+                  <p>790</p>
+                </div>
               </div>
 
-              <p className=" text-sm text-white font-medium">+52%</p>
+              <div className=" text-white flex flex-col justify-center items-center">
+                <p className=" text-xs capitalize font-medium">intrest</p>
+                <div className="text-sm text-white text flex items-center gap-1 font-light">
+                  <span className=" text-xs">$</span>
+                  <p>3280</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
