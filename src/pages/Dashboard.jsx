@@ -130,9 +130,7 @@ const Dashboard = () => {
             <div className="  flex gap-10">
               <div className=" bg-white w-[400px]  p-7 rounded shadow-lg">
                 <div className=" flex justify-between items-center">
-                  <p className=" font-medium text-white uppercase">
-                    investment
-                  </p>
+                  <p className=" font-medium uppercase">investment</p>
 
                   <div className="bg-green-800 text-white p-2 items-center flex justify-center rounded-full">
                     <BsEyeSlash size={20} />
@@ -147,7 +145,7 @@ const Dashboard = () => {
               </div>
               <div className=" bg-white w-[400px]  p-7 rounded shadow-lg">
                 <div className=" flex justify-between items-center">
-                  <p className=" font-medium text-white  uppercase">Intrest</p>
+                  <p className=" font-medium  uppercase">Intrest</p>
 
                   <div className="bg-yellow-800 text-white p-2 items-center flex justify-center rounded-full">
                     <BsEyeSlash size={20} />
@@ -308,9 +306,13 @@ const Dashboard = () => {
                   <p className=" text-sm text-gray-600">18-05-2023</p>
                 </div>
               </div>
+              <div className=" border-t-2 border-gray-100 px-5 py-3">
+                <h2 className="  text-green-600">View all notifications</h2>
+              </div>
             </div>
             {/* graph */}
             <div className=" bg-white shadow-lg rounded-sm my-10 p-5">
+              <h2 className=" font-medium mb-5 text-xl ">Bar Chat</h2>
               <BarChart width={450} height={250} data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
@@ -323,29 +325,32 @@ const Dashboard = () => {
             </div>
 
             {/* graph2 */}
-            <div className=" bg-white shadow-lg rounded-sm">
-              <PieChart width={730} height={250}>
-                <Pie
-                  data={data01}
-                  dataKey="value"
-                  nameKey="name"
-                  cx="50%"
-                  cy="50%"
-                  outerRadius={50}
-                  fill="#8884d8"
-                />
-                <Pie
-                  data={data02}
-                  dataKey="value"
-                  nameKey="name"
-                  cx="50%"
-                  cy="50%"
-                  innerRadius={60}
-                  outerRadius={80}
-                  fill="#82ca9d"
-                  label
-                />
-              </PieChart>
+            <div className=" bg-white shadow-lg rounded-sm p-5 ">
+              <h2 className=" font-medium mb-5 text-xl ">Pie Chart</h2>
+              <div className=" flex justify-center items-center w-full">
+                <PieChart width={730} height={250}>
+                  <Pie
+                    data={data01}
+                    dataKey="value"
+                    nameKey="name"
+                    cx="50%"
+                    cy="50%"
+                    outerRadius={50}
+                    fill="#8884d8"
+                  />
+                  <Pie
+                    data={data02}
+                    dataKey="value"
+                    nameKey="name"
+                    cx="50%"
+                    cy="50%"
+                    innerRadius={60}
+                    outerRadius={80}
+                    fill="#82ca9d"
+                    label
+                  />
+                </PieChart>
+              </div>
             </div>
           </div>
         </div>
