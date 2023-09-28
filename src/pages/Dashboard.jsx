@@ -120,8 +120,39 @@ const Dashboard = () => {
           </div>
           <div className=" bg-red-50 p-2 w-[35%]"></div>
         </div>
-        <div className=" lg:hidden">
-          <h2>Rex</h2>
+        <div className=" lg:hidden mt-10">
+          <div className="  flex overflow-x-scroll gap-10">
+            <div className=" bg-green-600 w-[380px]  p-7 rounded shadow-lg">
+              <div className=" flex justify-between items-center">
+                <p className=" font-medium text-white uppercase">investment</p>
+
+                <div className="bg-green-800 text-white p-2 items-center flex justify-center rounded-full">
+                  <BsEyeSlash size={20} />
+                </div>
+              </div>
+              <div className=" text-white text-4xl my-4 font-semibold">
+                {" "}
+                &#8358; 55,000
+              </div>
+
+              <p className=" text-sm text-white font-medium">34 transactions</p>
+            </div>
+            <div className=" bg-yellow-400 w-[380px]  p-7 rounded shadow-lg">
+              <div className=" flex justify-between items-center">
+                <p className=" font-medium text-white  uppercase">Intrest</p>
+
+                <div className="bg-yellow-800 text-white p-2 items-center flex justify-center rounded-full">
+                  <BsEyeSlash size={20} />
+                </div>
+              </div>
+              <div className=" text-white text-4xl my-4 font-semibold">
+                {" "}
+                &#8358; 12,690
+              </div>
+
+              <p className=" text-sm text-white font-medium">+52%</p>
+            </div>
+          </div>
         </div>
       </div>
       {/* <div className=" w-[20%] bg-green-700 h-screen p-10">
