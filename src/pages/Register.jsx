@@ -133,12 +133,14 @@ const Register = () => {
             </p>
           </div>
 
-          <button
-            className="border-2 border-yellow-500 rounded w-full text-center py-2.5 lg:py-3.5 my-4 bg-green-700 text-white "
-            type="submit"
-          >
-            Sign up
-          </button>
+          <Link to={"/dashbaord"}>
+            <button
+              className="border-2 border-yellow-500 rounded w-full text-center py-2.5 lg:py-3.5 my-4 bg-green-700 text-white "
+              type="submit"
+            >
+              Sign up
+            </button>
+          </Link>
 
           <p className="text-sm lg:text-base text-center  mt-3  text-gray-500">
             Already have an account?{" "}
