@@ -68,10 +68,7 @@ const Register = () => {
           </div>
 
           <div className=" my-5">
-            <label
-              className="  font-medium  text-xs lg:text-sm mb-2"
-              htmlFor="text"
-            >
+            <label className="  text-xs lg:text-sm mb-2" htmlFor="text">
               Name
             </label>
 
@@ -84,7 +81,7 @@ const Register = () => {
           </div>
 
           <div className=" mb-5">
-            <label className="  font-medium text-xs lg:text-sm" htmlFor="email">
+            <label className="  text-xs lg:text-sm" htmlFor="email">
               Email
             </label>
 
@@ -97,10 +94,7 @@ const Register = () => {
           </div>
 
           <div className=" my-5">
-            <label
-              className="  font-medium text-xs lg:text-sm"
-              htmlFor="password"
-            >
+            <label className="  text-xs lg:text-sm" htmlFor="password">
               Password
             </label>
             <input
@@ -112,10 +106,7 @@ const Register = () => {
           </div>
 
           <div className=" my-5">
-            <label
-              className="  font-medium text-xs lg:text-sm"
-              htmlFor="password"
-            >
+            <label className="  text-xs lg:text-sm" htmlFor="password">
               Confirm Password
             </label>
             <input

@@ -11,7 +11,7 @@ const Dashboard = () => {
       <Header />
 
       <div className="  pb-24 lg:pl-24  pt-32 h-screen  lg:ml-48">
-        <div className=" flex justify-between px-16">
+        <div className=" hidden lg:flex justify-between px-16">
           <div className="  p-2 w-[60%]">
             {/* card */}
             <div className="  flex gap-10">
@@ -119,6 +119,9 @@ const Dashboard = () => {
             </div>
           </div>
           <div className=" bg-red-50 p-2 w-[35%]"></div>
+        </div>
+        <div>
+          <h2>Rex</h2>
         </div>
       </div>
       {/* <div className=" w-[20%] bg-green-700 h-screen p-10">

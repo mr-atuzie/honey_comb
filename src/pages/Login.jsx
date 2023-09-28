@@ -44,7 +44,7 @@ const Login = () => {
           </div>
 
           <div className=" my-5">
-            <label className="  font-medium text-xs lg:text-sm" htmlFor="email">
+            <label className="   text-xs lg:text-sm" htmlFor="email">
               Email
             </label>
 
@@ -57,10 +57,7 @@ const Login = () => {
           </div>
 
           <div className=" my-5">
-            <label
-              className=" font-medium text-xs lg:text-sm"
-              htmlFor="password"
-            >
+            <label className="  text-xs lg:text-sm" htmlFor="password">
               Password
             </label>
             <input
