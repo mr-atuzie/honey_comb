@@ -32,7 +32,7 @@ const Header = () => {
           <Link to={"/notification"}>
             <div className=" flex items-center relative">
               <div className=" border-2 border-yellow-500 bg-green-500 text-white p-2 h-fit rounded-full">
-                <IoIosNotifications size={20} className=" " />
+                <IoIosNotifications size={25} className=" " />
               </div>
 
               <div className=" absolute w-2 h-2 bg-red-600 top-2 rounded-full right-3"></div>
