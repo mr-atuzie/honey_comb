@@ -77,7 +77,7 @@ const About = () => {
             />
           </div>
         </div>
-        <div className=" my-10 flex flex-col lg:flex-row-reverse justify-between items-center">
+        <div className=" my-24 flex flex-col lg:flex-row-reverse justify-between items-center">
           <div className=" lg:w-[50%]">
             <div className="mb-8">
               <h1 className=" text-green-600 font-semibold text-4xl tracking-wide capitalize">
