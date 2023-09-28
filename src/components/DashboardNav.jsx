@@ -84,7 +84,7 @@ const DashboardNav = () => {
       </div>
 
       {/* mobile */}
-      <div className=" px-6 py-3 flex items-center justify-between lg:hidden">
+      <div className=" px-6 py-3 flex items-center justify-between shadow-lg lg:hidden">
         <NavLink
           to={"/dashboard"}
           className={({ isActive }) =>

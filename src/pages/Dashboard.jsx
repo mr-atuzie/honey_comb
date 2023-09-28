@@ -122,7 +122,7 @@ const Dashboard = () => {
           <div className=" bg-red-50 p-2 w-[35%]"></div>
         </div>
         <div className=" lg:hidden mt-3 p-5">
-          <div className=" p-3 rounded-lg my-6 bg-black shadow-xl">
+          <div className=" p-3 rounded-lg  bg-black shadow-xl">
             <div className="flex flex-col justify-center">
               <p className=" text-xs text-white  uppercase font-medium">
                 Account Balance
