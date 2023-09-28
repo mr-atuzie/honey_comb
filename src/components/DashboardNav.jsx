@@ -1,5 +1,5 @@
 import React from "react";
-import { AiTwotoneHeart } from "react-icons/ai";
+import { GrTransaction } from "react-icons/gr";
 
 import { BiHomeAlt2 } from "react-icons/bi";
 import { FaCog, FaWallet } from "react-icons/fa";
@@ -114,8 +114,8 @@ const DashboardNav = () => {
               isActive ? "text-blue-500" : "text-gray-500"
             }
           >
-            <AiTwotoneHeart size={30} />
-            <p className=" text-xs mt-2">Saved</p>
+            <GrTransaction size={30} />
+            <p className=" text-xs mt-2">Transactionss</p>
           </NavLink>
         </div>
         <div className=" flex flex-col items-center justify-center ">
@@ -126,7 +126,7 @@ const DashboardNav = () => {
             }
           >
             <IoPersonOutline size={30} />
-            <p className=" text-xs mt-2">More</p>
+            <p className=" text-xs mt-2">Profile</p>
           </NavLink>
         </div>
       </div>
