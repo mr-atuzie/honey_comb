@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
-    <div className=" w-full  h-screen flex flex-row-reverse">
-      <div className="m-6 rounded-lg relative w-[40%] flex justify-center items-center flex-col ">
+    <div className=" w-full  h-screen flg:flex lg:flex-row-reverse">
+      <div className="m-6 rounded-lg relative w-[40%] hidden lg:flex justify-center items-center flex-col">
         <video
           src={vid}
           className="rounded-xl w-full h-full object-cover"
@@ -26,18 +26,18 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <div className="w-[60%]">
-        <form className="w-[50%] mx-auto">
+      <div className="lg:w-[60%">
+        <form className="w-[80%] lg:w-[50%] mx-auto mb-16">
           <div className=" my-16">
-            <p className=" uppercase font-semibold text-yellow-500 mb-4">
+            <p className=" text-sm lg:text-lg uppercase font-semibold text-yellow-500 mb-4">
               Honey comb fxd
             </p>
 
-            <h2 className="text-xl lg:text-4xl font-bold  text-green-600">
+            <h2 className="text-2xl lg:text-4xl font-bold  text-green-700 ">
               Log into your Account
             </h2>
 
-            <p className=" text-gray-500  text-sm my-4">
+            <p className="  text-gray-500 text-xs  lg:text-sm my-4">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi
               quasi, dolorem saepe sapiente culpa illum.
             </p>
@@ -52,7 +52,7 @@ const Login = () => {
             </label>
 
             <input
-              className="border p-3.5 block w-full"
+              className="border p-2.5 lg:p-3.5 block w-full"
               type="email"
               name="email"
               placeholder="Enter your email"
@@ -67,7 +67,7 @@ const Login = () => {
               Password
             </label>
             <input
-              className="border p-3.5  block w-full"
+              className="border p-2.5 lg:p-3.5 block w-full"
               type="password"
               name="password"
               placeholder="Enter your password"
@@ -75,7 +75,7 @@ const Login = () => {
           </div>
           <Link to={"/dashboard"}>
             <button
-              className=" w-full text-center py-3.5 my-4  bg-green-600 text-white "
+              className=" w-full text-center py-2.5 lg:py-3.5 my-4  bg-green-600 text-white "
               type="submit"
             >
               Sign In
