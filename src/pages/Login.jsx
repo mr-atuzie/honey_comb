@@ -28,24 +28,24 @@ const Login = () => {
       </div>
       <div className="lg:w-[60%">
         <form className="w-[80%] lg:w-[50%] mx-auto mb-16">
-          <div className=" my-16">
+          <div className="">
             <p className=" text-sm lg:text-lg uppercase font-semibold text-yellow-500 lg:mb-4">
               Honey comb fxd
             </p>
 
-            <h2 className="text-2xl lg:text-4xl font-bold  text-green-700 ">
-              Log into your Account
+            <h2 className="text-2xl lg:text-4xl font-bold  text-green-700 my-2 ">
+              Create your Account
             </h2>
 
-            <p className="  text-gray-500 text-sm lg:my-4">
+            <p className=" text-gray-900  text-sm  lg:my-4">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi
               quasi, dolorem saepe sapiente culpa illum.
             </p>
           </div>
 
-          <div className=" mb-5">
+          <div className=" my-5">
             <label
-              className=" text-gray-800 text-xs lg:text-sm"
+              className=" text-green-600 font-medium text-xs lg:text-sm"
               htmlFor="email"
             >
               Email
@@ -61,7 +61,7 @@ const Login = () => {
 
           <div className=" my-5">
             <label
-              className=" text-gray-800 text-xs lg:text-sm"
+              className=" text-green-600 font-medium text-xs lg:text-sm"
               htmlFor="password"
             >
               Password
@@ -75,13 +75,13 @@ const Login = () => {
           </div>
           <Link to={"/dashboard"}>
             <button
-              className=" w-full text-center py-2.5 lg:py-3.5 my-4  bg-green-600 text-white "
+              className="border-2 border-yellow-500 w-full text-center py-2.5 lg:py-3.5 my-4  bg-green-600 text-white "
               type="submit"
             >
               Sign In
             </button>
           </Link>
-          <p className="text-center mt-3   text-gray-500">
+          <p className="text-sm lg:text-base text-center mt-3   text-gray-500">
             Don't have an account?{" "}
             <Link to={"/"}>
               <span className=" text-black font-medium">Sign Up</span>

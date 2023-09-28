@@ -57,18 +57,21 @@ const Register = () => {
               Honey comb fxd
             </p>
 
-            <h2 className="text-2xl lg:text-4xl font-bold  text-green-700 my-3 ">
+            <h2 className="text-2xl lg:text-4xl font-bold  text-green-700 my-2 ">
               Create your Account
             </h2>
 
-            <p className=" text-gray-500  text-sm  lg:my-4">
+            <p className=" text-gray-900  text-sm  lg:my-4">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi
               quasi, dolorem saepe sapiente culpa illum.
             </p>
           </div>
 
           <div className=" my-5">
-            <label className="  text-xs lg:text-sm mb-2" htmlFor="text">
+            <label
+              className=" text-green-600 font-medium  text-xs lg:text-sm mb-2"
+              htmlFor="text"
+            >
               Name
             </label>
 
@@ -82,7 +85,7 @@ const Register = () => {
 
           <div className=" mb-5">
             <label
-              className=" text-gray-800 text-xs lg:text-sm"
+              className=" text-green-600 font-medium text-xs lg:text-sm"
               htmlFor="email"
             >
               Email
@@ -98,7 +101,7 @@ const Register = () => {
 
           <div className=" my-5">
             <label
-              className=" text-gray-800 text-xs lg:text-sm"
+              className=" text-green-600 font-medium text-xs lg:text-sm"
               htmlFor="password"
             >
               Password
@@ -134,7 +137,7 @@ const Register = () => {
           </div>
 
           <button
-            className="border-2 border-yellow-500 w-full text-center py-2.5 lg:py-3.5 my-4 bg-green-700 text-white "
+            className="border-2 border-yellow-500 rounded w-full text-center py-2.5 lg:py-3.5 my-4 bg-green-700 text-white "
             type="submit"
           >
             Sign up
