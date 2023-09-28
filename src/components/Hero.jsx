@@ -11,7 +11,7 @@ const Hero = () => {
             investing
           </h1>
 
-          <p className=" text-sm lg:text-base text-gray-200 my-6">
+          <p className=" text-xs lg:text-base text-gray-200 my-6">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
             ea quod veniam maiores, iusto placeat nam, architecto rerum quisquam
             nisi, eos earum officia tempore non fugiat? Culpa commodi temporibus

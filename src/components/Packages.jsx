@@ -4,7 +4,7 @@ import { BsCheck2 } from "react-icons/bs";
 const Packages = () => {
   return (
     <div className=" bg-green-50">
-      <div className="w-[80%] mx-auto py-20">
+      <div className="w-[80%] mx-auto py-10 lg:py-20">
         <div className=" text-center flex flex-col justify-center items-center ">
           <div className="text-center  text-green-600 text-lg lg:text-3xl font-semibold capitalize ">
             Our Packages
@@ -25,7 +25,7 @@ const Packages = () => {
                   65,000
                 </h2>
               </div>
-              <p className=" capitalize text-gray-800">Pay per momth</p>
+              <p className=" capitalize text-gray-800 text-xs">Pay per momth</p>
             </div>
 
             <ul className=" mt-5">
@@ -74,7 +74,7 @@ const Packages = () => {
                   1, 600,000
                 </h2>
               </div>
-              <p className=" capitalize text-gray-800">Pay for 2 Year</p>
+              <p className="text-xs capitalize text-gray-800">Pay for 2 Year</p>
             </div>
 
             <ul className=" mt-5">

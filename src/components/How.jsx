@@ -39,12 +39,6 @@ const How = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
               commodi a fugiat. Eaque amet temporibus sit.
               <br />
-              <br />
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-              commodi a fugiat. Eaque amet temporibus sit, quis provident
-              possimus distinctio mollitia cum excepturi. Eveniet, veritatis.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-              commodi a fugiat. Eaque amet temporibus sit.
             </p>
           </div>
         </div>
