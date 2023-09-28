@@ -85,50 +85,53 @@ const DashboardNav = () => {
 
       {/* mobile */}
       <div className=" px-6 py-3 flex items-center justify-between lg:hidden">
-        <div className=" flex flex-col items-center justify-center ">
-          <NavLink
-            to={"/dashboard"}
-            className={({ isActive }) =>
-              isActive ? "text-blue-500" : "text-gray-500"
-            }
-          >
+        <NavLink
+          to={"/dashboard"}
+          className={({ isActive }) =>
+            isActive ? "text-green-600" : "text-gray-900"
+          }
+        >
+          <div className=" flex flex-col items-center justify-center ">
             <BiHomeAlt2 size={30} />
             <p className=" text-xs mt-2">Home</p>
-          </NavLink>
-        </div>
-        <div className=" flex flex-col items-center justify-center">
-          <NavLink
-            to={"/explore"}
-            className={({ isActive }) =>
-              isActive ? "text-blue-500" : "text-gray-500"
-            }
-          >
+          </div>
+        </NavLink>
+
+        <NavLink
+          to={"/explore"}
+          className={({ isActive }) =>
+            isActive ? "text-green-600" : "text-gray-900"
+          }
+        >
+          <div className=" flex flex-col items-center justify-center">
             <FaWallet size={30} />
             <p className=" text-xs mt-2">Wallet</p>
-          </NavLink>
-        </div>
-        <div className=" flex flex-col items-center justify-center">
-          <NavLink
-            to={"/save/favorites"}
-            className={({ isActive }) =>
-              isActive ? "text-blue-500" : "text-gray-500"
-            }
-          >
+          </div>
+        </NavLink>
+
+        <NavLink
+          to={"/save/favorites"}
+          className={({ isActive }) =>
+            isActive ? "text-green-600" : "text-gray-900"
+          }
+        >
+          <div className=" flex flex-col items-center justify-center">
             <GrTransaction size={30} />
-            <p className=" text-xs mt-2">Transactionss</p>
-          </NavLink>
-        </div>
-        <div className=" flex flex-col items-center justify-center ">
-          <NavLink
-            to={"/more"}
-            className={({ isActive }) =>
-              isActive ? "text-blue-500" : "text-gray-500"
-            }
-          >
+            <p className=" text-xs mt-2">Transactions</p>
+          </div>
+        </NavLink>
+
+        <NavLink
+          to={"/more"}
+          className={({ isActive }) =>
+            isActive ? "text-green-600" : "text-gray-900"
+          }
+        >
+          <div className=" flex flex-col items-center justify-center ">
             <IoPersonOutline size={30} />
             <p className=" text-xs mt-2">Profile</p>
-          </NavLink>
-        </div>
+          </div>
+        </NavLink>
       </div>
     </div>
   );
