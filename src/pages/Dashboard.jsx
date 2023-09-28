@@ -2,21 +2,133 @@ import React from "react";
 import DashboardNav from "../components/DashboardNav";
 import Header from "../components/Header";
 import { BsEyeSlash } from "react-icons/bs";
+import { AiFillNotification } from "react-icons/ai";
 import { BsArrowDownShort, BsArrowUpShort } from "react-icons/bs";
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Legend,
+  Line,
+  LineChart,
+  Pie,
+  PieChart,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 
 const Dashboard = () => {
+  const data = [
+    {
+      name: "Page A",
+      uv: 4000,
+      pv: 2400,
+      amt: 2400,
+    },
+    {
+      name: "Page B",
+      uv: 3000,
+      pv: 1398,
+      amt: 2210,
+    },
+    {
+      name: "Page C",
+      uv: 2000,
+      pv: 9800,
+      amt: 2290,
+    },
+    {
+      name: "Page D",
+      uv: 2780,
+      pv: 3908,
+      amt: 2000,
+    },
+    {
+      name: "Page E",
+      uv: 1890,
+      pv: 4800,
+      amt: 2181,
+    },
+    {
+      name: "Page F",
+      uv: 2390,
+      pv: 3800,
+      amt: 2500,
+    },
+    {
+      name: "Page G",
+      uv: 3490,
+      pv: 4300,
+      amt: 2100,
+    },
+  ];
+
+  const data01 = [
+    {
+      name: "Group A",
+      value: 400,
+    },
+    {
+      name: "Group B",
+      value: 300,
+    },
+    {
+      name: "Group C",
+      value: 300,
+    },
+    {
+      name: "Group D",
+      value: 200,
+    },
+    {
+      name: "Group E",
+      value: 278,
+    },
+    {
+      name: "Group F",
+      value: 189,
+    },
+  ];
+  const data02 = [
+    {
+      name: "Group A",
+      value: 2400,
+    },
+    {
+      name: "Group B",
+      value: 4567,
+    },
+    {
+      name: "Group C",
+      value: 1398,
+    },
+    {
+      name: "Group D",
+      value: 9800,
+    },
+    {
+      name: "Group E",
+      value: 3908,
+    },
+    {
+      name: "Group F",
+      value: 4800,
+    },
+  ];
+
   return (
-    <div className=" relative lg:bg-green-100">
+    <div className=" relative bg-green-600 ">
       <DashboardNav />
 
       <Header />
 
-      <div className="  pb-24 lg:pl-24  lg:pt-32 h-screen  lg:ml-48">
+      <div className="  pb-24 lg:pl-24  lg:pt-32  lg:ml-48">
         <div className=" hidden lg:flex justify-between px-16">
           <div className="  p-2 w-[60%]">
             {/* card */}
             <div className="  flex gap-10">
-              <div className=" bg-green-600 w-[380px]  p-7 rounded shadow-lg">
+              <div className=" bg-white w-[400px]  p-7 rounded shadow-lg">
                 <div className=" flex justify-between items-center">
                   <p className=" font-medium text-white uppercase">
                     investment
@@ -26,16 +138,14 @@ const Dashboard = () => {
                     <BsEyeSlash size={20} />
                   </div>
                 </div>
-                <div className=" text-white text-4xl my-4 font-semibold">
+                <div className="  text-4xl my-4 font-semibold">
                   {" "}
                   &#8358; 55,000
                 </div>
 
-                <p className=" text-sm text-white font-medium">
-                  34 transactions
-                </p>
+                <p className=" text-sm  font-medium">34 transactions</p>
               </div>
-              <div className=" bg-yellow-400 w-[380px]  p-7 rounded shadow-lg">
+              <div className=" bg-white w-[400px]  p-7 rounded shadow-lg">
                 <div className=" flex justify-between items-center">
                   <p className=" font-medium text-white  uppercase">Intrest</p>
 
@@ -43,40 +153,53 @@ const Dashboard = () => {
                     <BsEyeSlash size={20} />
                   </div>
                 </div>
-                <div className=" text-white text-4xl my-4 font-semibold">
+                <div className="  text-4xl my-4 font-semibold">
                   {" "}
                   &#8358; 12,690
                 </div>
 
-                <p className=" text-sm text-white font-medium">+52%</p>
+                <p className=" text-sm  font-medium">+52%</p>
               </div>
             </div>
 
-            <div className=" my-16 bg-white p-3  h-60s">
-              <h2 className=" font-medium mb-5 text-lg">Overview</h2>
+            <div className=" my-16 bg-white p-5  shadow-lg rounded-sm">
+              <h2 className=" font-medium mb-5 text-xl ">Overview</h2>
+
+              <LineChart
+                width={850}
+                height={350}
+                data={data}
+                margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Line type="monotone" dataKey="pv" stroke="#8884d8" />
+                <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+              </LineChart>
             </div>
 
             {/* table */}
-            <div className=" bg-white p-3">
-              <h2 className=" font-medium mb-5 text-lg">
-                Transactions History
-              </h2>
+            <div className=" bg-white p-5 shadow-lg rounded-sm">
+              <h2 className=" font-medium mb-5 text-xl ">Transactions</h2>
 
-              <div className="relative overflow-x-auto">
-                <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                  <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+              <div className="relative overflow-x-auto mt-6">
+                <table className="w-full  text-left  ">
+                  <thead className=" uppercase bg-green-50 ">
                     <tr>
                       <th scope="col" className="px-6 py-3">
-                        Product name
+                        ID
                       </th>
                       <th scope="col" className="px-6 py-3">
-                        Color
+                        Amount
                       </th>
                       <th scope="col" className="px-6 py-3">
-                        Category
+                        Status
                       </th>
                       <th scope="col" className="px-6 py-3">
-                        Price
+                        Date
                       </th>
                     </tr>
                   </thead>
@@ -119,7 +242,112 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          <div className=" bg-red-50 p-2 w-[35%]"></div>
+          <div className="  p-2 w-[35%]">
+            {/* Notification */}
+            <div className=" bg-white shadow-lg rounded-sm">
+              <div className=" border-b-2 border-gray-100 px-5 py-3">
+                <h2 className=" font-medium text-xl">Notifications</h2>
+              </div>
+              <div className=" flex gap-3 p-5">
+                <div className=" border-2 border-gray-200 rounded-full p-2 text-green-300">
+                  <AiFillNotification size={25} />
+                </div>
+                <div>
+                  <p className=" font-medium text-lg">
+                    {" "}
+                    Purchase (0R45B6A) was successfull.
+                  </p>
+                  <p className=" text-sm text-gray-600">18-05-2023</p>
+                </div>
+              </div>
+              <div className=" flex gap-3 p-5">
+                <div className=" border-2 border-gray-200 rounded-full p-2 text-green-300">
+                  <AiFillNotification size={25} />
+                </div>
+                <div>
+                  <p className=" font-medium text-lg">
+                    {" "}
+                    Purchase (0R45B6A) was successfull.
+                  </p>
+                  <p className=" text-sm text-gray-600">18-05-2023</p>
+                </div>
+              </div>
+              <div className=" flex gap-3 p-5">
+                <div className=" border-2 border-gray-200 rounded-full p-2 text-green-300">
+                  <AiFillNotification size={25} />
+                </div>
+                <div>
+                  <p className=" font-medium text-lg">
+                    {" "}
+                    Purchase (0R45B6A) was successfull.
+                  </p>
+                  <p className=" text-sm text-gray-600">18-05-2023</p>
+                </div>
+              </div>
+              <div className=" flex gap-3 p-5">
+                <div className=" border-2 border-gray-200 rounded-full p-2 text-green-300">
+                  <AiFillNotification size={25} />
+                </div>
+                <div>
+                  <p className=" font-medium text-lg">
+                    {" "}
+                    Purchase (0R45B6A) was successfull.
+                  </p>
+                  <p className=" text-sm text-gray-600">18-05-2023</p>
+                </div>
+              </div>
+              <div className=" flex gap-3 p-5">
+                <div className=" border-2 border-gray-200 rounded-full p-2 text-green-300">
+                  <AiFillNotification size={25} />
+                </div>
+                <div>
+                  <p className=" font-medium text-lg">
+                    {" "}
+                    Purchase (0R45B6A) was successfull.
+                  </p>
+                  <p className=" text-sm text-gray-600">18-05-2023</p>
+                </div>
+              </div>
+            </div>
+            {/* graph */}
+            <div className=" bg-white shadow-lg rounded-sm my-10 p-5">
+              <BarChart width={450} height={250} data={data}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="pv" fill="#8884d8" />
+                <Bar dataKey="uv" fill="#82ca9d" />
+              </BarChart>
+            </div>
+
+            {/* graph2 */}
+            <div className=" bg-white shadow-lg rounded-sm">
+              <PieChart width={730} height={250}>
+                <Pie
+                  data={data01}
+                  dataKey="value"
+                  nameKey="name"
+                  cx="50%"
+                  cy="50%"
+                  outerRadius={50}
+                  fill="#8884d8"
+                />
+                <Pie
+                  data={data02}
+                  dataKey="value"
+                  nameKey="name"
+                  cx="50%"
+                  cy="50%"
+                  innerRadius={60}
+                  outerRadius={80}
+                  fill="#82ca9d"
+                  label
+                />
+              </PieChart>
+            </div>
+          </div>
         </div>
         <div className=" lg:hidden px-5">
           <div className=" flex ">

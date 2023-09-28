@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 
 const DashboardNav = () => {
   return (
-    <div className=" rounded-t-xl z-50 lg:rounded-t-none  fixed bottom-0  lg:top-0 w-full lg:left-0 lg:w-72 bg-white  shadow-xl lg:shadow-none lg:h-screen">
+    <div className=" border-r-2 border-gray-100 rounded-t-xl z-50 lg:rounded-t-none  fixed bottom-0  lg:top-0 w-full lg:left-0 lg:w-72 bg-white  shadow-xl lg:shadow-none lg:h-screen">
       {/* desktop */}
       <div className="  hidden lg:block">
         <div className=" w-full flex justify-center items-center py-5">
