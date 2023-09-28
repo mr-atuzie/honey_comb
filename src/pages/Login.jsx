@@ -29,7 +29,7 @@ const Login = () => {
       <div className="lg:w-[60%">
         <form className="w-[80%] lg:w-[50%] mx-auto mb-16">
           <div className=" my-16">
-            <p className=" text-sm lg:text-lg uppercase font-semibold text-yellow-500 mb-4">
+            <p className=" text-sm lg:text-lg uppercase font-semibold text-yellow-500 lg:mb-4">
               Honey comb fxd
             </p>
 
@@ -37,7 +37,7 @@ const Login = () => {
               Log into your Account
             </h2>
 
-            <p className="  text-gray-500 text-xs  lg:text-sm my-4">
+            <p className="  text-gray-500 text-sm lg:my-4">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi
               quasi, dolorem saepe sapiente culpa illum.
             </p>

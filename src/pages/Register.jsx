@@ -61,7 +61,7 @@ const Register = () => {
               Create your Account
             </h2>
 
-            <p className=" text-gray-500 text-sm  lg:text-sm lg:my-4">
+            <p className=" text-gray-500  text-sm lg:my-4">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi
               quasi, dolorem saepe sapiente culpa illum.
             </p>
