@@ -66,7 +66,13 @@ const Navbar = () => {
               Honey comb fxd
             </p>
 
-            <button onClick={handleNav} className="   cursor-pointer "></button>
+            <button onClick={handleNav} className="   cursor-pointer ">
+              {nav ? (
+                <IoCloseOutline size={30} />
+              ) : (
+                <HiOutlineBars3 size={30} />
+              )}
+            </button>
           </div>
 
           <ul className=" mt-7   ">
