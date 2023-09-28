@@ -29,7 +29,7 @@ const Register = () => {
 
   return (
     <div className=" w-full   h-screen flex flex-row-reverse">
-      <div className="m-6 rounded-lg relative w-[40%] flex justify-center items-center flex-col ">
+      <div className="m-6 rounded-lg relative w-[40%] hidden lg:flex justify-center items-center flex-col ">
         <video
           src={vid}
           className="rounded-xl w-full h-full object-cover"
@@ -50,8 +50,8 @@ const Register = () => {
           </div>
         </div>
       </div>
-      <div className="w-[60%]">
-        <form className="w-[50%] mx-auto">
+      <div className="lg:w-[60%]">
+        <form className="w-[90%] lg:w-[50%] mx-auto">
           <div className=" my-16">
             <p className=" uppercase font-semibold text-yellow-500 mb-4">
               Honey comb fxd
