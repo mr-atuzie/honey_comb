@@ -64,7 +64,7 @@ const About = () => {
             <br />
             <button
               onClick={() => setMore(!more)}
-              className=" bg-green-700 text-white py-3 px-6 rounded-full"
+              className=" bg-green-700 text-white py-3 px-6 rounded"
             >
               {more ? "Show less" : "More about us"}
             </button>
@@ -123,7 +123,7 @@ const About = () => {
             <br />
             <button
               onClick={() => setMore(!more)}
-              className=" bg-green-700 text-white py-3 px-6 rounded-full"
+              className=" bg-green-700 text-white py-3 px-6 rounded"
             >
               {more ? "Show less" : "More about us"}
             </button>
@@ -182,7 +182,7 @@ const About = () => {
             <br />
             <button
               onClick={() => setMore(!more)}
-              className=" bg-green-700 text-white py-3 px-6 rounded-full"
+              className=" bg-green-700 text-white py-3 px-6 rounded"
             >
               {more ? "Show less" : "More about us"}
             </button>
