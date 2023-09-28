@@ -51,7 +51,7 @@ const Register = () => {
         </div>
       </div>
       <div className="lg:w-[60%]">
-        <form className="w-[90%] lg:w-[50%] mx-auto">
+        <form className="w-[80%] lg:w-[50%] mx-auto mb-16">
           <div className=" my-16">
             <p className=" text-sm lg:text-lg uppercase font-semibold text-yellow-500 mb-4">
               Honey comb fxd
@@ -61,7 +61,7 @@ const Register = () => {
               Create your Account
             </h2>
 
-            <p className=" text-gray-500  text-sm my-4">
+            <p className=" text-gray-500 text-xs  lg:text-sm my-4">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi
               quasi, dolorem saepe sapiente culpa illum.
             </p>
@@ -73,7 +73,7 @@ const Register = () => {
             </label>
 
             <input
-              className="border p-3.5  block w-full"
+              className="border p-2.5 lg:p-3.5  block w-full"
               type="text"
               name="text"
               placeholder="Enter your name"
@@ -89,7 +89,7 @@ const Register = () => {
             </label>
 
             <input
-              className="border p-3.5 block w-full"
+              className="border p-2.5 lg:p-3.5 block w-full"
               type="email"
               name="email"
               placeholder="Enter your email"
@@ -104,7 +104,7 @@ const Register = () => {
               Password
             </label>
             <input
-              className="border p-3.5  block w-full"
+              className="border p-2.5 lg:p-3.5 block w-full"
               type="password"
               name="password"
               placeholder="Enter your password"
@@ -119,7 +119,7 @@ const Register = () => {
               Confirm Password
             </label>
             <input
-              className="border p-3.5  block w-full"
+              className="border p-2.5 lg:p-3.5  block w-full"
               type="password"
               name="password"
               placeholder="Retype password"
@@ -134,7 +134,7 @@ const Register = () => {
           </div>
 
           <button
-            className=" w-full text-center py-3.5 my-4 bg-green-700 text-white "
+            className=" w-full text-center py-2.5 lg:py-3.5 my-4 bg-green-700 text-white "
             type="submit"
           >
             Sign up
