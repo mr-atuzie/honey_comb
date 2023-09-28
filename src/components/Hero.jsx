@@ -5,7 +5,7 @@ const Hero = () => {
     <div className=" h-[95vh]   bg-green-700 w-full flex justify-center items-center ">
       <div className=" w-[80%] mx-auto flex gap-9 lg:gap-0 flex-col lg:justify-between lg:items-center lg:flex-row">
         <div className="lg:w-[55%]">
-          <h1 className=" text-white text-5xl lg:text-7xl font-extrabold my-4 ">
+          <h1 className=" text-white text-3xl lg:text-7xl font-extrabold my-4 ">
             Unlock your{" "}
             <span className=" text-yellow-500">financial Potential</span> by
             investing
@@ -19,7 +19,7 @@ const Hero = () => {
             asperiores harum.
           </p>
 
-          <button className="rounded bg-green-500  text-white px-6 py-2.5  hover:bg-white hover:text-green-500 ">
+          <button className="rounded bg-green-500 text-sm lg:text-base  text-white border-2 border-yellow-500 px-6 py-2.5  hover:bg-white hover:text-green-500 ">
             Get started
           </button>
         </div>

@@ -24,7 +24,7 @@ const Services = () => {
             <div>
               <div className="flex gap-3 items-center">
                 <MdVerified className="text-yellow-500" />
-                <h3 className=" text-green-600  font-semibold text-xl capitalize">
+                <h3 className=" text-green-600  font-semibold  lg:text-xl capitalize">
                   Bringing financial{" "}
                   <span className=" text-yellow-500"> Freedom</span>
                 </h3>
