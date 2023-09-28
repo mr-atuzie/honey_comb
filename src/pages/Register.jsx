@@ -28,7 +28,7 @@ const Register = () => {
   // };
 
   return (
-    <div className=" w-full   h-screen lg:flex lg:flex-row-reverse">
+    <div className=" w-full   h-screen flex  lg:flex-row-reverse">
       <div className="m-6 rounded-lg relative w-[40%] hidden lg:flex justify-center items-center flex-col ">
         <video
           src={vid}
@@ -50,7 +50,7 @@ const Register = () => {
           </div>
         </div>
       </div>
-      <div className="lg:w-[60%]">
+      <div className="lg:w-[60%] my-16">
         <form className="w-[80%] lg:w-[50%] mx-auto mb-16">
           <div className="">
             <p className=" text-sm lg:text-lg uppercase font-semibold text-yellow-500 lg:mb-4">
@@ -69,7 +69,7 @@ const Register = () => {
 
           <div className=" my-5">
             <label
-              className=" text-green-600 font-medium  text-xs lg:text-sm mb-2"
+              className="  font-medium  text-xs lg:text-sm mb-2"
               htmlFor="text"
             >
               Name
@@ -84,10 +84,7 @@ const Register = () => {
           </div>
 
           <div className=" mb-5">
-            <label
-              className=" text-green-600 font-medium text-xs lg:text-sm"
-              htmlFor="email"
-            >
+            <label className="  font-medium text-xs lg:text-sm" htmlFor="email">
               Email
             </label>
 
@@ -101,7 +98,7 @@ const Register = () => {
 
           <div className=" my-5">
             <label
-              className=" text-green-600 font-medium text-xs lg:text-sm"
+              className="  font-medium text-xs lg:text-sm"
               htmlFor="password"
             >
               Password
@@ -116,7 +113,7 @@ const Register = () => {
 
           <div className=" my-5">
             <label
-              className="  text-green-600 font-medium text-xs lg:text-sm"
+              className="  font-medium text-xs lg:text-sm"
               htmlFor="password"
             >
               Confirm Password
