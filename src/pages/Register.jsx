@@ -53,7 +53,7 @@ const Register = () => {
       <div className="lg:w-[60%]">
         <form className="w-[90%] lg:w-[50%] mx-auto">
           <div className=" my-16">
-            <p className=" uppercase font-semibold text-yellow-500 mb-4">
+            <p className=" text-sm lg:text-lg uppercase font-semibold text-yellow-500 mb-4">
               Honey comb fxd
             </p>
 
