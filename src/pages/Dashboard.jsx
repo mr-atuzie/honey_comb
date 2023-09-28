@@ -120,7 +120,7 @@ const Dashboard = () => {
           </div>
           <div className=" bg-red-50 p-2 w-[35%]"></div>
         </div>
-        <div>
+        <div className=" lg:hidden">
           <h2>Rex</h2>
         </div>
       </div>
