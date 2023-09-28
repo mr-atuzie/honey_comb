@@ -19,7 +19,7 @@ const Faq = () => {
         <div className=" lg:w-[60%] mx-auto my-10">
           <div className="w-full shadow-md mb-6">
             <div className=" bg-green-50 w-full p-3 flex items-center justify-between">
-              <h2 className=" font-medium lg:text-lg text-green-700 lg:tracking-wide  capitalize">
+              <h2 className=" text-sm font-medium lg:text-lg text-green-700 lg:tracking-wide  capitalize">
                 How do i sign up?
               </h2>
 
@@ -52,7 +52,7 @@ const Faq = () => {
           </div>
           <div className="w-full shadow-md mb-6">
             <div className=" bg-green-50 w-full p-3 flex items-center justify-between">
-              <h2 className=" font-medium lg:text-lg text-green-700 lg:tracking-wide  capitalize">
+              <h2 className="text-sm font-medium lg:text-lg text-green-700 lg:tracking-wide  capitalize">
                 How Much do i get back?
               </h2>
 
@@ -85,7 +85,7 @@ const Faq = () => {
           </div>
           <div className="w-full shadow-md mb-6">
             <div className=" bg-green-50 w-full p-3 flex items-center justify-between">
-              <h2 className=" font-medium lg:text-lg text-green-700 lg:tracking-wide  capitalize">
+              <h2 className="text-sm font-medium lg:text-lg text-green-700 lg:tracking-wide  capitalize">
                 When can i get my money back?
               </h2>
 
@@ -118,7 +118,7 @@ const Faq = () => {
           </div>
           <div className="w-full shadow-md mb-6">
             <div className=" bg-green-50 w-full p-3 flex items-center justify-between">
-              <h2 className=" font-medium lg:text-lg text-green-700 lg:tracking-wide  capitalize">
+              <h2 className="text-sm font-medium lg:text-lg text-green-700 lg:tracking-wide  capitalize">
                 How Much do i get back?
               </h2>
 
@@ -151,7 +151,7 @@ const Faq = () => {
           </div>
           <div className="w-full shadow-md mb-6">
             <div className=" bg-green-50 w-full p-3 flex items-center justify-between">
-              <h2 className=" font-medium lg:text-lg text-green-700 lg:tracking-wide  capitalize">
+              <h2 className=" text-sm font-medium lg:text-lg text-green-700 lg:tracking-wide  capitalize">
                 When can i withdraw my Intrest
               </h2>
 

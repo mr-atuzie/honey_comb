@@ -53,7 +53,7 @@ const Register = () => {
       <div className="lg:w-[60%]">
         <form className="w-[80%] lg:w-[50%] mx-auto mb-16">
           <div className=" my-16">
-            <p className=" text-sm lg:text-lg uppercase font-semibold text-yellow-500 mb-4">
+            <p className=" text-sm lg:text-lg uppercase font-semibold text-yellow-500 lg:mb-4">
               Honey comb fxd
             </p>
 
@@ -61,7 +61,7 @@ const Register = () => {
               Create your Account
             </h2>
 
-            <p className=" text-gray-500 text-xs  lg:text-sm my-4">
+            <p className=" text-gray-500 text-sm  lg:text-sm lg:my-4">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi
               quasi, dolorem saepe sapiente culpa illum.
             </p>
@@ -128,7 +128,7 @@ const Register = () => {
 
           <div className="flex gap-1 my-5">
             <input type="checkbox" name="" id="" />
-            <p className=" text-sm text-gray-800">
+            <p className=" text-xs lg:text-sm text-gray-800">
               I accept all terms and condition
             </p>
           </div>
@@ -140,7 +140,7 @@ const Register = () => {
             Sign up
           </button>
 
-          <p className="text-center  mt-3  text-gray-500">
+          <p className="text-sm lg:text-base text-center  mt-3  text-gray-500">
             Already have an account?{" "}
             <Link to={"/login"}>
               <span className=" text-black font-medium">Sign In</span>

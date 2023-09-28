@@ -142,7 +142,7 @@ const Packages = () => {
 
           <div className=" bg-yellow-500 p-4 md:p-7 h-fit shadow-md rounded-md ">
             <div className=" flex flex-col justify-center items-center">
-              <h1 className=" text-lg font-semibold text-green-700    uppercase">
+              <h1 className=" text-start lg:text-lg font-semibold text-green-700    uppercase">
                 Calculate Earning
               </h1>
               <div className=" flex items-center text-white">
@@ -190,7 +190,7 @@ const Packages = () => {
                 </div>
 
                 <button className="text-white text-sm lg:text-base bg-green-700  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4">
-                  Calculate Intrest
+                  Calculate
                 </button>
               </form>
             </div>

@@ -70,8 +70,8 @@ const Services = () => {
               <div className="flex gap-3 items-center">
                 <MdVerified className="text-yellow-500" />
                 <h3 className=" text-green-600  font-semibold lg:text-xl capitalize">
-                  <span className=" text-yellow-500">Advance</span> your chances
-                  with minimum risk
+                  <span className=" text-yellow-500">Advance</span> your
+                  Earnings
                 </h3>
               </div>
               <p className="   text-xs lg:text-base ">
