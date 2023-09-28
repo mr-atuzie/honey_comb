@@ -6,9 +6,11 @@ import { HiOutlineBars3 } from "react-icons/hi2";
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const links = [
-    { id: 2, link: "/about", name: "Who we are" },
-    { id: 3, link: "/services", name: "What we do" },
-    { id: 4, link: "/services", name: "How we do it" },
+    { id: 2, link: "/", name: "Home" },
+    { id: 2, link: "/about", name: "About us" },
+    { id: 3, link: "/", name: "Services" },
+    { id: 5, link: "/", name: "Packages" },
+    { id: 4, link: "/", name: "Contact us" },
   ];
 
   const handleNav = () => {
