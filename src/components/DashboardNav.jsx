@@ -4,7 +4,6 @@ import { AiTwotoneHeart } from "react-icons/ai";
 import { BiHomeAlt2 } from "react-icons/bi";
 import { FaCog, FaWallet } from "react-icons/fa";
 import { IoPersonOutline } from "react-icons/io5";
-import { MdOutlineExplore } from "react-icons/md";
 import { TbBellRingingFilled } from "react-icons/tb";
 import { BsFillPersonFill } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
@@ -52,7 +51,7 @@ const DashboardNav = () => {
               <div className=" border-2 border-yellow-500 bg-green-500 text-white  p-2 h-fit rounded-lg">
                 <BsFillPersonFill size={20} />
               </div>
-              <p className=" ml-4 font-medium  text-lg ">Profole</p>
+              <p className=" ml-4 font-medium  text-lg ">Profile</p>
             </div>
           </NavLink>
           <NavLink
@@ -104,8 +103,8 @@ const DashboardNav = () => {
               isActive ? "text-blue-500" : "text-gray-500"
             }
           >
-            <MdOutlineExplore size={30} />
-            <p className=" text-xs mt-2">Explore</p>
+            <FaWallet size={30} />
+            <p className=" text-xs mt-2">Wallet</p>
           </NavLink>
         </div>
         <div className=" flex flex-col items-center justify-center">

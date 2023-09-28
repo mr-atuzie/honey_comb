@@ -6,7 +6,7 @@ const Header = () => {
   const user =
     "https://images.squarespace-cdn.com/content/v1/51ef4493e4b0561c90fa76d6/1667315305235-RCUO3EX7WIENHM8CG9U1/20210601_SLP2805-edit.jpg?format=1000w";
   return (
-    <div className="bg-white w-full z-40  shadow-md fixed top-0 p-3 lg:pl-80  lg:py-4 lg:pr-4">
+    <div className="bg-white w-full z-40   fixed top-0 p-3 lg:pl-80  lg:py-4 lg:pr-4">
       <div className=" flex items-center justify-between">
         <div className=" flex items-center ">
           {user === "" ? (
@@ -35,7 +35,7 @@ const Header = () => {
                 <IoIosNotifications size={20} className=" " />
               </div>
 
-              <div className=" absolute w-1 h-1 bg-red-600 top-0 right-1"></div>
+              <div className=" absolute w-2 h-2 bg-red-600 top-2 rounded-full right-3"></div>
               <p className=" font-medium hidden lg:block ml-1">Notifications</p>
             </div>
           </Link>
