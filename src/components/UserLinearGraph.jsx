@@ -5,11 +5,11 @@ const UserLinearGraph = () => {
     <div>
       <div className=" bg-white shadow-lg  p-6 rounded">
         <div className="  mb-4">
-          <p className=" font-medium text-xl ">Total Investments</p>
+          <p className=" font-medium text-lg  lg:text-xl ">Total Investments</p>
         </div>
         <div>
           <div className=" mb-6">
-            <div className="mb-1  flex justify-between items-center ">
+            <div className="mb-1 text-sm lg:text-base  flex justify-between items-center ">
               <h3> Basic</h3>
               <p className=" text-lg text-red-600 font-medium">65%</p>
             </div>
@@ -18,7 +18,7 @@ const UserLinearGraph = () => {
             </div>
           </div>
           <div className=" mb-6">
-            <div className="mb-1  flex justify-between items-center ">
+            <div className="mb-1 text-sm lg:text-base  flex justify-between items-center ">
               <h3>Standard</h3>
               <p className=" text-lg text-purple-600 font-medium">79%</p>
             </div>
@@ -27,7 +27,7 @@ const UserLinearGraph = () => {
             </div>
           </div>
           <div className=" mb-6">
-            <div className="mb-1  flex justify-between items-center ">
+            <div className="mb-1 text-sm lg:text-base  flex justify-between items-center ">
               <h3>Average</h3>
               <p className=" text-lg text-yellow-600 font-medium">51%</p>
             </div>
@@ -36,7 +36,7 @@ const UserLinearGraph = () => {
             </div>
           </div>
           <div className=" mb-6">
-            <div className="mb-1  flex justify-between items-center ">
+            <div className="mb-1 text-sm lg:text-base  flex justify-between items-center ">
               <h3>Premium</h3>
               <p className=" text-lg text-green-600 font-medium">93%</p>
             </div>
@@ -45,7 +45,7 @@ const UserLinearGraph = () => {
             </div>
           </div>
           <div className=" mb-6">
-            <div className="mb-1  flex justify-between items-center ">
+            <div className="mb-1 text-sm lg:text-base  flex justify-between items-center ">
               <h3>Investment</h3>
               <p className=" text-lg text-orange-600 font-medium">78%</p>
             </div>

@@ -14,8 +14,13 @@ const UserStatCard = () => {
           </div>
 
           <div className=" mt-8">
-            <h2 className=" text-xl font-semibold "> &#8358; 7,233,000</h2>
-            <p className=" text-sm  text-gray-500 ">Revenue Generated</p>
+            <h2 className=" text-lg lg:text-xl font-semibold ">
+              {" "}
+              &#8358; 7,233,000
+            </h2>
+            <p className="text-xs lg:text-sm  text-gray-500 ">
+              Revenue Generated
+            </p>
           </div>
         </div>
       </div>
@@ -26,8 +31,10 @@ const UserStatCard = () => {
           </div>
 
           <div className=" mt-8">
-            <h2 className=" text-xl font-semibold ">&#8358; 276,000</h2>
-            <p className=" text-sm  text-gray-500 ">Annual Profit</p>
+            <h2 className=" text-lg lg:text-xl font-semibold ">
+              &#8358; 276,000
+            </h2>
+            <p className="text-xs lg:text-sm  text-gray-500 ">Annual Profit</p>
           </div>
         </div>
       </div>
@@ -38,8 +45,11 @@ const UserStatCard = () => {
           </div>
 
           <div className=" mt-8">
-            <h2 className=" text-xl font-semibold "> &#8358; 23,000</h2>
-            <p className=" text-sm  text-gray-500 ">Monthly Profit</p>
+            <h2 className=" text-lg lg:text-xl font-semibold ">
+              {" "}
+              &#8358; 23,000
+            </h2>
+            <p className="text-xs lg:text-sm  text-gray-500 ">Monthly Profit</p>
           </div>
         </div>
       </div>
@@ -50,8 +60,10 @@ const UserStatCard = () => {
           </div>
 
           <div className=" mt-8">
-            <h2 className=" text-xl font-semibold ">70%</h2>
-            <p className=" text-sm  text-gray-500 ">Revenue statistics</p>
+            <h2 className=" text-lg lg:text-xl font-semibold ">70%</h2>
+            <p className="text-xs lg:text-sm  text-gray-500 ">
+              Revenue statistics
+            </p>
           </div>
         </div>
       </div>
