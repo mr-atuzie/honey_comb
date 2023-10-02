@@ -67,7 +67,7 @@ const Login = () => {
               placeholder="Enter your password"
             />
           </div>
-          <Link to={"/dashboard"}>
+          <Link to={"/user/dashboard"}>
             <button
               className="border-2 border-yellow-500 w-full text-center py-2.5 lg:py-3.5 my-4  bg-green-600 text-white "
               type="submit"
