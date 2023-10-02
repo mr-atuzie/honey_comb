@@ -63,7 +63,7 @@ const UserDashboard = () => {
           <IoIosNotifications size={25} className=" " />
         </div>
       </div>
-      <h1 className=" font-medium text-2xl lg:text-4xl  my-6 lg:my-11">
+      <h1 className=" font-medium text-2xl lg:text-4xl  my-9 lg:my-11">
         {" "}
         Dashboard
       </h1>

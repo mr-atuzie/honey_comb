@@ -3,7 +3,7 @@ import { BsEyeSlash } from "react-icons/bs";
 
 const UserCard = () => {
   return (
-    <div className=" bg-white shadow-lg  p-4 lg:p-8 rounded h-fit mb-10">
+    <div className=" bg-white shadow-lg  px-4 py-6 lg:p-8 rounded h-fit mb-10">
       <div className=" mb-4 flex justify-between items-center">
         <div>
           <p className="  font-medium text-sm  ">Current Balance</p>
@@ -18,7 +18,7 @@ const UserCard = () => {
         </div>
       </div>
 
-      <div className=" mt-8 flex gap-4 ">
+      <div className=" mt-6 lg:mt-8 flex gap-4 ">
         <button className=" border-2 border-black py-2 lg:py-3 text-center font-medium rounded-md text-sm px-6 lg:px-8">
           Send
         </button>
