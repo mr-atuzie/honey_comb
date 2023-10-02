@@ -14,13 +14,13 @@ const MobileNav = () => {
       <div className=" px-6 py-3 flex items-center justify-between lg:hidden">
         <div className=" flex flex-col items-center justify-center ">
           <NavLink
-            to={"/dashboard"}
+            to={"/user/dashboard"}
             className={({ isActive }) =>
               isActive ? "text-blue-500" : "text-gray-900"
             }
           >
             <BiHomeAlt2 size={25} />
-            <p className=" text-xs mt-2">Home</p>
+            <p className=" text-xs mt-2">Dasboard</p>
           </NavLink>
         </div>
         <div className=" flex flex-col items-center justify-center">
