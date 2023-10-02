@@ -12,11 +12,11 @@ const Notification = () => {
       {notifications.map((not) => {
         return (
           <div key={not} className="  px-5 py-3 border-b-2 border-gray-100">
-            <div className="flex items-center gap-4">
-              <div className=" border-2 border-yellow-500 bg-green-500 text-green-50 p-2 h-fit rounded-full">
+            <div className="lg:flex lg:items-center lg:gap-4">
+              <div className=" hidden lg:block border-2 border-yellow-500 bg-green-500 text-green-50 p-2 h-fit rounded-full">
                 <AiFillNotification size={25} />
               </div>
-              <h3 className=" text-sm lg:text-base  font-medium">
+              <h3 className=" text-sm lg:text-base text-green-600  font-medium">
                 {" "}
                 Hot new deal, Enter (0R45B6A) to get 25% discount on all
                 transactions.
