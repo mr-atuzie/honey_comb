@@ -3,7 +3,7 @@ import { BsEyeSlash } from "react-icons/bs";
 
 const UserCard = () => {
   return (
-    <div className=" :bg-white shadow-lg  px-4 py-6 lg:p-8 rounded h-fit mb-10">
+    <div className=" bg-white shadow-lg  px-4 py-6 lg:p-8 rounded h-fit mb-10">
       <div className=" mb-4 flex justify-between items-center">
         <div>
           <p className="  font-medium text-sm text-green-600  ">
