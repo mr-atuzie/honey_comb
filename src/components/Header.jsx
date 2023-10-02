@@ -46,10 +46,15 @@ const Header = () => {
           alt=""
         />
 
-        <h2 className=" capitalize  font-medium">Atuzie Rex</h2>
+        <div className="">
+          <h2 className=" text-sm lg:text-base capitalize  font-medium">
+            Atuzie Rex
+          </h2>
+          <p className=" text-xs text-gray-700">rexatuzie@gmail.com</p>
+        </div>
       </div>
 
-      <div className=" border-2 border-yellow-500 bg-green-500 text-white p-2 h-fit rounded-full">
+      <div className=" lg:hidden border-2 border-yellow-500 bg-green-500 text-white p-2 h-fit rounded-full">
         <IoIosNotifications size={25} className=" " />
       </div>
     </div>
