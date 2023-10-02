@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 const UserLayout = () => {
   return (
-    <div className=" min-h-screen flex">
+    <div className=" min-h-screen lg:flex">
       <div className="w-0 lg:w-[20%] bg-green-600  lg:p-5 ">
         <div></div>
       </div>
