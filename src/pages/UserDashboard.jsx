@@ -13,7 +13,7 @@ const UserDashboard = () => {
     <div>
       {/* header */}
       <div className=" flex justify-between items-center">
-        <form className=" w-[70%] lg:w-[38%]">
+        <form className=" w-[60%] lg:w-[38%]">
           <label
             for="default-search"
             className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -61,42 +61,42 @@ const UserDashboard = () => {
       <h1 className=" text-2xl lg:text-4xl  my-6 lg:my-11"> Dashboard</h1>
 
       <div className=" hidden lg:block">
-        <div className="  flex justify-between mb-10">
-          <div className=" w-[46%]">
+        <div className="  flex flex-col lg:flex-row lg:justify-between mb-10">
+          <div className=" lg:w-[46%]">
             {/* card */}
             <UserCard />
             {/* areachart */}
-            <div className=" bg-white shadow-lg pb-3 rounded h-fit">
+            <div className="hidden lg:block bg-white shadow-lg pb-3 rounded h-fit">
               <UserAreaChart />
             </div>
           </div>
-          <div className=" w-[50%]">
+          <div className=" lg:w-[50%]">
             {/* Notification */}
             <Notification />
           </div>
         </div>
 
-        <div className=" flex justify-between">
-          <div className=" w-[30%]  ">
+        <div className=" flex flex-col lg:flex-row lg:justify-between">
+          <div className=" lg:w-[30%]  ">
             <UserStatCard />
           </div>
 
-          <div className=" w-[32%] ">
+          <div className=" my-10 lg:my-0 lg:w-[32%] ">
             <UserLinearGraph />
           </div>
 
-          <div className=" w-[35%] ">
+          <div className=" lg:w-[35%] ">
             <UserTransactions />
           </div>
         </div>
 
-        <div className=" flex justify-between my-10">
+        <div className="hidden lg:flex flex-col lg:flex-row lg:justify-between my-10">
           {/* line graph */}
-          <div className=" w-[60%] bg-white shadow-lg pb-3 rounded">
+          <div className=" lg:w-[60%] bg-white shadow-lg pb-3 rounded">
             <UserLineGraph />
           </div>
           {/* barchat */}
-          <div className=" w-[35%] bg-white shadow-lg pb-3 rounded">
+          <div className=" lg:w-[35%] bg-white shadow-lg pb-3 rounded">
             <UserBarChart />
           </div>
 
@@ -106,6 +106,23 @@ const UserDashboard = () => {
 
       <div className="lg:hidden">
         <UserCard />
+
+        <div className=" lg:w-[30%]  ">
+          <UserStatCard />
+        </div>
+
+        <div className=" my-10 lg:my-0 lg:w-[32%] ">
+          <UserLinearGraph />
+        </div>
+
+        <div className=" lg:w-[35%] ">
+          <UserTransactions />
+        </div>
+
+        <div className=" lg:w-[50%]">
+          {/* Notification */}
+          <Notification />
+        </div>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import { TbPigMoney } from "react-icons/tb";
 
 const UserStatCard = () => {
   return (
-    <div className="gap-9  grid grid-cols-2">
+    <div className=" gap-4 lg:gap-9  grid grid-cols-2">
       <div className="  bg-white shadow-lg rounded  h-fit">
         <div className=" p-5 ">
           <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">

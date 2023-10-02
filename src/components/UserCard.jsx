@@ -6,8 +6,11 @@ const UserCard = () => {
     <div className=" bg-white shadow-lg  p-8 rounded h-fit mb-10">
       <div className=" mb-4 flex justify-between items-center">
         <div>
-          <p className="  font-medium  ">Current Balance</p>
-          <h2 className=" text-4xl font-semibold "> &#8358; 7,233,000</h2>
+          <p className="  font-medium text-sm  ">Current Balance</p>
+          <h2 className=" text-2xl lg:text-4xl font-semibold ">
+            {" "}
+            &#8358; 7,233,000
+          </h2>
         </div>
 
         <div className="bg-black text-white  p-2 h-fit rounded-full">
@@ -16,10 +19,10 @@ const UserCard = () => {
       </div>
 
       <div className=" mt-8 flex gap-4 ">
-        <button className=" border-2 border-black py-3 text-center font-medium rounded-md px-8">
+        <button className=" border-2 border-black py-3 text-center font-medium rounded-md text-sm px-6 lg:px-8">
           Send
         </button>
-        <button className=" border-2 border-black py-3 text-center font-medium rounded-md px-8">
+        <button className=" border-2 border-black py-3 text-center font-medium rounded-mdtext-sm px-6 lg:px-8">
           Withdraw
         </button>
       </div>
