@@ -7,13 +7,14 @@ import UserBarChart from "../components/UserBarChart";
 import Notification from "../components/Notification";
 import UserAreaChart from "../components/UserAreaChart";
 import UserCard from "../components/UserCard";
+import { IoIosNotifications } from "react-icons/io";
 
 const UserDashboard = () => {
   return (
     <div>
       {/* header */}
       <div className=" flex justify-between items-center">
-        <form className=" w-[60%] lg:w-[38%]">
+        <form className=" hidden lg:block lg:w-[38%]">
           <label
             for="default-search"
             className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -57,8 +58,15 @@ const UserDashboard = () => {
 
           <h2 className=" capitalize  font-medium">Atuzie Rex</h2>
         </div>
+
+        <div className=" border-2 border-yellow-500 bg-green-500 text-white p-2 h-fit rounded-full">
+          <IoIosNotifications size={25} className=" " />
+        </div>
       </div>
-      <h1 className=" text-2xl lg:text-4xl  my-6 lg:my-11"> Dashboard</h1>
+      <h1 className=" font-medium text-2xl lg:text-4xl  my-6 lg:my-11">
+        {" "}
+        Dashboard
+      </h1>
 
       <div className=" hidden lg:block">
         <div className="  flex flex-col lg:flex-row lg:justify-between mb-10">
