@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
-    <div className=" w-full  h-screen flg:flex lg:flex-row-reverse">
+    <div className=" w-full  h-screen lg:flex lg:flex-row-reverse">
       <div className="m-6 rounded-lg relative w-[40%] hidden lg:flex justify-center items-center flex-col">
         <video
           src={vid}
@@ -26,7 +26,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <div className=" my-16 lg:w-[60%">
+      <div className=" my-16 lg:w-[60%]">
         <form className="w-[80%] lg:w-[50%] mx-auto mb-16">
           <div className="">
             <p className=" text-sm lg:text-lg uppercase font-semibold text-yellow-500 lg:mb-4">
