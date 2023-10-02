@@ -6,10 +6,10 @@ const UserCard = () => {
     <div className=" bg-white shadow-lg  px-4 py-6 lg:p-8 rounded h-fit mb-10">
       <div className=" mb-4 flex justify-between items-center">
         <div>
-          <p className="  font-medium text-sm text-green-600  ">
+          <p className=" text-xs  font-medium lg:text-sm text-green-600  ">
             Current Balance
           </p>
-          <h2 className=" text-xl lg:text-4xl font-semibold  text-yellow-500">
+          <h2 className=" text-xl lg:text-4xl font-bold  text-yellow-500">
             {" "}
             &#8358; 7,233,000
           </h2>
