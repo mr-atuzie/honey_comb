@@ -1,5 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import MobileNav from "./MobileNav";
 
 const UserLayout = () => {
   return (
@@ -12,6 +13,7 @@ const UserLayout = () => {
           <Outlet />
         </div>
       </div>
+      <MobileNav />
     </div>
   );
 };
