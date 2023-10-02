@@ -10,7 +10,7 @@ const UserLayout = () => {
         <div></div>
       </div>
       <div className=" lg:w-[80%] bg-gray-100  py-5   pb-40">
-        <div className=" w-[90%] lg:w-[95%] mx-auto">
+        <div className=" w-[95%] mx-auto">
           <Header />
           <Outlet />
         </div>
