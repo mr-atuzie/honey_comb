@@ -18,8 +18,8 @@ const UserStatCard = () => {
               {" "}
               &#8358; 7,233,000
             </h2>
-            <p className="text-xs lg:text-sm  text-gray-500 ">
-              Revenue Generated
+            <p className=" text-xs lg:text-sm  text-gray-500 ">
+              Profit Generated
             </p>
           </div>
         </div>
