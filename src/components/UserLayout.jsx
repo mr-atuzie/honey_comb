@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import MobileNav from "./MobileNav";
+import Header from "./Header";
 
 const UserLayout = () => {
   return (
@@ -10,6 +11,7 @@ const UserLayout = () => {
       </div>
       <div className=" lg:w-[80%] bg-gray-100  py-5   pb-40">
         <div className=" w-[90%] lg:w-[95%] mx-auto">
+          <Header />
           <Outlet />
         </div>
       </div>

@@ -9,6 +9,8 @@ import AdminLayout from "./components/AdminLayout";
 import AdminDashboard from "./pages/AdminDashboard";
 import UserLayout from "./components/UserLayout";
 import UserDashboard from "./pages/UserDashboard";
+import Notifications from "./pages/Notifications";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         </Route>
         <Route path="/user" element={<UserLayout />}>
           <Route path="dashboard" element={<UserDashboard />} />
+          <Route path="notifications" element={<Notifications />} />
+          <Route path="profile" element={<Profile />} />
         </Route>
       </Routes>
     </BrowserRouter>
