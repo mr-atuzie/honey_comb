@@ -13,16 +13,16 @@ const UserCard = () => {
           </h2>
         </div>
 
-        <div className="bg-green-400 text-yellow-500  p-2 h-fit rounded-full">
+        <div className="bg-green-400 text-white  p-2 h-fit rounded-full">
           <BsEyeSlash size={20} />
         </div>
       </div>
 
       <div className=" mt-6 lg:mt-8 flex gap-4 ">
-        <button className=" text-white bg-green-500  border-2 border-yellow-500 py-2 lg:py-3 text-center font-medium rounded-md text-sm px-6 lg:px-8">
+        <button className=" text-white bg-green-400  border-2 border-yellow-500 py-2 lg:py-3 text-center font-medium rounded-md text-sm px-6 lg:px-8">
           Send
         </button>
-        <button className="text-white bg-green-500  border-2 border-yellow-500  py-2 lg:py-3 text-center font-medium rounded-md text-sm px-6 lg:px-8">
+        <button className="text-white bg-green-400  border-2 border-yellow-500  py-2 lg:py-3 text-center font-medium rounded-md text-sm px-6 lg:px-8">
           Withdraw
         </button>
       </div>
