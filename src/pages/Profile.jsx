@@ -18,7 +18,7 @@ const Profile = () => {
               <div className="relative w-28 h-28 lg:w-36 lg:h-36 flex justify-center items-center rounded-full">
                 <label
                   htmlFor="image"
-                  className=" z-40 bg-black/60 h-[50px] w-[50px] rounded-full fixed flex items-center justify-center"
+                  className=" z-40 bg-black/60 h-[50px] w-[50px] rounded-full absolute flex items-center justify-center"
                 >
                   <AiOutlineCamera className=" text-white" size={30} />
                 </label>
@@ -40,7 +40,7 @@ const Profile = () => {
                 placeholder="Your Email"
               />
 
-              <button className=" bg-green-600 text-white py-2.5 w-40 ml-5 rounded-md">
+              <button className=" text-sm lg:text-base bg-green-600 text-white py-2.5 w-40 ml-5 rounded-md">
                 Upload Image
               </button>
             </div>
@@ -57,7 +57,7 @@ const Profile = () => {
               />
               <label
                 htmlFor="name"
-                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
+                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-gray-50 px-2  left-1"
               >
                 Your Name
               </label>
@@ -72,7 +72,7 @@ const Profile = () => {
               />
               <label
                 htmlFor="email"
-                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
+                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-gray-50 px-2  left-1"
               >
                 Your Email
               </label>
@@ -87,7 +87,7 @@ const Profile = () => {
               />
               <label
                 htmlFor="DOB"
-                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
+                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-gray-50 px-2  left-1"
               >
                 Date Of Birth
               </label>
@@ -102,7 +102,7 @@ const Profile = () => {
               />
               <label
                 htmlFor="phone"
-                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
+                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-gray-50 px-2  left-1"
               >
                 Your Phone Number
               </label>
@@ -111,7 +111,7 @@ const Profile = () => {
               <select
                 name="location"
                 id="location"
-                className="  w-full  mt-1 lg:mt-3   border text-gray-700  p-3 "
+                className="  w-full  mt-1 lg:mt-3  rounded-lg  border border-gray-300 text-gray-700  p-3 "
               >
                 <option>Select Location</option>
                 {countries.map((c) => {
@@ -124,7 +124,7 @@ const Profile = () => {
               </select>
               <label
                 htmlFor="location"
-                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
+                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-gray-50 px-2  left-1"
               >
                 Your Location
               </label>
