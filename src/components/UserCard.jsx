@@ -9,7 +9,7 @@ const UserCard = () => {
           <p className=" text-xs  font-medium lg:text-sm text-green-600  ">
             Current Balance
           </p>
-          <h2 className=" text-xl lg:text-4xl font-bold  text-yellow-500">
+          <h2 className=" text-2xl lg:text-4xl font-bold  text-yellow-500">
             {" "}
             &#8358; 7,233,000
           </h2>
