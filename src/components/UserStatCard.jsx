@@ -13,11 +13,8 @@ const UserStatCard = () => {
             <FaUsers size={30} />
           </div>
 
-          <div className=" mt-8">
-            <h2 className=" text-lg lg:text-xl font-semibold ">
-              {" "}
-              &#8358; 7,233,000
-            </h2>
+          <div className="  mt-4 lg:mt-8">
+            <h2 className=" lg:text-xl font-semibold "> &#8358; 7,233,000</h2>
             <p className=" text-xs lg:text-sm  text-gray-500 ">
               Profit Generated
             </p>
@@ -30,10 +27,8 @@ const UserStatCard = () => {
             <GiMoneyStack size={30} />
           </div>
 
-          <div className=" mt-8">
-            <h2 className=" text-lg lg:text-xl font-semibold ">
-              &#8358; 276,000
-            </h2>
+          <div className=" mt-4 lg:mt-8">
+            <h2 className="  lg:text-xl font-semibold ">&#8358; 276,000</h2>
             <p className="text-xs lg:text-sm  text-gray-500 ">Annual Profit</p>
           </div>
         </div>
@@ -44,11 +39,8 @@ const UserStatCard = () => {
             <TbPigMoney size={30} />
           </div>
 
-          <div className=" mt-8">
-            <h2 className=" text-lg lg:text-xl font-semibold ">
-              {" "}
-              &#8358; 23,000
-            </h2>
+          <div className=" mt-4 lg:mt-8">
+            <h2 className=" lg:text-xl font-semibold "> &#8358; 23,000</h2>
             <p className="text-xs lg:text-sm  text-gray-500 ">Monthly Profit</p>
           </div>
         </div>
@@ -59,8 +51,8 @@ const UserStatCard = () => {
             <ImStatsBars size={30} />
           </div>
 
-          <div className=" mt-8">
-            <h2 className=" text-lg lg:text-xl font-semibold ">70%</h2>
+          <div className=" mt-4 lg:mt-8">
+            <h2 className="  lg:text-xl font-semibold ">70%</h2>
             <p className="text-xs lg:text-sm  text-gray-500 ">
               Revenue statistics
             </p>
