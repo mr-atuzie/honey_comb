@@ -11,6 +11,7 @@ import UserLayout from "./components/UserLayout";
 import UserDashboard from "./pages/UserDashboard";
 import Notifications from "./pages/Notifications";
 import Profile from "./pages/Profile";
+import Transactions from "./pages/Transactions";
 
 function App() {
   return (
@@ -20,7 +21,6 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/add-kyc" element={<Kyc />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/admin" element={<AdminLayout />}>
           <Route path="dashboard" element={<AdminDashboard />} />
@@ -29,6 +29,8 @@ function App() {
           <Route path="dashboard" element={<UserDashboard />} />
           <Route path="notifications" element={<Notifications />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="add-kyc" element={<Kyc />} />
+          <Route path="transactions" element={<Transactions />} />
         </Route>
       </Routes>
     </BrowserRouter>

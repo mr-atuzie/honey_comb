@@ -5,7 +5,7 @@ import { countries } from "../data";
 const Profile = () => {
   return (
     <div>
-      <h1 className=" font-medium text-2xl lg:text-4xl  my-9 lg:my-11">
+      <h1 className=" font-bold text-green-600 text-2xl lg:text-4xl  my-9 lg:my-11">
         Profile
       </h1>
 

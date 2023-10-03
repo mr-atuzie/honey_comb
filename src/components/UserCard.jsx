@@ -21,10 +21,10 @@ const UserCard = () => {
       </div>
 
       <div className=" mt-6 lg:mt-8 flex gap-4 ">
-        <button className=" text-white bg-green-600  border-2 border-yellow-500 py-2 lg:py-3 text-center font-medium rounded-md text-sm px-6 lg:px-8">
+        <button className=" text-white bg-green-600   py-2 lg:py-3 text-center font-medium rounded-md text-sm px-6 lg:px-8">
           Send
         </button>
-        <button className="text-white bg-green-600  border-2 border-yellow-500  py-2 lg:py-3 text-center font-medium rounded-md text-sm px-6 lg:px-8">
+        <button className="text-white bg-green-600   py-2 lg:py-3 text-center font-medium rounded-md text-sm px-6 lg:px-8">
           Withdraw
         </button>
       </div>

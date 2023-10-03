@@ -14,7 +14,7 @@ const Notification = () => {
           <div key={not} className="  px-5 py-3 border-b-2 border-gray-100">
             <div className="lg:flex lg:items-center lg:gap-4">
               <div className=" hidden lg:block border-2 border-yellow-500 bg-green-500 text-green-50 p-2 h-fit rounded-full">
-                <AiFillNotification size={25} />
+                <AiFillNotification size={15} />
               </div>
               <h3 className=" text-sm lg:text-base text-green-600  font-medium">
                 {" "}

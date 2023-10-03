@@ -80,7 +80,7 @@ const UserBarChart = () => {
         <p className="  text-gray-500  ">Profit Earned</p>
         <h2 className=" text-3xl font-semibold "> &#8358; 7,233,000</h2>
       </div>
-      <BarChart width={430} height={300} data={data}>
+      <BarChart width={630} height={300} data={data}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
         <YAxis />

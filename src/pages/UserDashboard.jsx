@@ -13,7 +13,7 @@ const UserDashboard = () => {
     <div>
       {/* header */}
 
-      <h1 className=" font-medium text-2xl lg:text-4xl  my-9 lg:my-11">
+      <h1 className=" font-bold text-green-600 text-2xl lg:text-4xl  my-9 lg:my-11">
         {" "}
         Dashboard
       </h1>
@@ -23,9 +23,10 @@ const UserDashboard = () => {
           <div className=" lg:w-[46%]">
             {/* card */}
             <UserCard />
+
             {/* areachart */}
             <div className="hidden lg:block bg-white shadow-lg pb-3 rounded h-fit">
-              <UserAreaChart />
+              <UserBarChart />
             </div>
           </div>
           <div className=" lg:w-[50%]">
@@ -55,7 +56,7 @@ const UserDashboard = () => {
           </div>
           {/* barchat */}
           <div className=" lg:w-[35%] bg-white shadow-lg pb-3 rounded">
-            <UserBarChart />
+            <UserAreaChart />
           </div>
 
           {/* notification */}

@@ -40,7 +40,7 @@ const MobileNav = () => {
           <NavLink
             to={"/user/profile"}
             className={({ isActive }) =>
-              isActive ? "text-green-600" : "text-gray-900"
+              isActive ? "text-green-600" : "text-gray-500"
             }
           >
             <IoPersonOutline size={30} />
@@ -49,13 +49,13 @@ const MobileNav = () => {
         </div>
         <div className=" flex flex-col items-center justify-center">
           <NavLink
-            to={"/user/notifications"}
+            to={"/user/transactions"}
             className={({ isActive }) =>
-              isActive ? "text-green-600" : "text-gray-900"
+              isActive ? "text-green-600" : "text-gray-500"
             }
           >
             <IoIosNotifications size={25} />
-            <p className=" text-xs mt-2">Notifications</p>
+            <p className=" text-xs mt-2">Transactions</p>
           </NavLink>
         </div>
 

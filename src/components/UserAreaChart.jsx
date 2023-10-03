@@ -90,7 +90,7 @@ const UserAreaChart = () => {
         <h2 className=" text-xl font-semibold "> &#8358; 7,233,000</h2>
       </div>
       <AreaChart
-        width={650}
+        width={500}
         height={230}
         data={data}
         margin={{ top: 10, right: 30, left: 0, bottom: 0 }}

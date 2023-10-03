@@ -1,5 +1,6 @@
 import React from "react";
 import { IoIosNotifications } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -39,24 +40,40 @@ const Header = () => {
         </div>
       </form>
 
-      <div className=" flex items-center gap-2">
-        <img
-          className=" w-12 h-12 rounded-full object-cover"
-          src="https://images.squarespace-cdn.com/content/v1/55cba28de4b05c606034e167/1642440989307-TLPN44V33FNLQCWNJ4O5/Gabriel+Tanhara_Actors-Headshots-London.jpg"
-          alt=""
-        />
+      <div className=" flex items-center  gap-8">
+        <Link
+          className=" hidden lg:block border-2 border-yellow-500 bg-green-500 text-white p-2 h-fit rounded-full"
+          to={"/user/notifications"}
+        >
+          <div>
+            <IoIosNotifications size={25} className=" " />
+          </div>
+        </Link>
 
-        <div className="">
-          <h2 className=" text-sm lg:text-base capitalize  font-medium">
-            Atuzie Rex
-          </h2>
-          <p className=" text-xs text-gray-700">rexatuzie@gmail.com</p>
+        <div className=" flex items-center gap-2">
+          <img
+            className=" w-12 h-12 rounded-full object-cover"
+            src="https://images.squarespace-cdn.com/content/v1/55cba28de4b05c606034e167/1642440989307-TLPN44V33FNLQCWNJ4O5/Gabriel+Tanhara_Actors-Headshots-London.jpg"
+            alt=""
+          />
+
+          <div className="">
+            <h2 className=" text-sm lg:text-base capitalize  font-medium">
+              Atuzie Rex
+            </h2>
+            <p className=" text-xs text-gray-700">rexatuzie@gmail.com</p>
+          </div>
         </div>
       </div>
 
-      <div className=" lg:hidden border-2 border-yellow-500 bg-green-500 text-white p-2 h-fit rounded-full">
-        <IoIosNotifications size={25} className=" " />
-      </div>
+      <Link
+        className="  lg:hidden border-2 border-yellow-500 bg-green-500 text-white p-2 h-fit rounded-full"
+        to={"/user/notifications"}
+      >
+        <div>
+          <IoIosNotifications size={25} className=" " />
+        </div>
+      </Link>
     </div>
   );
 };
