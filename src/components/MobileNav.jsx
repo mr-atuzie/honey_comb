@@ -1,9 +1,9 @@
 import React from "react";
-import { BiHomeAlt2 } from "react-icons/bi";
+import { BiHomeAlt2, BiTransfer } from "react-icons/bi";
 import { BsBarChartLineFill } from "react-icons/bs";
 import { IoPersonOutline } from "react-icons/io5";
 // import { IoMdMore } from "react-icons/io";
-import { IoIosNotifications } from "react-icons/io";
+// import { IoIosNotifications } from "react-icons/io";
 // import { MdOutlineExplore } from "react-icons/md";
 // import { AiTwotoneHeart } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
@@ -13,17 +13,17 @@ const MobileNav = () => {
   return (
     <div className="  z-50  lg:hidden  fixed bottom-0 left-0  w-full  bg-white  shadow-xl ">
       <div className=" px-6 py-3 flex items-center justify-between lg:hidden">
-        <div className=" flex flex-col items-center justify-center ">
-          <NavLink
-            to={"/user/dashboard"}
-            className={({ isActive }) =>
-              isActive ? "text-green-600" : "text-gray-900"
-            }
-          >
+        <NavLink
+          to={"/user/dashboard"}
+          className={({ isActive }) =>
+            isActive ? "text-green-600" : "text-gray-900"
+          }
+        >
+          <div className=" flex flex-col items-center justify-center ">
             <BiHomeAlt2 size={25} />
             <p className=" text-xs mt-2">Home</p>
-          </NavLink>
-        </div>
+          </div>
+        </NavLink>
         <div className=" flex flex-col items-center justify-center">
           <NavLink
             to={"/"}
@@ -47,17 +47,17 @@ const MobileNav = () => {
             <p className=" text-xs mt-2">Profile</p>
           </NavLink>
         </div>
-        <div className=" flex flex-col items-center justify-center">
-          <NavLink
-            to={"/user/transactions"}
-            className={({ isActive }) =>
-              isActive ? "text-green-600" : "text-gray-500"
-            }
-          >
-            <IoIosNotifications size={25} />
+        <NavLink
+          to={"/user/transactions"}
+          className={({ isActive }) =>
+            isActive ? "text-green-600" : "text-gray-500"
+          }
+        >
+          <div className=" flex flex-col items-center justify-center">
+            <BiTransfer size={25} />
             <p className=" text-xs mt-2">Transactions</p>
-          </NavLink>
-        </div>
+          </div>
+        </NavLink>
 
         {/* <div className=" flex flex-col items-center justify-center">
           <NavLink
