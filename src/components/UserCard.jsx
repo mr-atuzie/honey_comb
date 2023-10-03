@@ -9,7 +9,7 @@ const UserCard = () => {
           <p className=" text-xs  font-medium lg:text-sm text-green-600  ">
             Current Balance
           </p>
-          <h2 className=" text-2xl lg:text-4xl font-bold  text-yellow-500">
+          <h2 className=" text-4xl font-bold  text-yellow-500">
             {" "}
             &#8358; 7,233,000
           </h2>
@@ -20,11 +20,11 @@ const UserCard = () => {
         </div>
       </div>
 
-      <div className=" mt-6 lg:mt-8 flex gap-4 ">
-        <button className=" text-white bg-green-600   py-2 lg:py-3 text-center font-medium rounded-md text-sm px-6 lg:px-8">
+      <div className=" mt-8 flex gap-4 ">
+        <button className=" text-white bg-green-600   py-2 lg:py-3 text-center font-medium rounded-sm text-sm px-6 lg:px-8">
           Send
         </button>
-        <button className="text-white bg-green-600   py-2 lg:py-3 text-center font-medium rounded-md text-sm px-6 lg:px-8">
+        <button className="text-white bg-green-600   py-2 lg:py-3 text-center font-medium rounded-sm text-sm px-6 lg:px-8">
           Withdraw
         </button>
       </div>
