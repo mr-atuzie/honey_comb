@@ -1,5 +1,5 @@
 import React from "react";
-import { BiHomeAlt2, BiTransfer } from "react-icons/bi";
+import { BiSolidDashboard, BiTransfer } from "react-icons/bi";
 import { BsBarChartLineFill } from "react-icons/bs";
 import { IoPersonOutline } from "react-icons/io5";
 // import { IoMdMore } from "react-icons/io";
@@ -20,13 +20,13 @@ const MobileNav = () => {
           }
         >
           <div className=" flex flex-col items-center justify-center ">
-            <BiHomeAlt2 size={25} />
+            <BiSolidDashboard size={25} />
             <p className=" text-xs mt-2">Home</p>
           </div>
         </NavLink>
         <div className=" flex flex-col items-center justify-center">
           <NavLink
-            to={"/"}
+            to={"/user/add-kyc"}
             className={({ isActive }) =>
               isActive ? "text-green-600" : "text-gray-900"
             }
