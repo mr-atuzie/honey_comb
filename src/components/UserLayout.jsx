@@ -5,6 +5,7 @@ import Header from "./Header";
 import { BiSolidDashboard, BiSolidUser, BiTransfer } from "react-icons/bi";
 import { IoNotificationsSharp } from "react-icons/io5";
 import { IoMdSettings } from "react-icons/io";
+import { GiGraduateCap } from "react-icons/gi";
 
 const UserLayout = () => {
   return (
@@ -18,7 +19,7 @@ const UserLayout = () => {
           </div>
         </div>
 
-        <div className=" my-10 px-12 flex flex-col gap-5 ">
+        <div className=" my-10 px-12 flex flex-col gap-4 ">
           <NavLink
             to={"/user/dashboard"}
             className={({ isActive }) =>
@@ -83,6 +84,20 @@ const UserLayout = () => {
                 <IoMdSettings size={24} />
               </div>
               <p className="font-medium text-lg  ">Settings</p>
+            </div>
+          </NavLink>
+
+          <NavLink
+            to={"/admin/dashboard"}
+            className={({ isActive }) =>
+              isActive ? "rounded-lg bg-yellow-400 text-white w-full" : ""
+            }
+          >
+            <div className="flex gap-3 text-white items-center px-6  py-3">
+              <div className="">
+                <GiGraduateCap size={24} />
+              </div>
+              <p className="font-medium text-lg  ">Admin</p>
             </div>
           </NavLink>
 
