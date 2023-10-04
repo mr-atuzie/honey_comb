@@ -12,6 +12,9 @@ import UserDashboard from "./pages/UserDashboard";
 import Notifications from "./pages/Notifications";
 import Profile from "./pages/Profile";
 import Transactions from "./pages/Transactions";
+import UsersList from "./pages/UsersList";
+import AdminTransactions from "./pages/AdminTransactions";
+import AddNotification from "./pages/AddNotification";
 
 function App() {
   return (
@@ -24,6 +27,9 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/admin" element={<AdminLayout />}>
           <Route path="dashboard" element={<AdminDashboard />} />
+          <Route path="users-list" element={<UsersList />} />
+          <Route path="transactions" element={<AdminTransactions />} />
+          <Route path="add-notifications" element={<AddNotification />} />
         </Route>
         <Route path="/user" element={<UserLayout />}>
           <Route path="dashboard" element={<UserDashboard />} />
