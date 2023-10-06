@@ -10,10 +10,9 @@ const NotificationCard = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
               tempora odit dolor.
             </p>
-            <p className=" text-xs my-1 lg:text-sm">
+            <p className=" text-xs my-2 lg:text-sm">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint id
-              accusamus accusantium alias. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Sint id accusamus accusantium alias.
+              accusamus accusantium alias. Lorem ipsum dolor sit amet..
             </p>
             <p className=" text-xs lg:text-sm text-gray-700 mt-1a">
               Febuary 23,2029
