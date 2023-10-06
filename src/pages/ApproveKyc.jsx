@@ -39,7 +39,7 @@ const ApproveKyc = () => {
         Approve Documents
       </h1>
 
-      <div className=" grid  grid-cols-4 gap-5">
+      <div className=" grid  grid-cols-4 gap-8">
         {docs.map((doc) => {
           return (
             <div className=" bg-white shadow-lg  rounded" key={doc.id}>
