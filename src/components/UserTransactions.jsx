@@ -5,7 +5,9 @@ const UserTransactions = () => {
   return (
     <div className=" p-5 bg-white shadow-lg rounded mb-10 lg:mb-0">
       <div className=" mb-6">
-        <p className=" font-medium text-lg  lg:text-xl ">Transactions</p>
+        <p className=" font-medium text-lg  lg:text-xl ">
+          Transactions History
+        </p>
       </div>
 
       <div>
@@ -20,9 +22,9 @@ const UserTransactions = () => {
             </div>
           </div>
 
-          <p className="text-sm lg:text-base text-green-600 font-medium bg-green-50 p-2">
+          {/* <p className="text-sm lg:text-base text-green-600 font-medium bg-green-50 p-2">
             Credit
-          </p>
+          </p> */}
 
           <p className=" font-medium text-sm lg:text-base">
             {" "}
@@ -40,9 +42,9 @@ const UserTransactions = () => {
             </div>
           </div>
 
-          <p className="text-sm lg:text-base text-red-600 font-medium bg-red-50 p-2">
+          {/* <p className="text-sm lg:text-base text-red-600 font-medium bg-red-50 p-2">
             Withdraw
-          </p>
+          </p> */}
 
           <p className=" font-medium text-sm lg:text-base">
             {" "}
@@ -60,9 +62,9 @@ const UserTransactions = () => {
             </div>
           </div>
 
-          <p className="text-sm lg:text-base text-red-600 font-medium bg-red-50 p-2">
+          {/* <p className="text-sm lg:text-base text-red-600 font-medium bg-red-50 p-2">
             Withdraw
-          </p>
+          </p> */}
 
           <p className=" font-medium text-sm lg:text-base">
             {" "}
@@ -80,9 +82,9 @@ const UserTransactions = () => {
             </div>
           </div>
 
-          <p className="text-sm lg:text-base text-green-600 font-medium bg-green-50 p-2">
+          {/* <p className="text-sm lg:text-base text-green-600 font-medium bg-green-50 p-2">
             Credit
-          </p>
+          </p> */}
 
           <p className=" font-medium text-sm lg:text-base">
             {" "}
@@ -100,9 +102,9 @@ const UserTransactions = () => {
             </div>
           </div>
 
-          <p className="text-sm lg:text-base text-green-600 font-medium bg-green-50 p-2">
+          {/* <p className="text-sm lg:text-base text-green-600 font-medium bg-green-50 p-2">
             Credit
-          </p>
+          </p> */}
 
           <p className=" font-medium text-sm lg:text-base">
             {" "}
