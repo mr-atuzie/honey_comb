@@ -2,7 +2,12 @@ import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import MobileNav from "./MobileNav";
 import Header from "./Header";
-import { BiSolidDashboard, BiSolidUser, BiTransfer } from "react-icons/bi";
+import {
+  BiSolidDashboard,
+  BiSolidUser,
+  BiSupport,
+  BiTransfer,
+} from "react-icons/bi";
 import { IoNotificationsSharp } from "react-icons/io5";
 import { GiGraduateCap } from "react-icons/gi";
 
@@ -57,6 +62,19 @@ const UserLayout = () => {
                 <BiTransfer size={24} />
               </div>
               <p className="font-medium text-lg  ">Transactions</p>
+            </div>
+          </NavLink>
+          <NavLink
+            to={"/user/support"}
+            className={({ isActive }) =>
+              isActive ? "rounded-lg bg-yellow-400 text-white w-full" : ""
+            }
+          >
+            <div className="flex gap-3 text-white items-center px-6  py-3">
+              <div className="">
+                <BiSupport size={24} />
+              </div>
+              <p className="font-medium text-lg  ">Support</p>
             </div>
           </NavLink>
           <NavLink

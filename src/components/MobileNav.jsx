@@ -36,7 +36,7 @@ const MobileNav = () => {
         </NavLink>
 
         <NavLink
-          to={"/user/add-kyc"}
+          to={"/user/support"}
           className={({ isActive }) =>
             isActive ? "text-yellow-400" : "text-white"
           }

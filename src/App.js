@@ -15,6 +15,7 @@ import Transactions from "./pages/Transactions";
 import UsersList from "./pages/UsersList";
 import AdminTransactions from "./pages/AdminTransactions";
 import AddNotification from "./pages/AddNotification";
+import Support from "./pages/Support";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="profile" element={<Profile />} />
           <Route path="add-kyc" element={<Kyc />} />
           <Route path="transactions" element={<Transactions />} />
+          <Route path="support" element={<Support />} />
         </Route>
       </Routes>
     </BrowserRouter>
