@@ -1,6 +1,5 @@
 import React from "react";
-import { BiSolidDashboard, BiTransfer } from "react-icons/bi";
-import { BsBarChartLineFill } from "react-icons/bs";
+import { BiSolidDashboard, BiSupport, BiTransfer } from "react-icons/bi";
 import { IoPersonOutline } from "react-icons/io5";
 // import { IoMdMore } from "react-icons/io";
 // import { IoIosNotifications } from "react-icons/io";
@@ -31,8 +30,8 @@ const MobileNav = () => {
               isActive ? "text-yellow-400" : "text-white"
             }
           >
-            <BsBarChartLineFill size={25} />
-            <p className=" text-xs mt-2">Stats</p>
+            <BiSupport size={25} />
+            <p className=" text-xs mt-2">Support</p>
           </NavLink>
         </div>
 
@@ -40,17 +39,17 @@ const MobileNav = () => {
           <NavLink
             to={"/user/profile"}
             className={({ isActive }) =>
-              isActive ? "text-green-600" : "text-gray-500"
+              isActive ? "text-yellow-400" : "text-white"
             }
           >
-            <IoPersonOutline size={30} />
+            <IoPersonOutline size={25} />
             <p className=" text-xs mt-2">Profile</p>
           </NavLink>
         </div>
         <NavLink
           to={"/user/transactions"}
           className={({ isActive }) =>
-            isActive ? "text-green-600" : "text-gray-500"
+            isActive ? "text-yellow-400" : "text-white"
           }
         >
           <div className=" flex flex-col items-center justify-center">
