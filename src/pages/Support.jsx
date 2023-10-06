@@ -1,5 +1,10 @@
 import React from "react";
-import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa6";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+  FaWhatsapp,
+} from "react-icons/fa6";
 
 const Support = () => {
   return (
@@ -36,6 +41,13 @@ const Support = () => {
           <div className=" font-medium text-sm lg:text-base">
             honeycombfxd_more
           </div>
+        </div>
+
+        <div className=" flex gap-3 border-b-2 border-gray-100  items-center py-3">
+          <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
+            <FaWhatsapp size={30} />
+          </div>
+          <div className=" font-medium text-sm lg:text-base">0801 234 5678</div>
         </div>
       </div>
     </div>
