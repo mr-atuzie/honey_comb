@@ -72,7 +72,7 @@ const Support = () => {
           <div className=" font-medium text-sm lg:text-base">02-000999-00</div>
         </div>
 
-        <div className=" flex gap-3 b items-center border-b-2 border-gray-100 py-3">
+        <div className=" flex gap-3  items-center py-3">
           <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
             <BiSupport size={30} />
           </div>
@@ -85,11 +85,13 @@ const Support = () => {
           Email Us
         </h1>
 
-        <div className=" flex gap-3 border-b-2 border-gray-100 items-center py-3">
+        <div className=" flex gap-3 items-center py-3">
           <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
             <FaEnvelopeOpenText size={30} />
           </div>
-          <div className=" font-medium text-sm lg:text-base">060 12345</div>
+          <div className=" font-medium text-sm lg:text-base">
+            honeycomFxd@gmail.com
+          </div>
         </div>
       </div>
     </div>
