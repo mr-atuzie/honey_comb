@@ -11,12 +11,12 @@ import { NavLink } from "react-router-dom";
 
 const MobileNav = () => {
   return (
-    <div className="  z-50  lg:hidden  fixed bottom-0 left-0  w-full  bg-white  shadow-xl ">
+    <div className="  z-50  lg:hidden  fixed bottom-0 left-0  w-full  bg-green-600  shadow-xl ">
       <div className=" px-6 py-3 flex items-center justify-between lg:hidden">
         <NavLink
           to={"/user/dashboard"}
           className={({ isActive }) =>
-            isActive ? "text-green-600" : "text-gray-900"
+            isActive ? "text-yellow-400" : "text-white"
           }
         >
           <div className=" flex flex-col items-center justify-center ">
@@ -28,7 +28,7 @@ const MobileNav = () => {
           <NavLink
             to={"/user/add-kyc"}
             className={({ isActive }) =>
-              isActive ? "text-green-600" : "text-gray-900"
+              isActive ? "text-yellow-400" : "text-white"
             }
           >
             <BsBarChartLineFill size={25} />

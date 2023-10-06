@@ -4,7 +4,6 @@ import MobileNav from "./MobileNav";
 import Header from "./Header";
 import { BiSolidDashboard, BiSolidUser, BiTransfer } from "react-icons/bi";
 import { IoNotificationsSharp } from "react-icons/io5";
-import { IoMdSettings } from "react-icons/io";
 import { GiGraduateCap } from "react-icons/gi";
 
 const UserLayout = () => {
@@ -71,19 +70,6 @@ const UserLayout = () => {
                 <IoNotificationsSharp size={24} />
               </div>
               <p className="font-medium text-lg  ">Notifications</p>
-            </div>
-          </NavLink>
-          <NavLink
-            to={"/user/add-kyc"}
-            className={({ isActive }) =>
-              isActive ? "rounded-lg bg-yellow-400 text-white w-full" : ""
-            }
-          >
-            <div className="flex gap-3 text-white items-center px-6  py-3">
-              <div className="">
-                <IoMdSettings size={24} />
-              </div>
-              <p className="font-medium text-lg  ">Settings</p>
             </div>
           </NavLink>
 
