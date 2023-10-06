@@ -87,7 +87,7 @@ const Profile = () => {
               />
               <label
                 htmlFor="DOB"
-                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-gray-50 px-2  left-1"
+                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-gray-100 px-2  left-1"
               >
                 Date Of Birth
               </label>
@@ -102,7 +102,7 @@ const Profile = () => {
               />
               <label
                 htmlFor="phone"
-                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-gray-50 px-2  left-1"
+                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-gray-100 px-2  left-1"
               >
                 Your Phone Number
               </label>
@@ -124,11 +124,15 @@ const Profile = () => {
               </select>
               <label
                 htmlFor="location"
-                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-gray-50 px-2  left-1"
+                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-gray-100 px-2  left-1"
               >
                 Your Location
               </label>
             </div>
+
+            <button className=" bg-green-600 text-white text-sm w-full py-2 lg:p-3 text-center font-medium">
+              Done
+            </button>
           </form>
         </div>
       </div>
