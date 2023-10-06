@@ -65,6 +65,9 @@ const UserDashboard = () => {
 
       <div className="lg:hidden">
         <UserCard />
+        <div className=" lg:w-[35%] ">
+          <UserTransactions />
+        </div>
 
         <div className=" lg:w-[30%]  ">
           <UserStatCard />
@@ -72,10 +75,6 @@ const UserDashboard = () => {
 
         <div className=" my-10 lg:my-0 lg:w-[32%] ">
           <UserLinearGraph />
-        </div>
-
-        <div className=" lg:w-[35%] ">
-          <UserTransactions />
         </div>
 
         <div className=" lg:w-[50%]">

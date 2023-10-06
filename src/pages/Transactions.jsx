@@ -1,5 +1,6 @@
 import React from "react";
 import { countries } from "../data";
+import UserTransactions from "../components/UserTransactions";
 
 const Transactions = () => {
   return (
@@ -26,77 +27,7 @@ const Transactions = () => {
       </div>
 
       <div className="lg:hidden bg-white lg:mx-auto">
-        <div className=" flex justify-between border-b-4 border-gray-100 p-3 bg-gray-50">
-          <p className=" font-medium">Name</p>
-          <p className=" font-medium">Date</p>
-          <p className=" font-medium">Amount</p>
-        </div>
-        <div className=" flex justify-between items-center border-b-4 border-gray-100 p-3">
-          <p className="text-gray-800  text-sm lg:text-base  text-center font-medium">
-            Atuzie Rex
-          </p>
-          <p className=" text-xs text-gray-500 lg:text-sm text-center">
-            Tue, 08:25AM
-          </p>
-          <p className=" font-medium text-sm lg:text-base text-green-600 text-center">
-            + &#8358;7,233,000
-          </p>
-        </div>
-        <div className=" flex justify-between items-center border-b-4 border-gray-100 p-3">
-          <p className="text-gray-800  text-sm lg:text-base  text-center font-medium">
-            Atuzie Rex
-          </p>
-          <p className=" text-xs text-gray-500 lg:text-sm text-center">
-            Tue, 08:25AM
-          </p>
-          <p className=" font-medium text-sm lg:text-base text-green-600 text-center">
-            + &#8358;7,233,000
-          </p>
-        </div>
-        <div className=" flex justify-between items-center border-b-4 border-gray-100 p-3">
-          <p className="text-gray-800  text-sm lg:text-base  text-center font-medium">
-            Atuzie Rex
-          </p>
-          <p className=" text-xs text-gray-500 lg:text-sm text-center">
-            Tue, 08:25AM
-          </p>
-          <p className=" font-medium text-sm lg:text-base text-red-600 text-center">
-            - &#8358;7,233,000
-          </p>
-        </div>
-        <div className=" flex justify-between items-center border-b-4 border-gray-100 p-3">
-          <p className="text-gray-800  text-sm lg:text-base  text-center font-medium">
-            Atuzie Rex
-          </p>
-          <p className=" text-xs text-gray-500 lg:text-sm text-center">
-            Tue, 08:25AM
-          </p>
-          <p className=" font-medium text-sm lg:text-base text-red-600 text-center">
-            - &#8358;7,233,000
-          </p>
-        </div>
-        <div className=" flex justify-between items-center border-b-4 border-gray-100 p-3">
-          <p className="text-gray-800  text-sm lg:text-base  text-center font-medium">
-            Atuzie Rex
-          </p>
-          <p className=" text-xs text-gray-500 lg:text-sm text-center">
-            Tue, 08:25AM
-          </p>
-          <p className=" font-medium text-sm lg:text-base text-green-600 text-center">
-            + &#8358;7,233,000
-          </p>
-        </div>
-        <div className=" flex justify-between items-center border-b-4 border-gray-100 p-3">
-          <p className="text-gray-800  text-sm lg:text-base  text-center font-medium">
-            Atuzie Rex
-          </p>
-          <p className=" text-xs text-gray-500 lg:text-sm text-center">
-            Tue, 08:25AM
-          </p>
-          <p className=" font-medium text-sm lg:text-base text-green-600 text-center">
-            + &#8358;7,233,000
-          </p>
-        </div>
+        <UserTransactions />
       </div>
 
       <div className="hidden lg:block relative overflow-x-auto shadow-md sm:rounded-lg">
