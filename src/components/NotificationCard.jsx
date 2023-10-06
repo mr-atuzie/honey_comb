@@ -2,7 +2,7 @@ import React from "react";
 
 const NotificationCard = () => {
   return (
-    <div className=" lg:w-[75%] lg:mx-auto bg-green-50 mb-2 lg:mb-4">
+    <div className=" lg:w-[75%] lg:mx-auto bg-white mb-2 lg:mb-4">
       <div className="w-[90%] mx-auto">
         <div className=" py-4">
           <div className=" ">
