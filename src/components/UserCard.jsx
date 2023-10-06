@@ -6,7 +6,9 @@ const UserCard = () => {
     <div className=" bg-white shadow-lg  px-4 py-6 lg:p-8 rounded h-fit mb-10">
       <div className=" mb-4 flex justify-between items-center">
         <div>
-          <p className="  text-xs font-medium  uppercase">current Balance </p>
+          <p className="  text-xs font-medium text-green-100  uppercase">
+            current Balance{" "}
+          </p>
           <h2 className=" text-xl font-semibold lg:text-4xl ">
             {" "}
             &#8358; 7,233,000
