@@ -57,7 +57,7 @@ const Profile = () => {
               />
               <label
                 htmlFor="name"
-                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-gray-50 px-2  left-1"
+                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-gray-100 px-2  left-1"
               >
                 Your Name
               </label>
@@ -72,7 +72,7 @@ const Profile = () => {
               />
               <label
                 htmlFor="email"
-                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-gray-50 px-2  left-1"
+                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-gray-100 px-2  left-1"
               >
                 Your Email
               </label>
