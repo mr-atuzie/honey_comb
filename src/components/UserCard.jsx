@@ -18,7 +18,7 @@ const UserCard = () => {
         </div>
       </div>
 
-      <div className=" mt-8 flex gap-4 ">
+      <div className=" mt-8 flex gap-2 ">
         <button className=" text-white bg-green-600   py-2 lg:py-3 text-center font-medium rounded-lg text-xs lg:text-sm px-4 lg:px-8">
           Invest
         </button>
