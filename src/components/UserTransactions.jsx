@@ -26,9 +26,9 @@ const UserTransactions = () => {
             Credit
           </p> */}
 
-          <p className=" font-medium text-sm lg:text-base">
+          <p className=" text-green-600 font-medium text-sm lg:text-base">
             {" "}
-            <span className=" text-green-600 font-medium">+</span> &#8358;60,000
+            <span className=" m">+</span> &#8358;60,000
           </p>
         </div>
         <div className=" flex justify-between items-center mb-3 border-b-2 border-gray-100 pb-2">
@@ -46,9 +46,9 @@ const UserTransactions = () => {
             Withdraw
           </p> */}
 
-          <p className=" font-medium text-sm lg:text-base">
+          <p className="  text-red-600 font-medium text-sm lg:text-base">
             {" "}
-            <span className=" text-red-600 font-medium">-</span> &#8358;3,000
+            <span className="">-</span> &#8358;3,000
           </p>
         </div>
         <div className=" flex justify-between items-center mb-3 border-b-2 border-gray-100 pb-2">
@@ -66,7 +66,7 @@ const UserTransactions = () => {
             Withdraw
           </p> */}
 
-          <p className=" font-medium text-sm lg:text-base">
+          <p className="  text-red-600 font-medium text-sm lg:text-base">
             {" "}
             <span className=" text-red-600 font-medium">-</span> &#8358;3,000
           </p>
@@ -86,7 +86,7 @@ const UserTransactions = () => {
             Credit
           </p> */}
 
-          <p className=" font-medium text-sm lg:text-base">
+          <p className="text-green-600 font-medium text-sm lg:text-base">
             {" "}
             <span className=" text-green-600 font-medium">+</span> &#8358;60,000
           </p>
@@ -106,7 +106,7 @@ const UserTransactions = () => {
             Credit
           </p> */}
 
-          <p className=" font-medium text-sm lg:text-base">
+          <p className="text-green-600 font-medium text-sm lg:text-base">
             {" "}
             <span className=" text-green-600 font-medium">+</span> &#8358;60,000
           </p>
