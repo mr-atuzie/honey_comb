@@ -13,7 +13,7 @@ const Transactions = () => {
         <select
           name="location"
           id="location"
-          className="  w-[25%]  mt-1 lg:mt-3  rounded-lg  border border-gray-300 text-gray-700  p-3 "
+          className=" w-[85%]  lg:w-[25%]  mt-1 lg:mt-3  rounded-lg  border border-gray-300 text-gray-700  p-3 "
         >
           <option>Select month</option>
           {countries.map((c) => {
