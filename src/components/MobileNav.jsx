@@ -35,17 +35,17 @@ const MobileNav = () => {
           </div>
         </NavLink>
 
-        <div className=" flex flex-col items-center justify-center">
-          <NavLink
-            to={"/user/add-kyc"}
-            className={({ isActive }) =>
-              isActive ? "text-yellow-400" : "text-white"
-            }
-          >
+        <NavLink
+          to={"/user/add-kyc"}
+          className={({ isActive }) =>
+            isActive ? "text-yellow-400" : "text-white"
+          }
+        >
+          <div className=" flex flex-col items-center justify-center">
             <BiSupport size={25} />
             <p className=" text-xs mt-2">Support</p>
-          </NavLink>
-        </div>
+          </div>
+        </NavLink>
 
         <div className=" flex flex-col items-center justify-center ">
           <NavLink
