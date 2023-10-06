@@ -16,6 +16,7 @@ import UsersList from "./pages/UsersList";
 import AdminTransactions from "./pages/AdminTransactions";
 import AddNotification from "./pages/AddNotification";
 import Support from "./pages/Support";
+import ApproveKyc from "./pages/ApproveKyc";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="users-list" element={<UsersList />} />
           <Route path="transactions" element={<AdminTransactions />} />
           <Route path="add-notifications" element={<AddNotification />} />
+          <Route path="approve-Kyc" element={<ApproveKyc />} />
         </Route>
         <Route path="/user" element={<UserLayout />}>
           <Route path="dashboard" element={<UserDashboard />} />

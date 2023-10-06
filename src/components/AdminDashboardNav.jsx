@@ -1,7 +1,8 @@
 import React from "react";
 import { BiSolidDashboard, BiTransfer } from "react-icons/bi";
 import { FaUsers } from "react-icons/fa";
-import { IoMdSettings } from "react-icons/io";
+import { HiMiniClipboardDocumentCheck } from "react-icons/hi2";
+// import { IoMdSettings } from "react-icons/io";
 import { IoNotificationsSharp } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 
@@ -67,20 +68,21 @@ const AdminDashboardNav = () => {
             <div className="">
               <IoNotificationsSharp size={24} />
             </div>
-            <p className="font-medium text-lg  ">Notifications</p>
+            <p className="font-medium text-lg  ">Add Notifications</p>
           </div>
         </NavLink>
+
         <NavLink
-          to={"/user/add-kyc"}
+          to={"/admin/approve-kyc"}
           className={({ isActive }) =>
             isActive ? "rounded-lg bg-yellow-400 text-white w-full" : ""
           }
         >
           <div className="flex gap-3 text-white items-center px-6  py-3">
-            <div className="">
-              <IoMdSettings size={24} />
+            <div className=" text-white">
+              <HiMiniClipboardDocumentCheck size={24} />
             </div>
-            <p className="font-medium text-lg  ">Settings</p>
+            <p className="font-medium text-lg  ">Approve Kyc</p>
           </div>
         </NavLink>
 

@@ -21,14 +21,14 @@ const About = () => {
         <div className=" flex flex-col lg:flex-row justify-between items-center">
           <div className=" lg:w-[50%]">
             <div className="mb-8">
-              <h1 className=" text-green-600 font-semibold text-4xl tracking-wide capitalize">
+              <h1 className=" text-green-600 font-semibold text-xl lg:text-4xl tracking-wide capitalize">
                 Our Agency story
               </h1>
-              <p className="text-yellow-500 font-medium text-xl">
+              <p className="text-yellow-500 font-medium lg:text-xl">
                 Check out our company story and work process
               </p>
             </div>
-            <p className="">
+            <p className="text-sm lg:text-base">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
               quod illo officia necessitatibus maiores repellendus cum excepturi
               error tenetur aliquam asperiores ut odit blanditiis quam dolorem a
@@ -36,7 +36,7 @@ const About = () => {
             </p>
             <br />
 
-            <p className="">
+            <p className="text-sm lg:text-base">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
               maiores, vero quibusdam officiis consequuntur voluptatem similique
               corporis magni laborum quae. blanditiis quam dolorem a aut natus
@@ -45,7 +45,7 @@ const About = () => {
             {more && (
               <div>
                 <br />
-                <p>
+                <p className="text-sm lg:text-base">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
                   temporibus ut esse fuga consectetur libero consequuntur
                   eligendi est autem, aut fugit deleniti repudiandae rerum
@@ -64,7 +64,7 @@ const About = () => {
             <br />
             <button
               onClick={() => setMore(!more)}
-              className=" bg-green-700 text-white py-3 px-6 rounded"
+              className=" bg-green-700 text-white py-3 px-6 rounded text-sm lg:text-base"
             >
               {more ? "Show less" : "More about us"}
             </button>
@@ -80,14 +80,14 @@ const About = () => {
         <div className=" my-24 flex flex-col lg:flex-row-reverse justify-between items-center">
           <div className=" lg:w-[50%]">
             <div className="mb-8">
-              <h1 className=" text-green-600 font-semibold text-4xl tracking-wide capitalize">
+              <h1 className=" text-green-600 font-semibold text-xl lg:text-4xl tracking-wide capitalize">
                 Our Agency story
               </h1>
-              <p className="text-yellow-500 font-medium text-xl">
+              <p className="text-yellow-500 font-medium lg:text-xl">
                 Check out our company story and work process
               </p>
             </div>
-            <p className="">
+            <p className="text-sm lg:text-base">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
               quod illo officia necessitatibus maiores repellendus cum excepturi
               error tenetur aliquam asperiores ut odit blanditiis quam dolorem a
@@ -95,7 +95,7 @@ const About = () => {
             </p>
             <br />
 
-            <p className="">
+            <p className="text-sm lg:text-base">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
               maiores, vero quibusdam officiis consequuntur voluptatem similique
               corporis magni laborum quae. blanditiis quam dolorem a aut natus
@@ -104,7 +104,7 @@ const About = () => {
             {more && (
               <div>
                 <br />
-                <p>
+                <p className="text-sm lg:text-base">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
                   temporibus ut esse fuga consectetur libero consequuntur
                   eligendi est autem, aut fugit deleniti repudiandae rerum
@@ -123,7 +123,7 @@ const About = () => {
             <br />
             <button
               onClick={() => setMore(!more)}
-              className=" bg-green-700 text-white py-3 px-6 rounded"
+              className=" bg-green-700 text-white py-3 px-6 rounded text-sm lg:text-base"
             >
               {more ? "Show less" : "More about us"}
             </button>
@@ -139,14 +139,14 @@ const About = () => {
         <div className=" flex flex-col lg:flex-row justify-between items-center">
           <div className=" lg:w-[50%]">
             <div className="mb-8">
-              <h1 className=" text-green-600 font-semibold text-4xl tracking-wide capitalize">
+              <h1 className=" text-green-600 font-semibold text-xl lg:text-4xl tracking-wide capitalize">
                 Our Agency story
               </h1>
-              <p className="text-yellow-500 font-medium text-xl">
+              <p className="text-yellow-500 font-medium lg:text-xl">
                 Check out our company story and work process
               </p>
             </div>
-            <p className="">
+            <p className="text-sm lg:text-base">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
               quod illo officia necessitatibus maiores repellendus cum excepturi
               error tenetur aliquam asperiores ut odit blanditiis quam dolorem a
@@ -154,7 +154,7 @@ const About = () => {
             </p>
             <br />
 
-            <p className="">
+            <p className="text-sm lg:text-base">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
               maiores, vero quibusdam officiis consequuntur voluptatem similique
               corporis magni laborum quae. blanditiis quam dolorem a aut natus
@@ -163,7 +163,7 @@ const About = () => {
             {more && (
               <div>
                 <br />
-                <p>
+                <p className="text-sm lg:text-base">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
                   temporibus ut esse fuga consectetur libero consequuntur
                   eligendi est autem, aut fugit deleniti repudiandae rerum
@@ -182,7 +182,7 @@ const About = () => {
             <br />
             <button
               onClick={() => setMore(!more)}
-              className=" bg-green-700 text-white py-3 px-6 rounded"
+              className=" bg-green-700 text-white py-3 px-6 rounded text-sm lg:text-base"
             >
               {more ? "Show less" : "More about us"}
             </button>
