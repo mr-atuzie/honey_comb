@@ -23,6 +23,18 @@ const MobileNav = () => {
             <p className=" text-xs mt-2">Home</p>
           </div>
         </NavLink>
+        <NavLink
+          to={"/user/transactions"}
+          className={({ isActive }) =>
+            isActive ? "text-yellow-400" : "text-white"
+          }
+        >
+          <div className=" flex flex-col items-center justify-center">
+            <BiTransfer size={25} />
+            <p className=" text-xs mt-2">Transactions</p>
+          </div>
+        </NavLink>
+
         <div className=" flex flex-col items-center justify-center">
           <NavLink
             to={"/user/add-kyc"}
@@ -46,17 +58,6 @@ const MobileNav = () => {
             <p className=" text-xs mt-2">Profile</p>
           </NavLink>
         </div>
-        <NavLink
-          to={"/user/transactions"}
-          className={({ isActive }) =>
-            isActive ? "text-yellow-400" : "text-white"
-          }
-        >
-          <div className=" flex flex-col items-center justify-center">
-            <BiTransfer size={25} />
-            <p className=" text-xs mt-2">Transactions</p>
-          </div>
-        </NavLink>
 
         {/* <div className=" flex flex-col items-center justify-center">
           <NavLink
