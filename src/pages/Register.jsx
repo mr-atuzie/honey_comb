@@ -51,7 +51,11 @@ const Register = () => {
 
       localStorage.setItem(
         "user",
-        JSON.stringify({ name: data?.name, email: data?.email })
+        JSON.stringify({
+          name: data?.name,
+          email: data?.email,
+          photo: data?.photo,
+        })
       );
 
       navigate("/user/dashboard");

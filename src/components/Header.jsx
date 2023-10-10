@@ -54,7 +54,11 @@ const Header = () => {
         <div className=" flex items-center gap-2">
           <img
             className=" w-12 h-12 rounded-full object-cover"
-            src="https://images.squarespace-cdn.com/content/v1/55cba28de4b05c606034e167/1642440989307-TLPN44V33FNLQCWNJ4O5/Gabriel+Tanhara_Actors-Headshots-London.jpg"
+            src={
+              user?.photo
+                ? user.photo
+                : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+            }
             alt=""
           />
 
