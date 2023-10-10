@@ -38,16 +38,16 @@ function App() {
           <Route path="users-list" element={<UsersList />} />
           <Route path="transactions" element={<AdminTransactions />} />
           <Route path="add-notifications" element={<AddNotification />} />
+          <Route path="approve-kyc" element={<ApproveKyc />} />
         </Route>
-        <Route path="approve-kyc/:token" element={<ApproveKyc />} />
         <Route path="/user" element={<UserLayout />}>
           <Route path="dashboard" element={<UserDashboard />} />
           <Route path="notifications" element={<Notifications />} />
           <Route path="profile" element={<Profile />} />
-          <Route path="add-kyc" element={<Kyc />} />
           <Route path="transactions" element={<Transactions />} />
           <Route path="support" element={<Support />} />
         </Route>
+        <Route path="add-kyc/:token" element={<Kyc />} />
       </Routes>
     </BrowserRouter>
   );
