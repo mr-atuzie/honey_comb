@@ -3,6 +3,7 @@ import { IoIosNotifications } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const user = JSON.parse(localStorage.getItem("user"));
   return (
     <div className=" flex justify-between items-center">
       <form className=" hidden lg:block lg:w-[38%]">
@@ -59,9 +60,9 @@ const Header = () => {
 
           <div className="">
             <h2 className=" text-sm lg:text-base capitalize  font-medium">
-              Atuzie Rex
+              {user?.name}
             </h2>
-            <p className=" text-xs text-gray-700">rexatuzie@gmail.com</p>
+            <p className=" text-xs text-gray-700">{user?.email}</p>
           </div>
         </div>
       </div>
