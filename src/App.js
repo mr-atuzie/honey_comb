@@ -17,10 +17,16 @@ import AdminTransactions from "./pages/AdminTransactions";
 import AddNotification from "./pages/AddNotification";
 import Support from "./pages/Support";
 import ApproveKyc from "./pages/ApproveKyc";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
+
+axios.defaults.withCredentials = true;
 
 function App() {
   return (
     <BrowserRouter>
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -32,8 +38,8 @@ function App() {
           <Route path="users-list" element={<UsersList />} />
           <Route path="transactions" element={<AdminTransactions />} />
           <Route path="add-notifications" element={<AddNotification />} />
-          <Route path="approve-Kyc" element={<ApproveKyc />} />
         </Route>
+        <Route path="approve-kyc/:token" element={<ApproveKyc />} />
         <Route path="/user" element={<UserLayout />}>
           <Route path="dashboard" element={<UserDashboard />} />
           <Route path="notifications" element={<Notifications />} />

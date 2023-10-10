@@ -1,31 +1,64 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import vid from "../assets/crypto2.mp4";
 // import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import { toast } from "react-toastify";
+import { registerUser, validateEmail } from "../services/authServices";
 
 const Register = () => {
-  // const initialState = {
-  //   name: "",
-  //   email: "",
-  //   password: "",
-  // };
+  const initialState = {
+    name: "",
+    email: "",
+    password: "",
+  };
 
-  // const [formData, setFormData] = useState(initialState);
+  const navigate = useNavigate();
 
-  // const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState(initialState);
 
-  // const { name, email, password } = formData;
+  const [loading, setLoading] = useState(false);
 
-  // const handleInputChange = (e) => {
-  //   const { name, value } = e.target;
+  const { name, email, password } = formData;
 
-  //   setFormData({ ...formData, [name]: value });
-  // };
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  // };
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!name || !email || !password) {
+      return toast.error("All fields are required");
+    }
+
+    if (!validateEmail(email)) {
+      return toast.error("Please enter a valid email");
+    }
+
+    if (password.length < 6) {
+      return toast.error("Password must be up to 6 characters");
+    }
+
+    const userData = { name, email, password };
+
+    setLoading(true);
+
+    try {
+      const data = await registerUser(userData);
+
+      localStorage.setItem(
+        "user",
+        JSON.stringify({ name: data?.name, email: data?.email })
+      );
+
+      navigate("/user/dashboard");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className=" w-full   h-screen flex  lg:flex-row-reverse">
@@ -51,7 +84,10 @@ const Register = () => {
         </div>
       </div>
       <div className="lg:w-[60%] my-16">
-        <form className="w-[80%] lg:w-[50%] mx-auto mb-16">
+        <form
+          onSubmit={handleSubmit}
+          className="w-[80%] lg:w-[50%] mx-auto mb-16"
+        >
           <div className="">
             <p className=" text-sm lg:text-lg uppercase font-semibold text-yellow-500 lg:mb-4">
               Honey comb fxd
@@ -75,8 +111,11 @@ const Register = () => {
             <input
               className="border p-2.5 lg:p-3.5  block w-full placeholder:text-sm lg:placeholder:text-base"
               type="text"
-              name="text"
               placeholder="Enter your name"
+              name="name"
+              value={name}
+              onChange={handleInputChange}
+              id="name"
             />
           </div>
 
@@ -90,6 +129,9 @@ const Register = () => {
               type="email"
               name="email"
               placeholder="Enter your email"
+              value={email}
+              onChange={handleInputChange}
+              id="email"
             />
           </div>
 
@@ -102,6 +144,9 @@ const Register = () => {
               type="password"
               name="password"
               placeholder="Enter your password"
+              value={password}
+              onChange={handleInputChange}
+              id="Name"
             />
           </div>
 
@@ -124,14 +169,13 @@ const Register = () => {
             </p>
           </div>
 
-          <Link to={"/user/dashboard"}>
-            <button
-              className="border-2 border-yellow-500 rounded w-full text-center py-2.5 lg:py-3.5 my-4 bg-green-700 text-white "
-              type="submit"
-            >
-              Sign up
-            </button>
-          </Link>
+          <button
+            disabled={loading}
+            className="border-2 border-yellow-500 rounded w-full text-center py-2.5 lg:py-3.5 my-4 bg-green-700 disabled:opacity-90 text-white "
+            type="submit"
+          >
+            Sign up
+          </button>
 
           <p className="text-sm lg:text-base text-center  mt-3  text-gray-500">
             Already have an account?{" "}
