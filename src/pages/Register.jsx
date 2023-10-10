@@ -174,7 +174,7 @@ const Register = () => {
             className="border-2 border-yellow-500 rounded w-full text-center py-2.5 lg:py-3.5 my-4 bg-green-700 disabled:opacity-90 text-white "
             type="submit"
           >
-            Sign up
+            {loading ? "Loading" : "Sign up"}
           </button>
 
           <p className="text-sm lg:text-base text-center  mt-3  text-gray-500">
