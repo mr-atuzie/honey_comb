@@ -150,7 +150,7 @@ const Register = () => {
               placeholder="Enter your password"
               value={password}
               onChange={handleInputChange}
-              id="Name"
+              id="password"
             />
           </div>
 

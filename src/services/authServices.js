@@ -35,3 +35,24 @@ export const registerUser = async (userData) => {
     toast.error(message);
   }
 };
+
+export const loginUser = async (userData) => {
+  try {
+    const res = await axios.post(`${BACKEND_URL}/api/v1/user/login`, userData);
+
+    if (res.statusText === "OK") {
+      toast.success("Login successfully");
+    }
+
+    return res.data;
+  } catch (error) {
+    const message =
+      (error.response && error.response.data && error.response.data.message) ||
+      error.message ||
+      error.toString();
+
+    console.log(error);
+
+    toast.error(message);
+  }
+};

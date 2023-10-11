@@ -1,8 +1,68 @@
-import React from "react";
+import React, { useState } from "react";
 import vid from "../assets/crypto2.mp4";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { loginUser, validateEmail } from "../services/authServices";
 
 const Login = () => {
+  const initialState = {
+    email: "",
+    password: "",
+  };
+
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState(initialState);
+
+  const [loading, setLoading] = useState(false);
+
+  const { email, password } = formData;
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!email || !password) {
+      return toast.error("All fields are required");
+    }
+
+    if (!validateEmail(email)) {
+      return toast.error("Please enter a valid email");
+    }
+
+    if (password.length < 6) {
+      return toast.error("Password must be up to 6 characters");
+    }
+
+    const userData = { email, password };
+
+    setLoading(true);
+
+    try {
+      const data = await loginUser(userData);
+
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          id: data?._id,
+          name: data?.name,
+          email: data?.email,
+          photo: data?.photo,
+        })
+      );
+
+      navigate("/user/dashboard");
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+    }
+  };
+
   return (
     <div className=" w-full  h-screen lg:flex lg:flex-row-reverse">
       <div className="m-6 rounded-lg relative w-[40%] hidden lg:flex justify-center items-center flex-col">
@@ -27,7 +87,10 @@ const Login = () => {
         </div>
       </div>
       <div className=" my-16 lg:w-[60%]">
-        <form className="w-[80%] lg:w-[50%] mx-auto mb-16">
+        <form
+          onSubmit={handleSubmit}
+          className="w-[80%] lg:w-[50%] mx-auto mb-16"
+        >
           <div className="">
             <p className=" text-sm lg:text-lg uppercase font-semibold text-yellow-500 lg:mb-4">
               Honey comb fxd
@@ -53,6 +116,9 @@ const Login = () => {
               type="email"
               name="email"
               placeholder="Enter your email"
+              value={email}
+              onChange={handleInputChange}
+              id="email"
             />
           </div>
 
@@ -65,16 +131,20 @@ const Login = () => {
               type="password"
               name="password"
               placeholder="Enter your password"
+              value={password}
+              onChange={handleInputChange}
+              id="password"
             />
           </div>
-          <Link to={"/user/dashboard"}>
-            <button
-              className="border-2 border-yellow-500 w-full text-center py-2.5 lg:py-3.5 my-4  bg-green-600 text-white "
-              type="submit"
-            >
-              Sign In
-            </button>
-          </Link>
+
+          <button
+            disabled={loading}
+            className="border-2 border-yellow-500 rounded w-full text-center py-2.5 lg:py-3.5 my-4 bg-green-700 disabled:opacity-90 text-white "
+            type="submit"
+          >
+            {loading ? "Loading" : "Sign In"}
+          </button>
+
           <p className="text-sm lg:text-base text-center mt-3   text-gray-500">
             Don't have an account?{" "}
             <Link to={"/"}>
