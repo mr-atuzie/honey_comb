@@ -100,7 +100,7 @@ const Login = () => {
               Log into your Account
             </h2>
 
-            <p className=" text-gray-900  text-sm  lg:my-4">
+            <p className=" text-gray-900 text-xs  lg:text-sm  lg:my-4">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi
               quasi, dolorem saepe sapiente culpa illum.
             </p>
@@ -139,16 +139,16 @@ const Login = () => {
 
           <button
             disabled={loading}
-            className="border-2 border-yellow-500 rounded w-full text-center py-2.5 lg:py-3.5 my-4 bg-green-700 disabled:opacity-90 text-white "
+            className="border-2 border-yellow-500 text-sm lg:text-base rounded w-full text-center py-2.5 lg:py-3.5 my-4 bg-green-700 disabled:opacity-95 text-white "
             type="submit"
           >
             {loading ? "Loading" : "Sign In"}
           </button>
 
-          <p className="text-sm lg:text-base text-center mt-3   text-gray-500">
+          <p className="text-xs lg:text-base text-center mt-3   text-gray-500">
             Don't have an account?{" "}
             <Link to={"/"}>
-              <span className=" text-black font-medium">Sign Up</span>
+              <span className=" text-green-600 font-medium">Sign Up</span>
             </Link>
           </p>
         </form>
