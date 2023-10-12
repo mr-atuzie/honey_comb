@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import vid from "../assets/crypto2.mp4";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { loginUser, validateEmail } from "../services/authServices";
+import { validateEmail } from "../services/authServices";
+import axios from "axios";
 
 const Login = () => {
   const initialState = {
@@ -27,24 +28,35 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    setLoading(true);
+
     if (!email || !password) {
+      setLoading(false);
       return toast.error("All fields are required");
     }
 
     if (!validateEmail(email)) {
+      setLoading(false);
       return toast.error("Please enter a valid email");
     }
 
     if (password.length < 6) {
+      setLoading(false);
       return toast.error("Password must be up to 6 characters");
     }
 
     const userData = { email, password };
 
-    setLoading(true);
-
     try {
-      const data = await loginUser(userData);
+      const res = await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/register`,
+        userData,
+        {
+          withCredentials: true,
+        }
+      );
+
+      const data = res.data;
 
       localStorage.setItem(
         "user",
@@ -58,8 +70,16 @@ const Login = () => {
 
       navigate("/user/dashboard");
     } catch (error) {
-      setLoading(false);
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+
       console.log(error);
+
+      toast.error(message);
     }
   };
 
@@ -147,7 +167,7 @@ const Login = () => {
 
           <p className="text-xs lg:text-base text-center mt-3   text-gray-500">
             Don't have an account?{" "}
-            <Link to={"/"}>
+            <Link to={"/register"}>
               <span className=" text-green-600 font-medium">Sign Up</span>
             </Link>
           </p>

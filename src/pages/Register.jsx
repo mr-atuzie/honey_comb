@@ -4,7 +4,8 @@ import vid from "../assets/crypto2.mp4";
 // import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { toast } from "react-toastify";
-import { registerUser, validateEmail } from "../services/authServices";
+import { validateEmail } from "../services/authServices";
+import axios from "axios";
 
 const Register = () => {
   const initialState = {
@@ -29,25 +30,37 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     if (!name || !email || !password) {
+      setLoading(false);
       return toast.error("All fields are required");
     }
 
     if (!validateEmail(email)) {
+      setLoading(false);
       return toast.error("Please enter a valid email");
     }
 
     if (password.length < 6) {
+      setLoading(false);
       return toast.error("Password must be up to 6 characters");
     }
 
     const userData = { name, email, password };
 
-    setLoading(true);
-
     try {
-      const data = await registerUser(userData);
+      const res = await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/register`,
+        userData,
+        {
+          withCredentials: true,
+        }
+      );
+
+      setLoading(false);
+
+      const data = res.data;
 
       localStorage.setItem(
         "user",
@@ -58,10 +71,39 @@ const Register = () => {
         })
       );
 
+      toast.success("User Registered successfully");
       navigate("/user/dashboard");
+
+      // return res.data;
     } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+
       console.log(error);
+      setLoading(false);
+      toast.error(message);
     }
+
+    // try {
+    //   const data = await registerUser(userData);
+
+    //   localStorage.setItem(
+    //     "user",
+    //     JSON.stringify({
+    //       name: data?.name,
+    //       email: data?.email,
+    //       photo: data?.photo,
+    //     })
+    //   );
+
+    //   navigate("/user/dashboard");
+    // } catch (error) {
+    //   console.log(error);
+    // }
   };
 
   return (

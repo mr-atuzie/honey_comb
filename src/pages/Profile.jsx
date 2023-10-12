@@ -1,8 +1,103 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiOutlineCamera } from "react-icons/ai";
-import { countries } from "../data";
+// import { countries } from "../data";
+import { validateEmail } from "../services/authServices";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 const Profile = () => {
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  const initialState = {
+    name: "",
+    email: "",
+    phone: "",
+    DOB: "",
+  };
+
+  const [formData, setFormData] = useState(initialState);
+
+  const [loading, setLoading] = useState(false);
+
+  const { email, password } = formData;
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData({ ...formData, [name]: value });
+  };
+
+  console.log(formData);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    if (email) {
+      if (!validateEmail(email)) {
+        setLoading(false);
+        return toast.error("Please enter a valid email");
+      }
+    }
+
+    if (password) {
+      if (password.length < 6) {
+        setLoading(false);
+        return toast.error("Password must be up to 6 characters");
+      }
+    }
+
+    try {
+      const res = await axios.patch(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/update-user`,
+        formData
+      );
+
+      const data = res.data;
+
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          id: data?._id,
+          name: data?.name,
+          email: data?.email,
+          photo: data?.photo,
+        })
+      );
+
+      toast.success("User updated successfully");
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+
+      console.log(error);
+
+      toast.error(message);
+    }
+
+    // try {
+    //   const data = await updateUser(formData);
+
+    //   localStorage.setItem(
+    //     "user",
+    //     JSON.stringify({
+    //       name: data?.name,
+    //       email: data?.email,
+    //       photo: data?.photo,
+    //     })
+    //   );
+
+    //   console.log(data);
+    // } catch (error) {
+    //   console.log(error);
+    //   setLoading(false);
+    // }
+  };
+
   return (
     <div>
       <h1 className=" font-bold text-green-600 text-2xl lg:text-4xl  my-9 lg:my-11">
@@ -14,8 +109,8 @@ const Profile = () => {
         <div className=" mt-4">
           <div className="w-[90%] md:w-[45%] mx-auto ">
             {/* image change */}
-            <div className=" flex mt-6 items-center">
-              <div className="relative w-28 h-28 lg:w-36 lg:h-36 flex justify-center items-center rounded-full">
+            <div className=" flex  justify-center items-center mt-6 ">
+              <div className="relative w-28 h-28 lg:w-36 lg:h-36 flex justify-center items-center rounded-full ">
                 <label
                   htmlFor="image"
                   className=" z-40 bg-black/60 h-[50px] w-[50px] rounded-full absolute flex items-center justify-center"
@@ -24,7 +119,7 @@ const Profile = () => {
                 </label>
 
                 <img
-                  className=" w-full h-full  rounded-full object-cover"
+                  className=" w-full h-full  rounded-full object-cover self-center"
                   src={
                     "https://t4.ftcdn.net/jpg/04/08/24/43/360_F_408244382_Ex6k7k8XYzTbiXLNJgIL8gssebpLLBZQ.jpg"
                   }
@@ -39,14 +134,13 @@ const Profile = () => {
                 className=" hidden"
                 placeholder="Your Email"
               />
-
-              <button className=" text-sm lg:text-base bg-green-600 text-white py-2.5 w-40 ml-5 rounded-md">
-                Upload Image
-              </button>
             </div>
           </div>
 
-          <form className=" my-14 w-[90%] md:w-[45%] mx-auto">
+          <form
+            onSubmit={handleSubmit}
+            className=" my-14 w-[90%] md:w-[45%] mx-auto"
+          >
             <div className="relative my-7">
               <input
                 type="text"
@@ -54,6 +148,8 @@ const Profile = () => {
                 id="name"
                 className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=""
+                onChange={handleInputChange}
+                defaultValue={user?.name}
               />
               <label
                 htmlFor="name"
@@ -62,6 +158,7 @@ const Profile = () => {
                 Your Name
               </label>
             </div>
+
             <div className="relative my-7 lg:my-11">
               <input
                 type="email"
@@ -69,6 +166,8 @@ const Profile = () => {
                 id="email"
                 className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=""
+                onChange={handleInputChange}
+                defaultValue={user?.email}
               />
               <label
                 htmlFor="email"
@@ -77,6 +176,7 @@ const Profile = () => {
                 Your Email
               </label>
             </div>
+
             <div className="relative my-7 lg:my-11">
               <input
                 type="date"
@@ -84,6 +184,7 @@ const Profile = () => {
                 id="DOB"
                 className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=""
+                onChange={handleInputChange}
               />
               <label
                 htmlFor="DOB"
@@ -92,6 +193,7 @@ const Profile = () => {
                 Date Of Birth
               </label>
             </div>
+
             <div className="relative my-7">
               <input
                 type="tel"
@@ -99,6 +201,7 @@ const Profile = () => {
                 id="phone"
                 className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=""
+                onChange={handleInputChange}
               />
               <label
                 htmlFor="phone"
@@ -107,7 +210,7 @@ const Profile = () => {
                 Your Phone Number
               </label>
             </div>
-            <div className="relative my-7">
+            {/* <div className="relative my-7">
               <select
                 name="location"
                 id="location"
@@ -128,10 +231,14 @@ const Profile = () => {
               >
                 Your Location
               </label>
-            </div>
+            </div> */}
 
-            <button className=" bg-green-600 text-white text-sm w-full py-2 lg:p-3 text-center font-medium">
-              Done
+            <button
+              disabled={loading}
+              type="submit"
+              className=" bg-green-600 text-white rounded-lg text-sm w-full py-2 lg:p-3 text-center font-medium disabled:opacity-95"
+            >
+              {loading ? "Loading" : "Submit"}
             </button>
           </form>
         </div>
