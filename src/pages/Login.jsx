@@ -49,22 +49,24 @@ const Login = () => {
 
     try {
       const res = await axios.post(
-        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/register`,
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/login`,
         userData,
         {
           withCredentials: true,
         }
       );
 
+      setLoading(false);
       const data = res.data;
 
       localStorage.setItem(
         "user",
         JSON.stringify({
           id: data?._id,
-          name: data?.name,
+          name: `${data?.firstname} ${data?.lastname}`,
           email: data?.email,
           photo: data?.photo,
+          abv: `${data?.firstname.charAt(0)}${data?.lastname.charAt(0)}`,
         })
       );
 
@@ -78,7 +80,7 @@ const Login = () => {
         error.toString();
 
       console.log(error);
-
+      setLoading(false);
       toast.error(message);
     }
   };
@@ -168,7 +170,7 @@ const Login = () => {
           <p className="text-xs lg:text-base text-center mt-3   text-gray-500">
             Don't have an account?{" "}
             <Link to={"/register"}>
-              <span className=" text-green-600 font-medium">Sign Up</span>
+              <span className=" text-blue-700 font-medium">Sign Up</span>
             </Link>
           </p>
         </form>

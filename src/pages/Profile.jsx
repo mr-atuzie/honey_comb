@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AiOutlineCamera } from "react-icons/ai";
+// import { AiOutlineCamera } from "react-icons/ai";
 // import { countries } from "../data";
 import { validateEmail } from "../services/authServices";
 import { toast } from "react-toastify";
@@ -8,18 +8,9 @@ import axios from "axios";
 const Profile = () => {
   const user = JSON.parse(localStorage.getItem("user"));
 
-  const initialState = {
-    name: "",
-    email: "",
-    phone: "",
-    DOB: "",
-  };
-
-  const [formData, setFormData] = useState(initialState);
+  const [formData, setFormData] = useState({});
 
   const [loading, setLoading] = useState(false);
-
-  const { email, password } = formData;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -32,6 +23,7 @@ const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    const { email } = formData;
 
     if (email) {
       if (!validateEmail(email)) {
@@ -40,12 +32,12 @@ const Profile = () => {
       }
     }
 
-    if (password) {
-      if (password.length < 6) {
-        setLoading(false);
-        return toast.error("Password must be up to 6 characters");
-      }
-    }
+    // if (password) {
+    //   if (password.length < 6) {
+    //     setLoading(false);
+    //     return toast.error("Password must be up to 6 characters");
+    //   }
+    // }
 
     try {
       const res = await axios.patch(
@@ -53,15 +45,21 @@ const Profile = () => {
         formData
       );
 
-      const data = res.data;
+      const data = res.data.user;
+
+      console.log(data);
+      setLoading(false);
+
+      // console.log(`${data?.firstname[0]}${data?.lastname[0]}`);
 
       localStorage.setItem(
         "user",
         JSON.stringify({
           id: data?._id,
-          name: data?.name,
+          name: `${data?.firstname} ${data?.lastname}`,
           email: data?.email,
           photo: data?.photo,
+          abv: `${data?.firstname.charAt(0)}${data?.lastname.charAt(0)}`,
         })
       );
 
@@ -73,7 +71,7 @@ const Profile = () => {
           error.response.data.message) ||
         error.message ||
         error.toString();
-
+      setLoading(false);
       console.log(error);
 
       toast.error(message);
@@ -110,21 +108,21 @@ const Profile = () => {
           <div className="w-[90%] md:w-[45%] mx-auto ">
             {/* image change */}
             <div className=" flex  justify-center items-center mt-6 ">
-              <div className="relative w-28 h-28 lg:w-36 lg:h-36 flex justify-center items-center rounded-full ">
-                <label
+              <div className="relative w-28 h-28 lg:w-36 lg:h-36 flex justify-center items-center rounded-full bg-green-600 text-yellow-400 text-4xl uppercase font-semibold ">
+                {/* <label
                   htmlFor="image"
                   className=" z-40 bg-black/60 h-[50px] w-[50px] rounded-full absolute flex items-center justify-center"
                 >
                   <AiOutlineCamera className=" text-white" size={30} />
-                </label>
-
-                <img
+                </label> */}
+                {user?.abv}
+                {/* <img
                   className=" w-full h-full  rounded-full object-cover self-center"
                   src={
                     "https://t4.ftcdn.net/jpg/04/08/24/43/360_F_408244382_Ex6k7k8XYzTbiXLNJgIL8gssebpLLBZQ.jpg"
                   }
                   alt=""
-                />
+                /> */}
               </div>
 
               <input
@@ -236,7 +234,7 @@ const Profile = () => {
             <button
               disabled={loading}
               type="submit"
-              className=" bg-green-600 text-white rounded-lg text-sm w-full py-2 lg:p-3 text-center font-medium disabled:opacity-95"
+              className=" bg-green-600 text-white rounded-lg text-sm w-full p-3 text-center font-medium disabled:opacity-95"
             >
               {loading ? "Loading" : "Submit"}
             </button>

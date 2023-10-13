@@ -20,6 +20,8 @@ import ApproveKyc from "./pages/ApproveKyc";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import Terms from "./pages/Terms";
+import Packages from "./components/Packages";
 
 axios.defaults.withCredentials = true;
 
@@ -33,6 +35,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/terms-and-condition" element={<Terms />} />
+
         <Route path="/admin" element={<AdminLayout />}>
           <Route path="dashboard" element={<AdminDashboard />} />
           <Route path="users-list" element={<UsersList />} />
@@ -40,13 +44,16 @@ function App() {
           <Route path="add-notifications" element={<AddNotification />} />
           <Route path="approve-kyc" element={<ApproveKyc />} />
         </Route>
+
         <Route path="/user" element={<UserLayout />}>
           <Route path="dashboard" element={<UserDashboard />} />
           <Route path="notifications" element={<Notifications />} />
+          <Route path="packages" element={<Packages />} />
           <Route path="profile" element={<Profile />} />
           <Route path="transactions" element={<Transactions />} />
           <Route path="support" element={<Support />} />
         </Route>
+
         <Route path="add-kyc/:token" element={<Kyc />} />
       </Routes>
     </BrowserRouter>

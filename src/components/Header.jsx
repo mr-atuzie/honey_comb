@@ -8,7 +8,7 @@ const Header = () => {
     <div className=" flex justify-between items-center">
       <form className=" hidden lg:block lg:w-[38%]">
         <label
-          for="default-search"
+          htmlFor="default-search"
           className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
         >
           Search
@@ -52,15 +52,9 @@ const Header = () => {
         </Link>
 
         <div className=" flex items-center gap-2">
-          <img
-            className=" w-12 h-12 rounded-full object-cover"
-            src={
-              user?.photo
-                ? user.photo
-                : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-            }
-            alt=""
-          />
+          <div className=" w-12 h-12 rounded-full object-cover bg-green-600 text-yellow-400 flex justify-center items-center uppercase font-semibold">
+            {user?.abv}
+          </div>
 
           <div className="">
             <h2 className=" text-sm lg:text-base capitalize  font-medium">

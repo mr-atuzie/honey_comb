@@ -1,7 +1,7 @@
 import React from "react";
 
 const Notification = () => {
-  const notifications = [1, 2, 3, 4, 5];
+  const notifications = [1, 2, 3, 4, 5, 6];
   return (
     <div className=" bg-white shadow-lg rounded-sm">
       <div className=" border-b-2 border-gray-100 px-5 py-3">

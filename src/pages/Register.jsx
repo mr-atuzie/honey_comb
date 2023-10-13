@@ -9,9 +9,11 @@ import axios from "axios";
 
 const Register = () => {
   const initialState = {
-    name: "",
+    firstname: "",
+    lastname: "",
     email: "",
     password: "",
+    confirmPassword: "",
   };
 
   const navigate = useNavigate();
@@ -19,8 +21,9 @@ const Register = () => {
   const [formData, setFormData] = useState(initialState);
 
   const [loading, setLoading] = useState(false);
+  const [tc, setTC] = useState(false);
 
-  const { name, email, password } = formData;
+  const { firstname, lastname, email, password, confirmPassword } = formData;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -32,9 +35,19 @@ const Register = () => {
     e.preventDefault();
     setLoading(true);
 
-    if (!name || !email || !password) {
+    if (!tc) {
+      setLoading(false);
+      return toast.error("Accept terms and condition to continue");
+    }
+
+    if (!firstname || !lastname || !email || !password) {
       setLoading(false);
       return toast.error("All fields are required");
+    }
+
+    if (password !== confirmPassword) {
+      setLoading(false);
+      return toast.error("Check passwords and try again");
     }
 
     if (!validateEmail(email)) {
@@ -47,7 +60,7 @@ const Register = () => {
       return toast.error("Password must be up to 6 characters");
     }
 
-    const userData = { name, email, password };
+    const userData = { firstname, lastname, email, password };
 
     try {
       const res = await axios.post(
@@ -65,16 +78,16 @@ const Register = () => {
       localStorage.setItem(
         "user",
         JSON.stringify({
-          name: data?.name,
+          id: data?._id,
+          name: `${data?.firstname} ${data?.lastname}`,
           email: data?.email,
           photo: data?.photo,
+          abv: `${data?.firstname.charAt(0)}${data?.lastname.charAt(0)}`,
         })
       );
 
       toast.success("User Registered successfully");
       navigate("/user/dashboard");
-
-      // return res.data;
     } catch (error) {
       const message =
         (error.response &&
@@ -87,23 +100,6 @@ const Register = () => {
       setLoading(false);
       toast.error(message);
     }
-
-    // try {
-    //   const data = await registerUser(userData);
-
-    //   localStorage.setItem(
-    //     "user",
-    //     JSON.stringify({
-    //       name: data?.name,
-    //       email: data?.email,
-    //       photo: data?.photo,
-    //     })
-    //   );
-
-    //   navigate("/user/dashboard");
-    // } catch (error) {
-    //   console.log(error);
-    // }
   };
 
   return (
@@ -151,17 +147,33 @@ const Register = () => {
 
           <div className=" my-5">
             <label className="  text-xs lg:text-sm mb-2" htmlFor="text">
-              Name
+              Fisrtname
             </label>
 
             <input
               className="border p-2.5 lg:p-3.5  block w-full placeholder:text-sm lg:placeholder:text-base"
               type="text"
-              placeholder="Enter your name"
-              name="name"
-              value={name}
+              placeholder="Enter your firstname"
+              name="firstname"
+              value={firstname}
               onChange={handleInputChange}
-              id="name"
+              id="firstname"
+            />
+          </div>
+
+          <div className=" my-5">
+            <label className="  text-xs lg:text-sm mb-2" htmlFor="text">
+              Lastname
+            </label>
+
+            <input
+              className="border p-2.5 lg:p-3.5  block w-full placeholder:text-sm lg:placeholder:text-base"
+              type="text"
+              placeholder="Enter your lastname"
+              name="lastname"
+              value={lastname}
+              onChange={handleInputChange}
+              id="lastname"
             />
           </div>
 
@@ -203,16 +215,23 @@ const Register = () => {
             <input
               className="border p-2.5 lg:p-3.5  block w-full placeholder:text-sm lg:placeholder:text-base"
               type="password"
-              name="password"
+              name="confirmPassword"
               placeholder="Retype password"
+              value={confirmPassword}
+              onChange={handleInputChange}
+              id="confirmPassword"
             />
           </div>
 
           <div className="flex gap-1 my-5">
-            <input type="checkbox" name="" id="" />
-            <p className=" text-xs lg:text-sm text-gray-800">
-              I accept all terms and condition
-            </p>
+            <input type="checkbox" name="" id="" onClick={() => setTC(!tc)} />
+
+            <Link to={"/terms-and-condition"}>
+              <p className=" text-xs font-medium lg:text-sm text-gray-800">
+                I accept all{" "}
+                <span className=" text-blue-700"> Terms & condition</span>
+              </p>
+            </Link>
           </div>
 
           <button
@@ -226,79 +245,11 @@ const Register = () => {
           <p className="text-xs lg:text-base text-center  mt-3  text-gray-500">
             Already have an account?{" "}
             <Link to={"/login"}>
-              <span className=" text-green-600 font-medium">Sign In</span>
+              <span className=" text-blue-700 font-medium">Sign In</span>
             </Link>
           </p>
         </form>
       </div>
-
-      {/* <div className=" flex items-center text-black">
-    <h1 className=" ml-1 font-bold text-sm   lg:text-base">TRADE-FAIR</h1>
-  </div>
-  <form className=" w-[90%] lg:w-[38%] py-5 mx-auto">
-    <div className=" my-8">
-      <h2 className="text-xl lg:text-3xl font-medium text-center ">
-        Create your account
-      </h2>
-
-      <p className="text-xs text-gray-500 text-center">
-        Improve your business by creating a strong digital presence.
-      </p>
-    </div>
-
-    <div className=" mb-3">
-      <label className=" text-gray-800 text-xs" htmlFor="text">
-        Fullname
-      </label>
-
-      <input
-        className="border p-3 rounded-xl block w-full"
-        type="text"
-        name="text"
-      />
-    </div>
-
-    <div className=" mb-3">
-      <label className=" text-gray-800 text-xs" htmlFor="email">
-        Email
-      </label>
-
-      <input
-        className="border p-3 rounded-xl block w-full"
-        type="email"
-        name="email"
-      />
-    </div>
-
-    <div className=" my-3">
-      <label className=" text-gray-800 text-xs" htmlFor="password">
-        Password
-      </label>
-      <input
-        className="border p-3 rounded-xl block w-full"
-        type="password"
-        name="password"
-      />
-    </div>
-
-    <div className=" mb-8">
-      <label className=" text-gray-800 text-xs" htmlFor="password">
-        Phone number
-      </label>
-      <PhoneInput
-        country={"ng"}
-        value={phoneNumber}
-        onChange={setPhoneNumber}
-      />
-    </div>
-
-    <button
-      className=" w-full text-center py-3 my-4 bg-black text-white  rounded-xl"
-      type="submit"
-    >
-      Sign up
-    </button>
-  </form> */}
     </div>
   );
 };

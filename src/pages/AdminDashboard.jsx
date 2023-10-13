@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaUsers } from "react-icons/fa6";
 import { GiMoneyStack } from "react-icons/gi";
 import { ImStatsBars } from "react-icons/im";
@@ -6,13 +6,39 @@ import { TbPigMoney } from "react-icons/tb";
 import AdminLineChart from "../components/AdminLineChart";
 import AdminBarChart from "../components/AdminBarChart";
 import { BsArrowBarDown, BsArrowBarUp } from "react-icons/bs";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 const AdminDashboard = () => {
+  const [users, setUsers] = useState([]);
+
+  const getUsers = async () => {
+    try {
+      const res = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/admin//all-users`,
+        {
+          withCredentials: true,
+        }
+      );
+
+      setUsers(res.data.result);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+
+      toast.error(message);
+    }
+  };
+
+  useEffect(() => {
+    getUsers();
+  }, []);
   return (
     <div>
-      {/* header */}
-
-      {/*  */}
       <h1 className=" font-bold text-green-600 text-2xl lg:text-4xl  my-9 lg:my-11">
         Admin Dashboard
       </h1>
@@ -24,7 +50,7 @@ const AdminDashboard = () => {
           </div>
 
           <div className="">
-            <h2 className=" text-2xl font-semibold"> 25000</h2>
+            <h2 className=" text-2xl font-semibold"> {users}</h2>
             <p className=" capitalize  font-medium text-gray-900">Users</p>
           </div>
         </div>

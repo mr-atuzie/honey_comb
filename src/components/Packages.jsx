@@ -1,9 +1,10 @@
 import React from "react";
 import { BsCheck2 } from "react-icons/bs";
+import Pay from "./Pay";
 
 const Packages = () => {
   return (
-    <div className=" bg-green-50">
+    <div className=" bg-green-50 mt-3">
       <div className="w-[80%] mx-auto py-10 lg:py-20">
         <div className=" text-center flex flex-col justify-center items-center ">
           <div className="text-center  text-green-600 text-lg lg:text-3xl font-semibold capitalize ">
@@ -60,9 +61,11 @@ const Packages = () => {
               </li>
             </ul>
 
-            <button className="text-white bg-green-700  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4">
+            <Pay amount={20000} type={"Basic"} />
+
+            {/* <button className="text-white bg-green-700  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4">
               start basic plan
-            </button>
+            </button> */}
           </div>
 
           <div className=" bg-white p-4 md:p-7 h-fit shadow-md rounded-md hover:scale-105">
@@ -139,12 +142,67 @@ const Packages = () => {
               </li>
             </ul>
 
-            <button className="text-white text-sm lg:text-lg bg-green-700  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4">
+            {/* <button className="text-white text-sm lg:text-lg bg-green-700  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4">
               start platinum plan
-            </button>
+            </button> */}
+            <Pay amount={40000} type={"Platnium"} />
           </div>
 
-          <div className=" bg-yellow-500 p-4 md:p-7 h-fit shadow-md rounded-md ">
+          <div className="bg-white p-4 md:p-7 h-fit shadow-md rounded-md hover:scale-105">
+            <div className=" flex flex-col justify-center items-center">
+              <h1 className=" text-red-500 lg:text-lg font-semibold tracking-wide uppercase">
+                basic
+              </h1>
+              <div className=" text-yellow-500 flex items-center">
+                <span className=" font-bold">&#x20A6;</span>
+                <h2 className=" text-green-600 text-4xl lg:text-5xl font-bold mt-1 mb-2 ">
+                  {" "}
+                  65,000
+                </h2>
+              </div>
+              <p className=" capitalize text-gray-800 text-xs font-medium">
+                Pay per momth
+              </p>
+            </div>
+
+            <ul className=" mt-5">
+              <li className="text-sm lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
+                <span className=" h-8 w-8 flex items-center justify-center rounded-full text-green-700 bg-green-100">
+                  <BsCheck2 />
+                </span>
+                99.5% uptime guarantee
+              </li>
+
+              <li className="text-sm lg:text-base text-gray-600  capitalize tracking-wide flex items-center gap-2 mb-2">
+                <span className=" h-8 w-8 flex items-center justify-center rounded-full text-green-700 bg-green-100">
+                  <BsCheck2 />
+                </span>
+                8 hours of electricity daily.
+              </li>
+
+              <li className="text-sm lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
+                <span className=" h-8 w-8 flex items-center justify-center rounded-full text-green-700 bg-green-100">
+                  <BsCheck2 />
+                </span>
+                Weekly Waste Pick ups.
+              </li>
+
+              <li className="text-sm lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
+                <span className=" h-8 w-8 flex items-center justify-center rounded-full text-green-700 bg-green-100">
+                  <BsCheck2 />
+                </span>
+                Weekly in-house clean ups.
+              </li>
+            </ul>
+
+            <Pay amount={30000} type={"Standard"} />
+
+            {/* <button className="text-white bg-green-700  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4">
+              start basic plan
+            </button> */}
+          </div>
+
+          {/* <div className=" bg-yellow-500 p-4 md:p-7 h-fit shadow-md rounded-md ">
             <div className=" flex flex-col justify-center items-center">
               <h1 className=" text-sm lg:text-lg font-semibold text-green-700    uppercase">
                 Calculate Earning
@@ -198,7 +256,7 @@ const Packages = () => {
                 </button>
               </form>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
