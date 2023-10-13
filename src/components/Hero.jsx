@@ -1,14 +1,19 @@
 import React from "react";
+import { heroMessage } from "../cms";
 
 const Hero = () => {
   return (
     <div className=" h-[95vh]   bg-green-700 w-full flex justify-center items-center ">
       <div className=" w-[80%] mx-auto flex gap-9 lg:gap-0 flex-col lg:justify-between lg:items-center lg:flex-row">
         <div className="lg:w-[55%]">
-          <h1 className=" text-white text-3xl lg:text-7xl font-extrabold my-4 ">
+          {/* <h1 className=" text-white text-3xl lg:text-7xl font-extrabold my-4 ">
             Unlock your{" "}
             <span className=" text-yellow-500">financial Potential</span> by
             investing
+          </h1> */}
+          <h1 className=" text-white text-3xl lg:text-7xl font-extrabold my-4 ">
+            {heroMessage.title}
+            <span className=" text-yellow-500">{heroMessage.title2}</span>
           </h1>
 
           <p className=" text-xs lg:text-base text-gray-200 my-6">

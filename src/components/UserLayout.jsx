@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import MobileNav from "./MobileNav";
 import Header from "./Header";
@@ -10,8 +10,37 @@ import {
 } from "react-icons/bi";
 import { IoNotificationsSharp } from "react-icons/io5";
 import { GiGraduateCap } from "react-icons/gi";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 const UserLayout = () => {
+  const [user, setUser] = useState({});
+
+  const getUser = async () => {
+    try {
+      const res = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user`,
+        {
+          withCredentials: true,
+        }
+      );
+
+      setUser(res.data);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+
+      toast.error(message);
+    }
+  };
+
+  useEffect(() => {
+    getUser();
+  }, []);
   return (
     <div className=" min-h-screen lg:flex">
       <div className=" hidden lg:block lg:w-[20%] bg-green-600   ">
@@ -64,19 +93,7 @@ const UserLayout = () => {
               <p className="font-medium text-lg  ">Transactions</p>
             </div>
           </NavLink>
-          <NavLink
-            to={"/user/support"}
-            className={({ isActive }) =>
-              isActive ? "rounded-lg bg-yellow-400 text-white w-full" : ""
-            }
-          >
-            <div className="flex gap-3 text-white items-center px-6  py-3">
-              <div className="">
-                <BiSupport size={24} />
-              </div>
-              <p className="font-medium text-lg  ">Support</p>
-            </div>
-          </NavLink>
+
           <NavLink
             to={"/user/notifications"}
             className={({ isActive }) =>
@@ -90,20 +107,34 @@ const UserLayout = () => {
               <p className="font-medium text-lg  ">Notifications</p>
             </div>
           </NavLink>
-
           <NavLink
-            to={"/admin/dashboard"}
+            to={"/user/support"}
             className={({ isActive }) =>
               isActive ? "rounded-lg bg-yellow-400 text-white w-full" : ""
             }
           >
             <div className="flex gap-3 text-white items-center px-6  py-3">
               <div className="">
-                <GiGraduateCap size={24} />
+                <BiSupport size={24} />
               </div>
-              <p className="font-medium text-lg  ">Admin</p>
+              <p className="font-medium text-lg  ">Support</p>
             </div>
           </NavLink>
+          {user?.admin && (
+            <NavLink
+              to={"/admin/dashboard"}
+              className={({ isActive }) =>
+                isActive ? "rounded-lg bg-yellow-400 text-white w-full" : ""
+              }
+            >
+              <div className="flex gap-3 text-white items-center px-6  py-3">
+                <div className="">
+                  <GiGraduateCap size={24} />
+                </div>
+                <p className="font-medium text-lg  ">Admin</p>
+              </div>
+            </NavLink>
+          )}
 
           <button className=" border-2 border-yellow-500 text-lg rounded-lg bg-green-500 text-white w-full py-3  mt-14">
             Logout

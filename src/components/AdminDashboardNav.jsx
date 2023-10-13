@@ -6,7 +6,7 @@ import { HiMiniClipboardDocumentCheck } from "react-icons/hi2";
 import { IoNotificationsSharp } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 
-const AdminDashboardNav = () => {
+const AdminDashboardNav = ({ user }) => {
   return (
     <div>
       <div>
