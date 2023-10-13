@@ -5,7 +5,7 @@ import axios from "axios";
 
 const Pay = ({ amount, type }) => {
   const config = {
-    public_key: "FLWPUBK_TEST-992ecad07f109c391d1ba645e5782842-X",
+    public_key: process.env.REACT_APP_FLUTTERWAVE_KEY,
     tx_ref: Date.now(),
     amount: amount,
     currency: "NGN",
