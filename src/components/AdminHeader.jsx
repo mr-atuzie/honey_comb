@@ -1,6 +1,7 @@
 import React from "react";
 
 const AdminHeader = () => {
+  const user = JSON.parse(localStorage.getItem("user"));
   return (
     <div className=" flex justify-between items-center">
       <form className=" w-[38%]">
@@ -39,13 +40,16 @@ const AdminHeader = () => {
       </form>
 
       <div className=" flex items-center gap-2">
-        <img
-          className=" w-14 h-14 rounded-full object-cover"
-          src="https://images.squarespace-cdn.com/content/v1/55cba28de4b05c606034e167/1642440989307-TLPN44V33FNLQCWNJ4O5/Gabriel+Tanhara_Actors-Headshots-London.jpg"
-          alt=""
-        />
+        <div className=" w-12 h-12 rounded-full object-cover bg-green-600 text-yellow-400 flex justify-center items-center uppercase font-semibold">
+          {user?.abv}
+        </div>
 
-        <h2 className=" capitalize  font-medium">Atuzie Rex</h2>
+        <div className="">
+          <h2 className=" text-sm lg:text-base capitalize  font-medium">
+            {user?.name}
+          </h2>
+          <p className=" text-xs text-gray-700">{user?.email}</p>
+        </div>
       </div>
     </div>
   );

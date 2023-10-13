@@ -1,4 +1,5 @@
 import React from "react";
+import { aboutUs } from "../cms";
 
 const About = () => {
   return (
@@ -25,16 +26,7 @@ const About = () => {
               <span className=" text-yellow-500"> investing</span> and{" "}
               <span className=" text-yellow-500"> geting double</span>
             </h3>
-            <p className="   mt-4 text-sm lg:text-base my-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-              commodi a fugiat. Eaque amet temporibus sit, quis provident
-              possimus distinctio mollitia cum excepturi. Eveniet, veritatis.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-              commodi a fugiat. Eaque amet temporibus sit, quis provident
-              possimus distinctio mollitia cum excepturi. Eveniet,
-              veritatis.Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Neque commodi a fugiat. Eaque amet temporibus sit.
-            </p>
+            <p className="   mt-4 text-sm lg:text-base my-4">{aboutUs.desc}</p>
             <button className="hidden md:flex rounded bg-green-600 text-white px-6 py-3 capitalize hover:bg-white hover:text-green-600 hover:border-2 hover:border-green-600 ">
               Explore
             </button>
