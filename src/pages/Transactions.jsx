@@ -128,7 +128,7 @@ const Transactions = () => {
                   </th>
                   <td className="px-6 py-4">
                     {" "}
-                    {moment(transaction.createdAt).format("MMM Do YY, h:mm")}
+                    {moment(transaction.createdAt).format("MMM Do YY")}
                   </td>
                   <td className="px-6 py-4"> &#8358; {transaction.amount}</td>
                   <td className="px-6 py-4">

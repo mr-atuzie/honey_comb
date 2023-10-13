@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { countries } from "../data";
 import axios from "axios";
 import { toast } from "react-toastify";
+import moment from "moment";
 
 const AdminTransactions = () => {
   const [transactions, setTransactions] = useState([]);
@@ -119,7 +120,10 @@ const AdminTransactions = () => {
                       </div>
                     </div>
                   </th>
-                  <td className="px-6 py-4"> Tue, 08:25 PM</td>
+                  <td className="px-6 py-4">
+                    {" "}
+                    {moment(transaction.createdAt).format("MMM Do YY, h:mm")}
+                  </td>
                   <td className="px-6 py-4"> &#8358; 6,000</td>
                   <td className="px-6 py-4"> &#8358; 20,000</td>
                   <td className="px-6 py-4"> &#8358; 26,000</td>

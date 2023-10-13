@@ -1,29 +1,56 @@
-import React from "react";
+import axios from "axios";
+import moment from "moment";
+import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const Notification = () => {
-  const notifications = [1, 2, 3, 4, 5, 6];
+  const [notifications, setNotifications] = useState([]);
+
+  const getNotifications = async () => {
+    try {
+      const res = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/notifications`,
+        {
+          withCredentials: true,
+        }
+      );
+
+      setNotifications(res.data.notifications);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+
+      toast.error(message);
+    }
+  };
+
+  useEffect(() => {
+    getNotifications();
+  }, []);
   return (
     <div className=" bg-white shadow-lg rounded-sm">
       <div className=" border-b-2 border-gray-100 px-5 py-3">
         <h2 className=" font-medium text-lg  lg:text-xl ">Notifications</h2>
       </div>
 
-      {notifications.map((not) => {
+      {notifications?.map((not) => {
         return (
-          <div key={not} className="  px-5 py-3 border-b-2 border-gray-100">
+          <div key={not._id} className="  px-5 py-3 border-b-2 border-gray-100">
             <div className="">
               <h3 className=" text-sm lg:text-base text-green-500  font-medium">
-                {" "}
-                Hot new deal, Enter (0R45B6A) to get 25% discount on all
-                transactions.
+                {not.title}
               </h3>
             </div>
 
-            <p className=" text-xs my-1 lg:text-sm">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint id
-              accusamus accusantium alias.
+            <p className=" text-xs my-1 lg:text-sm">{not.desc}</p>
+            <p className=" text-xs text-gray-500 ">
+              {" "}
+              {moment(not.createdAt).format("MMM Do YY, h:mm")}
             </p>
-            <p className=" text-xs text-gray-500 ">2 hours ago</p>
           </div>
         );
       })}

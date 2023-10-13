@@ -54,7 +54,7 @@ const UserTransactions = () => {
                 <div>
                   <p className=" text-sm lg:text-base">{transaction.userId}</p>
                   <p className=" text-gray-700 text-xs lg:text-sm">
-                    {moment(transaction.createdAt).format("MMM Do YY, h:mm")}
+                    {moment(transaction.createdAt).format("MMM Do YY")}
                   </p>
                 </div>
               </div>
