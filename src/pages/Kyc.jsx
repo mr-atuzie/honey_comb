@@ -1,44 +1,151 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { BsUpload } from "react-icons/bs";
+import { toast } from "react-toastify";
 
 const Kyc = () => {
+  const [productImage, setProductImage] = useState("");
+  const [idType, setIdType] = useState("");
+  const [imagePreview, setImagePreview] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const docs = [
+    "NIN",
+    "Drivers licence",
+    "Nepa Bill",
+    "Voters card",
+    "ID Card",
+  ];
+
+  const handleImageChange = (e) => {
+    setProductImage(e.target.files[0]);
+    setImagePreview(URL.createObjectURL(e.target.files[0]));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!productImage || !idType) {
+      toast.error("All fields are required");
+    } else {
+      setLoading(true);
+
+      try {
+        const formData = new FormData();
+        formData.append("image", productImage);
+        formData.append("idType", idType);
+
+        console.log(...formData);
+        const res = await axios.put(
+          `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/add-kyc`,
+          formData
+        );
+
+        // if (res.statusText === "OK") {
+        //   toast.success("listing succesfull");
+        // }
+
+        // const data = await uploadPic(formData);
+        // console.log(data);
+
+        console.log(res.data);
+
+        setLoading(false);
+      } catch (error) {
+        const message =
+          (error.response &&
+            error.response.data &&
+            error.response.data.message) ||
+          error.message ||
+          error.toString();
+
+        console.log(error);
+        setLoading(false);
+        toast.error(message);
+      }
+    }
+  };
+
   return (
     <div className=" w-full  h-screen ">
-      <div className="">
-        <form className="w-[85%] lg:w-[50%] mx-auto">
-          <div className=" my-16">
-            {/* <p className=" uppercase font-semibold text-yellow-600 mb-4">
+      <form onSubmit={handleSubmit} className="w-[85%] lg:w-[50%] mx-auto">
+        <div className=" my-16">
+          {/* <p className=" uppercase font-semibold text-yellow-600 mb-4">
               Honey comb fxd
             </p> */}
 
-            <h2 className="text-xl lg:text-4xl font-bold ">Add Document</h2>
+          <h2 className="text-xl lg:text-4xl font-bold text-green-600 ">
+            Add Document
+          </h2>
 
-            <p className=" text-gray-500  text-sm my-4">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi
-              quasi, dolorem saepe sapiente culpa illum.
-            </p>
+          <p className=" text-gray-500 text-xs  lg:text-sm my-4">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi
+            quasi, dolorem saepe sapiente culpa illum.
+          </p>
+        </div>
+
+        <div className="relative my-7">
+          <select
+            name="type"
+            id="type"
+            className=" bg-gray-100  w-full  mt-1 lg:mt-3  rounded-lg  border border-gray-300 text-gray-700  p-3 "
+            onChange={(e) => setIdType(e.target.value)}
+          >
+            <option>Select Document</option>
+            {docs.map((doc, index) => {
+              return (
+                <option key={index} value={doc}>
+                  {doc}
+                </option>
+              );
+            })}
+          </select>
+          <label
+            htmlFor="type"
+            className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-gray-100 px-2  left-1"
+          ></label>
+        </div>
+
+        {imagePreview != null ? (
+          <div className="  h-[300px] mb-5 rounded-sm mt-12">
+            <img
+              src={imagePreview}
+              className=" w-full h-full object-cover"
+              alt="id"
+            />
           </div>
-
-          <div className=" border-2 bg-gray-100 rounded-sm  flex justify-center items-center  border-dashed h-52 mb-5">
-            <div className=" flex justify-center items-center flex-col">
+        ) : (
+          <div className=" border-2 bg-gray-100 rounded-sm  mt-12 flex justify-center items-center  border-dashed h-52 mb-5">
+            <label
+              htmlFor="image"
+              className=" cursor-pointer flex justify-center items-center flex-col"
+            >
               <BsUpload className=" text-gray-400 text-center" size={30} />
               <p className=" text-gray-500 text-sm mt-2 text-center">
                 click to upload file
               </p>
-            </div>
-          </div>
+            </label>
 
-          <p className=" text-sm text-gray-500">
-            Accepted file type: jpg , png and svg
-          </p>
-          <button
-            className=" w-full text-center py-3.5 my-10  bg-black text-white "
-            type="submit"
-          >
-            Submit
-          </button>
-        </form>
-      </div>
+            <input
+              type="file"
+              name="image"
+              id="image"
+              className=" hidden"
+              onChange={(e) => handleImageChange(e)}
+            />
+          </div>
+        )}
+
+        <p className=" text-xs lg:text-sm text-gray-500">
+          Accepted file type: jpg , png and svg
+        </p>
+        <button
+          disabled={loading}
+          className=" w-full text-center py-3.5 my-10  bg-green-600 rounded-lg text-white disabled:opacity-95 "
+          type="submit"
+        >
+          {loading ? "Loading" : "Submit"}
+        </button>
+      </form>
     </div>
   );
 };

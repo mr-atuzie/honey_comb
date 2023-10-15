@@ -1,5 +1,6 @@
 import React from "react";
 import { BiSolidDashboard, BiSupport, BiTransfer } from "react-icons/bi";
+import { FaIdCard } from "react-icons/fa";
 import { IoPersonOutline } from "react-icons/io5";
 // import { IoMdMore } from "react-icons/io";
 // import { IoIosNotifications } from "react-icons/io";
@@ -11,7 +12,7 @@ import { NavLink } from "react-router-dom";
 const MobileNav = () => {
   return (
     <div className="  z-50  lg:hidden  fixed bottom-0 left-0  w-full  bg-green-600  shadow-xl ">
-      <div className=" px-6 py-3 flex items-center justify-between lg:hidden">
+      <div className=" px-3 py-3 flex items-center justify-between lg:hidden">
         <NavLink
           to={"/user/dashboard"}
           className={({ isActive }) =>
@@ -34,7 +35,17 @@ const MobileNav = () => {
             <p className=" text-xs mt-2">Transactions</p>
           </div>
         </NavLink>
-
+        <NavLink
+          to={"/user/add-kyc"}
+          className={({ isActive }) =>
+            isActive ? "text-yellow-400" : "text-white"
+          }
+        >
+          <div className=" flex flex-col items-center justify-center ">
+            <FaIdCard size={25} />
+            <p className=" text-xs mt-2">Kyc</p>
+          </div>
+        </NavLink>
         <NavLink
           to={"/user/support"}
           className={({ isActive }) =>

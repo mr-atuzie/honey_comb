@@ -33,6 +33,15 @@ const ApproveKyc = () => {
       type: "NIN",
     },
   ];
+
+  // const approvekyc = async () => {
+  //   try {
+
+  //   } catch (error) {
+
+  //   }
+  // };
+
   return (
     <div>
       <h1 className=" font-bold text-green-600 text-2xl lg:text-4xl  my-9 lg:my-11">

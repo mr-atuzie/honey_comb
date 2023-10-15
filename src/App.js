@@ -52,9 +52,8 @@ function App() {
           <Route path="profile" element={<Profile />} />
           <Route path="transactions" element={<Transactions />} />
           <Route path="support" element={<Support />} />
+          <Route path="add-kyc" element={<Kyc />} />
         </Route>
-
-        <Route path="add-kyc/:token" element={<Kyc />} />
       </Routes>
     </BrowserRouter>
   );

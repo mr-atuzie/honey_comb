@@ -12,6 +12,7 @@ import { IoNotificationsSharp } from "react-icons/io5";
 import { GiGraduateCap } from "react-icons/gi";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { FaIdCard } from "react-icons/fa";
 
 const UserLayout = () => {
   const [user, setUser] = useState({});
@@ -120,6 +121,21 @@ const UserLayout = () => {
               <p className="font-medium text-lg  ">Support</p>
             </div>
           </NavLink>
+
+          <NavLink
+            to={"/user/add-kyc"}
+            className={({ isActive }) =>
+              isActive ? "rounded-lg bg-yellow-400 text-white w-full" : ""
+            }
+          >
+            <div className="flex gap-3 text-white items-center px-6  py-3">
+              <div className="">
+                <FaIdCard size={24} />
+              </div>
+              <p className="font-medium text-lg  ">Add Kyc</p>
+            </div>
+          </NavLink>
+
           {user?.admin && (
             <NavLink
               to={"/admin/dashboard"}
