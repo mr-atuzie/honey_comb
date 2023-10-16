@@ -22,6 +22,8 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import Terms from "./pages/Terms";
 import Packages from "./components/Packages";
+import UserProfile from "./pages/UserProfile";
+import Cm from "./pages/Cm";
 
 axios.defaults.withCredentials = true;
 
@@ -43,6 +45,8 @@ function App() {
           <Route path="transactions" element={<AdminTransactions />} />
           <Route path="add-notifications" element={<AddNotification />} />
           <Route path="approve-kyc" element={<ApproveKyc />} />
+          <Route path="user-profile/:id" element={<UserProfile />} />
+          <Route path="content-management" element={<Cm />} />
         </Route>
 
         <Route path="/user" element={<UserLayout />}>

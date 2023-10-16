@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const UsersList = () => {
@@ -104,14 +105,49 @@ const UsersList = () => {
                     &#8358; {user?.accountBalance}{" "}
                   </td>
                   <td className="px-6 py-4"> &#8358; {user?.intrest} </td>
-                  <td className="px-6 py-4">
-                    <div className="flex items-center capitalize font-medium  text-yellow-500">
-                      <div className="h-2.5 w-2.5   rounded-full bg-yellow-500 mr-2"></div>{" "}
-                      {/* {user.kycStatus} */}
-                      pending
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 text-blue-500">Edit user</td>
+
+                  {!user?.kycStatus && (
+                    <td className="px-6 py-4">
+                      <div className="flex items-center capitalize font-medium  text-gray-500">
+                        <div className="h-2.5 w-2.5   rounded-full bg-gray-500 mr-2"></div>{" "}
+                        {/* {user.kycStatus} */}Nil
+                      </div>
+                    </td>
+                  )}
+
+                  {user?.kycStatus === "pending" && (
+                    <td className="px-6 py-4">
+                      <div className="flex items-center capitalize font-medium  text-yellow-500">
+                        <div className="h-2.5 w-2.5   rounded-full bg-yellow-500 mr-2"></div>{" "}
+                        {/* {user.kycStatus} */}
+                        pending
+                      </div>
+                    </td>
+                  )}
+
+                  {user?.kycStatus === "disapprove" && (
+                    <td className="px-6 py-4">
+                      <div className="flex items-center capitalize font-medium  text-red-500">
+                        <div className="h-2.5 w-2.5   rounded-full bg-red-500 mr-2"></div>{" "}
+                        {/* {user.kycStatus} */}
+                        Rejected
+                      </div>
+                    </td>
+                  )}
+
+                  {user?.kycStatus === "approved" && (
+                    <td className="px-6 py-4">
+                      <div className="flex items-center capitalize font-medium  text-green-500">
+                        <div className="h-2.5 w-2.5   rounded-full bg-green-500 mr-2"></div>{" "}
+                        {/* {user.kycStatus} */}
+                        Accepted
+                      </div>
+                    </td>
+                  )}
+
+                  <Link to={`/admin/user-profile/${user._id}`}>
+                    <td className="px-6 py-4 text-blue-500">Edit user</td>
+                  </Link>
                 </tr>
               );
             })}

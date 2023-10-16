@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import Packages from "../components/Packages";
 
 const About = () => {
   const [more, setMore] = useState(false);
@@ -70,6 +71,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      <Packages />
       <Contact />
       <Footer />
     </div>

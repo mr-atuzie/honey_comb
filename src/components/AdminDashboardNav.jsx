@@ -1,4 +1,5 @@
 import React from "react";
+import { AiFillEdit } from "react-icons/ai";
 import { BiSolidDashboard, BiTransfer } from "react-icons/bi";
 import { FaUsers } from "react-icons/fa";
 import { HiMiniClipboardDocumentCheck } from "react-icons/hi2";
@@ -58,6 +59,21 @@ const AdminDashboardNav = ({ user }) => {
             <p className="font-medium text-lg  ">Transactions</p>
           </div>
         </NavLink>
+
+        <NavLink
+          to={"/admin/content-management"}
+          className={({ isActive }) =>
+            isActive ? "rounded-lg bg-yellow-400 text-white w-full" : ""
+          }
+        >
+          <div className="flex gap-3 text-white items-center px-6  py-3">
+            <div className="">
+              <AiFillEdit size={24} />
+            </div>
+            <p className="font-medium text-lg  ">Edit content</p>
+          </div>
+        </NavLink>
+
         <NavLink
           to={"/admin/add-notifications"}
           className={({ isActive }) =>

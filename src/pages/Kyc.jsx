@@ -41,8 +41,8 @@ const Kyc = () => {
         );
 
         // if (res.statusText === "OK") {
-        //   toast.success("listing succesfull");
         // }
+        toast.success("Document uploaded succesfully");
 
         // const data = await uploadPic(formData);
         // console.log(data);

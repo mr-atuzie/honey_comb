@@ -77,9 +77,11 @@ const Login = () => {
           error.response.data &&
           error.response.data.message) ||
         error.message ||
+        error.response.statusText ||
         error.toString();
 
       console.log(error);
+      console.log(error.response.statusText);
       setLoading(false);
       toast.error(message);
     }

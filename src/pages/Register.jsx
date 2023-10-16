@@ -103,7 +103,7 @@ const Register = () => {
   };
 
   return (
-    <div className=" w-full   h-screen flex  lg:flex-row-reverse">
+    <div className=" w-full   flex  lg:flex-row-reverse">
       <div className="m-6 rounded-lg relative w-[40%] hidden lg:flex justify-center items-center flex-col ">
         <video
           src={vid}
@@ -242,7 +242,7 @@ const Register = () => {
             {loading ? "Loading" : "Sign up"}
           </button>
 
-          <p className="text-xs lg:text-base text-center  mt-3  text-gray-500">
+          <p className="text-xs lg:text-base text-center  mt-3 mb-14  text-gray-500">
             Already have an account?{" "}
             <Link to={"/login"}>
               <span className=" text-blue-700 font-medium">Sign In</span>

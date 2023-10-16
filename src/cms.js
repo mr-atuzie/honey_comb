@@ -1,5 +1,5 @@
 export const heroMessage = {
-  title: "Empowering lives through rewarding",
+  title: "Empowering lives through rewarding investing",
   title2: " investment journeys",
   desc: "",
 };

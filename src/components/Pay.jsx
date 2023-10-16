@@ -48,7 +48,7 @@ const Pay = ({ amount, type }) => {
 
   const fwConfig = {
     ...config,
-    text: "Pay with Flutterwave!",
+    text: "Pay with Flutterwave",
     callback: (response) => {
       console.log(response);
       if (response.status === "completed") {
@@ -64,7 +64,7 @@ const Pay = ({ amount, type }) => {
     },
   };
   return (
-    <button className="text-white text-sm lg:text-lg bg-green-700  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4">
+    <button className="text-white text-sm lg:text-lg bg-[#08432d]  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4">
       <FlutterWaveButton {...fwConfig} />
     </button>
   );

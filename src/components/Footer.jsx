@@ -19,9 +19,9 @@ const Footer = () => {
       <div className=" w-[90%] md:w-[80%] mx-auto ">
         <div className=" flex flex-col lg:flex-row justify-between items-start  mt-12">
           <div>
-            <div className=" uppercase font-semibold tracking-wider text-3xl text-neutral-300 ">
-              Trade fair
-            </div>
+            <p className=" text-sm lg:text-lg uppercase font-semibold text-yellow-500 lg:mb-4">
+              Honey comb fxd
+            </p>
 
             <p className="text-sm lg:text-base text-gray-400">
               Recieve updates, hot deals , discounts sent straight to inbox.

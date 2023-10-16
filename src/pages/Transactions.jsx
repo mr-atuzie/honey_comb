@@ -84,14 +84,12 @@ const Transactions = () => {
                 Date
               </th>
               <th scope="col" className="px-6 py-3">
+                Type
+              </th>
+              <th scope="col" className="px-6 py-3">
                 Amount
               </th>
-              <th scope="col" className="px-6 py-3">
-                Current Balance
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Old Balance
-              </th>
+
               <th scope="col" className="px-6 py-3">
                 Status
               </th>
@@ -130,15 +128,18 @@ const Transactions = () => {
                     {" "}
                     {moment(transaction.createdAt).format("MMM Do YYYY")}
                   </td>
+                  <td
+                    className={`${
+                      transaction?.type === "withdrawal"
+                        ? "text-red-500"
+                        : "text-green-500"
+                    }   px-6 py-4 font-medium`}
+                  >
+                    {" "}
+                    &#8358; {transaction.type}
+                  </td>
                   <td className="px-6 py-4"> &#8358; {transaction.amount}</td>
-                  <td className="px-6 py-4">
-                    {" "}
-                    &#8358; {transaction.currentBalance}
-                  </td>
-                  <td className="px-6 py-4">
-                    {" "}
-                    &#8358; {transaction.oldBalance}
-                  </td>
+
                   <td className="px-6 py-4">
                     <div class="flex items-center  text-green-600">
                       <div className="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div>{" "}

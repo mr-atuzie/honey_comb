@@ -13,8 +13,8 @@ const Packages = () => {
           <div className=" w-16 rounded-md  h-1 bg-yellow-500"></div>
         </div>
 
-        <div className=" grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3  gap-10 mt-10">
-          <div className="bg-white p-4 md:p-7 h-fit shadow-md rounded-md hover:scale-105">
+        <div className=" grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4  gap-4 lg:gap-10 mt-10">
+          <div className="bg-white p-4  h-fit shadow-md rounded-md hover:scale-105">
             <div className=" flex flex-col justify-center items-center">
               <h1 className=" text-red-500 lg:text-lg font-semibold tracking-wide uppercase">
                 basic
@@ -23,41 +23,41 @@ const Packages = () => {
                 <span className=" font-bold">&#x20A6;</span>
                 <h2 className=" text-green-600 text-4xl lg:text-5xl font-bold mt-1 mb-2 ">
                   {" "}
-                  65,000
+                  50,000
                 </h2>
               </div>
-              <p className=" capitalize text-gray-800 text-xs font-medium">
+              {/* <p className=" capitalize text-gray-800 text-xs font-medium">
                 Pay per momth
-              </p>
+              </p> */}
             </div>
 
             <ul className=" mt-5">
-              <li className="text-sm lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
+              <li className="text-xs lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
                 <span className=" h-8 w-8 flex items-center justify-center rounded-full text-green-700 bg-green-100">
                   <BsCheck2 />
                 </span>
-                99.5% uptime guarantee
+                0% risk
               </li>
 
-              <li className="text-sm lg:text-base text-gray-600  capitalize tracking-wide flex items-center gap-2 mb-2">
+              <li className="text-xs lg:text-base text-gray-600  capitalize tracking-wide flex items-center gap-2 mb-2">
                 <span className=" h-8 w-8 flex items-center justify-center rounded-full text-green-700 bg-green-100">
                   <BsCheck2 />
                 </span>
-                8 hours of electricity daily.
+                15% payout weekly
               </li>
 
-              <li className="text-sm lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
+              <li className="text-xs lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
                 <span className=" h-8 w-8 flex items-center justify-center rounded-full text-green-700 bg-green-100">
                   <BsCheck2 />
                 </span>
-                Weekly Waste Pick ups.
+                7.5% VAT charged on withdrawal
               </li>
 
-              <li className="text-sm lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
+              <li className="text-xs lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
                 <span className=" h-8 w-8 flex items-center justify-center rounded-full text-green-700 bg-green-100">
                   <BsCheck2 />
                 </span>
-                Weekly in-house clean ups.
+                Enjoy 2% referra
               </li>
             </ul>
 
@@ -68,134 +68,139 @@ const Packages = () => {
             </button> */}
           </div>
 
-          <div className=" bg-white p-4 md:p-7 h-fit shadow-md rounded-md hover:scale-105">
+          <div className=" bg-white p-4  h-fit shadow-md rounded-md hover:scale-105">
             <div className=" flex flex-col justify-center items-center">
               <h1 className=" lg:text-lg text-orange-500 font-semibold tracking-wide uppercase">
-                platinum
+                prenium
               </h1>
               <div className=" text-green-600 flex items-center">
                 <span className=" text-yellow-500 font-bold">&#x20A6;</span>
                 <h2 className=" text-4xl lg:text-5xl font-bold mt-1 mb-2 ">
-                  1, 600,000
+                  100,000
                 </h2>
               </div>
-              <p className="text-xs capitalize text-gray-800 font-medium">
+              {/* <p className="text-xs capitalize text-gray-800 font-medium">
                 Pay for 2 Year
-              </p>
+              </p> */}
             </div>
 
             <ul className=" mt-5">
-              <li className=" text-sm lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
+              <li className=" text-xs lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
                 <span className=" h-8 w-8 flex items-center justify-center rounded-full text-green-700 bg-green-100">
                   <BsCheck2 />
                 </span>
-                99.5% uptime guarantee
+                7.5% VAT charged on withdrawal
               </li>
 
-              <li className="text-sm lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
+              <li className="text-xs lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
                 <span className=" h-8 w-8 flex items-center justify-center rounded-full text-green-700 bg-green-100">
                   <BsCheck2 />
                 </span>
-                12 hours of electricity daily.
+                Enjoy 2% referral bonus
               </li>
 
-              <li className="text-sm lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
+              <li className="text-xs lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
                 <span className=" h-8 w-8 flex items-center justify-center rounded-full text-green-700 bg-green-100">
                   <BsCheck2 />
                 </span>
-                Weekly Waste Pick ups.
-              </li>
-
-              <li className="text-sm lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
-                <span className=" h-8 w-8 flex items-center justify-center rounded-full text-green-700 bg-green-100">
-                  <BsCheck2 />
-                </span>
-                Daily in-house clean ups.
-              </li>
-
-              <li className="text-sm lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
-                <span className=" h-8 w-8 flex items-center justify-center rounded-full text-green-700 bg-green-100">
-                  <BsCheck2 />
-                </span>
-                gym membership
-              </li>
-
-              <li className="text-sm lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
-                <span className=" h-8 w-8 flex items-center justify-center rounded-full text-green-700 bg-green-100">
-                  <BsCheck2 />
-                </span>
-                rotary club membership
-              </li>
-
-              <li className="text-sm lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
-                <span className=" h-8 w-8 flex items-center justify-center rounded-full text-green-700 bg-green-100">
-                  <BsCheck2 />
-                </span>
-                Daily News paper
-              </li>
-
-              <li className="text-sm lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
-                <span className=" h-8 w-8 flex items-center justify-center rounded-full text-green-700 bg-green-100">
-                  <BsCheck2 />
-                </span>
-                No caution fee needed
+                3% Monthly Returns paid upfront Enjoy 2% referral bonus
               </li>
             </ul>
 
             {/* <button className="text-white text-sm lg:text-lg bg-green-700  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4">
               start platinum plan
             </button> */}
-            <Pay amount={40000} type={"Platnium"} />
+            <Pay amount={10000} type={"Platnium"} />
           </div>
 
-          <div className="bg-white p-4 md:p-7 h-fit shadow-md rounded-md hover:scale-105">
+          <div className="bg-white p-4  h-fit shadow-md rounded-md hover:scale-105">
             <div className=" flex flex-col justify-center items-center">
               <h1 className=" text-red-500 lg:text-lg font-semibold tracking-wide uppercase">
-                basic
+                Gold
               </h1>
               <div className=" text-yellow-500 flex items-center">
                 <span className=" font-bold">&#x20A6;</span>
                 <h2 className=" text-green-600 text-4xl lg:text-5xl font-bold mt-1 mb-2 ">
                   {" "}
-                  65,000
+                  250,000
                 </h2>
               </div>
-              <p className=" capitalize text-gray-800 text-xs font-medium">
+              {/* <p className=" capitalize text-gray-800 text-xs font-medium">
                 Pay per momth
-              </p>
+              </p> */}
             </div>
 
             <ul className=" mt-5">
-              <li className="text-sm lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
+              <li className=" text-xs lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
                 <span className=" h-8 w-8 flex items-center justify-center rounded-full text-green-700 bg-green-100">
                   <BsCheck2 />
                 </span>
-                99.5% uptime guarantee
+                7.5% VAT charged on withdrawal
               </li>
 
-              <li className="text-sm lg:text-base text-gray-600  capitalize tracking-wide flex items-center gap-2 mb-2">
+              <li className="text-xs lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
                 <span className=" h-8 w-8 flex items-center justify-center rounded-full text-green-700 bg-green-100">
                   <BsCheck2 />
                 </span>
-                8 hours of electricity daily.
+                Enjoy 2% referral bonus
               </li>
 
-              <li className="text-sm lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
+              <li className="text-xs lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
                 <span className=" h-8 w-8 flex items-center justify-center rounded-full text-green-700 bg-green-100">
                   <BsCheck2 />
                 </span>
-                Weekly Waste Pick ups.
-              </li>
-
-              <li className="text-sm lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
-                <span className=" h-8 w-8 flex items-center justify-center rounded-full text-green-700 bg-green-100">
-                  <BsCheck2 />
-                </span>
-                Weekly in-house clean ups.
+                3% Monthly Returns paid upfront Enjoy 2% referral bonus
               </li>
             </ul>
 
-            <Pay amount={30000} type={"Standard"} />
+            <Pay amount={25000} type={"Gold"} />
+
+            {/* <button className="text-white bg-green-700  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4">
+              start basic plan
+            </button> */}
+          </div>
+
+          <div className="bg-white p-4 h-fit shadow-md rounded-md hover:scale-105">
+            <div className=" flex flex-col justify-center items-center">
+              <h1 className=" text-red-500 lg:text-lg font-semibold tracking-wide uppercase">
+                Platinum
+              </h1>
+              <div className=" text-yellow-500 flex items-center">
+                <span className=" font-bold">&#x20A6;</span>
+                <h2 className=" text-green-600 text-4xl lg:text-5xl font-bold mt-1 mb-2 ">
+                  {" "}
+                  500,000
+                </h2>
+              </div>
+              {/* <p className=" capitalize text-gray-800 text-xs font-medium">
+                Pay per momth
+              </p> */}
+            </div>
+
+            <ul className=" mt-5">
+              <li className=" text-xs lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
+                <span className=" h-8 w-8 flex items-center justify-center rounded-full text-green-700 bg-green-100">
+                  <BsCheck2 />
+                </span>
+                7.5% VAT charged on withdrawal
+              </li>
+
+              <li className="text-xs lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
+                <span className=" h-8 w-8 flex items-center justify-center rounded-full text-green-700 bg-green-100">
+                  <BsCheck2 />
+                </span>
+                Enjoy 2% referral bonus
+              </li>
+
+              <li className="text-xs lg:text-base text-gray-600 capitalize tracking-wide flex items-center gap-2 mb-2">
+                <span className=" h-8 w-8 flex items-center justify-center rounded-full text-green-700 bg-green-100">
+                  <BsCheck2 />
+                </span>
+                3% Monthly Returns paid upfront Enjoy 2% referral bonus
+              </li>
+            </ul>
+
+            <Pay amount={50000} type={"Platinum"} />
 
             {/* <button className="text-white bg-green-700  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4">
               start basic plan

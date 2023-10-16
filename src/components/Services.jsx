@@ -7,7 +7,7 @@ const Services = () => {
       <div className=" lg:w-[80%] mx-auto py-10 lg:py-20">
         <div className=" text-center flex flex-col justify-center items-center ">
           <div className="text-center  text-green-600 text-lg lg:text-3xl font-semibold capitalize ">
-            What we do
+            What choose us
           </div>
           <div className=" w-16 rounded-md  h-1 bg-yellow-500"></div>
         </div>
@@ -20,65 +20,66 @@ const Services = () => {
           />
 
           {/* text container */}
-          <div className=" w-[80%] mt-6 lg:mt-0 mx-auto lg:w-[40%]">
-            <div>
-              <div className="flex gap-3 items-center">
-                <MdVerified className="text-yellow-500" />
-                <h3 className=" text-green-600  font-semibold  lg:text-xl capitalize">
-                  Bringing financial{" "}
-                  <span className=" text-yellow-500"> Freedom</span>
-                </h3>
+          <div className=" w-[90%] mt-6 lg:mt-0 mx-auto lg:w-[40%]">
+            <div className=" mb-3">
+              <div className=" mb-2  ">
+                <div className="  text-green-600 text-lg  font-semibold capitalize ">
+                  What we do
+                </div>
+                <div className=" w-16 rounded-md  h-1 bg-yellow-500"></div>
               </div>
-              <p className="text-xs lg:text-base">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-                commodi a fugiat. Eaque amet temporibus sit, quis provident
-                possimus distinctio mollitia cum excepturi. Eveniet, veritatis.
+              <p className=" ">
+                Whether you're a seasoned investor or just starting, we give you
+                the potential to make the best returns on a range of financial
+                markets. We trade your money across diverse markets in foreign
+                exchange (forex trading), cryptocurrency, and agricultural
+                investments for the best possible returns. Our wide range of
+                investment packages was developed to suit your needs and budget.
               </p>
             </div>
-
-            <div className=" my-6">
-              <div className="flex gap-3 items-center">
-                <MdVerified className="text-yellow-500" />
-                <h3 className=" text-green-600  font-semibold lg:text-xl capitalize">
-                  Buy
-                  <span className=" text-yellow-500"> invest</span> and grow
-                </h3>
-              </div>
-              <p className="   text-xs lg:text-base ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-                commodi a fugiat. Eaque amet temporibus sit, quis provident
-                possimus distinctio mollitia cum excepturi. Eveniet, veritatis.
-              </p>
-            </div>
-
             <div>
-              <div className="flex gap-3 items-center">
-                <MdVerified className="text-yellow-500" />
-                <h3 className=" text-green-600  font-semibold lg:text-xl capitalize">
+              <div>
+                <div className="flex gap-3 items-center">
+                  <MdVerified className="text-yellow-500" />
+                  {/* <h3 className=" text-green-600  font-semibold lg:text-xl capitalize">
                   Getting New <span className=" text-yellow-500"> money</span>{" "}
                   at <span className=" text-yellow-500"> ease</span>
-                </h3>
+                </h3> */}
+                  <h3 className=" text-green-600  font-semibold lg:text-lg capitalize">
+                    Proven Track Record
+                  </h3>
+                </div>
+                <p className="  text-xs lg:text-base ">
+                  Our history of success speaks for itself, with consistent
+                  growth and satisfied investors.
+                </p>
               </div>
-              <p className="  text-xs lg:text-base ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-                commodi a fugiat. Eaque amet temporibus sit, quis provident
-                possimus distinctio mollitia cum excepturi. Eveniet, veritatis.
-              </p>
-            </div>
 
-            <div className=" my-6">
-              <div className="flex gap-3 items-center">
-                <MdVerified className="text-yellow-500" />
-                <h3 className=" text-green-600  font-semibold lg:text-xl capitalize">
-                  <span className=" text-yellow-500">Advance</span> your
-                  Earnings
-                </h3>
+              <div className=" my-3">
+                <div className="flex gap-3 items-center">
+                  <MdVerified className="text-yellow-500" />
+                  <h3 className=" text-green-600  font-semibold  lg:text-lg capitalize">
+                    Security First
+                  </h3>
+                </div>
+                <p className="text-xs lg:text-base">
+                  Your investments are protected with our secure measures and
+                  risk management strategies.
+                </p>
               </div>
-              <p className="   text-xs lg:text-base ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-                commodi a fugiat. Eaque amet temporibus sit, quis provident
-                possimus distinctio mollitia cum excepturi. Eveniet, veritatis.
-              </p>
+
+              <div>
+                <div className="flex gap-3 items-center">
+                  <MdVerified className="text-yellow-500" />
+                  <h3 className=" text-green-600  font-semibold lg:text-lg capitalize">
+                    Expert Guidance
+                  </h3>
+                </div>
+                <p className="   text-xs lg:text-base ">
+                  Our experienced team is here to provide you with personalized
+                  advice and market insights.
+                </p>
+              </div>
             </div>
           </div>
         </div>

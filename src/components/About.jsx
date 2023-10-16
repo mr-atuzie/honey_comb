@@ -1,5 +1,5 @@
 import React from "react";
-import { aboutUs } from "../cms";
+// import { aboutUs } from "../cms";
 
 const About = () => {
   return (
@@ -21,15 +21,42 @@ const About = () => {
 
           {/* text container */}
           <div className=" w-[80%] mt-6 lg:mt-0 mx-auto lg:w-[40%]">
-            <h3 className=" text-green-600   font-semibold text-xl lg:text-3xl capitalize">
+            {/* <h3 className=" text-green-600   font-semibold text-xl lg:text-3xl capitalize">
               Unleash Potentials through{" "}
               <span className=" text-yellow-500"> investing</span> and{" "}
               <span className=" text-yellow-500"> geting double</span>
-            </h3>
-            <p className="   mt-4 text-sm lg:text-base my-4">{aboutUs.desc}</p>
-            <button className="hidden md:flex rounded bg-green-600 text-white px-6 py-3 capitalize hover:bg-white hover:text-green-600 hover:border-2 hover:border-green-600 ">
-              Explore
+            </h3> */}
+            <p className="   mt-4 text-sm lg:text-base my-4">
+              Honeycomb FXD Farm is a leading financial investment platform that
+              offers a wide range of investment options in forex, crypto, and
+              agriculture. We specialize in trading your money across diverse
+              markets, to offer you substantial returns and financial growth. We
+              are committed to empowering our clients with great investment
+              opportunities to achieve their financial goals.
+            </p>
+
+            <p className="   mt-4 text-sm lg:text-base my-4">
+              With over 20 years of experience in the financial markets, our
+              team of experienced investment professionals is passionate about
+              helping people achieve their financial goals. We believe that
+              everyone should have the opportunity to invest and build wealth,
+              regardless of their background or experience.
+            </p>
+
+            <button className=" text-green-700 font-medium text-sm">
+              Read More
             </button>
+
+            {/* <p className="   mt-4 text-sm lg:text-base my-4">
+              Honeycomb FXD Farm is committed to providing its clients with the
+              best possible investment experience. We are constantly innovating
+              and adding new features to our platform to make it easier and more
+              convenient for you to invest. With us, investing becomes not just
+              an option but a destiny waiting to be fulfilled.
+            </p> */}
+            {/* <button className="hidden md:flex rounded bg-green-600 text-white px-6 py-3 capitalize hover:bg-white hover:text-green-600 hover:border-2 hover:border-green-600 ">
+              Explore
+            </button> */}
           </div>
         </div>
       </div>

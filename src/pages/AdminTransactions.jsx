@@ -32,6 +32,8 @@ const AdminTransactions = () => {
   useEffect(() => {
     getTransactions();
   }, []);
+
+  console.log(transactions);
   return (
     <div>
       <h1 className=" font-bold text-green-600 text-2xl lg:text-4xl  my-9 lg:my-11">
@@ -78,14 +80,12 @@ const AdminTransactions = () => {
                 Date
               </th>
               <th scope="col" className="px-6 py-3">
-                Amount
+                type
               </th>
               <th scope="col" className="px-6 py-3">
-                Current Balance
+                amount
               </th>
-              <th scope="col" className="px-6 py-3">
-                Old Balance
-              </th>
+
               <th scope="col" className="px-6 py-3">
                 Status
               </th>
@@ -122,11 +122,26 @@ const AdminTransactions = () => {
                   </th>
                   <td className="px-6 py-4">
                     {" "}
-                    {moment(transaction.createdAt).format("MMM Do YY, h:mm")}
+                    {moment(transaction.createdAt).format("MMM Do YY")}
                   </td>
-                  <td className="px-6 py-4"> &#8358; 6,000</td>
-                  <td className="px-6 py-4"> &#8358; 20,000</td>
-                  <td className="px-6 py-4"> &#8358; 26,000</td>
+                  <td
+                    className={`${
+                      transaction?.type === "withdrawal"
+                        ? "text-red-500"
+                        : "text-green-500"
+                    }   px-6 py-4 font-medium`}
+                  >
+                    {transaction?.type}
+                  </td>
+                  <td
+                    className={`${
+                      transaction?.type === "withdrawal"
+                        ? "text-red-500"
+                        : "text-green-500"
+                    }   px-6 py-4 font-medium`}
+                  >
+                    &#8358; {transaction?.amount}
+                  </td>
                   <td className="px-6 py-4">
                     <div class="flex items-center  text-green-600">
                       <div className="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div>{" "}
