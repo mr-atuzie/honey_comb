@@ -36,7 +36,7 @@ const AdminLayout = () => {
   }, []);
   return (
     <div className=" min-h-screen flex">
-      <div className=" hidden lg:block lg:w-[20%] bg-green-600 fixed left-0 h-screen   ">
+      <div className=" hidden lg:block lg:w-[20%] bg-[#08432d]  fixed left-0 h-screen   ">
         <AdminDashboardNav user={user} />
       </div>
       <div className=" w-full lg:w-[80%]  bg-gray-100  py-5  pb-40 lg:ml-[20%]">

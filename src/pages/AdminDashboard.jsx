@@ -3,25 +3,39 @@ import { FaUsers } from "react-icons/fa6";
 import { GiMoneyStack } from "react-icons/gi";
 import { ImStatsBars } from "react-icons/im";
 import { TbPigMoney } from "react-icons/tb";
-import AdminLineChart from "../components/AdminLineChart";
-import AdminBarChart from "../components/AdminBarChart";
-import { BsArrowBarDown, BsArrowBarUp } from "react-icons/bs";
+
+// import AdminBarChart from "../components/AdminBarChart";
+// import { BsArrowBarDown, BsArrowBarUp } from "react-icons/bs";
 import { toast } from "react-toastify";
 import axios from "axios";
+import moment from "moment";
+import Loader from "../components/Loader";
 
 const AdminDashboard = () => {
   const [users, setUsers] = useState([]);
+  const [transactions, setTransactions] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  const getUsers = async () => {
+  const getAdminDashboard = async () => {
+    setLoading(true);
     try {
       const res = await axios.get(
-        `${process.env.REACT_APP_BACKEND_URL}/api/v1/admin//all-users`,
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/admin/all-users`,
         {
           withCredentials: true,
         }
       );
 
-      setUsers(res.data.result);
+      const transRes = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/admin/all-transactions`,
+        {
+          withCredentials: true,
+        }
+      );
+
+      setTransactions(transRes.data.transactions);
+      setUsers(res.data.users);
+      setLoading(false);
     } catch (error) {
       const message =
         (error.response &&
@@ -31,12 +45,17 @@ const AdminDashboard = () => {
         error.toString();
 
       toast.error(message);
+      setLoading(false);
     }
   };
 
   useEffect(() => {
-    getUsers();
+    getAdminDashboard();
   }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <div>
       <h1 className=" font-bold text-green-600 text-2xl lg:text-4xl  my-9 lg:my-11">
@@ -50,7 +69,7 @@ const AdminDashboard = () => {
           </div>
 
           <div className="">
-            <h2 className=" text-2xl font-semibold"> {users}</h2>
+            <h2 className=" text-2xl font-semibold"> {users.length}</h2>
             <p className=" capitalize  font-medium text-gray-900">Users</p>
           </div>
         </div>
@@ -67,16 +86,6 @@ const AdminDashboard = () => {
           </div>
         </div>
         <div className=" bg-white px-5 py-8 shadow-lg rounded flex items-center gap-3">
-          <div className=" p-4 bg-orange-100 text-orange-500 flex justify-center items-center rounded-md">
-            <ImStatsBars size={30} />
-          </div>
-
-          <div className="">
-            <h2 className=" text-2xl font-semibold"> 85%</h2>
-            <p className=" capitalize  font-medium text-gray-900">Statistics</p>
-          </div>
-        </div>
-        <div className=" bg-white px-5 py-8 shadow-lg rounded flex items-center gap-3">
           <div className=" p-4 bg-purple-100 text-purple-500 flex justify-center items-center rounded-md">
             <TbPigMoney size={30} />
           </div>
@@ -88,74 +97,219 @@ const AdminDashboard = () => {
             </p>
           </div>
         </div>
-      </div>
-
-      <div className=" flex justify-between my-14">
-        <div className=" w-[60%]  bg-white shadow-lg pb-3 rounded h-fit">
-          <div className=" p-5 mb-4">
-            <p className=" font-medium  ">Revenue Generated</p>
-            <h2 className=" text-4xl font-semibold "> &#8358; 7,233,000</h2>
+        <div className=" bg-white px-5 py-8 shadow-lg rounded flex items-center gap-3">
+          <div className=" p-4 bg-orange-100 text-orange-500 flex justify-center items-center rounded-md">
+            <ImStatsBars size={30} />
           </div>
-          <AdminLineChart />
-        </div>
-        <div className=" w-[38%] ">
-          <div className=" bg-white shadow-lg h-fit p-6 rounded">
-            <div className="  mb-4">
-              <p className=" font-medium text-xl ">Total Investments</p>
-            </div>
-            <div>
-              <div className=" mb-6">
-                <div className="mb-1  flex justify-between items-center ">
-                  <h3> Basic</h3>
-                  <p className=" text-lg text-red-600 font-medium">65%</p>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4 ">
-                  <div className="bg-red-600 w-[65%] h-2.5 rounded-full "></div>
-                </div>
-              </div>
-              <div className=" mb-6">
-                <div className="mb-1  flex justify-between items-center ">
-                  <h3>Standard</h3>
-                  <p className=" text-lg text-purple-600 font-medium">79%</p>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4 ">
-                  <div className="bg-purple-600 w-[79%] h-2.5 rounded-full "></div>
-                </div>
-              </div>
-              <div className=" mb-6">
-                <div className="mb-1  flex justify-between items-center ">
-                  <h3>Average</h3>
-                  <p className=" text-lg text-yellow-600 font-medium">51%</p>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4">
-                  <div className="bg-yellow-600 w-[51%] h-2.5 rounded-full "></div>
-                </div>
-              </div>
-              <div className=" mb-6">
-                <div className="mb-1  flex justify-between items-center ">
-                  <h3>Premium</h3>
-                  <p className=" text-lg text-green-600 font-medium">93%</p>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4">
-                  <div className="bg-green-600 w-[93%] h-2.5 rounded-full "></div>
-                </div>
-              </div>
-              <div className=" mb-6">
-                <div className="mb-1  flex justify-between items-center ">
-                  <h3>Revenue</h3>
-                  <p className=" text-lg text-green-600 font-medium">93%</p>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4">
-                  <div className="bg-orange-600 w-[83%] h-2.5 rounded-full "></div>
-                </div>
-              </div>
-            </div>
+
+          <div className="">
+            <h2 className=" text-2xl font-semibold"> 85%</h2>
+            <p className=" capitalize  font-medium text-gray-900">Statistics</p>
           </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-5">
-        {/* transactions */}
+      <div className="flex justify-between my-16">
+        <div className=" w-[55%] bg-white p-5 shadow-md sm:rounded-sm">
+          <div className=" mb-6 ">
+            <p className=" font-medium  text-xl ">Transactions</p>
+            <p className=" text-xs text-gray-500 ">
+              {transactions?.length} Transactions
+            </p>
+          </div>
+          <div className="relative overflow-x-auto ">
+            <table className="w-full text-sm text-left text-gray-900 dark:text-gray-400">
+              <thead className=" text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                  <th scope="col" className="p-4">
+                    <div class="flex items-center">
+                      <input
+                        id="checkbox-all-search"
+                        type="checkbox"
+                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 0"
+                      />
+                      <label for="checkbox-all-search" className="sr-only">
+                        checkbox
+                      </label>
+                    </div>
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Name
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Date
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    type
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    amount
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {transactions?.slice(0, 7).map((transaction) => {
+                  return (
+                    <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                      <td className="w-4 p-4">
+                        <div className="flex items-center">
+                          <input
+                            id="checkbox-table-search-1"
+                            type="checkbox"
+                            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                          />
+                          <label
+                            for="checkbox-table-search-1"
+                            className="sr-only"
+                          >
+                            checkbox
+                          </label>
+                        </div>
+                      </td>
+                      <th
+                        scope="row"
+                        className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white"
+                      >
+                        <div className="pl-3">
+                          <div className="text-base font-semibold">
+                            {transaction?.name}
+                          </div>
+                          <div className="text-xs font-normal text-gray-500">
+                            {transaction?.email}
+                          </div>
+                        </div>
+                      </th>
+                      <td className="px-6 py-4">
+                        {" "}
+                        {moment(transaction.createdAt).format("Do MMM YYYY")}
+                      </td>
+                      <td
+                        className={`${
+                          transaction?.type === "withdrawal"
+                            ? "text-red-500"
+                            : "text-gray-900"
+                        }   px-6 py-4 font-medium capitalize`}
+                      >
+                        {transaction?.type}
+                      </td>
+                      <td
+                        className={`${
+                          transaction?.type === "withdrawal"
+                            ? "text-red-500"
+                            : "text-green-500"
+                        }   px-6 py-4 font-medium`}
+                      >
+                        {transaction?.type === "withdrawal" ? " -" : "+"}{" "}
+                        &#8358;{transaction?.amount}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div className=" w-[43%] bg-white p-5 shadow-md sm:rounded-sm">
+          <div className=" mb-6 ">
+            <p className=" font-medium  text-xl ">Users</p>
+            {/* <p className=" text-xs text-gray-500 ">
+              {transactions?.length} Transactions
+            </p> */}
+          </div>
+          <div className="relative overflow-x-auto ">
+            <table className="w-full text-sm text-left text-gray-900 dark:text-gray-400">
+              <thead className=" text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                  <th scope="col" className="p-4">
+                    S/N
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Name
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Investment
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Status
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {users?.slice(0, 7).map((user, index) => {
+                  return (
+                    <tr
+                      key={user._id}
+                      className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+                    >
+                      <td className="w-4 p-4">{index + 1}</td>
+
+                      <th
+                        scope="row"
+                        className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white"
+                      >
+                        <div className="pl-3">
+                          <div className="text-base font-semibold">
+                            {user?.firstname} {user?.lastname}
+                          </div>
+                          <div className="text-xs font-normal text-gray-500">
+                            {user?.email}
+                          </div>
+                        </div>
+                      </th>
+
+                      <td className="px-6 py-4 font-medium">
+                        {user.accountBalance}
+                      </td>
+
+                      {!user?.kycStatus && (
+                        <td className="px-6 py-4">
+                          <div className="flex items-center capitalize font-medium  text-gray-500">
+                            <div className="h-2.5 w-2.5   rounded-full bg-gray-500 mr-2"></div>{" "}
+                            {/* {user.kycStatus} */}Nil
+                          </div>
+                        </td>
+                      )}
+
+                      {user?.kycStatus === "pending" && (
+                        <td className="px-6 py-4">
+                          <div className="flex items-center capitalize font-medium  text-yellow-500">
+                            <div className="h-2.5 w-2.5   rounded-full bg-yellow-500 mr-2"></div>{" "}
+                            {/* {user.kycStatus} */}
+                            pending
+                          </div>
+                        </td>
+                      )}
+
+                      {user?.kycStatus === "disapprove" && (
+                        <td className="px-6 py-4">
+                          <div className="flex items-center capitalize font-medium  text-red-500">
+                            <div className="h-2.5 w-2.5   rounded-full bg-red-500 mr-2"></div>{" "}
+                            {/* {user.kycStatus} */}
+                            Rejected
+                          </div>
+                        </td>
+                      )}
+
+                      {user?.kycStatus === "approved" && (
+                        <td className="px-6 py-4">
+                          <div className="flex items-center capitalize font-medium  text-green-500">
+                            <div className="h-2.5 w-2.5   rounded-full bg-green-500 mr-2"></div>{" "}
+                            {/* {user.kycStatus} */}
+                            Accepted
+                          </div>
+                        </td>
+                      )}
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      {/* <div className="grid grid-cols-3 gap-5">
+        transactions
         <div className=" p-5 bg-white shadow-lg rounded h-fit">
           <div className=" mb-6">
             <p className=" font-medium  text-xl ">Transactions</p>
@@ -259,12 +413,12 @@ const AdminDashboard = () => {
             </div>
           </div>
         </div>
-        {/* users */}
+        users
         <div className=" p-5 bg-white shadow-lg rounded h-fit">
           <div className=" mb-6">
             <p className=" font-medium  text-xl ">Users</p>
           </div>
-          {/* user list */}
+          user list
           <div>
             <div className=" flex justify-between items-center border-b-2 border-green-100 pb-2 mb-2">
               <div className=" flex items-center gap-2">
@@ -355,7 +509,7 @@ const AdminDashboard = () => {
           </div>
           <AdminBarChart />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

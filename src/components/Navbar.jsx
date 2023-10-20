@@ -19,7 +19,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className=" bg-[#11a064] p-4 absolute top-0 z-40  w-full   ">
+    <div className=" bg-[#08432d] p-4 absolute top-0 z-40  w-full   ">
       <div className=" w-[90%] lg:w-[80%] mx-auto  flex justify-between items-center">
         <div className="flex items-center gap-36">
           <p className=" text-sm lg:text-base uppercase font-semibold text-[#fcc745]">

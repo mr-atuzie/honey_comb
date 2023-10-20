@@ -24,6 +24,7 @@ import Terms from "./pages/Terms";
 import Packages from "./components/Packages";
 import UserProfile from "./pages/UserProfile";
 import Cm from "./pages/Cm";
+import AdminStat from "./pages/AdminStat";
 
 axios.defaults.withCredentials = true;
 
@@ -41,6 +42,7 @@ function App() {
 
         <Route path="/admin" element={<AdminLayout />}>
           <Route path="dashboard" element={<AdminDashboard />} />
+          <Route path="statistics" element={<AdminStat />} />
           <Route path="users-list" element={<UsersList />} />
           <Route path="transactions" element={<AdminTransactions />} />
           <Route path="add-notifications" element={<AddNotification />} />

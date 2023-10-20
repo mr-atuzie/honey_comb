@@ -2,16 +2,14 @@ import axios from "axios";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 
-const AddNotification = () => {
+const AddNotification = ({ placeholder }) => {
   const initialState = {
     title: "",
     desc: "",
   };
 
   const [formData, setFormData] = useState(initialState);
-
   const [loading, setLoading] = useState(false);
-
   const { title, desc } = formData;
 
   const handleInputChange = (e) => {
@@ -59,6 +57,7 @@ const AddNotification = () => {
       toast.error(message);
     }
   };
+
   return (
     <div>
       <form onSubmit={handleSubmit} className="w-[85%] lg:w-[50%] mx-auto">
