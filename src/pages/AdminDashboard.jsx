@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaUsers } from "react-icons/fa6";
 import { GiMoneyStack } from "react-icons/gi";
-import { ImStatsBars } from "react-icons/im";
+// import { ImStatsBars } from "react-icons/im";
 import { TbPigMoney } from "react-icons/tb";
 
 // import AdminBarChart from "../components/AdminBarChart";
@@ -10,10 +10,14 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import moment from "moment";
 import Loader from "../components/Loader";
+import AdminHeader from "../components/AdminHeader";
 
 const AdminDashboard = () => {
   const [users, setUsers] = useState([]);
   const [transactions, setTransactions] = useState([]);
+  const [totalInvestment, setTotalInvestment] = useState({});
+  const [totalIntrest, setTotalIntrest] = useState({});
+
   const [loading, setLoading] = useState(false);
 
   const getAdminDashboard = async () => {
@@ -33,8 +37,24 @@ const AdminDashboard = () => {
         }
       );
 
+      const intrestRes = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/admin/total-intrest`,
+        {
+          withCredentials: true,
+        }
+      );
+
+      const investmentRes = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/admin/total-investment`,
+        {
+          withCredentials: true,
+        }
+      );
+
       setTransactions(transRes.data.transactions);
       setUsers(res.data.users);
+      setTotalInvestment(investmentRes.data.totalInvestments);
+      setTotalIntrest(intrestRes.data.totalIntrest);
       setLoading(false);
     } catch (error) {
       const message =
@@ -53,11 +73,14 @@ const AdminDashboard = () => {
     getAdminDashboard();
   }, []);
 
+  console.log(totalIntrest);
+
   if (loading) {
     return <Loader />;
   }
   return (
     <div>
+      <AdminHeader />
       <h1 className=" font-bold text-green-600 text-2xl lg:text-4xl  my-9 lg:my-11">
         Admin Dashboard
       </h1>
@@ -79,7 +102,11 @@ const AdminDashboard = () => {
           </div>
 
           <div className="">
-            <h2 className=" text-2xl font-semibold"> &#8358; 17,560,000</h2>
+            <h2 className=" text-2xl font-semibold">
+              {" "}
+              &#8358;{" "}
+              {new Intl.NumberFormat().format(totalIntrest + totalInvestment)}
+            </h2>
             <p className=" capitalize  font-medium text-gray-900">
               Total Revenue
             </p>
@@ -91,20 +118,28 @@ const AdminDashboard = () => {
           </div>
 
           <div className="">
-            <h2 className=" text-2xl font-semibold"> &#8358; 7,233,000</h2>
+            <h2 className=" text-2xl font-semibold">
+              {" "}
+              &#8358; {new Intl.NumberFormat().format(totalInvestment)}
+            </h2>
             <p className=" capitalize  font-medium text-gray-900">
-              customer Revenue
+              Total Investment
             </p>
           </div>
         </div>
         <div className=" bg-white px-5 py-8 shadow-lg rounded flex items-center gap-3">
-          <div className=" p-4 bg-orange-100 text-orange-500 flex justify-center items-center rounded-md">
-            <ImStatsBars size={30} />
+          <div className=" p-4 bg-purple-100 text-purple-500 flex justify-center items-center rounded-md">
+            <TbPigMoney size={30} />
           </div>
 
           <div className="">
-            <h2 className=" text-2xl font-semibold"> 85%</h2>
-            <p className=" capitalize  font-medium text-gray-900">Statistics</p>
+            <h2 className=" text-2xl font-semibold">
+              {" "}
+              &#8358; {new Intl.NumberFormat().format(totalIntrest)}
+            </h2>
+            <p className=" capitalize  font-medium text-gray-900">
+              customer Revenue
+            </p>
           </div>
         </div>
       </div>

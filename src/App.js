@@ -25,6 +25,9 @@ import Packages from "./components/Packages";
 import UserProfile from "./pages/UserProfile";
 import Cm from "./pages/Cm";
 import AdminStat from "./pages/AdminStat";
+import Search from "./pages/Search";
+import How from "./pages/How";
+import Cont from "./pages/Cont";
 
 axios.defaults.withCredentials = true;
 
@@ -35,6 +38,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/service" element={<How />} />
+        <Route path="/contact" element={<Cont />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
@@ -49,6 +54,7 @@ function App() {
           <Route path="approve-kyc" element={<ApproveKyc />} />
           <Route path="user-profile/:id" element={<UserProfile />} />
           <Route path="content-management" element={<Cm />} />
+          <Route path="search" element={<Search />} />
         </Route>
 
         <Route path="/user" element={<UserLayout />}>

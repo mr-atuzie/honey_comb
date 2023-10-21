@@ -1,82 +1,37 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { BiSearchAlt2 } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loader from "../components/Loader";
-import AdminHeader from "../components/AdminHeader";
 
-const UsersList = () => {
+const Search = () => {
   const [users, setUsers] = useState([]);
+  const [value, setValue] = useState("");
   const [loading, setLoading] = useState(false);
+  const [notFound, setNotFound] = useState(null);
 
-  const getUsers = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     setLoading(true);
+
+    if (!value) {
+      return toast.error("All fields are required");
+    }
+
     try {
       const res = await axios.get(
-        `${process.env.REACT_APP_BACKEND_URL}/api/v1/admin/all-users`,
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/admin/get?searchTerm=${value}`,
         {
           withCredentials: true,
         }
       );
 
       setUsers(res.data.users);
+      setNotFound(res.data.result);
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      const message =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.message ||
-        error.toString();
-
-      toast.error(message);
-    }
-  };
-
-  var months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  useEffect(() => {
-    getUsers();
-  }, []);
-
-  const handleChange = (e) => {
-    const month = e.target.value;
-    const userData = { month };
-
-    if (month === "All") {
-      getUsers();
-    } else {
-      handleFilter(userData);
-    }
-  };
-
-  const handleFilter = async (formData) => {
-    console.log(formData);
-    try {
-      const res = await axios.post(
-        `${process.env.REACT_APP_BACKEND_URL}/api/v1/admin/filter-user-month`,
-        formData,
-        {
-          withCredentials: true,
-        }
-      );
-
-      setUsers(res.data.users);
-    } catch (error) {
       const message =
         (error.response &&
           error.response.data &&
@@ -91,31 +46,43 @@ const UsersList = () => {
   if (loading) {
     return <Loader />;
   }
+
   return (
     <div>
-      <AdminHeader />
+      <form onSubmit={handleSubmit} className=" w-[38%]">
+        <label
+          htmlFor="default-search"
+          className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+        >
+          Search
+        </label>
+        <div className="relative">
+          <button
+            type="submit"
+            className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400"
+          >
+            <BiSearchAlt2 size={25} />
+          </button>
+          <input
+            type="search"
+            id="default-search"
+            className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 "
+            placeholder="Search..."
+            required
+            autoFocus
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+          />
+        </div>
+      </form>
+
       <h1 className=" font-bold text-green-600 text-2xl lg:text-4xl  my-9 lg:my-11">
-        Users
+        Searching for: {value}
       </h1>
 
-      <div className="relative mb-10">
-        <select
-          className=" w-[45%]  lg:w-[15%]  mt-1 lg:mt-3  rounded-lg  border border-gray-300 text-gray-700  p-3 "
-          onChange={handleChange}
-        >
-          <option>Select month</option>
-          <option value={"All"}>All</option>
-          {months.map((month, index) => {
-            return (
-              <option key={index} value={month}>
-                {month}
-              </option>
-            );
-          })}
-        </select>
-      </div>
-
-      {users?.length < 1 && <p className=" text-gray-500">No user found</p>}
+      {notFound != null && notFound < 1 && (
+        <p className=" text-gray-500">No user found</p>
+      )}
       {users?.length >= 1 && (
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
           <table className="w-full text-sm text-left text-gray-900 dark:text-gray-400">
@@ -239,4 +206,4 @@ const UsersList = () => {
   );
 };
 
-export default UsersList;
+export default Search;

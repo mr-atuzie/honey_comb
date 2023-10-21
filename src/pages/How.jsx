@@ -1,19 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import About from "../components/About";
-import Services from "../components/Services";
-import Footer from "../components/Footer";
-import How from "../components/How";
+import Banner from "../components/Banner";
 import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 import Packages from "../components/Packages";
-import Faq from "../components/Faq";
-import Terms from "../components/Terms";
+import HowComp from "../components/How";
+import { useEffect } from "react";
+import { toast } from "react-toastify";
 import axios from "axios";
 import Loader from "../components/Loader";
-import { toast } from "react-toastify";
+import { useState } from "react";
 
-const Home = () => {
+const How = () => {
   const [loading, setLoading] = useState(false);
   const [content, setContent] = useState({});
 
@@ -52,17 +50,19 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <Hero />
-      <About about={content?.about} />
-      <Services value={content?.value} />
-      <How how={content?.how} />
+      <Banner
+        img={
+          "https://cdn.financebuzz.com/images/2020/08/07/values-based-investing.jpg"
+        }
+        heading={"How we do it"}
+        text={"lorem ipseum yemsum defrt er"}
+      />
+      <HowComp how={content?.how} />
       <Packages />
-      <Terms />
-      <Faq />
       <Contact />
       <Footer />
     </div>
   );
 };
 
-export default Home;
+export default How;

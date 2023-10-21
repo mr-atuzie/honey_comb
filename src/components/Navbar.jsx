@@ -7,10 +7,9 @@ const Navbar = () => {
   const [nav, setNav] = useState(false);
   const links = [
     { id: 2, link: "/", name: "Home" },
-    { id: 2, link: "/about", name: "About us" },
-    { id: 3, link: "/", name: "Services" },
-    { id: 5, link: "/", name: "Packages" },
-    { id: 4, link: "/", name: "Contact us" },
+    { id: 2, link: "/about", name: "Who we are" },
+    { id: 3, link: "/service", name: "How we do it" },
+    { id: 4, link: "/contact", name: "Contact us" },
   ];
 
   const handleNav = () => {
@@ -42,13 +41,13 @@ const Navbar = () => {
 
         <div className=" flex gap-4 items-center">
           <Link to={"/login"}>
-            <button className="hidden md:flex rounded text-white px-6 py-3 capitalize   ">
+            <button className="hidden md:flex rounded bg-yellow-500 text-white  px-6 py-2 capitalize hover:bg-green-500 hover:text-white    ">
               Log in
             </button>
           </Link>
 
           <Link to={"/register"}>
-            <button className="hidden md:flex rounded bg-green-500 text-white px-6 py-2 capitalize hover:bg-white hover:text-green-500 hover:border-2 hover:border-green-500 ">
+            <button className="hidden md:flex rounded bg-green-500 text-white px-6 py-2 capitalize hover:bg-yellow-500 hover:text-white  ">
               Sign Up
             </button>
           </Link>

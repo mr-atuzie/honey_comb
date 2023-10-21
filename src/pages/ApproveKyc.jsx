@@ -1,11 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import Loader from "../components/Loader";
+import AdminHeader from "../components/AdminHeader";
 
 const ApproveKyc = () => {
   const [docs, setDocs] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const getDocs = async () => {
+    setLoading(true);
     try {
       const res = await axios.get(
         `${process.env.REACT_APP_BACKEND_URL}/api/v1/admin/pending-kyc`,
@@ -15,6 +19,7 @@ const ApproveKyc = () => {
       );
 
       setDocs(res.data.users);
+      setLoading(false);
     } catch (error) {
       const message =
         (error.response &&
@@ -23,6 +28,7 @@ const ApproveKyc = () => {
         error.message ||
         error.toString();
 
+      setLoading(false);
       toast.error(message);
     }
   };
@@ -30,8 +36,6 @@ const ApproveKyc = () => {
   useEffect(() => {
     getDocs();
   }, []);
-
-  console.log(docs);
 
   const approvekyc = async (id) => {
     try {
@@ -78,12 +82,22 @@ const ApproveKyc = () => {
       toast.error(message);
     }
   };
-  console.log(docs);
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <div>
-      <h1 className=" font-bold text-green-600 text-2xl lg:text-4xl  my-9 lg:my-11">
-        Approve Documents
-      </h1>
+      <AdminHeader />
+      <div className=" my-9 lg:my-11">
+        <h1 className=" font-bold text-green-600 text-2xl lg:text-4xl ">
+          Approve Documents
+        </h1>
+        {docs?.length < 1 && (
+          <p className=" text-gray-500 my-3">No pending Kyc</p>
+        )}
+      </div>
 
       <div className=" grid  grid-cols-4 gap-8">
         {docs.map((doc) => {

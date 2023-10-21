@@ -3,7 +3,7 @@ import { AiFillEdit } from "react-icons/ai";
 import { BiSolidDashboard, BiTransfer } from "react-icons/bi";
 import { FaUsers } from "react-icons/fa";
 import { HiMiniClipboardDocumentCheck } from "react-icons/hi2";
-import { ImStatsBars } from "react-icons/im";
+// import { ImStatsBars } from "react-icons/im";
 // import { IoMdSettings } from "react-icons/io";
 import { IoNotificationsSharp } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
@@ -100,11 +100,11 @@ const AdminDashboardNav = ({ user }) => {
             <div className=" text-white">
               <HiMiniClipboardDocumentCheck size={24} />
             </div>
-            <p className="font-medium text-lg  ">Approve Kyc</p>
+            <p className="font-medium text-lg  ">Pending Kyc</p>
           </div>
         </NavLink>
 
-        <NavLink
+        {/* <NavLink
           to={"/admin/statistics"}
           className={({ isActive }) =>
             isActive ? "rounded-lg bg-yellow-400 text-white w-full" : ""
@@ -116,7 +116,7 @@ const AdminDashboardNav = ({ user }) => {
             </div>
             <p className="font-medium text-lg  ">Statistics</p>
           </div>
-        </NavLink>
+        </NavLink> */}
 
         <button className=" border-2 border-yellow-500 text-lg rounded-lg bg-green-500 text-white w-full py-3  mt-14">
           Logout

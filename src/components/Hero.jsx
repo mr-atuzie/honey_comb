@@ -1,8 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
@@ -25,13 +24,12 @@ const Hero = () => {
   ];
 
   return (
-    <div className=" h-[95vh]   bg-[#08432d] w-full flex justify-center items-center ">
+    <div className="  lg:h-[95vh]   bg-[#08432d] w-full flex justify-center items-center ">
       <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        navigation
+        modules={[Pagination, Autoplay]}
         pagination={{ clickable: true }}
         autoplay={{
-          delay: 2000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
       >
@@ -39,15 +37,15 @@ const Hero = () => {
           return (
             <SwiperSlide key={index}>
               <div className=" w-[80%] mx-auto flex gap-9 lg:gap-0 flex-col lg:justify-between lg:items-center lg:flex-row">
-                <div className="lg:w-[55%]">
+                <div className="lg:w-[50%]">
                   <h1 className=" text-white text-3xl lg:text-7xl font-extrabold my-4 ">
                     {slide.text}{" "}
                     <span className=" text-yellow-500">{slide.sub}</span>
                   </h1>
 
                   <Link to={"/register"}>
-                    <button className="rounded bg-[#11a064] text-sm lg:text-base  text-white border-2 border-yellow-500 px-6 py-2.5  hover:bg-white hover:text-green-500 ">
-                      Get started
+                    <button className="hidden md:flex rounded bg-yellow-500 text-white px-6 py-2 capitalize hover:bg-green-700 hover:text-white border-2 border-green-700 ">
+                      Get Started
                     </button>
                   </Link>
                 </div>

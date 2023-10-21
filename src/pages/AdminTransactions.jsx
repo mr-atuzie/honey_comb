@@ -3,6 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import moment from "moment";
 import Loader from "../components/Loader";
+import AdminHeader from "../components/AdminHeader";
 
 const AdminTransactions = () => {
   const [transactions, setTransactions] = useState([]);
@@ -93,6 +94,7 @@ const AdminTransactions = () => {
   }
   return (
     <div>
+      <AdminHeader />
       <h1 className=" font-bold text-green-600 text-2xl lg:text-4xl  my-9 lg:my-11">
         All Transactions
       </h1>

@@ -1,6 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
+import AdminHeader from "../components/AdminHeader";
+// import ReactQuill from "react-quill";
+// import "react-quill/dist/quill.snow.css";
 
 const AddNotification = ({ placeholder }) => {
   const initialState = {
@@ -8,8 +11,33 @@ const AddNotification = ({ placeholder }) => {
     desc: "",
   };
 
+  // var toolbarOptions = [
+  //   ["bold", "italic", "underline", "strike"], // toggled buttons
+  //   ["blockquote", "code-block"],
+
+  //   [{ header: 1 }, { header: 2 }], // custom button values
+  //   [{ list: "ordered" }, { list: "bullet" }],
+  //   [{ script: "sub" }, { script: "super" }], // superscript/subscript
+  //   [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
+  //   [{ direction: "rtl" }], // text direction
+
+  //   [{ size: ["small", false, "large", "huge"] }], // custom dropdown
+  //   [{ header: [1, 2, 3, 4, 5, 6, false] }],
+
+  //   [{ color: [] }, { background: [] }], // dropdown with defaults from theme
+  //   [{ font: [] }],
+  //   [{ align: [] }],
+
+  //   ["clean"], // remove formatting button
+  // ];
+
+  // const module = {
+  //   toolbar: toolbarOptions,
+  // };
+
   const [formData, setFormData] = useState(initialState);
   const [loading, setLoading] = useState(false);
+  // const [value, setValue] = useState("");
   const { title, desc } = formData;
 
   const handleInputChange = (e) => {
@@ -58,22 +86,19 @@ const AddNotification = ({ placeholder }) => {
     }
   };
 
+  // console.log(value);
+
   return (
     <div>
-      <form onSubmit={handleSubmit} className="w-[85%] lg:w-[50%] mx-auto">
-        <div className=" my-16">
-          {/* <p className=" uppercase font-semibold text-yellow-600 mb-4">
-      Honey comb fxd
-    </p> */}
-
-          <h2 className="text-xl lg:text-4xl font-bold text-green-600 ">
+      <AdminHeader />
+      <form
+        onSubmit={handleSubmit}
+        className=" lg:w-[60%] bg-white rounded shadow-lg my-16 p-10 mx-auto"
+      >
+        <div className=" mb-14 ">
+          <h2 className="text-xl lg:text-4xl font-bold text-[#08432d]">
             Add Notification
           </h2>
-
-          <p className=" text-gray-500  text-sm my-4">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi
-            quasi, dolorem saepe sapiente culpa illum.
-          </p>
         </div>
 
         <div className="relative my-7">
@@ -81,14 +106,14 @@ const AddNotification = ({ placeholder }) => {
             type="text"
             name="title"
             id="title"
-            className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             value={title}
             onChange={handleInputChange}
             placeholder=""
           />
           <label
             htmlFor="name"
-            className="absolute  text-gray-500 scale-75 -top-4 lg:text-lg   bg-gray-100 px-2  left-1"
+            className="absolute  text-gray-500 scale-75 -top-4 lg:text-lg   bg-white px-2  left-1"
           >
             Title
           </label>
@@ -98,20 +123,28 @@ const AddNotification = ({ placeholder }) => {
           <textarea
             name="desc"
             id="desc"
-            className="block px-2.5 py-3 lg:p-4 w-full h-48  text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className="block px-2.5 py-3 lg:p-4 w-full h-52  text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             value={desc}
+            placeholder="Start typing.."
             onChange={handleInputChange}
           ></textarea>
           <label
             htmlFor="name"
-            className="absolute  text-gray-500 scale-75 -top-4 lg:text-lg   bg-gray-100 px-2  left-1"
+            className="absolute  text-gray-500 scale-75 -top-4 lg:text-lg bg-white px-2  left-1"
           >
             Message
           </label>
         </div>
 
+        {/* <ReactQuill
+          className=" h-52 my-10"
+          theme="snow"
+          value={value}
+          onChange={setValue}
+        /> */}
+
         <button
-          className=" w-full text-center py-3.5 my-10  bg-green-600 text-white "
+          className=" w-full rounded text-center py-3.5 mt-10 bg-[#08432d] text-white "
           type="submit"
         >
           {loading ? "Loading" : "Send"}
