@@ -8,7 +8,7 @@ import {
 import { IoNotificationsSharp } from "react-icons/io5";
 import { GiGraduateCap } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
-import { FaUsers } from "react-icons/fa6";
+// import { FaUsers } from "react-icons/fa6";
 
 const UserDashboardNav = ({ user }) => {
   return (
@@ -62,7 +62,7 @@ const UserDashboardNav = ({ user }) => {
             <p className="font-medium text-lg  ">Transactions</p>
           </div>
         </NavLink>
-        <NavLink
+        {/* <NavLink
           to={"/user/referrals"}
           className={({ isActive }) =>
             isActive ? "rounded-lg bg-yellow-400 text-white w-full" : ""
@@ -74,7 +74,7 @@ const UserDashboardNav = ({ user }) => {
             </div>
             <p className="font-medium text-lg  ">Referrals</p>
           </div>
-        </NavLink>
+        </NavLink> */}
         <NavLink
           to={"/user/notifications"}
           className={({ isActive }) =>
