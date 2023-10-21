@@ -1,25 +1,24 @@
-import React, { useEffect, useState } from "react";
-import UserTransactions from "../components/UserTransactions";
 import axios from "axios";
-import { toast } from "react-toastify";
 import moment from "moment";
+import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import Loader from "../components/Loader";
 
-const Transactions = () => {
-  const [transactions, setTransactions] = useState([]);
+const Referral = () => {
+  const [referrals, setReferrals] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const getUserTransactions = async () => {
+  const getUserReferrals = async () => {
     setLoading(true);
     try {
       const res = await axios.get(
-        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/transaction-history`,
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/referrals`,
         {
           withCredentials: true,
         }
       );
 
-      setTransactions(res.data.transactions);
+      setReferrals(res.data.referrals);
       setLoading(false);
     } catch (error) {
       setLoading(false);
@@ -35,58 +34,8 @@ const Transactions = () => {
   };
 
   useEffect(() => {
-    getUserTransactions();
+    getUserReferrals();
   }, []);
-
-  var months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  const handleChange = (e) => {
-    const month = e.target.value;
-    const userData = { month };
-
-    if (month === "All") {
-      getUserTransactions();
-    } else {
-      handleFilter(userData);
-    }
-  };
-
-  const handleFilter = async (formData) => {
-    console.log(formData);
-    try {
-      const res = await axios.post(
-        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/filter-transactions-month`,
-        formData,
-        {
-          withCredentials: true,
-        }
-      );
-
-      setTransactions(res.data);
-    } catch (error) {
-      const message =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.message ||
-        error.toString();
-
-      toast.error(message);
-    }
-  };
 
   if (loading) {
     return <Loader />;
@@ -95,34 +44,14 @@ const Transactions = () => {
   return (
     <div>
       <h1 className=" font-bold text-green-600 text-2xl lg:text-4xl  my-9 lg:my-11">
-        Transactions History
+        Referrals
       </h1>
 
-      <div className="relative mb-10">
-        <select
-          className=" w-[45%]  lg:w-[15%]  mt-1 lg:mt-3  rounded-lg  border border-gray-300 text-gray-700  p-3 "
-          onChange={handleChange}
-        >
-          <option>Select month</option>
-          <option value={"All"}>All</option>
-          {months.map((month, index) => {
-            return (
-              <option key={index} value={month}>
-                {month}
-              </option>
-            );
-          })}
-        </select>
-      </div>
-
-      <div className="lg:hidden bg-white lg:mx-auto">
-        <UserTransactions />
-      </div>
-      {transactions?.length < 1 && (
-        <p className=" text-gray-500">No Transaction found</p>
+      {referrals?.length < 1 && (
+        <p className=" text-gray-500">No Referrals found</p>
       )}
-      {transactions?.length >= 1 && (
-        <div className="hidden lg:block relative overflow-x-auto shadow-md sm:rounded-lg">
+      {referrals?.length >= 1 && (
+        <div className="hidden lg:block relative overflow-x-auto shadow-md sm:rounded-lg md:w-[50%] mx-auto">
           <table className="w-full text-sm text-left text-gray-900 dark:text-gray-400">
             <thead className=" text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
@@ -153,14 +82,10 @@ const Transactions = () => {
                 <th scope="col" className="px-6 py-3">
                   Amount
                 </th>
-
-                <th scope="col" className="px-6 py-3">
-                  Status
-                </th>
               </tr>
             </thead>
             <tbody>
-              {transactions?.map((transaction) => {
+              {referrals?.map((transaction) => {
                 return (
                   <tr
                     key={transaction._id}
@@ -187,7 +112,7 @@ const Transactions = () => {
                     >
                       <div className="pl-3">
                         <div className="text-base font-semibold">
-                          {transaction._id}
+                          {transaction.name}
                         </div>
                       </div>
                     </th>
@@ -195,25 +120,8 @@ const Transactions = () => {
                       {" "}
                       {moment(transaction.createdAt).format("MMM Do YYYY")}
                     </td>
-                    {/* <td
-                      className={`${
-                        transaction?.type === "withdrawal"
-                          ? "text-red-500"
-                          : "text-green-500"
-                      }   px-6 py-4 font-medium`}
-                    >
-                      {" "}
-                      &#8358; {transaction.type}
-                    </td>
-                    <td className="px-6 py-4">{transaction.plan}</td> */}
-                    <td className="px-6 py-4"> &#8358; {transaction.amount}</td>
 
-                    <td className="px-6 py-4">
-                      <div class="flex items-center  text-green-600">
-                        <div className="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div>{" "}
-                        Successful
-                      </div>
-                    </td>
+                    <td className="px-6 py-4"> &#8358; {transaction.amount}</td>
                   </tr>
                 );
               })}
@@ -225,4 +133,4 @@ const Transactions = () => {
   );
 };
 
-export default Transactions;
+export default Referral;

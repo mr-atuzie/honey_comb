@@ -28,6 +28,7 @@ import AdminStat from "./pages/AdminStat";
 import Search from "./pages/Search";
 import How from "./pages/How";
 import Cont from "./pages/Cont";
+import Referral from "./pages/Referral";
 
 axios.defaults.withCredentials = true;
 
@@ -65,6 +66,7 @@ function App() {
           <Route path="transactions" element={<Transactions />} />
           <Route path="support" element={<Support />} />
           <Route path="add-kyc" element={<Kyc />} />
+          <Route path="referrals" element={<Referral />} />
         </Route>
       </Routes>
     </BrowserRouter>

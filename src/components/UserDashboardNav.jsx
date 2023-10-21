@@ -6,8 +6,9 @@ import {
   BiTransfer,
 } from "react-icons/bi";
 import { IoNotificationsSharp } from "react-icons/io5";
-import { GiGraduateCap } from "react-icons/gi";
+// import { GiGraduateCap } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
+import { FaUsers } from "react-icons/fa6";
 
 const UserDashboardNav = ({ user }) => {
   return (
@@ -61,7 +62,19 @@ const UserDashboardNav = ({ user }) => {
             <p className="font-medium text-lg  ">Transactions</p>
           </div>
         </NavLink>
-
+        <NavLink
+          to={"/user/referrals"}
+          className={({ isActive }) =>
+            isActive ? "rounded-lg bg-yellow-400 text-white w-full" : ""
+          }
+        >
+          <div className="flex gap-3 text-white items-center px-6  py-3">
+            <div className="">
+              <FaUsers size={24} />
+            </div>
+            <p className="font-medium text-lg  ">Referrals</p>
+          </div>
+        </NavLink>
         <NavLink
           to={"/user/notifications"}
           className={({ isActive }) =>
@@ -89,7 +102,7 @@ const UserDashboardNav = ({ user }) => {
           </div>
         </NavLink>
 
-        {user?.admin && (
+        {/* {user?.admin && (
           <NavLink
             to={"/admin/dashboard"}
             className={({ isActive }) =>
@@ -103,7 +116,7 @@ const UserDashboardNav = ({ user }) => {
               <p className="font-medium text-lg  ">Admin</p>
             </div>
           </NavLink>
-        )}
+        )} */}
 
         <button className=" border-2 border-yellow-500 text-lg rounded-lg bg-green-500 text-white w-full py-3  mt-14">
           Logout
