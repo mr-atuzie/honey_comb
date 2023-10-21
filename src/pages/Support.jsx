@@ -1,12 +1,6 @@
 import React from "react";
 import { BiSupport } from "react-icons/bi";
-import {
-  FaEnvelopeOpenText,
-  FaFacebookF,
-  FaInstagram,
-  FaTwitter,
-  FaWhatsapp,
-} from "react-icons/fa6";
+import { FaEnvelopeOpenText, FaFacebookF, FaWhatsapp } from "react-icons/fa6";
 
 const Support = () => {
   return (
@@ -22,27 +16,9 @@ const Support = () => {
 
         <div className=" flex gap-3 border-b-2 border-gray-100 items-center py-3">
           <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
-            <FaTwitter size={30} />
-          </div>
-          <div className=" font-medium text-sm lg:text-base">
-            honeycombfxd_help
-          </div>
-        </div>
-
-        <div className=" flex gap-3 border-b-2 border-gray-100 items-center py-3">
-          <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
             <FaFacebookF size={30} />
           </div>
           <div className=" font-medium text-sm lg:text-base">HoneyCombFxd</div>
-        </div>
-
-        <div className=" flex gap-3 b items-center border-b-2 border-gray-100 py-3">
-          <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
-            <FaInstagram size={30} />
-          </div>
-          <div className=" font-medium text-sm lg:text-base">
-            honeycombfxd_more
-          </div>
         </div>
 
         <div className=" flex gap-3   items-center py-3">

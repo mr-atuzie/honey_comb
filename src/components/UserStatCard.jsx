@@ -4,7 +4,7 @@ import { GiMoneyStack } from "react-icons/gi";
 import { ImStatsBars } from "react-icons/im";
 import { TbPigMoney } from "react-icons/tb";
 
-const UserStatCard = () => {
+const UserStatCard = ({ user, referrals }) => {
   return (
     <div className=" gap-5  grid grid-cols-2 lg:grid-cols-2">
       <div className=" bg-white px-5 py-8 shadow-lg rounded flex items-center gap-3">
@@ -13,9 +13,12 @@ const UserStatCard = () => {
         </div>
 
         <div className="  ">
-          <h2 className=" lg:text-xl font-semibold "> &#8358; 7,233,000</h2>
+          <h2 className=" lg:text-xl font-semibold ">
+            {" "}
+            &#8358; {new Intl.NumberFormat().format(user?.accountBalance)}
+          </h2>
           <p className=" text-xs lg:text-sm  text-gray-500 ">
-            Profit Generated
+            Total Investment
           </p>
         </div>
       </div>
@@ -25,8 +28,11 @@ const UserStatCard = () => {
         </div>
 
         <div className="">
-          <h2 className="  lg:text-xl font-semibold ">&#8358; 276,000</h2>
-          <p className="text-xs lg:text-sm  text-gray-500 ">Annual Profit</p>
+          <h2 className="  lg:text-xl font-semibold ">
+            {" "}
+            &#8358; {new Intl.NumberFormat().format(user?.accountBalance)}
+          </h2>
+          <p className="text-xs lg:text-sm  text-gray-500 ">Total Intrest</p>
         </div>
       </div>
       <div className=" bg-white px-5 py-8 shadow-lg rounded flex items-center gap-3">
@@ -35,8 +41,11 @@ const UserStatCard = () => {
         </div>
 
         <div className=" ">
-          <h2 className=" lg:text-xl font-semibold "> &#8358; 23,000</h2>
-          <p className="text-xs lg:text-sm  text-gray-500 ">Monthly Profit</p>
+          <h2 className=" lg:text-xl font-semibold ">
+            {" "}
+            &#8358; {new Intl.NumberFormat().format(user?.referralBonus)}
+          </h2>
+          <p className="text-xs lg:text-sm  text-gray-500 ">Referral Bonus</p>
         </div>
       </div>
       <div className=" bg-white px-5 py-8 shadow-lg rounded flex items-center gap-3">
@@ -45,10 +54,8 @@ const UserStatCard = () => {
         </div>
 
         <div className="">
-          <h2 className="  lg:text-xl font-semibold ">70%</h2>
-          <p className="text-xs lg:text-sm  text-gray-500 ">
-            Revenue statistics
-          </p>
+          <h2 className="  lg:text-xl font-semibold ">{referrals}</h2>
+          <p className="text-xs lg:text-sm  text-gray-500 ">Referrals</p>
         </div>
       </div>
     </div>

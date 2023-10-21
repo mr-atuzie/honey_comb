@@ -1,36 +1,14 @@
 import React from "react";
-import { BiSearchAlt2 } from "react-icons/bi";
 import { IoIosNotifications } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   return (
-    <div className=" flex justify-between items-center">
-      <form className=" hidden lg:block lg:w-[38%]">
-        <label
-          htmlFor="default-search"
-          className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-        >
-          Search
-        </label>
-        <div className="relative">
-          <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-            <BiSearchAlt2 size={30} />
-          </div>
-          <input
-            type="search"
-            id="default-search"
-            className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 "
-            placeholder="Search..."
-            required
-          />
-        </div>
-      </form>
-
+    <div className=" flex justify-end items-end">
       <div className=" flex items-center  gap-8">
         <Link
-          className=" hidden lg:block border-2 border-yellow-500 bg-green-500 text-white p-2 h-fit rounded-full"
+          className=" hidden lg:block border-2 border-yellow-400 bg-[#08432d] text-white p-2 h-fit rounded-full"
           to={"/user/notifications"}
         >
           <div>
@@ -39,9 +17,11 @@ const Header = () => {
         </Link>
 
         <div className=" flex items-center gap-2">
-          <div className=" w-12 h-12 rounded-full object-cover bg-green-600 text-yellow-400 flex justify-center items-center uppercase font-semibold">
-            {user?.abv}
-          </div>
+          <img
+            className=" w-12 h-12 rounded-full object-cover "
+            src={user?.photo}
+            alt=""
+          />
 
           <div className="">
             <h2 className=" text-sm lg:text-base capitalize  font-medium">
@@ -53,7 +33,7 @@ const Header = () => {
       </div>
 
       <Link
-        className="  lg:hidden border-2 border-yellow-500 bg-green-500 text-white p-2 h-fit rounded-full"
+        className="  lg:hidden border-2 border-yellow-400 bg-[#08432d] text-white p-2 h-fit rounded-full"
         to={"/user/notifications"}
       >
         <div>

@@ -42,9 +42,16 @@ const UserDashboard = () => {
         }
       );
 
+      const referralRes = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/referrals`,
+        {
+          withCredentials: true,
+        }
+      );
+
       setTransactions(res.data.transactions);
       setUser(userRes.data);
-      setReferrals([]);
+      setReferrals(referralRes.data.referrals);
       setLoading(false);
     } catch (error) {
       const message =
@@ -153,7 +160,7 @@ const UserDashboard = () => {
             <UserCard user={user} />
           </div>
           <div className=" w-[50%]">
-            <UserStatCard user={user} />
+            <UserStatCard user={user} referrals={referrals.length} />
           </div>
         </div>
 
@@ -163,7 +170,7 @@ const UserDashboard = () => {
               <div className=" mb-6 ">
                 <p className=" font-medium  text-xl ">Referrals</p>
                 <p className=" text-xs text-gray-500 ">
-                  {referrals?.length} Referrals
+                  {referrals?.length} Referral
                 </p>
               </div>
               {referrals?.length < 1 && (
@@ -201,7 +208,7 @@ const UserDashboard = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {transactions?.slice(0, 7).map((transaction) => {
+                      {referrals?.slice(0, 7).map((transaction) => {
                         return (
                           <tr
                             key={transactions._id}
@@ -236,7 +243,10 @@ const UserDashboard = () => {
                             </td>
 
                             <td className={`px-6 py-4 font-medium`}>
-                              &#8358;{transaction?.amount}
+                              &#8358;
+                              {new Intl.NumberFormat().format(
+                                transaction?.amount
+                              )}
                             </td>
                           </tr>
                         );
@@ -344,7 +354,10 @@ const UserDashboard = () => {
                               }   px-6 py-4 font-medium`}
                             >
                               {transaction?.type === "withdrawal" ? " -" : "+"}{" "}
-                              &#8358;{transaction?.amount}
+                              &#8358;{" "}
+                              {new Intl.NumberFormat().format(
+                                transaction?.amount
+                              )}
                             </td>
                           </tr>
                         );

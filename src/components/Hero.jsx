@@ -24,7 +24,7 @@ const Hero = () => {
   ];
 
   return (
-    <div className="  lg:h-[95vh]   bg-[#08432d] w-full flex justify-center items-center ">
+    <div className=" h-[75vh] lg:h-[95vh]   bg-[#08432d] w-full flex justify-center items-center ">
       <Swiper
         modules={[Pagination, Autoplay]}
         pagination={{ clickable: true }}

@@ -12,6 +12,7 @@ const Register = () => {
     firstname: "",
     lastname: "",
     email: "",
+    referral: "",
     password: "",
     confirmPassword: "",
   };
@@ -23,7 +24,8 @@ const Register = () => {
   const [loading, setLoading] = useState(false);
   const [tc, setTC] = useState(false);
 
-  const { firstname, lastname, email, password, confirmPassword } = formData;
+  const { firstname, lastname, email, password, confirmPassword, referral } =
+    formData;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -60,7 +62,7 @@ const Register = () => {
       return toast.error("Password must be up to 6 characters");
     }
 
-    const userData = { firstname, lastname, email, password };
+    const userData = { firstname, lastname, email, password, referral };
 
     try {
       const res = await axios.post(
@@ -190,6 +192,22 @@ const Register = () => {
               value={email}
               onChange={handleInputChange}
               id="email"
+            />
+          </div>
+
+          <div className=" my-5">
+            <label className="  text-xs lg:text-sm mb-2" htmlFor="referral">
+              Referral code (optional)
+            </label>
+
+            <input
+              className="border p-2.5 lg:p-3.5  block w-full placeholder:text-sm lg:placeholder:text-base"
+              type="text"
+              placeholder="Enter referral code"
+              name="referral"
+              value={referral}
+              onChange={handleInputChange}
+              id="referral"
             />
           </div>
 

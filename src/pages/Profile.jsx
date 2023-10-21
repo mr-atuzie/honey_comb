@@ -6,11 +6,13 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { banks } from "../data";
 import Loader from "../components/Loader";
+import { NavLink } from "react-router-dom";
 
 const Profile = () => {
   const [user, setUser] = useState({});
   const [userData, setUserData] = useState({});
   const [loading, setLoading] = useState(false);
+  const [formLoader, setFormLoader] = useState(false);
   const [uploading, setUpLoading] = useState(false);
   const [productImage, setProductImage] = useState("");
   const [imagePreview, setImagePreview] = useState(null);
@@ -91,7 +93,7 @@ const Profile = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    setFormLoader(true);
     const { email } = userData;
 
     if (email) {
@@ -101,13 +103,6 @@ const Profile = () => {
       }
     }
 
-    // if (password) {
-    //   if (password.length < 6) {
-    //     setLoading(false);
-    //     return toast.error("Password must be up to 6 characters");
-    //   }
-    // }
-
     try {
       const res = await axios.patch(
         `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/update-user`,
@@ -116,10 +111,7 @@ const Profile = () => {
 
       const data = res.data.user;
 
-      console.log(data);
-      setLoading(false);
-
-      // console.log(`${data?.firstname[0]}${data?.lastname[0]}`);
+      setFormLoader(false);
 
       localStorage.setItem(
         "user",
@@ -140,29 +132,10 @@ const Profile = () => {
           error.response.data.message) ||
         error.message ||
         error.toString();
-      setLoading(false);
-      console.log(error);
+      setFormLoader(false);
 
       toast.error(message);
     }
-
-    // try {
-    //   const data = await updateUser(formData);
-
-    //   localStorage.setItem(
-    //     "user",
-    //     JSON.stringify({
-    //       name: data?.name,
-    //       email: data?.email,
-    //       photo: data?.photo,
-    //     })
-    //   );
-
-    //   console.log(data);
-    // } catch (error) {
-    //   console.log(error);
-    //   setLoading(false);
-    // }
   };
 
   if (loading) {
@@ -171,9 +144,31 @@ const Profile = () => {
 
   return (
     <div>
-      <h1 className=" font-bold text-green-600 text-2xl lg:text-4xl  my-9 lg:my-11">
-        Profile
-      </h1>
+      <div className="my-9 lg:my-11">
+        <h1 className=" font-bold text-green-600 text-2xl lg:text-4xl  ">
+          Profile
+        </h1>
+
+        <div className=" flex gap-8 items-center">
+          <NavLink
+            to={"/user/profile"}
+            className={({ isActive }) =>
+              isActive ? " text-green-600" : "text-gray-600"
+            }
+          >
+            <p className="font-medium text-lg  ">Add Kyc</p>
+          </NavLink>
+
+          <NavLink
+            to={"/user/add-kyc"}
+            className={({ isActive }) =>
+              isActive ? "text-green-600" : "text-gray-600"
+            }
+          >
+            <p className="font-medium text-lg  ">Upload valid ID</p>
+          </NavLink>
+        </div>
+      </div>
 
       <div className=" bg-white w-[90%] md:w-[45%] mx-auto p-5">
         {/* form */}
@@ -240,18 +235,36 @@ const Profile = () => {
             <div className="relative my-7">
               <input
                 type="text"
-                name="name"
-                id="name"
+                name="firstname"
+                id="firstname"
                 className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=""
                 onChange={handleInputChange}
                 defaultValue={user?.name}
               />
               <label
-                htmlFor="name"
+                htmlFor="firstname"
                 className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
               >
-                Your Name
+                firstame
+              </label>
+            </div>
+
+            <div className="relative my-7">
+              <input
+                type="text"
+                name="lastname"
+                id="lastname"
+                className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                placeholder=""
+                onChange={handleInputChange}
+                defaultValue={user?.name}
+              />
+              <label
+                htmlFor="lastname"
+                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
+              >
+                lastame
               </label>
             </div>
 
@@ -344,6 +357,7 @@ const Profile = () => {
                 name="bank"
                 id="bank"
                 className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                onChange={handleInputChange}
               >
                 <option>Select Bank</option>
                 {banks.map((bank, index) => {
@@ -363,11 +377,11 @@ const Profile = () => {
             </div>
 
             <button
-              disabled={loading}
+              disabled={formLoader}
               type="submit"
-              className=" bg-green-600 text-white rounded-lg text-sm w-full p-3 text-center font-medium disabled:opacity-95"
+              className=" bg-green-600 text-white rounded-lg text-sm w-full p-3 text-center font-medium disabled:bg-green-300"
             >
-              {loading ? "Loading" : "Submit"}
+              {formLoader ? "Loading" : "Submit"}
             </button>
           </form>
         </div>

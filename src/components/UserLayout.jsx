@@ -43,7 +43,7 @@ const UserLayout = () => {
       </div>
       <div className=" w-full lg:w-[80%]  bg-gray-100  py-5  pb-40 lg:ml-[20%]">
         <div className=" w-[95%] mx-auto">
-          <Header />
+          <Header user={user} />
           <Outlet />
         </div>
       </div>
