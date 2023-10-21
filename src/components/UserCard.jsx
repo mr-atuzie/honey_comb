@@ -29,9 +29,12 @@ const UserCard = ({ user }) => {
             Invest
           </button>
         </Link>
-        <button className="text-white bg-[#08432d]   py-2 lg:py-3 text-center font-medium rounded  text-xs  lg:text-sm px-4 lg:px-8">
-          Withdraw
-        </button>
+
+        <Link to={"/user/withdraw"}>
+          <button className="text-white bg-[#08432d]   py-2 lg:py-3 text-center font-medium rounded  text-xs  lg:text-sm px-4 lg:px-8">
+            Withdraw
+          </button>
+        </Link>
       </div>
     </div>
   );

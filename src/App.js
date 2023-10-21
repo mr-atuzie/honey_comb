@@ -29,6 +29,7 @@ import Search from "./pages/Search";
 import How from "./pages/How";
 import Cont from "./pages/Cont";
 import Referral from "./pages/Referral";
+import Withdraw from "./pages/Withdraw";
 
 axios.defaults.withCredentials = true;
 
@@ -67,6 +68,7 @@ function App() {
           <Route path="support" element={<Support />} />
           <Route path="add-kyc" element={<Kyc />} />
           <Route path="referrals" element={<Referral />} />
+          <Route path="withdraw" element={<Withdraw />} />
         </Route>
       </Routes>
     </BrowserRouter>
