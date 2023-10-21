@@ -149,14 +149,14 @@ const Profile = () => {
           Profile
         </h1>
 
-        <div className=" flex gap-8 items-center">
+        <div className=" flex gap-8 items-center my-4">
           <NavLink
             to={"/user/profile"}
             className={({ isActive }) =>
               isActive ? " text-green-600" : "text-gray-600"
             }
           >
-            <p className="font-medium text-lg  ">Add Kyc</p>
+            <p className="font-medium text-sm  ">Add Kyc</p>
           </NavLink>
 
           <NavLink
@@ -165,7 +165,7 @@ const Profile = () => {
               isActive ? "text-green-600" : "text-gray-600"
             }
           >
-            <p className="font-medium text-lg  ">Upload valid ID</p>
+            <p className="font-medium text-sm  ">Upload valid ID</p>
           </NavLink>
         </div>
       </div>
