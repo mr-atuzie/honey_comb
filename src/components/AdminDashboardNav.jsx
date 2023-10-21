@@ -63,6 +63,20 @@ const AdminDashboardNav = ({ user }) => {
         </NavLink>
 
         <NavLink
+          to={"/admin/withdraw"}
+          className={({ isActive }) =>
+            isActive ? "rounded-lg bg-yellow-400 text-white w-full" : ""
+          }
+        >
+          <div className="flex gap-3 text-white items-center px-6  py-3">
+            <div className="">
+              <BiTransfer size={24} />
+            </div>
+            <p className="font-medium text-lg  ">Withdrawals</p>
+          </div>
+        </NavLink>
+
+        <NavLink
           to={"/admin/content-management"}
           className={({ isActive }) =>
             isActive ? "rounded-lg bg-yellow-400 text-white w-full" : ""

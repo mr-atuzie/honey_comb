@@ -30,6 +30,7 @@ import How from "./pages/How";
 import Cont from "./pages/Cont";
 import Referral from "./pages/Referral";
 import Withdraw from "./pages/Withdraw";
+import AdminWithdraw from "./pages/AdminWithdraw";
 
 axios.defaults.withCredentials = true;
 
@@ -57,6 +58,7 @@ function App() {
           <Route path="user-profile/:id" element={<UserProfile />} />
           <Route path="content-management" element={<Cm />} />
           <Route path="search" element={<Search />} />
+          <Route path="withdraw" element={<AdminWithdraw />} />
         </Route>
 
         <Route path="/user" element={<UserLayout />}>
