@@ -6,6 +6,7 @@ import "react-phone-input-2/lib/style.css";
 import { toast } from "react-toastify";
 import { validateEmail } from "../services/authServices";
 import axios from "axios";
+import logo from "../assets/honeycomb full logo.png";
 
 const Register = () => {
   const initialState = {
@@ -133,9 +134,7 @@ const Register = () => {
           className="w-[80%] lg:w-[50%] mx-auto mb-16"
         >
           <div className="">
-            <p className=" text-sm lg:text-lg uppercase font-semibold text-yellow-500 lg:mb-4">
-              Honey comb fxd
-            </p>
+            <img className="w-40" src={logo} alt="" />
 
             <h2 className="text-2xl lg:text-4xl font-bold  text-green-700 my-2 ">
               Create your Account

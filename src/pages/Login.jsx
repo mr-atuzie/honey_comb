@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { validateEmail } from "../services/authServices";
 import axios from "axios";
+import logo from "../assets/honeycomb full logo.png";
 
 const Login = () => {
   const initialState = {
@@ -116,9 +117,7 @@ const Login = () => {
           className="w-[80%] lg:w-[50%] mx-auto mb-16"
         >
           <div className="">
-            <p className=" text-sm lg:text-lg uppercase font-semibold text-yellow-500 lg:mb-4">
-              Honey comb fxd
-            </p>
+            <img className="w-40" src={logo} alt="" />
 
             <h2 className="text-2xl lg:text-4xl font-bold  text-green-700 my-2 ">
               Log into your Account
