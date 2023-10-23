@@ -119,14 +119,9 @@ const Login = () => {
           <div className="">
             <img className="w-40" src={logo} alt="" />
 
-            <h2 className="text-2xl lg:text-4xl font-bold  text-green-700 my-2 ">
+            <h2 className="text-2xl lg:text-4xl font-bold  text-green-700 mt-4 ">
               Log into your Account
             </h2>
-
-            <p className=" text-gray-900 text-xs  lg:text-sm  lg:my-4">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi
-              quasi, dolorem saepe sapiente culpa illum.
-            </p>
           </div>
 
           <div className=" my-5">
