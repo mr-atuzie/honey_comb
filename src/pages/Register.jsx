@@ -143,7 +143,7 @@ const Register = () => {
 
           <div className=" my-5">
             <label className="  text-xs lg:text-sm mb-2" htmlFor="text">
-              Fisrtname
+              Firstname
             </label>
 
             <input
