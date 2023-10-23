@@ -17,6 +17,7 @@ const AdminDashboard = () => {
   const [transactions, setTransactions] = useState([]);
   const [totalInvestment, setTotalInvestment] = useState({});
   const [totalIntrest, setTotalIntrest] = useState({});
+  const [pendingWithdraw, setPendingWithdraw] = useState([]);
 
   const [loading, setLoading] = useState(false);
 
@@ -51,10 +52,18 @@ const AdminDashboard = () => {
         }
       );
 
+      const withdrawRes = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/admin/pending-withdraws`,
+        {
+          withCredentials: true,
+        }
+      );
+
       setTransactions(transRes.data.transactions);
       setUsers(res.data.users);
       setTotalInvestment(investmentRes.data.totalInvestments);
       setTotalIntrest(intrestRes.data.totalIntrest);
+      setPendingWithdraw(withdrawRes.data.withdraws);
       setLoading(false);
     } catch (error) {
       const message =
@@ -96,6 +105,7 @@ const AdminDashboard = () => {
             <p className=" capitalize  font-medium text-gray-900">Users</p>
           </div>
         </div>
+
         <div className=" bg-white px-5 py-8 shadow-lg rounded flex items-center gap-3">
           <div className=" p-4 bg-red-100 text-red-500 flex justify-center items-center rounded-md">
             <GiMoneyStack size={30} />
@@ -112,21 +122,7 @@ const AdminDashboard = () => {
             </p>
           </div>
         </div>
-        <div className=" bg-white px-5 py-8 shadow-lg rounded flex items-center gap-3">
-          <div className=" p-4 bg-purple-100 text-purple-500 flex justify-center items-center rounded-md">
-            <TbPigMoney size={30} />
-          </div>
 
-          <div className="">
-            <h2 className=" text-2xl font-semibold">
-              {" "}
-              &#8358; {new Intl.NumberFormat().format(totalInvestment)}
-            </h2>
-            <p className=" capitalize  font-medium text-gray-900">
-              Total Investment
-            </p>
-          </div>
-        </div>
         <div className=" bg-white px-5 py-8 shadow-lg rounded flex items-center gap-3">
           <div className=" p-4 bg-purple-100 text-purple-500 flex justify-center items-center rounded-md">
             <TbPigMoney size={30} />
@@ -138,7 +134,22 @@ const AdminDashboard = () => {
               &#8358; {new Intl.NumberFormat().format(totalIntrest)}
             </h2>
             <p className=" capitalize  font-medium text-gray-900">
-              customer Revenue
+              Total Investment
+            </p>
+          </div>
+        </div>
+
+        <div className=" bg-white px-5 py-8 shadow-lg rounded flex items-center gap-3">
+          <div className=" p-4 bg-purple-100 text-purple-500 flex justify-center items-center rounded-md">
+            <TbPigMoney size={30} />
+          </div>
+
+          <div className="">
+            <h2 className=" text-2xl font-semibold">
+              {new Intl.NumberFormat().format(pendingWithdraw?.length)}
+            </h2>
+            <p className=" capitalize  font-medium text-gray-900">
+              Pending Withdrawls
             </p>
           </div>
         </div>

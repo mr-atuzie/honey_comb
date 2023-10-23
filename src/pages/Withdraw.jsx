@@ -1,10 +1,14 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
+import Loader from "../components/Loader";
+import { useEffect } from "react";
 
 const Withdraw = () => {
   const [formLoader, setFormLoader] = useState(false);
   const [amount, setAmout] = useState();
+  const [loading, setLoading] = useState(false);
+  const [user, setUser] = useState({});
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -41,11 +45,59 @@ const Withdraw = () => {
     }
   };
 
+  const getUser = async () => {
+    setLoading(true);
+    try {
+      const userRes = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user`,
+        {
+          withCredentials: true,
+        }
+      );
+
+      setUser(userRes.data);
+
+      setLoading(false);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+
+      setLoading(false);
+      toast.error(message);
+    }
+  };
+
+  useEffect(() => {
+    getUser();
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <div>
-      <div className="my-9 lg:my-11">
+      <h1 className=" capitalize font-bold text-green-600 text-2xl lg:text-4xl  my-9 lg:my-11 ">
+        withdraw
+      </h1>
+      <div className="">
         <div className=" bg-white w-[90%] md:w-[45%] mx-auto shadow-lg rounded p-5">
-          <h1 className=" font-medium text-[#08432d]0 text-2xl  ">Withdraw</h1>
+          <div>
+            <p className=" text-xs lg:text-sm  text-gray-500 ">
+              Current Balanace
+            </p>
+            <h2 className=" text-xl font-semibold lg:text-5xl ">
+              {" "}
+              &#8358;
+              {new Intl.NumberFormat().format(
+                user?.accountBalance + user?.intrest + user?.referralBonus
+              )}
+            </h2>
+          </div>
 
           <form onSubmit={handleSubmit} className=" mb-14 ">
             <div className="relative my-7">
@@ -67,9 +119,9 @@ const Withdraw = () => {
             <button
               disabled={formLoader}
               type="submit"
-              className=" bg-green-600 text-white rounded-lg text-sm w-full p-3 lg:p-4 text-center font-medium disabled:bg-green-300"
+              className=" bg-[#08432d] text-white rounded text-sm w-full p-3 lg:p-4 text-center font-medium disabled:bg-green-300"
             >
-              {formLoader ? "Loading" : "Submit"}
+              {formLoader ? "Loading" : "Withdraw"}
             </button>
           </form>
         </div>

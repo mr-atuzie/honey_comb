@@ -36,7 +36,7 @@ const Hero = () => {
         {slides.map((slide, index) => {
           return (
             <SwiperSlide key={index}>
-              <div className=" w-[80%] mx-auto flex gap-9 lg:gap-0 flex-col lg:justify-between lg:items-center lg:flex-row">
+              <div className=" w-[90%] mx-auto flex gap-9 lg:gap-0 flex-col lg:justify-between lg:items-center lg:flex-row">
                 <div className="lg:w-[50%]">
                   <h1 className=" text-white text-3xl lg:text-7xl font-extrabold my-4 ">
                     {slide.text}{" "}
@@ -44,7 +44,7 @@ const Hero = () => {
                   </h1>
 
                   <Link to={"/register"}>
-                    <button className="hidden md:flex rounded bg-yellow-500 text-white px-6 py-2 capitalize hover:bg-green-700 hover:text-white border-2 border-green-700 ">
+                    <button className="hidden md:flex rounded bg-green-500 text-white px-6 py-2 capitalize hover:bg-green-700 hover:text-white border-2 border-green-700 ">
                       Get Started
                     </button>
                   </Link>

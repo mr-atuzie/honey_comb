@@ -21,10 +21,7 @@ const Home = () => {
     setLoading(true);
     try {
       const res = await axios.get(
-        `${process.env.REACT_APP_BACKEND_URL}/api/v1/admin/content`,
-        {
-          withCredentials: true,
-        }
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/content`
       );
 
       setContent(res.data);
@@ -49,6 +46,7 @@ const Home = () => {
   if (loading) {
     return <Loader />;
   }
+
   return (
     <div>
       <Navbar />
@@ -56,7 +54,7 @@ const Home = () => {
       <About about={content?.about} />
       <Services value={content?.value} />
       <How how={content?.how} />
-      <Packages />
+      <Packages homePage />
       <Terms />
       <Faq />
       <Contact />

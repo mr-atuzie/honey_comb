@@ -13,9 +13,10 @@ import { FaMoneyBillTransfer } from "react-icons/fa6";
 import Loader from "../components/Loader";
 
 const UserProfile = () => {
-  const [formData, setFormData] = useState({});
+  // const [formData, setFormData] = useState({});
   //   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState("");
+  const [amount, setAmout] = useState();
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -54,86 +55,15 @@ const UserProfile = () => {
         setLoading(false);
       }
     };
-    // const getTransactions = async () => {
-    //   try {
-    //     const res = await axios.get(
-    //       `${process.env.REACT_APP_BACKEND_URL}/api/v1/admin/transaction-history/${id}`,
-    //       {
-    //         withCredentials: true,
-    //       }
-    //     );
 
-    //     setTransactions(res.data);
-    //   } catch (error) {
-    //     const message =
-    //       (error.response &&
-    //         error.response.data &&
-    //         error.response.data.message) ||
-    //       error.message ||
-    //       error.toString();
-
-    //     toast.error(message);
-    //   }
-    // };
     getUser();
-    // getTransactions()
   }, [id]);
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-
-    setFormData({ ...formData, [name]: value });
-  };
-
-  // const approvekyc = async (id) => {
-  //   try {
-  //     const res = await axios.get(
-  //       `${process.env.REACT_APP_BACKEND_URL}/api/v1/admin/approve-kyc/${id}`,
-  //       {
-  //         withCredentials: true,
-  //       }
-  //     );
-
-  //     console.log(res.data);
-  //     toast.success("Kyc has been accepteced");
-  //   } catch (error) {
-  //     const message =
-  //       (error.response &&
-  //         error.response.data &&
-  //         error.response.data.message) ||
-  //       error.message ||
-  //       error.toString();
-
-  //     toast.error(message);
-  //   }
-  // };
-
-  // const disapprovekyc = async (id) => {
-  //   try {
-  //     const res = await axios.get(
-  //       `${process.env.REACT_APP_BACKEND_URL}/api/v1/admin/disapprove-kyc/${id}`,
-  //       {
-  //         withCredentials: true,
-  //       }
-  //     );
-
-  //     console.log(res.data);
-  //     toast.success("Kyc has been rejected");
-  //   } catch (error) {
-  //     const message =
-  //       (error.response &&
-  //         error.response.data &&
-  //         error.response.data.message) ||
-  //       error.message ||
-  //       error.toString();
-
-  //     toast.error(message);
-  //   }
-  // };
 
   if (loading) {
     return <Loader />;
   }
+
+  // const handlePayout = () => {};
 
   return (
     <div>
@@ -218,85 +148,123 @@ const UserProfile = () => {
               </label>
             </div>
 
-            <div className="relative my-7 lg:my-11">
+            <div className=" flex justify-between items-center my-7 lg:my-11">
+              <div className="relative  w-[45%]">
+                <p
+                  // type="email"
+                  // name="email"
+                  // id="email"
+                  className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  // placeholder=""
+                  // onChange={handleInputChange}
+                  // defaultValue={user?.email}
+                >
+                  {user?.email}
+                </p>
+                <label
+                  htmlFor="email"
+                  className="absolute   text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
+                >
+                  Email
+                </label>
+              </div>
+
+              <div className="relative w-[45%]">
+                <p
+                  // type="email"
+                  // name="email"
+                  // id="email"
+                  className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  // placeholder=""
+                  // onChange={handleInputChange}
+                  // defaultValue={user?.email}
+                >
+                  {user?.DOB}
+                </p>
+                <label
+                  htmlFor="DOB"
+                  className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
+                >
+                  Date Of Birth
+                </label>
+              </div>
+            </div>
+
+            <div className="relative my-7">
               <p
-                // type="email"
-                // name="email"
-                // id="email"
-                className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none capitalize   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 // placeholder=""
                 // onChange={handleInputChange}
-                // defaultValue={user?.email}
+                // defaultValue={name}
               >
-                {user?.email}
+                {user?.address}
               </p>
               <label
-                htmlFor="email"
-                className="absolute   text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
+                htmlFor="name"
+                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
               >
-                Email
+                Address
               </label>
             </div>
 
-            <div className="relative my-7 lg:my-11">
-              <p
-                // type="email"
-                // name="email"
-                // id="email"
-                className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                // placeholder=""
-                // onChange={handleInputChange}
-                // defaultValue={user?.email}
-              >
-                {user?.DOB}
-              </p>
-              <label
-                htmlFor="DOB"
-                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
-              >
-                Date Of Birth
-              </label>
+            <div className=" flex items-center justify-between my-7 lg:my-11">
+              <div className="relative  w-[45%] ">
+                <p
+                  // type="email"
+                  // name="email"
+                  // id="email"
+                  className="block px-2.5 py-3 lg:p-4   text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  // placeholder=""
+                  // onChange={handleInputChange}
+                  // defaultValue={user?.email}
+                >
+                  {/* {user?.kycStatus} */}
+                  {!user?.kycStatus && "NIL"}
+                  {user?.kycStatus === "pending" && "Pending"}
+                  {user?.kycStatus === "disapprove" && "Rejected"}
+                  {user?.kycStatus === "approved" && "Accepted"}
+                </p>
+                <label
+                  htmlFor="DOB"
+                  className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
+                >
+                  Kyc status
+                </label>
+              </div>
+
+              <div className="relative w-[45%]">
+                <p className="block px-2.5 py-3 lg:p-4   text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                  {user?.phone}
+                </p>
+                <label
+                  htmlFor="DOB"
+                  className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
+                >
+                  Phone Number
+                </label>
+              </div>
             </div>
 
-            <div className="relative my-7 lg:my-11">
+            <div className="relative my-7">
               <p
-                // type="email"
-                // name="email"
-                // id="email"
-                className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none capitalize   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 // placeholder=""
                 // onChange={handleInputChange}
-                // defaultValue={user?.email}
+                // defaultValue={name}
               >
-                {/* {user?.kycStatus} */}
-                {!user?.kycStatus && "NIL"}
-                {user?.kycStatus === "pending" && "Pending"}
-                {user?.kycStatus === "disapprove" && "Rejected"}
-                {user?.kycStatus === "approved" && "Accepted"}
+                {user?.bank}
               </p>
               <label
-                htmlFor="DOB"
+                htmlFor="name"
                 className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
               >
-                Kyc status
+                Bank
               </label>
             </div>
 
             <div className="relative my-7 lg:my-11">
               <p className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer">
-                {user?.phone}
-              </p>
-              <label
-                htmlFor="DOB"
-                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
-              >
-                Phone Number
-              </label>
-            </div>
-
-            <div className="relative my-7 lg:my-11">
-              <p className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer">
-                {moment(user.createdAt).format("MMM Do YYYY")}
+                {user?.accountNumber}
               </p>
               <label
                 htmlFor="DOB"
@@ -466,7 +434,7 @@ const UserProfile = () => {
                   id="amount"
                   className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                   placeholder="Pay client"
-                  onChange={handleInputChange}
+                  onChange={(e) => setAmout(e.target.value)}
                   // defaultValue={user?.email}
                 />
 
@@ -478,7 +446,7 @@ const UserProfile = () => {
                 </label>
               </div>
 
-              <Pay amount={50000} type={"withdral"} />
+              <Pay amount={amount} type={"withdral"} />
             </div>
           </div>
         </div>

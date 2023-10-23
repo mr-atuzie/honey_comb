@@ -4,18 +4,18 @@ import { BsFacebook, BsLinkedin, BsReddit } from "react-icons/bs";
 import { AiFillTwitterCircle } from "react-icons/ai";
 
 const Footer = () => {
-  const F1 = ["Homeowner", "Landlords", "real estate", "services"];
+  const F1 = ["Agriculture", "Forex", "real estate", "Crypto"];
   const F2 = [
-    "What is super?",
-    "Plans",
-    "Smarter than home warranty",
-    "Frequently asked questions",
-    "Abouts us",
-    "Blog",
-    "Terms of Coveraage",
+    "Forex Trading",
+    "Cryptocurrency Investments",
+    "Agriculture Investments",
+    "Investment Security",
+    "Foreign Investment",
+    "Low investment minimums",
+    "Expert Financial Guidance",
   ];
   return (
-    <div className="h-full lg:h-[60vh] bg-black  py-10 ">
+    <div className="h-full lg:h-[60vh] bg-white  py-10 ">
       <div className=" w-[90%] md:w-[80%] mx-auto ">
         <div className=" flex flex-col lg:flex-row justify-between items-start  mt-12">
           <div>
@@ -23,17 +23,17 @@ const Footer = () => {
               Honey comb fxd
             </p>
 
-            <p className="text-sm lg:text-base text-gray-400">
+            <p className="text-sm lg:text-base">
               Recieve updates, hot deals , discounts sent straight to inbox.
             </p>
 
-            <div className=" flex bg-white items-center mt-3">
+            <div className=" flex bg-white items-center border-[#08432d] border-2  mt-3">
               <input
-                className=" py-3 px-6 w-full  rounded-md border-none outline-none"
+                className=" py-3 px-6 w-full   rounded-md border-none outline-none"
                 type="email"
                 placeholder="Your email"
               />
-              <button className=" w-[30%] text-sm lg:text-base  py-3 px-6 bg-green-700 text-white">
+              <button className="  text-sm lg:text-base  py-3 px-6 bg-[#08432d]  text-white">
                 Subscribe
               </button>
             </div>
@@ -41,14 +41,14 @@ const Footer = () => {
 
           <div className=" mt-6 lg:mt-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             <div>
-              <div className="uppercase font-medium tracking-wider text-neutral-300 mb-4">
+              <div className="uppercase font-medium tracking-wider mb-4">
                 WE MAKE LIFE EASIER FOR;
               </div>
               {F1.map((data, index) => {
                 return (
                   <div className=" flex mb-4 tracking-wide " key={index}>
                     <MdVerified size={25} className="text-sky-900" />
-                    <span className=" ml-3 text-gray-300 capitalize">
+                    <span className=" ml-3 text-gray-600 capitalize text-sm lg:text-base">
                       {data}
                     </span>
                   </div>
@@ -56,20 +56,19 @@ const Footer = () => {
               })}
             </div>
             <div>
-              <div className=" uppercase font-medium tracking-wider text-neutral-300 mb-4">
-                LOOKING FOR SOMETHING?
-              </div>
               {F2.map((data, index) => {
                 return (
                   <div className=" mb-4 " key={index}>
-                    <span className=" text-gray-600 capitalize">{data}</span>
+                    <span className=" text-gray-600 capitalize text-sm lg:text-base">
+                      {data}
+                    </span>
                   </div>
                 );
               })}
             </div>
 
             <div>
-              <div className=" uppercase font-medium tracking-wider text-neutral-300 mb-4">
+              <div className=" uppercase font-medium tracking-wider  mb-4">
                 Let's continue the conversation
               </div>
               <div className="flex gap-8 items-center">
@@ -81,9 +80,8 @@ const Footer = () => {
 
                 <BsReddit className=" text-[#FF4300]" size={30} />
               </div>
-              <div className=" text-sm text-gray-700 font-medium mt-8">
-                &copy; 2023 Super Home Inc. Contracts not <br /> avaliable for
-                sale in Nigeria.
+              <div className=" text-xs lg:text-sm text-gray-700 font-medium mt-8">
+                &copy; 2023 Honey comb fxd
               </div>
             </div>
           </div>

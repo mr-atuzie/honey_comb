@@ -20,7 +20,7 @@ const Cm = () => {
     setLoading(true);
     try {
       const res = await axios.get(
-        `${process.env.REACT_APP_BACKEND_URL}/api/v1/admin/content`,
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/content`,
         {
           withCredentials: true,
         }

@@ -31,6 +31,9 @@ import Cont from "./pages/Cont";
 import Referral from "./pages/Referral";
 import Withdraw from "./pages/Withdraw";
 import AdminWithdraw from "./pages/AdminWithdraw";
+import Notification from "./pages/Notification";
+import Private from "./components/Private";
+import AdminRegister from "./pages/AdminRegister";
 
 axios.defaults.withCredentials = true;
 
@@ -59,18 +62,22 @@ function App() {
           <Route path="content-management" element={<Cm />} />
           <Route path="search" element={<Search />} />
           <Route path="withdraw" element={<AdminWithdraw />} />
+          <Route path="register" element={<AdminRegister />} />
         </Route>
 
-        <Route path="/user" element={<UserLayout />}>
-          <Route path="dashboard" element={<UserDashboard />} />
-          <Route path="notifications" element={<Notifications />} />
-          <Route path="packages" element={<Packages />} />
-          <Route path="profile" element={<Profile />} />
-          <Route path="transactions" element={<Transactions />} />
-          <Route path="support" element={<Support />} />
-          <Route path="add-kyc" element={<Kyc />} />
-          <Route path="referrals" element={<Referral />} />
-          <Route path="withdraw" element={<Withdraw />} />
+        <Route element={<Private />}>
+          <Route path="/user" element={<UserLayout />}>
+            <Route path="dashboard" element={<UserDashboard />} />
+            <Route path="notifications" element={<Notifications />} />
+            <Route path="notification/:id" element={<Notification />} />
+            <Route path="packages" element={<Packages />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="transactions" element={<Transactions />} />
+            <Route path="support" element={<Support />} />
+            <Route path="add-kyc" element={<Kyc />} />
+            <Route path="referrals" element={<Referral />} />
+            <Route path="withdraw" element={<Withdraw />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

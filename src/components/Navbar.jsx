@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { IoCloseOutline } from "react-icons/io5";
 import { HiOutlineBars3 } from "react-icons/hi2";
+import logo from "../assets/honeycomb full logo.png";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+  const user = JSON.parse(localStorage.getItem("user"));
+
   const links = [
-    { id: 2, link: "/", name: "Home" },
+    { id: 1, link: "/", name: "Home" },
     { id: 2, link: "/about", name: "Who we are" },
     { id: 3, link: "/service", name: "How we do it" },
     { id: 4, link: "/contact", name: "Contact us" },
@@ -19,12 +22,9 @@ const Navbar = () => {
 
   return (
     <div className=" bg-[#08432d] p-4 absolute top-0 z-40  w-full   ">
-      <div className=" w-[90%] lg:w-[80%] mx-auto  flex justify-between items-center">
+      <div className=" w-[90%]  mx-auto  flex justify-between items-center">
         <div className="flex items-center gap-36">
-          <p className=" text-sm lg:text-base uppercase font-semibold text-[#fcc745]">
-            Honey comb fxd
-          </p>
-
+          <img className="w-40" src={logo} alt="" />
           <ul className="hidden text-white md:flex ">
             {links.map(({ id, link, name }) => {
               return (
@@ -39,19 +39,40 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className=" flex gap-4 items-center">
-          <Link to={"/login"}>
-            <button className="hidden md:flex rounded bg-yellow-500 text-white  px-6 py-2 capitalize hover:bg-green-500 hover:text-white    ">
-              Log in
-            </button>
-          </Link>
+        {!user && (
+          <div className=" flex gap-4 items-center">
+            <Link to={"/login"}>
+              <button className="hidden md:flex rounded bg-yellow-500 text-white  px-6 py-2 capitalize hover:bg-green-500 hover:text-white    ">
+                Log in
+              </button>
+            </Link>
 
-          <Link to={"/register"}>
-            <button className="hidden md:flex rounded bg-green-500 text-white px-6 py-2 capitalize hover:bg-yellow-500 hover:text-white  ">
-              Sign Up
-            </button>
+            <Link to={"/register"}>
+              <button className="hidden md:flex rounded bg-green-500 text-white px-6 py-2 capitalize hover:bg-yellow-500 hover:text-white  ">
+                Sign Up
+              </button>
+            </Link>
+          </div>
+        )}
+
+        {user && (
+          <Link to={"/user/dashboard"}>
+            <div className=" flex items-center gap-2">
+              <img
+                className=" w-12 h-12 rounded-full object-cover "
+                src={user?.photo}
+                alt=""
+              />
+
+              <div className="">
+                <h2 className=" text-sm lg:text-base text-yellow-500 capitalize  font-medium">
+                  {user?.name}
+                </h2>
+                <p className=" text-xs text-gray-300">{user?.email}</p>
+              </div>
+            </div>
           </Link>
-        </div>
+        )}
 
         <button
           onClick={handleNav}

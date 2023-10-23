@@ -133,7 +133,7 @@ const UserDashboard = () => {
         <Swiper
           modules={[Autoplay]}
           autoplay={{
-            delay: 6000,
+            delay: 15000,
             disableOnInteraction: false,
           }}
         >

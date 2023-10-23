@@ -27,7 +27,7 @@ const Services = ({ value }) => {
             <div>
               <div className=" mb-2  ">
                 <div className="  text-green-600 text-lg  font-semibold capitalize ">
-                  What choose us
+                  Why choose us
                 </div>
               </div>
               <div>

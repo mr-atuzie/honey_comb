@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineCamera } from "react-icons/ai";
 // import { countries } from "../data";
-import { validateEmail } from "../services/authServices";
+// import { validateEmail } from "../services/authServices";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { banks } from "../data";
@@ -94,14 +94,6 @@ const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormLoader(true);
-    const { email } = userData;
-
-    if (email) {
-      if (!validateEmail(email)) {
-        setLoading(false);
-        return toast.error("Please enter a valid email");
-      }
-    }
 
     try {
       const res = await axios.patch(
@@ -165,12 +157,12 @@ const Profile = () => {
               isActive ? "text-green-600" : "text-gray-600"
             }
           >
-            <p className="font-medium text-sm  ">Upload valid ID</p>
+            <p className="font-medium text-sm  ">Upload valid ID Card</p>
           </NavLink>
         </div>
       </div>
 
-      <div className=" bg-white w-[90%] md:w-[45%] mx-auto p-5">
+      <div className=" bg-white w-[90%] md:w-[45%] shadow-lg mx-auto p-5">
         {/* form */}
         <div className=" mt-4">
           <div className="w-[90%] md:w-[45%] mx-auto ">
@@ -246,7 +238,7 @@ const Profile = () => {
                 htmlFor="firstname"
                 className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
               >
-                firstame
+                Firstame
               </label>
             </div>
 
@@ -264,25 +256,7 @@ const Profile = () => {
                 htmlFor="lastname"
                 className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
               >
-                lastame
-              </label>
-            </div>
-
-            <div className="relative my-7 lg:my-11">
-              <input
-                type="email"
-                name="email"
-                id="email"
-                className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                placeholder=""
-                onChange={handleInputChange}
-                defaultValue={user?.email}
-              />
-              <label
-                htmlFor="email"
-                className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
-              >
-                Email
+                Lastame
               </label>
             </div>
 
@@ -336,6 +310,7 @@ const Profile = () => {
                 Phone Number
               </label>
             </div>
+
             <div className="relative my-7">
               <input
                 type="text"
@@ -352,6 +327,7 @@ const Profile = () => {
                 Account Number
               </label>
             </div>
+
             <div className="relative my-7">
               <select
                 name="bank"

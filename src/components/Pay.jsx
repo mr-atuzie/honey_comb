@@ -4,6 +4,8 @@ import { toast } from "react-toastify";
 import axios from "axios";
 
 const Pay = ({ amount, type }) => {
+  const user = JSON.parse(localStorage.getItem("user"));
+
   const config = {
     public_key: process.env.REACT_APP_FLUTTERWAVE_KEY,
     tx_ref: Date.now(),
@@ -11,9 +13,9 @@ const Pay = ({ amount, type }) => {
     currency: "NGN",
     payment_options: "card,mobilemoney,ussd",
     customer: {
-      email: "atuzierex0@gmail.com",
+      email: user.email,
       phone_number: "08154963477",
-      name: "rex atuzie",
+      name: user.name,
     },
     customizations: {
       title: "Honey-comb-fxd",
@@ -64,9 +66,10 @@ const Pay = ({ amount, type }) => {
     },
   };
   return (
-    <button className="text-white text-sm lg:text-lg bg-[#08432d]  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4">
-      <FlutterWaveButton {...fwConfig} />
-    </button>
+    <FlutterWaveButton
+      className="text-white text-sm lg:text-lg bg-[#08432d]  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4"
+      {...fwConfig}
+    />
   );
 };
 

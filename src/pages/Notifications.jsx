@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import NotificationCard from "../components/NotificationCard";
 import { toast } from "react-toastify";
 import axios from "axios";
+import Loader from "../components/Loader";
 
 const Notifications = () => {
   const [notifications, setNotifications] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const getNotifications = async () => {
+    setLoading(true);
     try {
       const res = await axios.get(
         `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/notifications`,
@@ -16,6 +19,7 @@ const Notifications = () => {
       );
 
       setNotifications(res.data.notifications);
+      setLoading(false);
     } catch (error) {
       const message =
         (error.response &&
@@ -25,12 +29,17 @@ const Notifications = () => {
         error.toString();
 
       toast.error(message);
+      setLoading(false);
     }
   };
 
   useEffect(() => {
     getNotifications();
   }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <div>
       <div className="mx-auto">
@@ -46,6 +55,7 @@ const Notifications = () => {
             return (
               <NotificationCard
                 key={not._id}
+                id={not._id}
                 title={not.title}
                 desc={not.desc}
                 date={not.createdAt}

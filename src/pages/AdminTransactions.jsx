@@ -197,11 +197,13 @@ const AdminTransactions = () => {
                         transaction?.type === "withdrawal"
                           ? "text-red-500"
                           : "text-green-500"
-                      }   px-6 py-4 font-medium`}
+                      }   px-6 py-4 font-medium capitalize`}
                     >
                       {transaction?.type}
                     </td>
-                    <td className="px-6 py-4"> </td>
+                    <td className="px-6 py-4 capitalize">
+                      {transaction?.plan}{" "}
+                    </td>
                     <td
                       className={`${
                         transaction?.type === "withdrawal"

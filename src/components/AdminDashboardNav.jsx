@@ -2,20 +2,20 @@ import React from "react";
 import { AiFillEdit } from "react-icons/ai";
 import { BiSolidDashboard, BiTransfer } from "react-icons/bi";
 import { FaUsers } from "react-icons/fa";
+import { GiGraduateCap } from "react-icons/gi";
 import { HiMiniClipboardDocumentCheck } from "react-icons/hi2";
 // import { ImStatsBars } from "react-icons/im";
 // import { IoMdSettings } from "react-icons/io";
 import { IoNotificationsSharp } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
+import logo from "../assets/honeycomb full logo.png";
 
 const AdminDashboardNav = ({ user }) => {
   return (
     <div>
       <div>
         <div className=" w-full flex justify-center items-center py-5">
-          <p className=" uppercase font-semibold text-yellow-400 mb-4">
-            Honey comb fxd
-          </p>
+          <img className="w-40" src={logo} alt="" />
         </div>
       </div>
 
@@ -73,6 +73,20 @@ const AdminDashboardNav = ({ user }) => {
               <BiTransfer size={24} />
             </div>
             <p className="font-medium text-lg  ">Withdrawals</p>
+          </div>
+        </NavLink>
+
+        <NavLink
+          to={"/admin/register"}
+          className={({ isActive }) =>
+            isActive ? "rounded-lg bg-yellow-400 text-white w-full" : ""
+          }
+        >
+          <div className="flex gap-3 text-white items-center px-6  py-3">
+            <div className="">
+              <GiGraduateCap size={24} />
+            </div>
+            <p className="font-medium text-lg  ">Create Admin</p>
           </div>
         </NavLink>
 
