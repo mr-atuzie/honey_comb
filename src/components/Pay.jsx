@@ -1,9 +1,10 @@
 import React from "react";
 import { FlutterWaveButton, closePaymentModal } from "flutterwave-react-v3";
 import { toast } from "react-toastify";
-import axios from "axios";
+// import axios from "axios";
+import logo from "../assets/honeycomb full logo.png";
 
-const Pay = ({ amount, type }) => {
+const Pay = ({ amount, pay }) => {
   const user = JSON.parse(localStorage.getItem("user"));
 
   const config = {
@@ -20,32 +21,8 @@ const Pay = ({ amount, type }) => {
     customizations: {
       title: "Honey-comb-fxd",
       description: "Payment for items in cart",
-      logo: "https://st2.depositphotos.com/4403291/7418/v/450/depositphotos_74189661-stock-illustration-online-shop-log.jpg",
+      logo: logo,
     },
-  };
-
-  const invest = async () => {
-    const userData = { amount, type };
-    try {
-      await axios.post(
-        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/invest`,
-        userData,
-        {
-          withCredentials: true,
-        }
-      );
-    } catch (error) {
-      const message =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.message ||
-        error.toString();
-
-      console.log(error);
-
-      toast.error(message);
-    }
   };
 
   const fwConfig = {
@@ -54,7 +31,7 @@ const Pay = ({ amount, type }) => {
     callback: (response) => {
       console.log(response);
       if (response.status === "completed") {
-        invest();
+        pay();
         toast.success("Transaction successfull");
       } else {
         toast.error("Transaction failed");
