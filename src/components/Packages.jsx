@@ -3,11 +3,15 @@ import { BsCheck2 } from "react-icons/bs";
 import Pay from "./Pay";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { useSelector } from "react-redux";
+import { selectIsLoggedIn } from "../redux/features/authSlice";
 
 const Packages = ({ homePage }) => {
   const [amount, setAmout] = useState(0);
   const [duration, setDuration] = useState(0);
   const [type, setType] = useState(0);
+
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const packages = [
     {
@@ -243,7 +247,8 @@ const Packages = ({ homePage }) => {
                     Duration
                   </label>
                 </div>
-                <Pay pay={invest} />
+
+                <Pay pay={invest} amount={amount} />
               </div>
             </div>
           </div>
