@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { BsCheck2 } from "react-icons/bs";
 import Pay from "./Pay";
-import { toast } from "react-toastify";
-import axios from "axios";
 import { useSelector } from "react-redux";
 import { selectIsLoggedIn } from "../redux/features/authSlice";
 import { Link } from "react-router-dom";
@@ -51,34 +49,6 @@ const Packages = ({ homePage }) => {
     { name: "6 months", value: 6 },
     { name: "1 years", value: 12 },
   ];
-
-  const invest = async () => {
-    const userData = { amount, type, duration };
-    if (!amount || !type || !duration) {
-      return toast.error("All fields are required");
-    }
-
-    try {
-      await axios.post(
-        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/invest`,
-        userData,
-        {
-          withCredentials: true,
-        }
-      );
-    } catch (error) {
-      const message =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.message ||
-        error.toString();
-
-      console.log(error);
-
-      toast.error(message);
-    }
-  };
 
   return (
     <div className={" bg-green-50 mt-3"}>
@@ -250,7 +220,7 @@ const Packages = ({ homePage }) => {
                 </div>
 
                 {isLoggedIn ? (
-                  <Pay pay={invest} amount={amount} />
+                  <Pay amount={amount} type={type} duration={duration} />
                 ) : (
                   <Link to={"/register"}>
                     <div className="text-white text-sm lg:text-lg bg-[#08432d]  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4">
