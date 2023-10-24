@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { selectIsLoggedIn } from "../redux/features/authSlice";
+import { Link } from "react-router-dom";
 
 const Packages = ({ homePage }) => {
   const [amount, setAmout] = useState(0);
@@ -248,7 +249,15 @@ const Packages = ({ homePage }) => {
                   </label>
                 </div>
 
-                <Pay pay={invest} amount={amount} />
+                {isLoggedIn ? (
+                  <Pay pay={invest} amount={amount} />
+                ) : (
+                  <Link to={"/register"}>
+                    <div className="text-white text-sm lg:text-lg bg-[#08432d]  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4">
+                      Get started
+                    </div>
+                  </Link>
+                )}
               </div>
             </div>
           </div>
