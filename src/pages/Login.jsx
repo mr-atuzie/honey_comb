@@ -111,10 +111,10 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <div className=" my-16 lg:w-[60%]">
+      <div className=" w-full my-16 lg:w-[60%]">
         <form
           onSubmit={handleSubmit}
-          className="w-[80%] lg:w-[50%] mx-auto mb-16"
+          className="w-[90%] lg:w-[50%] mx-auto mb-16"
         >
           <div className="">
             <img className="w-40" src={logo} alt="" />

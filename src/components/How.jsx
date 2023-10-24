@@ -12,21 +12,21 @@ const How = ({ how }) => {
           <div className=" w-16 rounded-md  h-1 bg-yellow-500"></div>
         </div>
 
-        <div className=" w-full  items-center mt-14  lg:flex justify-around ">
+        <div className=" w-full  items-center mt-8  lg:flex justify-around ">
           <img
-            className=" w-[80%] mx-auto lg:w-[40%]  lg:h-[40%] rounded"
+            className=" w-[90%] mx-auto lg:w-[40%]  lg:h-[40%] rounded"
             src="https://guardian.ng/wp-content/uploads/2023/02/IMG-20230301-WA0001.jpg"
             alt=""
           />
 
           {/* text container */}
-          <div className=" w-[80%] mt-6 lg:mt-0 mx-auto lg:w-[40%]">
+          <div className=" w-[90%] mt-6 lg:mt-0 mx-auto lg:w-[40%]">
             {/* <h3 className=" text-green-600   font-semibold text-xl lg:text-3xl capitalize">
               Unleash Potentials through{" "}
               <span className=" text-yellow-500"> investing</span> and{" "}
               <span className=" text-yellow-500"> geting double</span>
             </h3> */}
-            <p className=" mt-4 text-sm lg:text-base my-3">{how}</p>
+            <p className=" mt-4 leading-7 text-sm lg:text-base my-3">{how}</p>
           </div>
         </div>
       </div>

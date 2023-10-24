@@ -8,7 +8,7 @@ import {
 import { IoNotificationsSharp } from "react-icons/io5";
 import { GiGraduateCap } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
-import logo from "../assets/honeycomb full logo.png";
+import logo from "../assets/honeycomb logo.png";
 // import { FaUsers } from "react-icons/fa6";
 
 const UserDashboardNav = ({ user }) => {

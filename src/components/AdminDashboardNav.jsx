@@ -8,7 +8,7 @@ import { HiMiniClipboardDocumentCheck } from "react-icons/hi2";
 // import { IoMdSettings } from "react-icons/io";
 import { IoNotificationsSharp } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
-import logo from "../assets/honeycomb full logo.png";
+import logo from "../assets/honeycomb logo.png";
 
 const AdminDashboardNav = ({ user }) => {
   return (

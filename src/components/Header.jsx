@@ -10,7 +10,11 @@ const Header = () => {
         <div className=" flex items-center gap-2">
           <img
             className=" w-12 h-12 rounded-full object-cover "
-            src={user?.photo}
+            src={
+              user?.photo
+                ? user?.photo
+                : "https://t4.ftcdn.net/jpg/04/08/24/43/360_F_408244382_Ex6k7k8XYzTbiXLNJgIL8gssebpLLBZQ.jpg"
+            }
             alt=""
           />
 

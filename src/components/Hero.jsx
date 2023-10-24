@@ -24,7 +24,7 @@ const Hero = () => {
   ];
 
   return (
-    <div className=" h-[75vh] lg:h-[95vh]   bg-[#08432d] w-full flex justify-center items-center ">
+    <div className=" min-h-[65vh] lg:h-[75vh] -mt-2   bg-[#08432d] w-full flex justify-center items-center ">
       <Swiper
         modules={[Pagination, Autoplay]}
         pagination={{ clickable: true }}
@@ -36,15 +36,15 @@ const Hero = () => {
         {slides.map((slide, index) => {
           return (
             <SwiperSlide key={index}>
-              <div className=" w-[90%] mx-auto flex gap-9 lg:gap-0 flex-col lg:justify-between lg:items-center lg:flex-row">
+              <div className=" w-[90%] mx-auto flex gap-5 lg:gap-0 flex-col lg:justify-between lg:items-center lg:flex-row">
                 <div className="lg:w-[50%]">
-                  <h1 className=" text-white text-3xl lg:text-7xl font-extrabold my-4 ">
+                  <h1 className=" capitalize text-white text-3xl lg:text-7xl font-extrabold my-4 ">
                     {slide.text}{" "}
                     <span className=" text-yellow-500">{slide.sub}</span>
                   </h1>
 
                   <Link to={"/register"}>
-                    <button className="hidden md:flex rounded bg-green-500 text-white px-6 py-2 capitalize hover:bg-green-700 hover:text-white border-2 border-green-700 ">
+                    <button className=" rounded bg-green-600 text-white px-4 text-xs lg:text-base lg:px-6 py-2 capitalize hover:bg-green-700 hover:text-white  ">
                       Get Started
                     </button>
                   </Link>

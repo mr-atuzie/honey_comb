@@ -7,6 +7,8 @@ import { toast } from "react-toastify";
 import { validateEmail } from "../services/authServices";
 import axios from "axios";
 import logo from "../assets/honeycomb full logo.png";
+import { useDispatch } from "react-redux";
+import { SET_LOGIN, SET_USER } from "../redux/features/authSlice";
 
 const Register = () => {
   const initialState = {
@@ -19,6 +21,7 @@ const Register = () => {
   };
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [formData, setFormData] = useState(initialState);
 
@@ -78,16 +81,16 @@ const Register = () => {
 
       const data = res.data;
 
-      localStorage.setItem(
-        "user",
-        JSON.stringify({
-          id: data?._id,
-          name: `${data?.firstname} ${data?.lastname}`,
-          email: data?.email,
-          photo: data?.photo,
-          abv: `${data?.firstname.charAt(0)}${data?.lastname.charAt(0)}`,
-        })
-      );
+      const user = {
+        id: data?._id,
+        name: `${data?.firstname} ${data?.lastname}`,
+        email: data?.email,
+        photo: data?.photo,
+        abv: `${data?.firstname.charAt(0)}${data?.lastname.charAt(0)}`,
+      };
+
+      dispatch(SET_LOGIN(true));
+      dispatch(SET_USER(user));
 
       toast.success("User Registered successfully");
       navigate("/user/dashboard");
@@ -128,10 +131,10 @@ const Register = () => {
           </div>
         </div>
       </div>
-      <div className="lg:w-[60%] my-16">
+      <div className="w-full lg:w-[60%] my-16">
         <form
           onSubmit={handleSubmit}
-          className="w-[80%] lg:w-[50%] mx-auto mb-16"
+          className=" w-[90%] lg:w-[50%] mx-auto mb-16"
         >
           <div className="">
             <img className="w-40" src={logo} alt="" />
@@ -141,7 +144,7 @@ const Register = () => {
             </h2>
           </div>
 
-          <div className=" my-5">
+          <div className=" w-full my-5">
             <label className="  text-xs lg:text-sm mb-2" htmlFor="text">
               Firstname
             </label>

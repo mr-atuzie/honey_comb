@@ -211,7 +211,8 @@ const AdminTransactions = () => {
                           : "text-green-500"
                       }   px-6 py-4 font-medium`}
                     >
-                      &#8358; {transaction?.amount}
+                      &#8358;{" "}
+                      {new Intl.NumberFormat().format(transaction.amount)}
                     </td>
                     <td className="px-6 py-4">
                       <div class="flex items-center  text-green-600">

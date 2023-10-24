@@ -17,7 +17,7 @@ import AdminTransactions from "./pages/AdminTransactions";
 import AddNotification from "./pages/AddNotification";
 import Support from "./pages/Support";
 import ApproveKyc from "./pages/ApproveKyc";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import Terms from "./pages/Terms";
@@ -34,10 +34,41 @@ import AdminWithdraw from "./pages/AdminWithdraw";
 import Notification from "./pages/Notification";
 import Private from "./components/Private";
 import AdminRegister from "./pages/AdminRegister";
-
-axios.defaults.withCredentials = true;
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { SET_LOGIN } from "./redux/features/authSlice";
 
 function App() {
+  axios.defaults.withCredentials = true;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const getLoginStatus = async () => {
+      try {
+        const res = await axios.get(
+          `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/login-status`,
+          {
+            withCredentials: true,
+          }
+        );
+
+        const loginStatus = res.data;
+
+        dispatch(SET_LOGIN(loginStatus));
+      } catch (error) {
+        const message =
+          (error.response &&
+            error.response.data &&
+            error.response.data.message) ||
+          error.message ||
+          error.toString();
+
+        toast.error(message);
+      }
+    };
+    getLoginStatus();
+  }, [dispatch]);
+
   return (
     <BrowserRouter>
       <ToastContainer />
