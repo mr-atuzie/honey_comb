@@ -3,11 +3,10 @@ import { BsCheck2 } from "react-icons/bs";
 import Pay from "./Pay";
 
 const Packages = ({ homePage }) => {
-  const user = JSON.parse(localStorage.getItem("user"));
-
   const [amount, setAmout] = useState(0);
   const [duration, setDuration] = useState(0);
   const [type, setType] = useState(0);
+
   const packages = [
     {
       name: "Low Risk Investment",
@@ -41,13 +40,10 @@ const Packages = ({ homePage }) => {
   ];
 
   const durations = [
-    { name: "3 months", value: 90 },
-    { name: "6 months", value: 180 },
-    { name: "1 years", value: 360 },
+    { name: "3 months", value: 3 },
+    { name: "6 months", value: 6 },
+    { name: "1 years", value: 12 },
   ];
-
-  console.log(user);
-  console.log(duration);
 
   return (
     <div className={" bg-green-50 mt-3"}>
@@ -61,7 +57,7 @@ const Packages = ({ homePage }) => {
           </div>
         )}
 
-        <div className=" grid grid-cols-1  md:grid-cols-2 lg:grid-cols-2  gap-4 lg:gap-10 mt-10">
+        <div className=" grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3  gap-4 lg:gap-10 mt-10">
           {packages.map((p) => {
             return (
               <div
@@ -133,7 +129,7 @@ const Packages = ({ homePage }) => {
               <div className=" text-yellow-500 flex items-center">
                 <span className=" font-bold">&#x20A6;</span>
                 <h2 className=" text-green-600 text-4xl lg:text-5xl font-bold mt-1 mb-2 ">
-                  {new Intl.NumberFormat().format(amount)}
+                  {new Intl.NumberFormat().format(amount * duration * type)}
                 </h2>
               </div>
               {/* <p className=" capitalize text-gray-800 text-xs font-medium">
