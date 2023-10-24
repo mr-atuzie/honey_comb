@@ -5,6 +5,8 @@ import { toast } from "react-toastify";
 import { validateEmail } from "../services/authServices";
 import axios from "axios";
 import logo from "../assets/honeycomb full logo.png";
+import { useDispatch } from "react-redux";
+import { SET_LOGIN, SET_USER } from "../redux/features/authSlice";
 
 const Login = () => {
   const initialState = {
@@ -13,6 +15,7 @@ const Login = () => {
   };
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [formData, setFormData] = useState(initialState);
 
@@ -60,16 +63,27 @@ const Login = () => {
       setLoading(false);
       const data = res.data;
 
-      localStorage.setItem(
-        "user",
-        JSON.stringify({
-          id: data?._id,
-          name: `${data?.firstname} ${data?.lastname}`,
-          email: data?.email,
-          photo: data?.photo,
-          abv: `${data?.firstname.charAt(0)}${data?.lastname.charAt(0)}`,
-        })
-      );
+      // localStorage.setItem(
+      //   "user",
+      //   JSON.stringify({
+      //     id: data?._id,
+      //     name: `${data?.firstname} ${data?.lastname}`,
+      //     email: data?.email,
+      //     photo: data?.photo,
+      //     abv: `${data?.firstname.charAt(0)}${data?.lastname.charAt(0)}`,
+      //   })
+      // );
+
+      const user = {
+        id: data?._id,
+        name: `${data?.firstname} ${data?.lastname}`,
+        email: data?.email,
+        photo: data?.photo,
+        abv: `${data?.firstname.charAt(0)}${data?.lastname.charAt(0)}`,
+      };
+
+      dispatch(SET_LOGIN(true));
+      dispatch(SET_USER(user));
 
       navigate("/user/dashboard");
     } catch (error) {
