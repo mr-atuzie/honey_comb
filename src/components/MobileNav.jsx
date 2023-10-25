@@ -11,7 +11,7 @@ import { NavLink } from "react-router-dom";
 
 const MobileNav = () => {
   return (
-    <div className="  z-50  lg:hidden  fixed bottom-0 left-0  w-full  bg-green-600  shadow-xl ">
+    <div className="  z-50  lg:hidden  fixed bottom-0 left-0  w-full  bg-[#08432d]  shadow-xl ">
       <div className=" px-3 py-3 flex items-center justify-between lg:hidden">
         <NavLink
           to={"/user/dashboard"}

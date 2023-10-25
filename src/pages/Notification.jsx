@@ -43,10 +43,14 @@ const Notification = () => {
     return <Loader />;
   }
   return (
-    <div>
-      <div className=" bg-white w-[90%] md:w-[45%] shadow-lg mx-auto p-5">
-        <p>{notification?.title}</p>
-        <p>{notification?.desc}</p>
+    <div className=" h-screen ">
+      <div className=" bg-white  md:w-[45%] shadow-lg mx-auto my-16  p-3 lg:p-5">
+        <h1 className=" font-semibold text-sm lg:text-base text-green-600 capitalize mb-2">
+          {notification?.title}
+        </h1>
+        <p className=" text-xs lg:text-sm text-gray-600">
+          {notification?.desc}
+        </p>
       </div>
     </div>
   );

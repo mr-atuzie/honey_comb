@@ -6,8 +6,8 @@ import { TbPigMoney } from "react-icons/tb";
 
 const UserStatCard = ({ user, referrals }) => {
   return (
-    <div className=" gap-5  grid grid-cols-2 lg:grid-cols-2">
-      <div className=" bg-white px-5 py-8 shadow-lg rounded flex items-center gap-3">
+    <div className=" gap-3 lg:gap-5  grid grid-cols-2 lg:grid-cols-2">
+      <div className=" bg-white p-3 lg:px-5 py-4 lg:py-8 shadow-lg  flex flex-col lg:flex-row lg:items-center gap-3">
         <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
           <FaUsers size={30} />
         </div>
@@ -22,7 +22,8 @@ const UserStatCard = ({ user, referrals }) => {
           </p>
         </div>
       </div>
-      <div className="  bg-white px-5 py-8 shadow-lg rounded flex items-center gap-3">
+
+      <div className=" bg-white p-3 lg:px-5 py-4 lg:py-8 shadow-lg  flex flex-col lg:flex-row lg:items-center gap-3">
         <div className=" w-fit p-4 bg-red-100 text-red-500 flex justify-center items-center rounded-md">
           <GiMoneyStack size={30} />
         </div>
@@ -35,7 +36,8 @@ const UserStatCard = ({ user, referrals }) => {
           <p className="text-xs lg:text-sm  text-gray-500 ">Total Intrest</p>
         </div>
       </div>
-      <div className=" bg-white px-5 py-8 shadow-lg rounded flex items-center gap-3">
+
+      <div className=" bg-white p-3 lg:px-5 py-4 lg:py-8 shadow-lg  flex flex-col lg:flex-row lg:items-center gap-3">
         <div className=" w-fit p-4 bg-purple-100 text-purple-500 flex justify-center items-center rounded-md">
           <TbPigMoney size={30} />
         </div>
@@ -48,7 +50,8 @@ const UserStatCard = ({ user, referrals }) => {
           <p className="text-xs lg:text-sm  text-gray-500 ">Referral Bonus</p>
         </div>
       </div>
-      <div className=" bg-white px-5 py-8 shadow-lg rounded flex items-center gap-3">
+
+      <div className=" bg-white p-3 lg:px-5 py-4 lg:py-8 shadow-lg  flex flex-col lg:flex-row lg:items-center gap-3">
         <div className=" w-fit p-4 bg-orange-100 text-orange-500 flex justify-center items-center rounded-md">
           <ImStatsBars size={30} />
         </div>

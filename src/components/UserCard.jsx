@@ -10,7 +10,7 @@ const UserCard = ({ user }) => {
   };
 
   return (
-    <div className=" h-full  bg-gray-50 shadow-lg flex flex-col justify-between  px-4 py-6 lg:p-8 rounded">
+    <div className=" h-full  bg-white shadow-lg flex flex-col justify-between  px-4 py-6 lg:p-8 rounded">
       <div className=" mb-4 flex justify-between items-center">
         <div>
           <p className=" text-xs lg:text-sm  text-gray-500 ">
@@ -39,18 +39,18 @@ const UserCard = ({ user }) => {
           <h2 className=" text-xs lg:text-sm font-medium  ">{user?._id}</h2>
         </div>
 
-        <FaRegCopy />
+        <FaRegCopy className=" text-gray-500" />
       </div>
 
       <div className=" mt-8 flex gap-2  ">
         <Link to={"/user/packages"}>
-          <button className=" text-white bg-[#08432d]  py-2 lg:py-3 text-center font-medium rounded text-xs lg:text-sm px-4 lg:px-8">
+          <button className=" text-white bg-[#08432d]  py-3 text-center font-medium rounded text-xs lg:text-sm px-4 lg:px-8">
             Invest
           </button>
         </Link>
 
         <Link to={"/user/withdraw"}>
-          <button className="text-white bg-[#08432d]   py-2 lg:py-3 text-center font-medium rounded  text-xs  lg:text-sm px-4 lg:px-8">
+          <button className="text-white bg-[#08432d]  py-3 text-center font-medium rounded  text-xs  lg:text-sm px-4 lg:px-8">
             Withdraw
           </button>
         </Link>

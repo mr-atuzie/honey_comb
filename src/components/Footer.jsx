@@ -1,20 +1,20 @@
 import React from "react";
-import { MdVerified } from "react-icons/md";
+// import { MdVerified } from "react-icons/md";
 import { BsFacebook, BsLinkedin } from "react-icons/bs";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import logo from "../assets/honeycomb full logo.png";
 
 const Footer = () => {
-  const F1 = ["Agriculture", "Forex", "real estate", "Crypto"];
-  const F2 = [
-    "Forex Trading",
-    "Cryptocurrency Investments",
-    "Agriculture Investments",
-    "Investment Security",
-    "Foreign Investment",
-    "Low investment minimums",
-    "Expert Financial Guidance",
-  ];
+  // const F1 = ["Agriculture", "Forex", "real estate", "Crypto"];
+  // const F2 = [
+  //   "Forex Trading",
+  //   "Cryptocurrency Investments",
+  //   "Agriculture Investments",
+  //   "Investment Security",
+  //   "Foreign Investment",
+  //   "Low investment minimums",
+  //   "Expert Financial Guidance",
+  // ];
   return (
     <div className="h-full lg:h-[60vh] bg-white  py-10 ">
       <div className=" w-[90%] md:w-[80%] mx-auto ">
@@ -23,7 +23,7 @@ const Footer = () => {
             <img className=" w-28 lg:w-40" src={logo} alt="" />
 
             <p className="text-xs mt-1 lg:text-base">
-              Recieve updates, hot deals , discounts sent straight to inbox.
+              Subscribe to recieve our newsletter
             </p>
 
             <div className=" flex bg-white items-center border-[#08432d] border-2  mt-3">
@@ -38,7 +38,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className=" mt-6 lg:mt-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {/* <div className=" mt-6 lg:mt-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             <div>
               <div className="uppercase font-medium text-sm lg:text-base mb-2">
                 WE MAKE LIFE EASIER FOR;
@@ -67,26 +67,26 @@ const Footer = () => {
                   </div>
                 );
               })}
+            </div> */}
+
+          <div>
+            <div className=" uppercase font-medium  text-sm lg:text-base    mb-2">
+              Let's continue the conversation
             </div>
+            <div className="flex gap-4 lg:gap-8 items-center">
+              <AiFillTwitterCircle color="#00acee" size={30} />
 
-            <div>
-              <div className=" uppercase font-medium  text-sm lg:text-base    mb-2">
-                Let's continue the conversation
-              </div>
-              <div className="flex gap-4 lg:gap-8 items-center">
-                <AiFillTwitterCircle color="#00acee" size={30} />
+              <BsFacebook className=" text-[#3b5998]" size={30} />
 
-                <BsFacebook className=" text-[#3b5998]" size={30} />
-
-                <BsLinkedin className=" text-[#0072b1]" size={30} />
-              </div>
-              <div className=" text-xs lg:text-sm text-gray-700 font-medium mt-8">
-                &copy; 2023 Honey comb fxd farm
-              </div>
+              <BsLinkedin className=" text-[#0072b1]" size={30} />
+            </div>
+            <div className=" text-xs lg:text-sm text-gray-700 font-medium mt-8">
+              &copy; 2023 Honey comb fxd farm
             </div>
           </div>
         </div>
       </div>
+      {/* </div> */}
     </div>
   );
 };

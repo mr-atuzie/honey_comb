@@ -116,7 +116,7 @@ const Transactions = () => {
       </div>
 
       <div className="lg:hidden bg-white lg:mx-auto">
-        <UserTransactions />
+        <UserTransactions transactions={transactions} />
       </div>
       {transactions?.length < 1 && (
         <p className=" text-gray-500">No Transaction found</p>

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 // import UserLineGraph from "../components/UserLineGraph";
 import UserTransactions from "../components/UserTransactions";
-import UserLinearGraph from "../components/UserLinearGraph";
+// import UserLinearGraph from "../components/UserLinearGraph";
 import UserStatCard from "../components/UserStatCard";
 // import UserBarChart from "../components/UserBarChart";
-import Notification from "../components/Notification";
+// import Notification from "../components/Notification";
 // import UserAreaChart from "../components/UserAreaChart";
 import UserCard from "../components/UserCard";
 // import UserPieChart from "../components/UserPieChart";
@@ -16,6 +16,7 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Loader from "../components/Loader";
+import UserReferral from "../components/UserReferral";
 
 const UserDashboard = () => {
   const [transactions, setTransactions] = useState([]);
@@ -399,22 +400,18 @@ const UserDashboard = () => {
       </div>
 
       <div className="lg:hidden">
-        <UserCard />
-        <div className=" lg:w-[35%] ">
-          <UserTransactions />
+        <UserCard user={user} />
+
+        <div className=" my-6 ">
+          <UserStatCard user={user} referrals={referrals.length} />
         </div>
 
-        <div className=" lg:w-[30%]  ">
-          <UserStatCard />
+        <div className="my-6  ">
+          <UserTransactions transactions={transactions.slice(0, 7)} />
         </div>
 
-        <div className=" my-10 lg:my-0 lg:w-[32%] ">
-          <UserLinearGraph />
-        </div>
-
-        <div className=" lg:w-[50%]">
-          {/* Notification */}
-          <Notification />
+        <div>
+          <UserReferral referrals={referrals} />
         </div>
       </div>
     </div>

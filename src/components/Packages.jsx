@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { BsCheck2 } from "react-icons/bs";
 import Pay from "./Pay";
-import { useSelector } from "react-redux";
-import { selectIsLoggedIn } from "../redux/features/authSlice";
-import { Link } from "react-router-dom";
+// import { useSelector } from "react-redux";
+// import { selectIsLoggedIn } from "../redux/features/authSlice";
+// import { Link } from "react-router-dom";
 
 const Packages = ({ homePage }) => {
   const [amount, setAmout] = useState(0);
   const [duration, setDuration] = useState(0);
   const [type, setType] = useState(0);
 
-  const isLoggedIn = useSelector(selectIsLoggedIn);
+  // const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const packages = [
     {
@@ -218,16 +218,16 @@ const Packages = ({ homePage }) => {
                     Duration
                   </label>
                 </div>
+                <Pay amount={amount} type={type} duration={duration} />
 
-                {isLoggedIn ? (
-                  <Pay amount={amount} type={type} duration={duration} />
+                {/* {isLoggedIn ? (
                 ) : (
                   <Link to={"/register"}>
                     <div className="text-white text-sm lg:text-lg bg-[#08432d]  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4">
                       Get started
                     </div>
                   </Link>
-                )}
+                )} */}
               </div>
             </div>
           </div>

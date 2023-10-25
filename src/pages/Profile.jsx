@@ -141,7 +141,7 @@ const Profile = () => {
           Profile
         </h1>
 
-        <div className=" flex gap-8 items-center my-4">
+        <div className=" flex gap-4 lg:gap-8 items-center my-4">
           <NavLink
             to={"/user/profile"}
             className={({ isActive }) =>
@@ -162,10 +162,10 @@ const Profile = () => {
         </div>
       </div>
 
-      <div className=" bg-white w-[90%] md:w-[45%] shadow-lg mx-auto p-5">
+      <div className=" bg-white md:w-[45%] shadow-lg mx-auto p-3 lg:p-5">
         {/* form */}
         <div className=" mt-4">
-          <div className="w-[90%] md:w-[45%] mx-auto ">
+          <div className="md:w-[45%] mx-auto ">
             {/* image change */}
             <div className=" flex  justify-center items-center mt-6 ">
               {imagePreview != null ? (
@@ -362,7 +362,7 @@ const Profile = () => {
             <button
               disabled={formLoader}
               type="submit"
-              className=" bg-green-600 text-white rounded-lg text-sm w-full p-3 text-center font-medium disabled:bg-green-300"
+              className=" bg-[#08432d] text-white rounded-lg text-sm w-full p-3 text-center font-medium disabled:bg-green-300"
             >
               {formLoader ? "Loading" : "Submit"}
             </button>
