@@ -8,7 +8,7 @@ import { validateEmail } from "../services/authServices";
 import axios from "axios";
 import logo from "../assets/honeycomb full logo.png";
 import { useDispatch } from "react-redux";
-import { SET_LOGIN, SET_USER } from "../redux/features/authSlice";
+import { SET_USER } from "../redux/features/authSlice";
 
 const Register = () => {
   const initialState = {
@@ -89,11 +89,10 @@ const Register = () => {
         abv: `${data?.firstname.charAt(0)}${data?.lastname.charAt(0)}`,
       };
 
-      dispatch(SET_LOGIN(true));
       dispatch(SET_USER(user));
 
       toast.success("User Registered successfully");
-      navigate("/user/dashboard");
+      navigate("/email-sent");
     } catch (error) {
       const message =
         (error.response &&
@@ -137,7 +136,7 @@ const Register = () => {
           className=" w-[90%] lg:w-[50%] mx-auto mb-16"
         >
           <div className="">
-            <img className="w-40" src={logo} alt="" />
+            <img className="w-28 lg:w-40" src={logo} alt="" />
 
             <h2 className="text-2xl lg:text-4xl font-bold  text-green-700 mt-4 ">
               Create your Account

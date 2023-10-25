@@ -37,6 +37,9 @@ import AdminRegister from "./pages/AdminRegister";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { SET_LOGIN } from "./redux/features/authSlice";
+import EmailSent from "./pages/EmailSent";
+import VerifyEmail from "./pages/VerifyEmail";
+import AdminLogin from "./pages/AdminLogin";
 
 function App() {
   axios.defaults.withCredentials = true;
@@ -78,22 +81,27 @@ function App() {
         <Route path="/service" element={<How />} />
         <Route path="/contact" element={<Cont />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/email-sent" element={<EmailSent />} />
+        <Route path="/verify-email/:id" element={<VerifyEmail />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/terms-and-condition" element={<Terms />} />
 
-        <Route path="/admin" element={<AdminLayout />}>
-          <Route path="dashboard" element={<AdminDashboard />} />
-          <Route path="statistics" element={<AdminStat />} />
-          <Route path="users-list" element={<UsersList />} />
-          <Route path="transactions" element={<AdminTransactions />} />
-          <Route path="add-notifications" element={<AddNotification />} />
-          <Route path="approve-kyc" element={<ApproveKyc />} />
-          <Route path="user-profile/:id" element={<UserProfile />} />
-          <Route path="content-management" element={<Cm />} />
-          <Route path="search" element={<Search />} />
-          <Route path="withdraw" element={<AdminWithdraw />} />
-          <Route path="register" element={<AdminRegister />} />
+        <Route element={<Private />}>
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route path="dashboard" element={<AdminDashboard />} />
+            <Route path="statistics" element={<AdminStat />} />
+            <Route path="users-list" element={<UsersList />} />
+            <Route path="transactions" element={<AdminTransactions />} />
+            <Route path="add-notifications" element={<AddNotification />} />
+            <Route path="approve-kyc" element={<ApproveKyc />} />
+            <Route path="user-profile/:id" element={<UserProfile />} />
+            <Route path="content-management" element={<Cm />} />
+            <Route path="search" element={<Search />} />
+            <Route path="withdraw" element={<AdminWithdraw />} />
+            <Route path="register" element={<AdminRegister />} />
+            <Route path="login" element={<AdminLogin />} />
+          </Route>
         </Route>
 
         <Route element={<Private />}>

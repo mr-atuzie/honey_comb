@@ -1,7 +1,7 @@
 import React from "react";
 import { FlutterWaveButton, closePaymentModal } from "flutterwave-react-v3";
 import { toast } from "react-toastify";
-// import axios from "axios";
+import axios from "axios";
 // import logo from "../assets/honeycomb full logo.png";
 // import axios from "axios";
 
@@ -26,30 +26,30 @@ const Pay = ({ amount, type, duration }) => {
     },
   };
 
-  // const invest = async () => {
-  //   const userData = { amount, type, duration };
+  const invest = async () => {
+    const userData = { amount, type, duration };
 
-  //   try {
-  //     await axios.post(
-  //       `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/invest`,
-  //       userData,
-  //       {
-  //         withCredentials: true,
-  //       }
-  //     );
-  //   } catch (error) {
-  //     const message =
-  //       (error.response &&
-  //         error.response.data &&
-  //         error.response.data.message) ||
-  //       error.message ||
-  //       error.toString();
+    try {
+      await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/invest`,
+        userData,
+        {
+          withCredentials: true,
+        }
+      );
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
 
-  //     console.log(error);
+      console.log(error);
 
-  //     toast.error(message);
-  //   }
-  // };
+      toast.error(message);
+    }
+  };
 
   const fwConfig = {
     ...config,
@@ -57,7 +57,7 @@ const Pay = ({ amount, type, duration }) => {
     callback: (response) => {
       console.log(response);
       if (response.status === "completed") {
-        // invest();
+        invest();
         toast.success("Transaction successfull");
       } else {
         toast.error("Transaction failed");

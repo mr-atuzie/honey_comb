@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import Loader from "../components/Loader";
 import moment from "moment";
 import AdminHeader from "../components/AdminHeader";
+import { Link } from "react-router-dom";
 
 const AdminWithdraw = () => {
   const [transactions, setTransactions] = useState([]);
@@ -82,6 +83,10 @@ const AdminWithdraw = () => {
                 <th scope="col" className="px-6 py-3">
                   Status
                 </th>
+
+                <th scope="col" className="px-6 py-3">
+                  Action
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -135,6 +140,10 @@ const AdminWithdraw = () => {
                     >
                       {transaction?.status}
                     </td>
+
+                    <Link to={`/admin/user-profile/${transaction.userId}`}>
+                      <td className="px-6 py-4 text-blue-500">view user</td>
+                    </Link>
                   </tr>
                 );
               })}

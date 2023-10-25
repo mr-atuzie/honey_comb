@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { BsCheck2 } from "react-icons/bs";
 import Pay from "./Pay";
-// import { useSelector } from "react-redux";
-// import { selectIsLoggedIn } from "../redux/features/authSlice";
-// import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectIsLoggedIn } from "../redux/features/authSlice";
+import { Link } from "react-router-dom";
 
 const Packages = ({ homePage }) => {
-  const [amount, setAmout] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const [type, setType] = useState(0);
+  const [amount, setAmout] = useState(10000);
+  const [duration, setDuration] = useState(1);
+  const [type, setType] = useState(1);
 
-  // const isLoggedIn = useSelector(selectIsLoggedIn);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const packages = [
     {
@@ -100,28 +100,6 @@ const Packages = ({ homePage }) => {
                     );
                   })}
                 </ul>
-
-                {/* {user && (
-                  <div>
-                    <div className="relative mt-11 mb-4">
-                      <input
-                        type="text"
-                        name="amount"
-                        id="amount"
-                        className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                        placeholder=""
-                        onChange={(e) => setAmout(e.target.value)}
-                      />
-                      <label
-                        htmlFor="amount"
-                        className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
-                      >
-                        Amount
-                      </label>
-                    </div>
-                    <Pay amount={amount} type={p.type} />
-                  </div>
-                )} */}
               </div>
             );
           })}
@@ -129,7 +107,7 @@ const Packages = ({ homePage }) => {
           <div className="bg-white p-4  h-fit shadow-md rounded-md ">
             <div className=" flex flex-col justify-center items-center">
               <h1 className=" text-red-500 lg:text-lg font-semibold tracking-wide uppercase">
-                Calcute intrest
+                Calculate intrest
               </h1>
               <div className=" text-yellow-500 flex items-center">
                 <span className=" font-bold">&#x20A6;</span>
@@ -166,7 +144,7 @@ const Packages = ({ homePage }) => {
                     className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     onChange={(e) => setDuration(e.target.value)}
                   >
-                    <option className=" text-sm lg:text-base">
+                    <option className=" text-xs lg:text-base">
                       Select Duration
                     </option>
                     {durations.map((d, index) => {
@@ -215,19 +193,21 @@ const Packages = ({ homePage }) => {
                     htmlFor="bank"
                     className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
                   >
-                    Duration
+                    Type
                   </label>
                 </div>
-                <Pay amount={amount} type={type} duration={duration} />
 
-                {/* {isLoggedIn ? (
-                ) : (
-                  <Link to={"/register"}>
-                    <div className="text-white text-sm lg:text-lg bg-[#08432d]  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4">
+                {isLoggedIn && (
+                  <Pay amount={amount} type={type} duration={duration} />
+                )}
+
+                {!isLoggedIn && (
+                  <Link to={"/login"}>
+                    <button className="text-white text-sm lg:text-lg bg-[#08432d]  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4">
                       Get started
-                    </div>
+                    </button>
                   </Link>
-                )} */}
+                )}
               </div>
             </div>
           </div>

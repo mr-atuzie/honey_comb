@@ -80,7 +80,10 @@ const UserProfile = () => {
           <div className="">
             <h2 className=" text-2xl font-semibold">
               {" "}
-              &#8358; {user?.accountBalance + user?.intrest}
+              &#8358;{" "}
+              {new Intl.NumberFormat().format(
+                user?.accountBalance + user?.intrest + user?.referralBonus
+              )}
             </h2>
             <p className=" capitalize  font-medium text-gray-900">
               Total Balance
@@ -95,7 +98,7 @@ const UserProfile = () => {
           <div className="">
             <h2 className=" text-2xl font-semibold">
               {" "}
-              &#8358; {user?.accountBalance}
+              &#8358;{new Intl.NumberFormat().format(user?.accountBalance)}
             </h2>
             <p className=" capitalize  font-medium text-gray-900">Investment</p>
           </div>
@@ -106,7 +109,11 @@ const UserProfile = () => {
           </div>
 
           <div className="">
-            <h2 className=" text-2xl font-semibold"> &#8358;{user?.intrest}</h2>
+            <h2 className=" text-2xl font-semibold">
+              {" "}
+              &#8358;
+              {new Intl.NumberFormat().format(user?.intrest)}
+            </h2>
             <p className=" capitalize  font-medium text-gray-900">Intrest</p>
           </div>
         </div>
