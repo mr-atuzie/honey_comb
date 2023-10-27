@@ -1,5 +1,7 @@
 import React from "react";
+import { useState } from "react";
 import { BsCheck2 } from "react-icons/bs";
+import Warning from "./Warning";
 // import Pay from "./Pay";
 // import { useSelector } from "react-redux";
 // import { selectIsLoggedIn } from "../redux/features/authSlice";
@@ -8,6 +10,7 @@ import { BsCheck2 } from "react-icons/bs";
 const Packages = ({ homePage }) => {
   // const [amount, setAmout] = useState(10000);
   // const [duration, setDuration] = useState(1);
+  const [warning, setWarning] = useState(false);
   // const [type, setType] = useState(1);
 
   // const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -52,11 +55,13 @@ const Packages = ({ homePage }) => {
 
   const handleInvest = (name) => {
     if (name === "High Risk Investment") {
+      setWarning(true);
     }
   };
 
   return (
     <div className={"  bg-green-50"}>
+      {warning && <Warning warning={warning} setWarning={setWarning} />}
       <div className="w-[90%] mx-auto py-10 lg:py-20">
         {homePage && (
           <div className=" text-center flex flex-col justify-center items-center ">
