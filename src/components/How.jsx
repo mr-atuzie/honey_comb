@@ -15,7 +15,7 @@ const How = ({ how }) => {
         <div className=" w-full  items-center mt-8  lg:flex justify-around ">
           <img
             className=" w-[90%] mx-auto lg:w-[40%]  lg:h-[40%] rounded"
-            src="https://guardian.ng/wp-content/uploads/2023/02/IMG-20230301-WA0001.jpg"
+            src="https://img.freepik.com/premium-vector/money-tree-concept_118813-7216.jpg?size=626&ext=jpg&uid=R105802964&ga=GA1.1.795360759.1692018039&semt=ais"
             alt=""
           />
 

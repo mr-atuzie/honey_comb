@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { BsCheck2 } from "react-icons/bs";
-import Pay from "./Pay";
-import { useSelector } from "react-redux";
-import { selectIsLoggedIn } from "../redux/features/authSlice";
-import { Link } from "react-router-dom";
+// import Pay from "./Pay";
+// import { useSelector } from "react-redux";
+// import { selectIsLoggedIn } from "../redux/features/authSlice";
+// import { Link } from "react-router-dom";
 
 const Packages = ({ homePage }) => {
-  const [amount, setAmout] = useState(10000);
-  const [duration, setDuration] = useState(1);
-  const [type, setType] = useState(1);
+  // const [amount, setAmout] = useState(10000);
+  // const [duration, setDuration] = useState(1);
+  // const [type, setType] = useState(1);
 
-  const isLoggedIn = useSelector(selectIsLoggedIn);
+  // const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const packages = [
     {
@@ -39,19 +39,24 @@ const Packages = ({ homePage }) => {
     },
   ];
 
-  const types = [
-    { name: "Low Risk Investment", value: 0.03 },
-    { name: "High Risk Investment", value: 0.15 },
-  ];
+  // const types = [
+  //   { name: "Low Risk Investment", value: 0.03 },
+  //   { name: "High Risk Investment", value: 0.15 },
+  // ];
 
-  const durations = [
-    { name: "3 months", value: 3 },
-    { name: "6 months", value: 6 },
-    { name: "1 years", value: 12 },
-  ];
+  // const durations = [
+  //   { name: "3 months", value: 3 },
+  //   { name: "6 months", value: 6 },
+  //   { name: "1 years", value: 12 },
+  // ];
+
+  const handleInvest = (name) => {
+    if (name === "High Risk Investment") {
+    }
+  };
 
   return (
-    <div className={" bg-green-50 mt-3"}>
+    <div className={"  bg-green-50"}>
       <div className="w-[90%] mx-auto py-10 lg:py-20">
         {homePage && (
           <div className=" text-center flex flex-col justify-center items-center ">
@@ -62,7 +67,7 @@ const Packages = ({ homePage }) => {
           </div>
         )}
 
-        <div className=" grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3  gap-4 lg:gap-10 mt-10">
+        <div className=" flex flex-col lg:flex-row gap-6 justify-around mt-10">
           {packages.map((p) => {
             return (
               <div
@@ -100,11 +105,18 @@ const Packages = ({ homePage }) => {
                     );
                   })}
                 </ul>
+
+                <button
+                  onClick={() => handleInvest(p.name)}
+                  className="text-white text-sm lg:text-lg bg-[#08432d]  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4"
+                >
+                  Get started
+                </button>
               </div>
             );
           })}
 
-          <div className="bg-white p-4  h-fit shadow-md rounded-md ">
+          {/* <div className="bg-white p-4  h-fit shadow-md rounded-md ">
             <div className=" flex flex-col justify-center items-center">
               <h1 className=" text-red-500 lg:text-lg font-semibold tracking-wide uppercase">
                 Calculate intrest
@@ -115,9 +127,9 @@ const Packages = ({ homePage }) => {
                   {new Intl.NumberFormat().format(amount * duration * type)}
                 </h2>
               </div>
-              {/* <p className=" capitalize text-gray-800 text-xs font-medium">
+              <p className=" capitalize text-gray-800 text-xs font-medium">
                 {duration}
-              </p> */}
+              </p>
 
               <div className=" w-full">
                 <div className="relative mt-11 mb-4">
@@ -210,7 +222,7 @@ const Packages = ({ homePage }) => {
                 )}
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

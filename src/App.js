@@ -22,6 +22,7 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import Terms from "./pages/Terms";
 import Packages from "./components/Packages";
+import PackagesPage from "./pages/Packages";
 import UserProfile from "./pages/UserProfile";
 import Cm from "./pages/Cm";
 import AdminStat from "./pages/AdminStat";
@@ -79,6 +80,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/service" element={<How />} />
+        <Route path="/packages" element={<PackagesPage />} />
         <Route path="/contact" element={<Cont />} />
         <Route path="/register" element={<Register />} />
         <Route path="/email-sent" element={<EmailSent />} />

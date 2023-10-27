@@ -43,7 +43,7 @@ const Faq = () => {
               )}
             </div>
             {f1 && (
-              <div className=" p-5 text-xs lg:text-base">
+              <div className=" p-3 lg:p-5 text-xs lg:text-base">
                 <p>
                   We offer different investment options to suit your needs and
                   budget, including forex, crypto, and agriculture.
@@ -75,7 +75,7 @@ const Faq = () => {
               )}
             </div>
             {f2 && (
-              <div className=" p-5 text-xs lg:text-base">
+              <div className=" p-3 lg:p-5 text-xs lg:text-base">
                 <p>
                   The minimum investment amount varies depending on the
                   investment option you choose. Please visit our website for
@@ -108,7 +108,7 @@ const Faq = () => {
               )}
             </div>
             {f3 && (
-              <div className=" p-5 text-xs lg:text-base">
+              <div className=" p-3 lg:p-5 text-xs lg:text-base">
                 <p>
                   To open an account and start investing, simply visit our
                   website and sign up. Once your account is verified, you can
@@ -141,7 +141,7 @@ const Faq = () => {
               )}
             </div>
             {f4 && (
-              <div className=" p-5 text-xs lg:text-base">
+              <div className=" p-3 lg:p-5 text-xs lg:text-base">
                 <p>
                   We offer competitive fees on all of our investments.5%
                   mandatory registration fee upon deposit
@@ -173,7 +173,7 @@ const Faq = () => {
               )}
             </div>
             {f5 && (
-              <div className=" p-5 text-xs lg:text-base">
+              <div className=" p-3 lg:p-5 text-xs lg:text-base">
                 <p>
                   Investing is always associated with risk. Your investment's
                   value can go down and up, and you may lose some or all of your
@@ -207,7 +207,7 @@ const Faq = () => {
               )}
             </div>
             {f6 && (
-              <div className=" p-5 text-sm lg:text-base">
+              <div className=" p-3 lg:p-5 text-xs lg:text-base">
                 <p>Withdrawal is made through bank transfer</p>
               </div>
             )}
@@ -236,7 +236,7 @@ const Faq = () => {
               )}
             </div>
             {f7 && (
-              <div className=" p-5 text-xs lg:text-base">
+              <div className=" p-3 lg:p-5 text-xs lg:text-base">
                 <p>
                   Withdrawal requests are typically processed within 1-3
                   business days. For First-time investors, withdrawals are

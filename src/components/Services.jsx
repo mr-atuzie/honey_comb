@@ -15,7 +15,7 @@ const Services = ({ value }) => {
         <div className=" w-full  items-center mt-14  lg:flex justify-around flex-row-reverse ">
           <img
             className=" w-[90%] mx-auto lg:w-[40%]  lg:h-[40%] rounded"
-            src="https://img.freepik.com/free-photo/desk-scene-with-laptop_23-2147626521.jpg?w=996&t=st=1695735525~exp=1695736125~hmac=d8510eeab281f2654b7ffd9387d8405a7c3e48cfbac0f54fb5e8d452f6928ca6"
+            src="https://img.freepik.com/free-vector/organic-flat-design-csr-concept-illustrated_23-2148916672.jpg?size=626&ext=jpg&uid=R105802964&ga=GA1.1.795360759.1692018039&semt=ais"
             alt=""
           />
 

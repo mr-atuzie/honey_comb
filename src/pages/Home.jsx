@@ -6,12 +6,12 @@ import Services from "../components/Services";
 import Footer from "../components/Footer";
 import How from "../components/How";
 import Contact from "../components/Contact";
-import Packages from "../components/Packages";
 import Faq from "../components/Faq";
 import Terms from "../components/Terms";
 import axios from "axios";
 import Loader from "../components/Loader";
 import { toast } from "react-toastify";
+import Ready from "../components/Ready";
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
@@ -54,7 +54,7 @@ const Home = () => {
       <About about={content?.about} />
       <Services value={content?.value} />
       <How how={content?.how} />
-      <Packages homePage />
+      <Ready />
       <Terms />
       <Faq />
       <Contact />

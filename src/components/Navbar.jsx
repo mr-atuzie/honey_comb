@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { IoCloseOutline } from "react-icons/io5";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import logo from "../assets/honeycomb logo.png";
+import logo2 from "../assets/honeycomb full logo.png";
 import ShowOnLogIn, { ShowOnLogOut } from "../protect/Protect";
 
 const Navbar = () => {
@@ -12,7 +13,7 @@ const Navbar = () => {
   const links = [
     { id: 1, link: "/", name: "Home" },
     { id: 2, link: "/about", name: "Who we are" },
-    { id: 3, link: "/service", name: "How we do it" },
+    { id: 3, link: "/packages", name: "Packages" },
     { id: 4, link: "/contact", name: "Contact us" },
   ];
 
@@ -50,7 +51,7 @@ const Navbar = () => {
 
             <Link to={"/register"}>
               <button className="hidden md:flex rounded bg-green-500 text-white px-6 py-2 capitalize hover:bg-yellow-500 hover:text-white  ">
-                Sign Up
+                Create Account
               </button>
             </Link>
           </div>
@@ -58,7 +59,7 @@ const Navbar = () => {
 
         <ShowOnLogIn>
           <Link to={"/user/dashboard"}>
-            <div className=" hidden lg:flex items-center gap-2">
+            <div className=" cursor-pointer hidden lg:flex items-center gap-2">
               <img
                 className=" w-12 h-12 rounded-full object-cover "
                 src={
@@ -89,7 +90,7 @@ const Navbar = () => {
       {nav && (
         <div className=" p-4 z-40 duration-300 flex flex-col fixed  shadow-md bg-green-50 top-0 right-0  w-[80vw] h-screen">
           <div className=" flex justify-between items-center">
-            <img className="w-40" src={logo} alt="" />
+            <img className="w-28 lg:w-40" src={logo2} alt="" />
 
             <button onClick={handleNav} className="   cursor-pointer ">
               {nav ? (
@@ -115,11 +116,21 @@ const Navbar = () => {
             })}
           </ul>
 
-          {/* <Link to={"/register"}>
-            <button className=" border-2 border-yellow-500 text-sm lg:text-base rounded bg-green-700 mt-6 text-white px-6 py-2.5 lg:py-3 capitalize hover:bg-white hover:text-black hover:border-2 hover:border-black ">
-              Register
-            </button>
-          </Link> */}
+          <ShowOnLogOut>
+            <Link to={"/register"}>
+              <button className=" border-2 border-yellow-500 text-sm lg:text-base rounded bg-green-700 mt-3 text-white px-6 py-2.5 lg:py-3 capitalize hover:bg-white hover:text-black hover:border-2 hover:border-black ">
+                Create Account
+              </button>
+            </Link>
+          </ShowOnLogOut>
+
+          <ShowOnLogIn>
+            <Link to={"/user/dashbaord"}>
+              <button className=" border-2 border-yellow-500 text-sm lg:text-base rounded bg-green-700 mt-3 text-white px-6 py-2.5 lg:py-3 capitalize hover:bg-white hover:text-black hover:border-2 hover:border-black ">
+                Dashboard
+              </button>
+            </Link>
+          </ShowOnLogIn>
         </div>
       )}
     </div>

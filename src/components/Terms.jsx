@@ -11,9 +11,9 @@ const Terms = () => {
       </div>
       <div className=" w-[90%]   mx-auto flex flex-col lg:flex-row items-center justify-center lg:items-center lg:justify-between mt-6 ">
         <div className="  lg:w-[50%] ">
-          <p className=" text-white text-center text-sm lg:text-base">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis
-            exercitationem vel.
+          <p className=" text-white text-center lg:text-left font-medium text-sm lg:text-base">
+            PLEASE READ AND UNDERSTAND THE TERMS OF AGREEMENT CAREFULLY BEFORE
+            AGREEING TO BE BOUND BY ITS TERMS
           </p>
         </div>
         <div className=" flex justify-center items-center mt-6">

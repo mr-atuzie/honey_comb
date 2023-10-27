@@ -15,7 +15,7 @@ const About = ({ about }) => {
         <div className=" w-full  items-center mt-14  lg:flex justify-around ">
           <img
             className=" w-[90%] mx-auto lg:w-[40%]  lg:h-[40%] rounded"
-            src="https://img.freepik.com/premium-photo/businessman-protection-money-table-with-tree_34152-1752.jpg?size=626&ext=jpg&uid=R74218588&ga=GA1.2.89680559.1678048408&semt=sph"
+            src="https://img.freepik.com/free-vector/investing-concept-illustration_114360-6492.jpg?size=626&ext=jpg&uid=R105802964&ga=GA1.1.795360759.1692018039&semt=ais"
             alt=""
           />
 

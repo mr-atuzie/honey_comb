@@ -1,11 +1,11 @@
 import React from "react";
-// import { MdVerified } from "react-icons/md";
+import { MdVerified } from "react-icons/md";
 import { BsFacebook, BsLinkedin } from "react-icons/bs";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import logo from "../assets/honeycomb full logo.png";
 
 const Footer = () => {
-  // const F1 = ["Agriculture", "Forex", "real estate", "Crypto"];
+  const F1 = ["About Us", "Terms and Condition", "Learn more"];
   // const F2 = [
   //   "Forex Trading",
   //   "Cryptocurrency Investments",
@@ -38,10 +38,10 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* <div className=" mt-6 lg:mt-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className=" mt-6 lg:mt-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
             <div>
               <div className="uppercase font-medium text-sm lg:text-base mb-2">
-                WE MAKE LIFE EASIER FOR;
+                LEARN MORE
               </div>
               {F1.map((data, index) => {
                 return (
@@ -54,7 +54,7 @@ const Footer = () => {
                 );
               })}
             </div>
-            <div>
+            {/* <div>
               <div className="uppercase font-medium text-sm lg:text-base mb-2">
                 more about us;
               </div>
@@ -69,24 +69,24 @@ const Footer = () => {
               })}
             </div> */}
 
-          <div>
-            <div className=" uppercase font-medium  text-sm lg:text-base    mb-2">
-              Let's continue the conversation
-            </div>
-            <div className="flex gap-4 lg:gap-8 items-center">
-              <AiFillTwitterCircle color="#00acee" size={30} />
+            <div>
+              <div className=" uppercase font-medium  text-sm lg:text-base    mb-2">
+                Let's continue the conversation
+              </div>
+              <div className="flex gap-4 lg:gap-8 items-center">
+                <AiFillTwitterCircle color="#00acee" size={30} />
 
-              <BsFacebook className=" text-[#3b5998]" size={30} />
+                <BsFacebook className=" text-[#3b5998]" size={30} />
 
-              <BsLinkedin className=" text-[#0072b1]" size={30} />
-            </div>
-            <div className=" text-xs lg:text-sm text-gray-700 font-medium mt-8">
-              &copy; 2023 Honey comb fxd farm
+                <BsLinkedin className=" text-[#0072b1]" size={30} />
+              </div>
+              <div className=" text-xs lg:text-sm text-gray-700 font-medium mt-8">
+                &copy; 2023 Honey comb fxd farm
+              </div>
             </div>
           </div>
         </div>
       </div>
-      {/* </div> */}
     </div>
   );
 };

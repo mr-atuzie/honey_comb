@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   return (
@@ -13,9 +14,11 @@ const Contact = () => {
           </p> */}
         </div>
 
-        <button className="mt-4 bg-white font-medium text-sm lg:text-base text-green-700 px-6 py-2.5 lgpy-3 capitalize rounded-full">
-          contact us today
-        </button>
+        <Link to={"/contact"}>
+          <button className="mt-4 bg-white font-medium text-sm lg:text-base text-green-700 px-6 py-2.5 lgpy-3 capitalize rounded-full">
+            contact us today
+          </button>
+        </Link>
       </div>
     </div>
   );

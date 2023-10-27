@@ -3,13 +3,14 @@ import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
-import Packages from "../components/Packages";
+// import Packages from "../components/Packages";
 import HowComp from "../components/How";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 import Loader from "../components/Loader";
 import { useState } from "react";
+import Ready from "../components/Ready";
 
 const How = () => {
   const [loading, setLoading] = useState(false);
@@ -58,7 +59,7 @@ const How = () => {
         text={"lorem ipseum yemsum defrt er"}
       />
       <HowComp how={content?.how} />
-      <Packages />
+      <Ready />
       <Contact />
       <Footer />
     </div>

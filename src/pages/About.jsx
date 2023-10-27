@@ -3,12 +3,15 @@ import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
-import Packages from "../components/Packages";
+// import Packages from "../components/Packages";
 import AboutComp from "../components/About";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 import Loader from "../components/Loader";
+import Ready from "../components/Ready";
+import Terms from "../components/Terms";
+import Faq from "../components/Faq";
 
 const About = () => {
   const [loading, setLoading] = useState(false);
@@ -57,7 +60,9 @@ const About = () => {
         text={"   who we are?"}
       />
       <AboutComp about={content?.about} />
-      <Packages />
+      <Ready />
+      <Terms />
+      <Faq />
       <Contact />
       <Footer />
     </div>
