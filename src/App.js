@@ -41,6 +41,7 @@ import { SET_LOGIN } from "./redux/features/authSlice";
 import EmailSent from "./pages/EmailSent";
 import VerifyEmail from "./pages/VerifyEmail";
 import AdminLogin from "./pages/AdminLogin";
+import Invest from "./pages/Invest";
 
 function App() {
   axios.defaults.withCredentials = true;
@@ -88,6 +89,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/terms-and-condition" element={<Terms />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
 
         <Route element={<Private />}>
           <Route path="/admin" element={<AdminLayout />}>
@@ -102,7 +104,6 @@ function App() {
             <Route path="search" element={<Search />} />
             <Route path="withdraw" element={<AdminWithdraw />} />
             <Route path="register" element={<AdminRegister />} />
-            <Route path="login" element={<AdminLogin />} />
           </Route>
         </Route>
 
@@ -118,6 +119,7 @@ function App() {
             <Route path="add-kyc" element={<Kyc />} />
             <Route path="referrals" element={<Referral />} />
             <Route path="withdraw" element={<Withdraw />} />
+            <Route path="invest/:type" element={<Invest />} />
           </Route>
         </Route>
       </Routes>

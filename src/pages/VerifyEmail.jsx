@@ -33,10 +33,10 @@ const VerifyEmail = () => {
 
   return (
     <div className=" w-full h-screen   flex  lg:flex-row-reverse">
-      <div className="m-6 rounded-lg relative w-[70%] hidden lg:flex justify-center items-center flex-col ">
+      <div className="relative w-[70%] hidden lg:flex justify-center items-center flex-col ">
         <video
           src={vid}
-          className="rounded-xl w-full h-full object-cover"
+          className=" w-full h-full object-cover"
           autoPlay
           loop
           muted
@@ -48,22 +48,20 @@ const VerifyEmail = () => {
               recieve, Transfer, Send Money Safely
             </p>
             <h1 className="  text-green-600 uppercase text-3xl lg:text-6xl font-extrabold ">
-              WELCOME TO{" "}
-              <span className=" text-yellow-500">HONEY COMB FXD</span>
+              <span className=" text-yellow-500">HONEY COMB FXD FARM</span>
             </h1>
           </div>
         </div>
       </div>
       <div className="w-full bg-gray-50 lg:w-[30%]  p-5">
         <img className=" w-28 lg:w-40" src={logo} alt="" />
-        <h2 className="   lg:text-3xl font-bold capitalize   text-green-700 mt-28 lg:mt-56 ">
-          <span className=" text-yellow-500 uppercase">
-            Honey-comb-fxd farm
-          </span>
+        <h2 className="    font-medium capitalize lg:text-lg  mt-28 lg:mt-56 ">
+          You’re almost finished setting up your account,Please take a moment to
+          confirm your email address.
         </h2>
-        <p className=" text-sm lg:text-base">
+        {/* <p className=" text-sm lg:text-base">
           Verify your email to continue Registration
-        </p>
+        </p> */}
 
         <button
           onClick={verifyEmail}

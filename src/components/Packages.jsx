@@ -2,18 +2,21 @@ import React from "react";
 import { useState } from "react";
 import { BsCheck2 } from "react-icons/bs";
 import Warning from "./Warning";
+import ShowOnLogIn, { ShowOnLogOut } from "../protect/Protect";
+
 // import Pay from "./Pay";
 // import { useSelector } from "react-redux";
 // import { selectIsLoggedIn } from "../redux/features/authSlice";
-// import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Packages = ({ homePage }) => {
-  // const [amount, setAmout] = useState(10000);
-  // const [duration, setDuration] = useState(1);
   const [warning, setWarning] = useState(false);
+  const [type, setType] = useState("");
   // const [type, setType] = useState(1);
 
   // const isLoggedIn = useSelector(selectIsLoggedIn);
+
+  const navigate = useNavigate();
 
   const packages = [
     {
@@ -56,12 +59,18 @@ const Packages = ({ homePage }) => {
   const handleInvest = (name) => {
     if (name === "High Risk Investment") {
       setWarning(true);
+      setType(name);
+    } else {
+      navigate(`/user/invest/${name}`);
     }
   };
 
   return (
     <div className={"  bg-green-50"}>
-      {warning && <Warning warning={warning} setWarning={setWarning} />}
+      {warning && (
+        <Warning warning={warning} setWarning={setWarning} type={type} />
+      )}
+
       <div className="w-[90%] mx-auto py-10 lg:py-20">
         {homePage && (
           <div className=" text-center flex flex-col justify-center items-center ">
@@ -111,12 +120,25 @@ const Packages = ({ homePage }) => {
                   })}
                 </ul>
 
-                <button
-                  onClick={() => handleInvest(p.name)}
-                  className="text-white text-sm lg:text-lg bg-[#08432d]  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4"
-                >
-                  Get started
-                </button>
+                <ShowOnLogOut>
+                  <Link to={"/login"}>
+                    <button
+                      onClick={() => handleInvest(p.name)}
+                      className="text-white text-sm lg:text-lg bg-[#08432d]  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4"
+                    >
+                      Get started
+                    </button>
+                  </Link>
+                </ShowOnLogOut>
+
+                <ShowOnLogIn>
+                  <button
+                    onClick={() => handleInvest(p.name)}
+                    className="text-white text-sm lg:text-lg bg-[#08432d]  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4"
+                  >
+                    Get started
+                  </button>
+                </ShowOnLogIn>
               </div>
             );
           })}

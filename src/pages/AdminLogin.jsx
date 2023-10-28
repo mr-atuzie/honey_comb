@@ -93,10 +93,10 @@ const AdminLogin = () => {
   };
   return (
     <div className=" w-full  h-screen lg:flex lg:flex-row-reverse">
-      <div className="m-6 rounded-lg relative w-[40%] hidden lg:flex justify-center items-center flex-col">
+      <div className="relative w-[60%] hidden lg:flex justify-center items-center flex-col">
         <video
           src={vid}
-          className="rounded-xl w-full h-full object-cover"
+          className="w-full h-full object-cover"
           autoPlay
           loop
           muted
@@ -109,20 +109,20 @@ const AdminLogin = () => {
             </p>
             <h1 className="  text-green-600 uppercase text-3xl lg:text-6xl font-extrabold ">
               WELCOME TO{" "}
-              <span className=" text-yellow-500">HONEY COMB FXD</span>
+              <span className=" text-yellow-500">HONEY COMB FXD FARM</span>
             </h1>
           </div>
         </div>
       </div>
-      <div className=" w-full my-16 lg:w-[60%]">
+      <div className=" w-full my-8 lg:my-16 lg:w-[40%]">
         <form
           onSubmit={handleSubmit}
-          className="w-[90%] lg:w-[50%] mx-auto mb-16"
+          className="w-[90%] lg:w-[70%] mx-auto mb-16"
         >
           <div className="">
-            <img className="w-40" src={logo} alt="" />
+            <img className=" w-28 lg:w-40" src={logo} alt="" />
 
-            <h2 className="text-2xl lg:text-4xl font-bold  text-green-700 mt-4 ">
+            <h2 className="text-2xl lg:text-4xl font-semibold  text-green-700 my-4 lg:my-8 ">
               Admin Panel
             </h2>
           </div>
@@ -160,10 +160,10 @@ const AdminLogin = () => {
 
           <button
             disabled={loading}
-            className="border-2 border-yellow-500 text-sm lg:text-base rounded w-full text-center py-2.5 lg:py-3.5 my-4 bg-green-700 disabled:opacity-95 text-white "
+            className="border-2 border-yellow-500 text-sm lg:text-base rounded w-full text-center py-2.5 lg:py-3.5 my-4  bg-[#08432d] disabled:opacity-95 text-white "
             type="submit"
           >
-            {loading ? "Loading" : "Sign In"}
+            {loading ? "Loading" : "Log In"}
           </button>
         </form>
       </div>
