@@ -10,7 +10,7 @@ const Hero = () => {
   const slides = [
     {
       text: "Empowering lives through rewarding",
-      sub: " investment journeys",
+      sub: " investments",
       img: "https://img.freepik.com/free-vector/global-stock-market-concept-illustration_114360-19630.jpg?size=626&ext=jpg&uid=R105802964&ga=GA1.1.795360759.1692018039&semt=ais",
     },
     {

@@ -19,8 +19,8 @@ const Faq = () => {
         </div>
 
         <div className=" my-8 ">
-          <div className="w-full shadow-md mb-9">
-            <div className=" bg-green-50 w-full p-5 flex items-center justify-between">
+          <div className="w-full shadow-md mb-6 lg:mb-9">
+            <div className=" bg-green-50 w-full p-3  lg:p-5 flex items-center justify-between">
               <h2 className=" text-xs font-medium lg:text-base text-green-700 lg:tracking-wide  capitalize">
                 What are the different types of investment options available on
                 your platform?
@@ -52,8 +52,8 @@ const Faq = () => {
             )}
           </div>
 
-          <div className="w-full shadow-md mb-9">
-            <div className=" bg-green-50 w-full p-5 flex items-center justify-between">
+          <div className="w-full shadow-md mb-6 lg:mb-9">
+            <div className=" bg-green-50 w-full p-3 lg:p-5 flex items-center justify-between">
               <h2 className=" text-xs font-medium lg:text-base text-green-700 lg:tracking-wide  capitalize">
                 What is the minimum investment amount?
               </h2>
@@ -85,8 +85,8 @@ const Faq = () => {
             )}
           </div>
 
-          <div className="w-full shadow-md mb-9">
-            <div className=" bg-green-50 w-full p-5 flex items-center justify-between">
+          <div className="w-full shadow-md mb-6 lg:mb-9">
+            <div className=" bg-green-50 w-full p-3 lg:p-5 flex items-center justify-between">
               <h2 className=" text-xs font-medium lg:text-base text-green-700 lg:tracking-wide  capitalize">
                 How do I open an account and start investing?
               </h2>
@@ -118,8 +118,8 @@ const Faq = () => {
             )}
           </div>
 
-          <div className="w-full shadow-md mb-9">
-            <div className=" bg-green-50 w-full p-5 flex items-center justify-between">
+          <div className="w-full shadow-md mb-6 lg:mb-9">
+            <div className=" bg-green-50 w-full p-3 lg:p-5 flex items-center justify-between">
               <h2 className=" text-xs font-medium lg:text-base text-green-700 lg:tracking-wide  capitalize">
                 What are the fees associated with investing on your platform?
               </h2>
@@ -150,8 +150,8 @@ const Faq = () => {
             )}
           </div>
 
-          <div className="w-full shadow-md mb-9">
-            <div className=" bg-green-50 w-full p-5 flex items-center justify-between">
+          <div className="w-full shadow-md mb-6 lg:mb-9">
+            <div className=" bg-green-50 w-full p-3 lg:p-5 flex items-center justify-between">
               <h2 className=" text-xs font-medium lg:text-base text-green-700 lg:tracking-wide  capitalize">
                 What are the risks involved in investing?
               </h2>
@@ -184,8 +184,8 @@ const Faq = () => {
             )}
           </div>
 
-          <div className="w-full shadow-md mb-9">
-            <div className=" bg-green-50 w-full p-5 flex items-center justify-between">
+          <div className="w-full shadow-md mb-6 lg:mb-9">
+            <div className=" bg-green-50 w-full p-3 lg:p-5 flex items-center justify-between">
               <h2 className=" text-xs font-medium lg:text-base text-green-700 lg:tracking-wide  capitalize">
                 What are the different types of withdrawal options available?
               </h2>
@@ -213,8 +213,8 @@ const Faq = () => {
             )}
           </div>
 
-          <div className="w-full shadow-md mb-9">
-            <div className=" bg-green-50 w-full p-5 flex items-center justify-between">
+          <div className="w-full shadow-md mb-6 lg:mb-9">
+            <div className=" bg-green-50 w-full p-3 lg:p-5 flex items-center justify-between">
               <h2 className=" text-xs font-medium lg:text-base text-green-700 lg:tracking-wide  capitalize">
                 How long does it take to process a withdrawal request?
               </h2>
