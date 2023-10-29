@@ -1,15 +1,12 @@
 import React from "react";
 import { FlutterWaveButton, closePaymentModal } from "flutterwave-react-v3";
 import { toast } from "react-toastify";
-// import axios from "axios";
-// import logo from "../assets/honeycomb full logo.png";
-// import axios from "axios";
 
 const Pay = ({ handleInvest, amount }) => {
   const user = JSON.parse(localStorage.getItem("user"));
 
   const config = {
-    public_key: "FLWPUBK_TEST-992ecad07f109c391d1ba645e5782842-X",
+    public_key: process.env.REACT_APP_FLUTTERWAVE_KEY,
     tx_ref: Date.now(),
     amount: amount,
     currency: "NGN",
