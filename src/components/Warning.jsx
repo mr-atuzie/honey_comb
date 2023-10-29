@@ -10,15 +10,18 @@ const Warning = ({ warning, setWarning, type }) => {
           CAUTION WARNING
         </h1>
 
-        <p className=" text-sm lg:text-base">
+        <p className=" text-sm lg:text-base leading-7">
           Your capital is at risk. You should not spend more than you can afford
           to lose and should ensure that you fully understand the risks
-          involved. This package is not suitable for everyone please take into
+          involved.
+          <br />
+          This package is not suitable for everyone please take into
           consideration your level of experience, and financial objectives and
-          also seek independent advice if necessary. Under no circumstances
-          shall Honey Comb FXD Farm have any liability to any person or entity
-          for any loss or damage in whole or part caused by, resulting from, or
-          relating to this investing activity
+          also seek independent advice if necessary.
+          <br />
+          Under no circumstances shall Honey Comb FXD Farm have any liability to
+          any person or entity for any loss or damage in whole or part caused
+          by, resulting from, or relating to this investing activity
         </p>
 
         <div className=" flex gap-4 mt-5">

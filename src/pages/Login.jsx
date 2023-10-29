@@ -63,17 +63,6 @@ const Login = () => {
       setLoading(false);
       const data = res.data;
 
-      // localStorage.setItem(
-      //   "user",
-      //   JSON.stringify({
-      //     id: data?._id,
-      //     name: `${data?.firstname} ${data?.lastname}`,
-      //     email: data?.email,
-      //     photo: data?.photo,
-      //     abv: `${data?.firstname.charAt(0)}${data?.lastname.charAt(0)}`,
-      //   })
-      // );
-
       const user = {
         id: data?._id,
         name: `${data?.firstname} ${data?.lastname}`,
@@ -104,10 +93,10 @@ const Login = () => {
 
   return (
     <div className=" w-full  h-screen lg:flex lg:flex-row-reverse">
-      <div className="m-6 rounded-lg relative w-[40%] hidden lg:flex justify-center items-center flex-col">
+      <div className="relative w-[50%] hidden lg:flex justify-center items-center flex-col ">
         <video
           src={vid}
-          className="rounded-xl w-full h-full object-cover"
+          className=" w-full h-full object-cover"
           autoPlay
           loop
           muted
@@ -116,22 +105,21 @@ const Login = () => {
         <div className=" w-full h-full absolute rounded-lg top-0 z-30 bg-black/20 flex  items-center">
           <div className=" w-[80%] mx-auto text-center">
             <p className="text-white capitalize tracking-wide font-medium text-xs  lg:text-base my-3">
-              recieve, Transfer, Send Money Safely
+              Sign Up,Invest and Make Profit
             </p>
             <h1 className="  text-green-600 uppercase text-3xl lg:text-6xl font-extrabold ">
-              WELCOME TO{" "}
-              <span className=" text-yellow-500">HONEY COMB FXD</span>
+              <span className=" text-yellow-500">HONEY COMB FXD FARM</span>
             </h1>
           </div>
         </div>
       </div>
-      <div className=" w-full my-16 lg:w-[60%]">
+      <div className=" w-full my-10 lg:my-16 lg:w-[50%]">
         <form
           onSubmit={handleSubmit}
           className="w-[90%] lg:w-[50%] mx-auto mb-16"
         >
           <div className="">
-            <img className="w-40" src={logo} alt="" />
+            <img className="w-28 lg:w-40" src={logo} alt="" />
 
             <h2 className="text-2xl lg:text-4xl font-bold  text-green-700 mt-4 ">
               Log into your Account
@@ -154,7 +142,7 @@ const Login = () => {
             />
           </div>
 
-          <div className=" my-5">
+          <div className=" mt-5">
             <label className="  text-xs lg:text-sm" htmlFor="password">
               Password
             </label>
@@ -169,9 +157,16 @@ const Login = () => {
             />
           </div>
 
+          <Link
+            className=" text-blue-500 text-xs lg:text-sm mt-3 font-medium"
+            to={"/forgot-password"}
+          >
+            Forgot Password
+          </Link>
+
           <button
             disabled={loading}
-            className="border-2 border-yellow-500 text-sm lg:text-base rounded w-full text-center py-2.5 lg:py-3.5 my-4 bg-green-700 disabled:opacity-95 text-white "
+            className="border-2 text-sm lg:text-base border-yellow-500 rounded w-full text-center py-2.5 lg:py-3.5 my-4 bg-[#08432d] disabled:bg-green-300 text-white "
             type="submit"
           >
             {loading ? "Loading" : "Sign In"}
@@ -180,7 +175,7 @@ const Login = () => {
           <p className="text-xs lg:text-base text-center mt-3   text-gray-500">
             Don't have an account?{" "}
             <Link to={"/register"}>
-              <span className=" text-blue-700 font-medium">Sign Up</span>
+              <span className=" text-blue-700 font-medium ">Sign Up</span>
             </Link>
           </p>
         </form>

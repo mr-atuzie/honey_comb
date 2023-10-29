@@ -21,7 +21,7 @@ const Invest = () => {
 
     try {
       const res = await axios.post(
-        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user//low-risk-investment`,
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/low-risk-investment`,
         userData,
         {
           withCredentials: true,
@@ -43,8 +43,31 @@ const Invest = () => {
     }
   };
 
-  const HRI = () => {
-    console.log("high risk investment, All glory belongs to Jesus");
+  const HRI = async () => {
+    const userData = { amount, type };
+
+    try {
+      const res = await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/high-risk-investment`,
+        userData,
+        {
+          withCredentials: true,
+        }
+      );
+
+      console.log(res.data);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+
+      console.log(error);
+
+      toast.error(message);
+    }
   };
 
   return (
@@ -56,7 +79,9 @@ const Invest = () => {
         <div className=" text-yellow-500 flex items-center">
           <span className=" font-bold">&#x20A6;</span>
           <h2 className=" text-green-600 text-4xl lg:text-5xl font-bold">
-            {new Intl.NumberFormat().format(amount * duration)}
+            {type === "Low Risk Investment"
+              ? new Intl.NumberFormat().format(amount * duration * 0.03)
+              : new Intl.NumberFormat().format(amount * 0.15)}
           </h2>
         </div>
 

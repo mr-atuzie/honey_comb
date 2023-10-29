@@ -43,6 +43,7 @@ import VerifyEmail from "./pages/VerifyEmail";
 import AdminLogin from "./pages/AdminLogin";
 import Invest from "./pages/Invest";
 import UserInvestments from "./pages/UserInvestments";
+import ForgotPassword from "./pages/ForgotPassword";
 
 function App() {
   axios.defaults.withCredentials = true;
@@ -89,6 +90,7 @@ function App() {
         <Route path="/verify-email/:id" element={<VerifyEmail />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/terms-and-condition" element={<Terms />} />
         <Route path="/admin/login" element={<AdminLogin />} />
 

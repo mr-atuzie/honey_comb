@@ -109,10 +109,10 @@ const Register = () => {
 
   return (
     <div className=" w-full   flex  lg:flex-row-reverse">
-      <div className="m-6 rounded-lg relative w-[40%] hidden lg:flex justify-center items-center flex-col ">
+      <div className="relative w-[50%] hidden lg:flex justify-center items-center flex-col ">
         <video
           src={vid}
-          className="rounded-xl w-full h-full object-cover"
+          className=" w-full h-full object-cover"
           autoPlay
           loop
           muted
@@ -121,16 +121,15 @@ const Register = () => {
         <div className=" w-full h-full absolute rounded-lg top-0 z-30 bg-black/20 flex  items-center">
           <div className=" w-[80%] mx-auto text-center">
             <p className="text-white capitalize tracking-wide font-medium text-xs  lg:text-base my-3">
-              recieve, Transfer, Send Money Safely
+              Sign Up,Invest and Make Profit
             </p>
             <h1 className="  text-green-600 uppercase text-3xl lg:text-6xl font-extrabold ">
-              WELCOME TO{" "}
-              <span className=" text-yellow-500">HONEY COMB FXD</span>
+              <span className=" text-yellow-500">HONEY COMB FXD FARM</span>
             </h1>
           </div>
         </div>
       </div>
-      <div className="w-full lg:w-[60%] my-16">
+      <div className="w-full lg:w-[50%] my-10 lg:my-16">
         <form
           onSubmit={handleSubmit}
           className=" w-[90%] lg:w-[50%] mx-auto mb-16"
@@ -250,7 +249,7 @@ const Register = () => {
 
           <button
             disabled={loading}
-            className="border-2 text-sm lg:text-base border-yellow-500 rounded w-full text-center py-2.5 lg:py-3.5 my-4 bg-green-700 disabled:opacity-95 text-white "
+            className="border-2 text-sm lg:text-base border-yellow-500 rounded w-full text-center py-2.5 lg:py-3.5 my-4 bg-[#08432d] disabled:bg-green-300 text-white "
             type="submit"
           >
             {loading ? "Loading" : "Sign up"}

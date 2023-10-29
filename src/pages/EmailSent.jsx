@@ -7,7 +7,7 @@ const EmailSent = () => {
 
   return (
     <div className=" w-full h-screen   flex  lg:flex-row-reverse">
-      <div className="relative w-[70%] hidden lg:flex justify-center items-center flex-col ">
+      <div className="relative w-[50%] hidden lg:flex justify-center items-center flex-col ">
         <video
           src={vid}
           className=" w-full h-full object-cover"
@@ -19,7 +19,7 @@ const EmailSent = () => {
         <div className=" w-full h-full absolute rounded-lg top-0 z-30 bg-black/20 flex  items-center">
           <div className=" w-[80%] mx-auto text-center">
             <p className="text-white capitalize tracking-wide font-medium text-xs  lg:text-base my-3">
-              recieve, Transfer, Send Money Safely
+              Sign Up,Invest and Make Profit
             </p>
             <h1 className="  text-green-600 uppercase text-3xl lg:text-6xl font-extrabold ">
               <span className=" text-yellow-500">HONEY COMB FXD FARM</span>
@@ -27,7 +27,7 @@ const EmailSent = () => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-gray-50 lg:w-[30%]  p-5">
+      <div className="w-full bg-gray-50 lg:w-[50%]  p-5">
         <img className=" w-28 lg:w-40" src={logo} alt="" />
 
         <div className=" mt-28  lg:mt-56 ">

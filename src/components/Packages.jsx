@@ -4,24 +4,19 @@ import { BsCheck2 } from "react-icons/bs";
 import Warning from "./Warning";
 import ShowOnLogIn, { ShowOnLogOut } from "../protect/Protect";
 
-// import Pay from "./Pay";
-// import { useSelector } from "react-redux";
-// import { selectIsLoggedIn } from "../redux/features/authSlice";
 import { Link, useNavigate } from "react-router-dom";
 
 const Packages = ({ homePage }) => {
   const [warning, setWarning] = useState(false);
   const [type, setType] = useState("");
-  // const [type, setType] = useState(1);
-
-  // const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const navigate = useNavigate();
 
   const packages = [
     {
       name: "Low Risk Investment",
-      type: "LRI",
+      payout: " Basic (3 Months)| Standard (6 Months)| Premium (1 Year)",
+      investments: "(SME Loans, Real Estate, Agriculture)",
       list: [
         "0% risk",
         "3% Monthly Returns paid upfront",
@@ -33,28 +28,18 @@ const Packages = ({ homePage }) => {
     },
     {
       name: "High Risk Investment",
-      type: "HRI",
+      payout: "Weekly Cash Out",
+      investments: "(Betting, Casino, Crypto, Forex Trading)",
       list: [
-        "15% payout weekly",
-        "0% payout for Investments above 1 Million",
-        "7.5% VAT charged on withdrawal",
+        "100,000 naira Minimum Investment ",
+        "15% weekly payout",
+        "2% Referral Bonus",
         "Minimum Investment is 100,000",
-        "Investment spans across 3 months (Basic), 6 months (Standard), 1 year (Professional)",
-        "Enjoy 2% referral bonus",
+        "5% Registration Fee",
+        "7.5% VAT Charged on Withdrawal",
       ],
     },
   ];
-
-  // const types = [
-  //   { name: "Low Risk Investment", value: 0.03 },
-  //   { name: "High Risk Investment", value: 0.15 },
-  // ];
-
-  // const durations = [
-  //   { name: "3 months", value: 3 },
-  //   { name: "6 months", value: 6 },
-  //   { name: "1 years", value: 12 },
-  // ];
 
   const handleInvest = (name) => {
     if (name === "High Risk Investment") {
@@ -89,18 +74,23 @@ const Packages = ({ homePage }) => {
                 className="bg-white p-3 lg:p-4  h-fit shadow-md rounded-md "
               >
                 <div className=" flex flex-col justify-center items-center">
-                  <h1 className=" text-red-500 text-sm lg:text-lg font-semibold tracking-wide uppercase">
+                  <h1
+                    className={`${
+                      p.name === "Low Risk Investment"
+                        ? "text-orange-500-500"
+                        : "text-red-500"
+                    }   lg:text-lg font-semibold tracking-wide uppercase`}
+                  >
                     {p.name}
                   </h1>
                   <div className=" text-yellow-500 flex items-center">
                     <span className=" font-bold">&#x20A6;</span>
-                    <h2 className=" text-green-600 text-4xl lg:text-5xl font-bold mt-1 mb-1 ">
-                      {" "}
-                      100,000
+                    <h2 className=" text-green-600 text-sm lg:text-base font-bold mt-1 mb-1 ">
+                      {p.investments}
                     </h2>
                   </div>
-                  <p className=" text-gray-800 text-xs font-medium">
-                    and above
+                  <p className=" text-gray-800 text-xs lg:text-sm font-medium">
+                    {p.payout}
                   </p>
                 </div>
 
@@ -142,114 +132,6 @@ const Packages = ({ homePage }) => {
               </div>
             );
           })}
-
-          {/* <div className="bg-white p-4  h-fit shadow-md rounded-md ">
-            <div className=" flex flex-col justify-center items-center">
-              <h1 className=" text-red-500 lg:text-lg font-semibold tracking-wide uppercase">
-                Calculate intrest
-              </h1>
-              <div className=" text-yellow-500 flex items-center">
-                <span className=" font-bold">&#x20A6;</span>
-                <h2 className=" text-green-600 text-4xl lg:text-5xl font-bold mt-1 mb-2 ">
-                  {new Intl.NumberFormat().format(amount * duration * type)}
-                </h2>
-              </div>
-              <p className=" capitalize text-gray-800 text-xs font-medium">
-                {duration}
-              </p>
-
-              <div className=" w-full">
-                <div className="relative mt-11 mb-4">
-                  <input
-                    type="text"
-                    name="amount"
-                    id="amount"
-                    className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    placeholder=""
-                    onChange={(e) => setAmout(e.target.value)}
-                  />
-                  <label
-                    htmlFor="amount"
-                    className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
-                  >
-                    Amount
-                  </label>
-                </div>
-
-                <div className="relative my-7">
-                  <select
-                    name="duration"
-                    id="duration"
-                    className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    onChange={(e) => setDuration(e.target.value)}
-                  >
-                    <option className=" text-xs lg:text-base">
-                      Select Duration
-                    </option>
-                    {durations.map((d, index) => {
-                      return (
-                        <option
-                          className=" text-sm lg:text-base"
-                          key={index}
-                          value={d.value}
-                        >
-                          {d.name}
-                        </option>
-                      );
-                    })}
-                  </select>
-                  <label
-                    htmlFor="bank"
-                    className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
-                  >
-                    Duration
-                  </label>
-                </div>
-
-                <div className="relative my-7">
-                  <select
-                    name="duration"
-                    id="duration"
-                    className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    onChange={(e) => setType(e.target.value)}
-                  >
-                    <option className=" text-sm lg:text-base">
-                      Select type
-                    </option>
-                    {types.map((d, index) => {
-                      return (
-                        <option
-                          className=" text-sm lg:text-base"
-                          key={index}
-                          value={d.value}
-                        >
-                          {d.name}
-                        </option>
-                      );
-                    })}
-                  </select>
-                  <label
-                    htmlFor="bank"
-                    className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
-                  >
-                    Type
-                  </label>
-                </div>
-
-                {isLoggedIn && (
-                  <Pay amount={amount} type={type} duration={duration} />
-                )}
-
-                {!isLoggedIn && (
-                  <Link to={"/login"}>
-                    <button className="text-white text-sm lg:text-lg bg-[#08432d]  rounded py-2.5 lg:p-4 w-full uppercase font-medium my-4">
-                      Get started
-                    </button>
-                  </Link>
-                )}
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>
