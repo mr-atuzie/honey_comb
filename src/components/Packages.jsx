@@ -71,20 +71,19 @@ const Packages = ({ homePage }) => {
             return (
               <div
                 key={p.name}
-                className="bg-white p-3 lg:p-4  h-fit shadow-md rounded-md "
+                className="bg-white w-full p-3 lg:p-4  h-fit shadow-md rounded-md "
               >
                 <div className=" flex flex-col justify-center items-center">
                   <h1
                     className={`${
                       p.name === "Low Risk Investment"
-                        ? "text-orange-500-500"
+                        ? "text-orange-500"
                         : "text-red-500"
                     }   lg:text-lg font-semibold tracking-wide uppercase`}
                   >
                     {p.name}
                   </h1>
                   <div className=" text-yellow-500 flex items-center">
-                    <span className=" font-bold">&#x20A6;</span>
                     <h2 className=" text-green-600 text-sm lg:text-base font-bold mt-1 mb-1 ">
                       {p.investments}
                     </h2>
