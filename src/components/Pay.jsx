@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 // import axios from "axios";
 
 const Pay = ({ handleInvest, amount }) => {
-  // const user = JSON.parse(localStorage.getItem("user"));
+  const user = JSON.parse(localStorage.getItem("user"));
 
   const config = {
     public_key: "FLWPUBK_TEST-992ecad07f109c391d1ba645e5782842-X",
@@ -15,9 +15,9 @@ const Pay = ({ handleInvest, amount }) => {
     currency: "NGN",
     payment_options: "card,mobilemoney,ussd",
     customer: {
-      email: "atuzierex0@gmail.com",
+      email: user.email,
       phone_number: "070********",
-      name: "john doe",
+      name: user.name,
     },
     customizations: {
       title: "My store",
@@ -28,7 +28,7 @@ const Pay = ({ handleInvest, amount }) => {
 
   const fwConfig = {
     ...config,
-    text: "Pay with Flutterwave",
+    text: "Invest Now",
     callback: (response) => {
       console.log(response);
       if (response.status === "completed") {
