@@ -1,11 +1,13 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
-import Packages from "../components/Packages";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import { FaEnvelopeOpenText, FaFacebookF, FaWhatsapp } from "react-icons/fa";
 import { BiSupport } from "react-icons/bi";
+import Faq from "../components/Faq";
+import Terms from "./Terms";
+import Ready from "../components/Ready";
 
 const Cont = () => {
   return (
@@ -79,7 +81,9 @@ const Cont = () => {
           </div>
         </div>
       </div>
-      <Packages />
+      <Ready />
+      <Terms />
+      <Faq />
       <Contact />
       <Footer />
     </div>

@@ -12,6 +12,8 @@ import Loader from "../components/Loader";
 import Ready from "../components/Ready";
 import Terms from "../components/Terms";
 import Faq from "../components/Faq";
+import How from "../components/How";
+import Services from "../components/Services";
 
 const About = () => {
   const [loading, setLoading] = useState(false);
@@ -60,6 +62,8 @@ const About = () => {
         text={"   who we are?"}
       />
       <AboutComp about={content?.about} />
+      <Services value={content?.value} />
+      <How how={content?.how} />
       <Ready />
       <Terms />
       <Faq />

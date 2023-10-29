@@ -1,5 +1,6 @@
 import React from "react";
 import { BiSolidDashboard, BiSupport, BiTransfer } from "react-icons/bi";
+import { FaMoneyBillTransfer } from "react-icons/fa6";
 // import { FaIdCard } from "react-icons/fa";
 import { IoPersonOutline } from "react-icons/io5";
 // import { IoMdMore } from "react-icons/io";
@@ -36,16 +37,42 @@ const MobileNav = () => {
           </div>
         </NavLink>
         {/* <NavLink
-          to={"/user/add-kyc"}
+          to={"/user/investment"}
+          className={({ isActive }) =>
+            isActive ? "text-yellow-400" : "text-white"
+          }
+        >
+          <div className="flex gap-3 text-white items-center px-6  py-3">
+            <div className="">
+              <FaMoneyBillTransfer size={24} />
+            </div>
+            <p className="font-medium text-lg  ">Investment</p>
+          </div>
+        </NavLink> */}
+        <NavLink
+          to={"/user/investments"}
           className={({ isActive }) =>
             isActive ? "text-yellow-400" : "text-white"
           }
         >
           <div className=" flex flex-col items-center justify-center ">
-            <FaIdCard size={25} />
-            <p className=" text-xs mt-2">Kyc</p>
+            <FaMoneyBillTransfer size={24} />
+            <p className=" text-xs mt-2">Investment</p>
           </div>
-        </NavLink> */}
+        </NavLink>
+
+        <NavLink
+          to={"/user/profile"}
+          className={({ isActive }) =>
+            isActive ? "text-yellow-400" : "text-white"
+          }
+        >
+          <div className=" flex flex-col items-center justify-center ">
+            <IoPersonOutline size={25} />
+            <p className=" text-xs mt-2">Profile</p>
+          </div>
+        </NavLink>
+
         <NavLink
           to={"/user/support"}
           className={({ isActive }) =>
@@ -57,18 +84,6 @@ const MobileNav = () => {
             <p className=" text-xs mt-2">Support</p>
           </div>
         </NavLink>
-
-        <div className=" flex flex-col items-center justify-center ">
-          <NavLink
-            to={"/user/profile"}
-            className={({ isActive }) =>
-              isActive ? "text-yellow-400" : "text-white"
-            }
-          >
-            <IoPersonOutline size={25} />
-            <p className=" text-xs mt-2">Profile</p>
-          </NavLink>
-        </div>
 
         {/* <div className=" flex flex-col items-center justify-center">
           <NavLink

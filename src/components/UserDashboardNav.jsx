@@ -9,6 +9,7 @@ import { IoNotificationsSharp } from "react-icons/io5";
 import { GiGraduateCap } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/honeycomb logo.png";
+import { FaMoneyBillTransfer } from "react-icons/fa6";
 // import { FaUsers } from "react-icons/fa6";
 
 const UserDashboardNav = ({ user }) => {
@@ -45,6 +46,20 @@ const UserDashboardNav = ({ user }) => {
               <BiSolidUser size={24} />
             </div>
             <p className="font-medium text-lg  ">Profile</p>
+          </div>
+        </NavLink>
+
+        <NavLink
+          to={"/user/investment"}
+          className={({ isActive }) =>
+            isActive ? "rounded-lg bg-yellow-400 text-white w-full" : ""
+          }
+        >
+          <div className="flex gap-3 text-white items-center px-6  py-3">
+            <div className="">
+              <FaMoneyBillTransfer size={24} />
+            </div>
+            <p className="font-medium text-lg  ">Investment</p>
           </div>
         </NavLink>
 

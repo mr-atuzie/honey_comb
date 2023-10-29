@@ -10,13 +10,13 @@ const Hero = () => {
   const slides = [
     {
       text: "Empowering lives through rewarding",
-      sub: " investments",
-      img: "https://img.freepik.com/free-vector/global-stock-market-concept-illustration_114360-19630.jpg?size=626&ext=jpg&uid=R105802964&ga=GA1.1.795360759.1692018039&semt=ais",
+      sub: "investments",
+      img: "https://img.freepik.com/premium-vector/money-tree-concept_118813-7216.jpg?size=626&ext=jpg&uid=R105802964&ga=GA1.1.795360759.1692018039&semt=ais",
     },
     {
       text: "Unleash Potentials through and",
       sub: "geting double",
-      img: "https://img.freepik.com/free-vector/investment-data-concept-illustration_114360-7373.jpg?size=626&ext=jpg&uid=R105802964&ga=GA1.1.795360759.1692018039&semt=ais",
+      img: "https://img.freepik.com/free-vector/investing-concept-illustration_114360-6492.jpg?size=626&ext=jpg&uid=R105802964&ga=GA1.1.795360759.1692018039&semt=ais",
     },
     {
       text: "Rewarding Investments",
@@ -41,7 +41,7 @@ const Hero = () => {
             <SwiperSlide key={index}>
               <div className=" w-[90%] mx-auto flex gap-5 lg:gap-0 flex-col lg:justify-between lg:items-center lg:flex-row">
                 <div className="lg:w-[50%]">
-                  <h1 className=" capitalize text-white text-3xl lg:text-7xl font-extrabold my-4 ">
+                  <h1 className=" capitalize text-white text-2xl lg:text-7xl font-extrabold my-2 lg:my-4 ">
                     {slide.text}{" "}
                     <span className=" text-yellow-500">{slide.sub}</span>
                   </h1>
@@ -63,7 +63,11 @@ const Hero = () => {
                   )}
                 </div>
 
-                <img className=" lg:w-[35%] rounded" src={slide.img} alt="" />
+                <img
+                  className=" h-[250px] lg:h-full  lg:w-[35%]  object-cover "
+                  src={slide.img}
+                  alt=""
+                />
               </div>
             </SwiperSlide>
           );

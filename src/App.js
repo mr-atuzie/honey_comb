@@ -42,6 +42,7 @@ import EmailSent from "./pages/EmailSent";
 import VerifyEmail from "./pages/VerifyEmail";
 import AdminLogin from "./pages/AdminLogin";
 import Invest from "./pages/Invest";
+import UserInvestments from "./pages/UserInvestments";
 
 function App() {
   axios.defaults.withCredentials = true;
@@ -120,6 +121,7 @@ function App() {
             <Route path="referrals" element={<Referral />} />
             <Route path="withdraw" element={<Withdraw />} />
             <Route path="invest/:type" element={<Invest />} />
+            <Route path="investments" element={<UserInvestments />} />
           </Route>
         </Route>
       </Routes>
