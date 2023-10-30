@@ -50,7 +50,7 @@ const UserDashboardNav = ({ user }) => {
         </NavLink>
 
         <NavLink
-          to={"/user/investment"}
+          to={"/user/investments"}
           className={({ isActive }) =>
             isActive ? "rounded-lg bg-yellow-400 text-white w-full" : ""
           }

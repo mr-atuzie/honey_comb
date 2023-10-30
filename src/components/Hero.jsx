@@ -57,7 +57,7 @@ const Hero = () => {
                   {isLoggedIn && (
                     <Link to={"/user/dashboard"}>
                       <button className=" rounded bg-green-600 text-white px-4 text-xs lg:text-base lg:px-6 py-2 capitalize hover:bg-green-700 hover:text-white  ">
-                        Dashboard
+                        Visit Dashboard
                       </button>
                     </Link>
                   )}

@@ -23,7 +23,7 @@ const UserTransactions = ({ transactions }) => {
                 key={transaction._id}
                 className=" flex justify-between items-center mb-3 border-b-2 border-gray-100 pb-2"
               >
-                {transaction?.type === "withdrawal" ? (
+                {transaction?.type === "payout" ? (
                   <div className=" flex items-center gap-2">
                     <div className=" w-10 h-10 lg:w-12 lg:h-12 bg-red-100 text-red-600 flex justify-center items-center">
                       <BsArrowBarDown size={25} />
@@ -53,7 +53,7 @@ const UserTransactions = ({ transactions }) => {
                   </div>
                 )}
 
-                {transaction?.type === "withdrawal" ? (
+                {transaction?.type === "payout" ? (
                   <p className=" text-red-600 font-medium text-sm lg:text-base">
                     {" "}
                     <span className=" m">-</span> &#8358;

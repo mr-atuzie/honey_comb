@@ -44,6 +44,7 @@ import AdminLogin from "./pages/AdminLogin";
 import Invest from "./pages/Invest";
 import UserInvestments from "./pages/UserInvestments";
 import ForgotPassword from "./pages/ForgotPassword";
+import Payout from "./pages/Payout";
 
 function App() {
   axios.defaults.withCredentials = true;
@@ -102,6 +103,7 @@ function App() {
             <Route path="transactions" element={<AdminTransactions />} />
             <Route path="add-notifications" element={<AddNotification />} />
             <Route path="approve-kyc" element={<ApproveKyc />} />
+            <Route path="payout/:id" element={<Payout />} />
             <Route path="user-profile/:id" element={<UserProfile />} />
             <Route path="content-management" element={<Cm />} />
             <Route path="search" element={<Search />} />

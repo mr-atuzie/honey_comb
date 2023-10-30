@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import { FaEnvelopeOpenText, FaFacebookF, FaWhatsapp } from "react-icons/fa";
 import { BiSupport } from "react-icons/bi";
 import Faq from "../components/Faq";
-import Terms from "./Terms";
+import Terms from "../components/Terms";
 import Ready from "../components/Ready";
 
 const Cont = () => {

@@ -19,7 +19,7 @@ const Packages = () => {
         heading={"Our Packages"}
         text={"what we offer"}
       />
-      <PackagesComp />
+      <PackagesComp homePage />
       <Ready />
       <Terms />
       <Faq />

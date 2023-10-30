@@ -1,10 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 // import { validateEmail } from "../services/authServices";
 import moment from "moment";
-import Pay from "../components/Pay";
+// import Pay from "../components/Pay";
 import { MdAccountBalance } from "react-icons/md";
 // import { GiMoneyStack } from "react-icons/gi";
 import { TbPigMoney } from "react-icons/tb";
@@ -16,7 +16,7 @@ const UserProfile = () => {
   // const [formData, setFormData] = useState({});
   //   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState("");
-  const [amount, setAmout] = useState();
+  const [investments, setInvestments] = useState();
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -40,8 +40,16 @@ const UserProfile = () => {
           }
         );
 
+        const investmentRes = await axios.get(
+          `${process.env.REACT_APP_BACKEND_URL}/api/v1/admin/investments/${id}`,
+          {
+            withCredentials: true,
+          }
+        );
+
         setUser(userRes.data);
         setTransactions(transactionRes.data.transactions);
+        setInvestments(investmentRes.data.investments);
         setLoading(false);
       } catch (error) {
         const message =
@@ -131,8 +139,8 @@ const UserProfile = () => {
         </div>
       </div>
 
-      <div className=" flex justify-between my-16 ">
-        <div className=" w-[40%]">
+      <div className=" flex justify-between my-16  ">
+        <div className=" w-[45%]">
           <form className=" p-5  bg-white">
             <div className=" mb-6 ">
               <p className=" font-medium  text-xl ">User Details </p>
@@ -321,8 +329,8 @@ const UserProfile = () => {
             </div>
           </div> */}
         </div>
-        <div className=" w-[55%]">
-          <div className=" bg-white p-5 shadow-md  h-fit sm:rounded-sm">
+        <div className=" w-[52%] ">
+          <div className=" bg-white p-5  shadow-md  h-fit sm:rounded-sm">
             <div className=" mb-6 ">
               <p className=" font-medium  text-xl ">Transactions</p>
               <p className=" text-xs text-gray-500 ">
@@ -429,31 +437,64 @@ const UserProfile = () => {
               </div>
             )}
           </div>
-          <div className="  mt-11 bg-white p-5  h-fit">
+
+          <div className=" p-3 lg:p-5 bg-white mt-9 shadow-lg rounded mb-10 lg:mb-0">
             <div className=" mb-6 ">
-              <p className=" font-medium  text-xl ">Payout</p>
+              {/* <p className=" font-medium  lg:text-xl ">Transactions</p> */}
+              <p className=" text-xs text-gray-500 ">
+                {investments?.length} Investments
+              </p>
             </div>
-            <div className=" ">
-              <div className="relative ">
-                <input
-                  type="text"
-                  name="amount"
-                  id="amount"
-                  className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                  placeholder="Pay client"
-                  onChange={(e) => setAmout(e.target.value)}
-                  // defaultValue={user?.email}
-                />
+            {investments?.length < 1 && (
+              <p className=" text-sm text-gray-500">No Investments</p>
+            )}
 
-                <label
-                  htmlFor="amount"
-                  className="absolute   text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
-                >
-                  Amount
-                </label>
-              </div>
+            <div>
+              {investments?.length >= 1 &&
+                investments.map((investment) => {
+                  return (
+                    <Link to={`/admin/payout/${investment?.id}`}>
+                      <div
+                        key={investment._id}
+                        className=" flex justify-between items-center mb-3 border-b-2 border-gray-100 pb-2"
+                      >
+                        <div>
+                          <p className=" text-xs lg:text-base">
+                            {" "}
+                            {investment?.type}
+                          </p>
+                          <p className=" text-gray-700 text-[11px] lg:text-sm">
+                            {moment(investment?.createdAt).format(
+                              "MMM Do YYYY"
+                            )}
+                          </p>
+                        </div>
 
-              <Pay amount={amount} type={"withdral"} />
+                        <p className=" text-xs lg:text-base">
+                          {new Intl.NumberFormat().format(investment?.amount)}
+                        </p>
+
+                        <p className="  text-xs lg:text-base">
+                          {moment(investment?.maturity).format("MMM Do YYYY")}
+                        </p>
+
+                        <p className="  text-xs lg:text-base">
+                          {new Intl.NumberFormat().format(investment?.payout)}
+                        </p>
+
+                        {investment?.status === "withdraw" ? (
+                          <div className="text-red-600 capitalize">
+                            {investment?.status}
+                          </div>
+                        ) : (
+                          <div className=" text-green-600 capitalize">
+                            {investment?.status}
+                          </div>
+                        )}
+                      </div>
+                    </Link>
+                  );
+                })}
             </div>
           </div>
         </div>

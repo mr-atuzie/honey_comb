@@ -25,7 +25,7 @@ const UserInvestment = ({ transactions, withdraw, handleSubmit }) => {
                 <div>
                   <p className=" text-xs lg:text-base"> {transaction?.type}</p>
                   <p className=" text-gray-700 text-[11px] lg:text-sm">
-                    {moment(transaction?.maturity).format("MMM Do YYYY")}
+                    {moment(transaction?.createdAt).format("MMM Do YYYY")}
                   </p>
                 </div>
 

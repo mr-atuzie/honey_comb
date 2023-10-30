@@ -70,7 +70,7 @@ const UserInvestments = () => {
     }
   };
   return (
-    <div>
+    <div className=" h-screen">
       <h1 className=" font-bold text-green-600 text-2xl lg:text-4xl  my-9 lg:my-11">
         Investment
       </h1>

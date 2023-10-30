@@ -74,6 +74,9 @@ const AdminWithdraw = () => {
                   Name
                 </th>
                 <th scope="col" className="px-6 py-3">
+                  Type
+                </th>
+                <th scope="col" className="px-6 py-3">
                   Date
                 </th>
                 <th scope="col" className="px-6 py-3">
@@ -81,7 +84,11 @@ const AdminWithdraw = () => {
                 </th>
 
                 <th scope="col" className="px-6 py-3">
-                  Status
+                  Maturity
+                </th>
+
+                <th scope="col" className="px-6 py-3">
+                  Intrest
                 </th>
 
                 <th scope="col" className="px-6 py-3">
@@ -121,17 +128,26 @@ const AdminWithdraw = () => {
                         </div>
                       </div>
                     </th>
+
+                    <td className="px-6 py-4">{transaction?.type}</td>
+
                     <td className="px-6 py-4">
-                      {" "}
                       {moment(transaction.createdAt).format("Do MMM YYYY")}
                     </td>
 
                     <td className="px-6 py-4">
-                      {" "}
                       {new Intl.NumberFormat().format(transaction.amount)}
                     </td>
 
-                    <td
+                    <td className="px-6 py-4">
+                      {moment(transaction.maturity).format("Do MMM YYYY")}
+                    </td>
+
+                    <td className="px-6 py-4">
+                      {new Intl.NumberFormat().format(transaction?.payout)}
+                    </td>
+
+                    {/* <td
                       className={`${
                         transaction?.status === "pending"
                           ? "text-yellow-500"
@@ -139,11 +155,10 @@ const AdminWithdraw = () => {
                       }   px-6 py-4 font-medium capitalize`}
                     >
                       {transaction?.status}
+                    </td> */}
+                    <td className="px-6 py-4 text-blue-500">
+                      <Link to={`/admin/payout/${transaction._id}`}>Pay</Link>
                     </td>
-
-                    <Link to={`/admin/user-profile/${transaction.userId}`}>
-                      <td className="px-6 py-4 text-blue-500">view user</td>
-                    </Link>
                   </tr>
                 );
               })}
