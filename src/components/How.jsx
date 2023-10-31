@@ -21,11 +21,6 @@ const How = ({ how }) => {
 
           {/* text container */}
           <div className=" w-[90%] mt-6 lg:mt-0 mx-auto lg:w-[40%]">
-            {/* <h3 className=" text-green-600   font-semibold text-xl lg:text-3xl capitalize">
-              Unleash Potentials through{" "}
-              <span className=" text-yellow-500"> investing</span> and{" "}
-              <span className=" text-yellow-500"> geting double</span>
-            </h3> */}
             <p className=" mt-4 leading-7 text-sm lg:text-base my-3">{how}</p>
           </div>
         </div>

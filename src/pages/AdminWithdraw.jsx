@@ -147,15 +147,6 @@ const AdminWithdraw = () => {
                       {new Intl.NumberFormat().format(transaction?.payout)}
                     </td>
 
-                    {/* <td
-                      className={`${
-                        transaction?.status === "pending"
-                          ? "text-yellow-500"
-                          : "text-green-500"
-                      }   px-6 py-4 font-medium capitalize`}
-                    >
-                      {transaction?.status}
-                    </td> */}
                     <td className="px-6 py-4 text-blue-500">
                       <Link to={`/admin/payout/${transaction._id}`}>Pay</Link>
                     </td>

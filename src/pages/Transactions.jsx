@@ -195,18 +195,12 @@ const Transactions = () => {
                       {" "}
                       {moment(transaction.createdAt).format("MMM Do YYYY")}
                     </td>
-                    {/* <td
-                      className={`${
-                        transaction?.type === "withdrawal"
-                          ? "text-red-500"
-                          : "text-green-500"
-                      }   px-6 py-4 font-medium`}
-                    >
+
+                    <td className="px-6 py-4">
                       {" "}
-                      &#8358; {transaction.type}
+                      &#8358;{" "}
+                      {new Intl.NumberFormat().format(transaction?.amount)}
                     </td>
-                    <td className="px-6 py-4">{transaction.plan}</td> */}
-                    <td className="px-6 py-4"> &#8358; {transaction.amount}</td>
 
                     <td className="px-6 py-4">
                       <div class="flex items-center  text-green-600">
