@@ -10,7 +10,7 @@ const Invest = () => {
   const [amount, setAmout] = useState(0);
   const [duration, setDuration] = useState(1);
 
-  // te
+  // te,,,rex
 
   const durations = [
     { name: "3 months", value: 3 },
