@@ -70,6 +70,15 @@ const Invest = () => {
     }
   };
 
+  const calHighInvestment = (amount) => {
+    const intrest = parseInt(amount) * 0.15;
+    const initialInvest = parseInt(amount) / 4;
+
+    const payout = intrest + initialInvest;
+
+    setAmout(payout);
+  };
+
   return (
     <div className=" w-full h-screen ">
       <div className=" w-full lg:w-[50%] mx-auto bg-white shadow-lg rounded mt-20 p-5 flex flex-col justify-center items-center">
@@ -81,26 +90,45 @@ const Invest = () => {
           <h2 className=" text-green-600 text-4xl lg:text-5xl font-bold">
             {type === "Low Risk Investment"
               ? new Intl.NumberFormat().format(amount * duration * 0.03)
-              : new Intl.NumberFormat().format(amount * 0.15 * (amount / 4))}
+              : new Intl.NumberFormat().format(amount)}
           </h2>
         </div>
 
-        <div className="relative w-full mt-7">
-          <input
-            type="text"
-            name="amount"
-            id="amount"
-            className="block p-2.5  lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder=""
-            onChange={(e) => setAmout(e.target.value)}
-          />
-          <label
-            htmlFor="amount"
-            className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
-          >
-            Amount
-          </label>
-        </div>
+        {type === "Low Risk Investment" ? (
+          <div className="relative w-full mt-7">
+            <input
+              type="text"
+              name="amount"
+              id="amount"
+              className="block p-2.5  lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=""
+              onChange={(e) => setAmout(e.target.value)}
+            />
+            <label
+              htmlFor="amount"
+              className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
+            >
+              Amount
+            </label>
+          </div>
+        ) : (
+          <div className="relative w-full mt-7">
+            <input
+              type="text"
+              name="amount"
+              id="amount"
+              className="block p-2.5  lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-green-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=""
+              onChange={(e) => calHighInvestment(e.target.value)}
+            />
+            <label
+              htmlFor="amount"
+              className="absolute  text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
+            >
+              Amount
+            </label>
+          </div>
+        )}
 
         {type === "Low Risk Investment" && (
           <div className="relative w-full mt-7">
