@@ -1,9 +1,11 @@
 import React from "react";
 import { FlutterWaveButton, closePaymentModal } from "flutterwave-react-v3";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Pay = ({ handleInvest, amount }) => {
   const user = JSON.parse(localStorage.getItem("user"));
+  const navigate = useNavigate();
 
   const config = {
     public_key: process.env.REACT_APP_FLUTTERWAVE_KEY,
@@ -31,6 +33,7 @@ const Pay = ({ handleInvest, amount }) => {
       if (response.status === "completed") {
         handleInvest();
         toast.success("Transaction successfull");
+        navigate("/user/investments");
       } else {
         toast.error("Transaction failed");
       }

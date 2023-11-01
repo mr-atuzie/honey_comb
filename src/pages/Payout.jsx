@@ -57,12 +57,43 @@ const Payout = () => {
   }
 
   const payout = async () => {
-    const userData = { amount: investment?.amount, type: investment?.type };
-
     try {
-      const res = await axios.post(
+      const res = await axios.get(
         `${process.env.REACT_APP_BACKEND_URL}/api/v1/admin/payout/${investment?._id}`,
-        userData,
+
+        {
+          withCredentials: true,
+        }
+      );
+
+      const investmentRes = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/admin/investment/${id}`,
+        {
+          withCredentials: true,
+        }
+      );
+
+      setInvestment(investmentRes.data);
+      console.log(res.data);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+
+      console.log(error);
+
+      toast.error(message);
+    }
+  };
+
+  const highpayout = async () => {
+    try {
+      const res = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/admin/high-payout/${investment?._id}`,
+
         {
           withCredentials: true,
         }
@@ -126,12 +157,22 @@ const Payout = () => {
           </p>
         </div>
 
-        <div className=" font-medium flex justify-between items-center capitalize mb-2 border-b py-2">
-          <span className="  text-green-700 uppercase">Intrest</span>
-          <p className=" text-lg">
-            &#8358; {new Intl.NumberFormat().format(investment?.payout)}
-          </p>
-        </div>
+        {investment?.type === "High Risk Investment" ? (
+          <div className=" font-medium flex justify-between items-center capitalize mb-2 border-b py-2">
+            <span className="  text-green-700 uppercase">Intrest</span>
+            <p className=" text-lg">
+              &#8358;{" "}
+              {new Intl.NumberFormat().format(investment?.amount * 0.15)}
+            </p>
+          </div>
+        ) : (
+          <div className=" font-medium flex justify-between items-center capitalize mb-2 border-b py-2">
+            <span className="  text-green-700 uppercase">Intrest</span>
+            <p className=" text-lg">
+              &#8358; {new Intl.NumberFormat().format(investment?.payout)}
+            </p>
+          </div>
+        )}
 
         <div className=" font-medium flex justify-between items-center capitalize mb-2 border-b py-2">
           <span className="  text-green-700 uppercase">Maturity</span>
@@ -149,52 +190,51 @@ const Payout = () => {
           )}
         </div>
 
-        <div className=" font-medium flex justify-between items-center capitalize mb-2 border-b py-2">
-          <span className="  text-green-700 uppercase">payout</span>
-          <p className=" text-lg">
-            &#8358;{" "}
-            {new Intl.NumberFormat().format(
-              investment?.payout + investment?.amount
-            )}
-          </p>
-        </div>
+        {investment?.type === "High Risk Investment" ? (
+          <div className=" font-medium flex justify-between items-center capitalize mb-2 border-b py-2">
+            <span className="  text-green-700 uppercase">payout</span>
+            <p className=" text-lg">
+              &#8358; {new Intl.NumberFormat().format(investment?.payout)}
+            </p>
+          </div>
+        ) : (
+          <div className=" font-medium flex justify-between items-center capitalize mb-2 border-b py-2">
+            <span className="  text-green-700 uppercase">payout</span>
+            <p className=" text-lg">
+              &#8358;{" "}
+              {new Intl.NumberFormat().format(
+                investment?.payout + investment?.amount
+              )}
+            </p>
+          </div>
+        )}
 
         <div className=" font-medium flex justify-between items-center capitalize mb-2 border-b py-2">
           <span className="  text-green-700 uppercase">Bank</span>
           <p className=" text-lg">{!user?.bank ? "Not added" : user?.bank}</p>
         </div>
 
-        <div className=" font-medium flex justify-between items-center capitalize mb-2">
+        <div className=" font-medium flex justify-between items-center capitalize mb-2 border-b py-2">
           <span className="  text-green-700 uppercase">Account Number</span>
           <p className=" text-lg">
             {!user?.accountNumber ? "Not added" : user?.accountNumber}
           </p>
         </div>
 
+        <div className=" font-medium flex justify-between items-center capitalize mb-2">
+          <span className="  text-green-700 uppercase">Paid</span>
+          <p className=" text-lg">{investment?.paid}</p>
+        </div>
+
         <div className=" mt-8 ">
-          {/* <div className="relative ">
-            <input
-              type="text"
-              name="amount"
-              id="amount"
-              className="block px-2.5 py-3 lg:p-4 w-full  text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-              placeholder="Pay client"
-                onChange={(e) => setAmout(e.target.value)}
-              value={investment?.payout + investment?.amount}
+          {investment?.type === "High Risk Investment" ? (
+            <AdminPay handlePay={highpayout} amount={investment?.payout} />
+          ) : (
+            <AdminPay
+              handlePay={payout}
+              amount={investment?.payout + investment?.amount}
             />
-
-            <label
-              htmlFor="amount"
-              className="absolute   text-gray-500 scale-75 -top-3 lg:text-lg   bg-white px-2  left-1"
-            >
-              Amount
-            </label>
-
-          </div> */}
-          <AdminPay
-            handlePay={payout}
-            amount={investment?.payout + investment?.amount}
-          />
+          )}
         </div>
       </div>
     </div>

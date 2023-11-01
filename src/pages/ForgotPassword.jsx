@@ -41,8 +41,8 @@ const ForgotPassword = () => {
     const userData = { email };
 
     try {
-      const res = await axios.post(
-        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/login`,
+      const res = await axios.patch(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/forgot-password`,
         userData,
         {
           withCredentials: true,

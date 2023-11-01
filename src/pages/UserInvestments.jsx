@@ -176,17 +176,42 @@ const UserInvestments = () => {
                       {/* {moment(D).format("MMM Do YYYY")} */}
                     </td>
 
-                    <td
-                      onClick={() => handleWithdraw(investment._id)}
-                      className="px-6 py-4"
-                    >
-                      <button
-                        disabled={withdraw}
-                        className=" bg-green-700 text-white py-2.5  rounded w-full disabled:bg-green-300"
+                    {investment.status === "" && (
+                      <td
+                        onClick={() => handleWithdraw(investment._id)}
+                        className="px-6 py-4"
                       >
-                        {withdraw ? "Processing" : "Withdraw"}
-                      </button>
-                    </td>
+                        <button
+                          disabled={withdraw}
+                          className=" bg-green-700 text-white py-2.5  rounded w-full disabled:bg-green-300"
+                        >
+                          {withdraw ? "Processing" : "Withdraw"}
+                        </button>
+                      </td>
+                    )}
+                    {investment.status === "approved" && (
+                      <td className="px-6 py-4">
+                        <button
+                          disabled={true}
+                          className=" bg-green-700 text-white py-2.5  rounded w-full disabled:bg-green-300"
+                        >
+                          Paid
+                        </button>
+                      </td>
+                    )}
+                    {investment.status === "withdraw" && (
+                      <td
+                        // onClick={() => handleWithdraw(investment._id)}
+                        className="px-6 py-4"
+                      >
+                        <button
+                          // disabled={true}
+                          className=" bg-yellow-500 text-white py-2.5  rounded w-full disabled:bg-green-300"
+                        >
+                          Pending
+                        </button>
+                      </td>
+                    )}
                   </tr>
                 );
               })}

@@ -194,7 +194,7 @@ const AdminTransactions = () => {
                     </td>
                     <td
                       className={`${
-                        transaction?.type === "withdrawal"
+                        transaction?.type === "payout"
                           ? "text-red-500"
                           : "text-green-500"
                       }   px-6 py-4 font-medium capitalize`}

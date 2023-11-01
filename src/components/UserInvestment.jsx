@@ -38,13 +38,31 @@ const UserInvestment = ({ transactions, withdraw, handleSubmit }) => {
                   </p>
                 </div>
 
-                <button
-                  onClick={() => handleSubmit(transaction?._id)}
-                  disabled={withdraw}
-                  className=" bg-green-700 text-white text-xs py-2 px-2 rounded disabled:bg-green-300 "
-                >
-                  {withdraw ? "Processing" : "Withdraw"}
-                </button>
+                {transaction.status === "" && (
+                  <button
+                    onClick={() => handleSubmit(transaction?._id)}
+                    disabled={withdraw}
+                    className=" bg-green-700 text-white text-xs py-2 px-2 rounded disabled:bg-green-300 "
+                  >
+                    {withdraw ? "Processing" : "Withdraw"}
+                  </button>
+                )}
+                {transaction.status === "approved" && (
+                  <button
+                    disabled={withdraw}
+                    className=" bg-green-700 text-white text-xs py-2 px-2 rounded disabled:bg-green-300 "
+                  >
+                    Paid
+                  </button>
+                )}
+                {transaction.status === "withdraw" && (
+                  <button
+                    disabled={withdraw}
+                    className=" bg-yellow-400 text-white text-xs py-2 px-2 rounded disabled:bg-green-300 "
+                  >
+                    Pending
+                  </button>
+                )}
               </div>
             );
           })}

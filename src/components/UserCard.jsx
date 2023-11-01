@@ -19,9 +19,7 @@ const UserCard = ({ user }) => {
           <h2 className=" text-xl font-semibold lg:text-5xl ">
             {" "}
             &#8358;
-            {new Intl.NumberFormat().format(
-              user?.accountBalance + user?.intrest + user?.referralBonus
-            )}
+            {new Intl.NumberFormat().format(user?.intrest)}
           </h2>
         </div>
 
@@ -49,7 +47,7 @@ const UserCard = ({ user }) => {
           </button>
         </Link>
 
-        <Link to={"/user/withdraw"}>
+        <Link to={"/user/investments"}>
           <button className="text-white bg-[#08432d]  py-3 text-center font-medium rounded  text-xs  lg:text-sm px-4 lg:px-8">
             Withdraw
           </button>
