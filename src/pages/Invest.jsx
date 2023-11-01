@@ -81,7 +81,7 @@ const Invest = () => {
           <h2 className=" text-green-600 text-4xl lg:text-5xl font-bold">
             {type === "Low Risk Investment"
               ? new Intl.NumberFormat().format(amount * duration * 0.03)
-              : new Intl.NumberFormat().format(amount * 0.15)}
+              : new Intl.NumberFormat().format(amount * 0.15 * (amount / 4))}
           </h2>
         </div>
 
