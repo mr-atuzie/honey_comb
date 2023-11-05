@@ -35,7 +35,7 @@ const Kyc = () => {
         formData.append("idType", idType);
 
         console.log(...formData);
-        const res = await axios.put(
+        await axios.put(
           `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/add-kyc`,
           formData
         );
@@ -47,7 +47,7 @@ const Kyc = () => {
         // const data = await uploadPic(formData);
         // console.log(data);
 
-        console.log(res.data);
+        // console.log(res.data);
 
         setLoading(false);
       } catch (error) {
