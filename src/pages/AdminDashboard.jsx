@@ -114,8 +114,7 @@ const AdminDashboard = () => {
           <div className="">
             <h2 className=" text-2xl font-semibold">
               {" "}
-              &#8358;{" "}
-              {new Intl.NumberFormat().format(totalIntrest + totalInvestment)}
+              &#8358; {new Intl.NumberFormat().format(totalInvestment)}
             </h2>
             <p className=" capitalize  font-medium text-gray-900">
               Total Revenue
