@@ -59,7 +59,7 @@ const AddNotification = ({ placeholder }) => {
     const userData = { title, desc };
 
     try {
-      const res = await axios.post(
+      await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/api/v1/admin/add-notification`,
         userData,
         {
@@ -68,8 +68,6 @@ const AddNotification = ({ placeholder }) => {
       );
 
       setLoading(false);
-      const data = res.data;
-      console.log(data);
 
       toast.success("Notification sent");
     } catch (error) {
