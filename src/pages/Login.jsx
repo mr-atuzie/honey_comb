@@ -85,7 +85,7 @@ const Login = () => {
         error.toString();
 
       console.log(error);
-      console.log(error.response.statusText);
+
       setLoading(false);
       toast.error(message);
     }

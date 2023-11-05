@@ -1,5 +1,4 @@
 import React from "react";
-// import { aboutUs } from "../cms";
 
 const About = ({ about }) => {
   return (
@@ -24,10 +23,6 @@ const About = ({ about }) => {
             <p className="   mt-4 text-sm leading-7 lg:text-base my-4">
               {about}
             </p>
-
-            {/* <button className=" text-green-700 font-medium text-sm">
-              Read More
-            </button> */}
           </div>
         </div>
       </div>

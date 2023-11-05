@@ -7,10 +7,34 @@ import { HiMiniClipboardDocumentCheck } from "react-icons/hi2";
 // import { ImStatsBars } from "react-icons/im";
 // import { IoMdSettings } from "react-icons/io";
 import { IoNotificationsSharp } from "react-icons/io5";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../assets/honeycomb logo.png";
+import axios from "axios";
+import { toast } from "react-toastify";
 
-const AdminDashboardNav = ({ user }) => {
+const AdminDashboardNav = () => {
+  const navigate = useNavigate();
+  const logout = async () => {
+    try {
+      await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/logout`,
+        {
+          withCredentials: true,
+        }
+      );
+      localStorage.clear();
+      navigate("/login");
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+
+      toast.error(message);
+    }
+  };
   return (
     <div>
       <div>
@@ -132,21 +156,10 @@ const AdminDashboardNav = ({ user }) => {
           </div>
         </NavLink>
 
-        {/* <NavLink
-          to={"/admin/statistics"}
-          className={({ isActive }) =>
-            isActive ? "rounded-lg bg-yellow-400 text-white w-full" : ""
-          }
+        <button
+          onClick={logout}
+          className=" border-2 border-yellow-500 text-lg rounded-lg bg-green-500 text-white w-full py-3  mt-14"
         >
-          <div className="flex gap-3 text-white items-center px-6  py-3">
-            <div className="">
-              <ImStatsBars size={24} />
-            </div>
-            <p className="font-medium text-lg  ">Statistics</p>
-          </div>
-        </NavLink> */}
-
-        <button className=" border-2 border-yellow-500 text-lg rounded-lg bg-green-500 text-white w-full py-3  mt-14">
           Logout
         </button>
       </div>

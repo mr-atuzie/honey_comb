@@ -45,6 +45,7 @@ import Invest from "./pages/Invest";
 import UserInvestments from "./pages/UserInvestments";
 import ForgotPassword from "./pages/ForgotPassword";
 import Payout from "./pages/Payout";
+import ScrollTop from "./components/ScrollTop";
 
 function App() {
   axios.defaults.withCredentials = true;
@@ -80,6 +81,7 @@ function App() {
   return (
     <BrowserRouter>
       <ToastContainer />
+      <ScrollTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

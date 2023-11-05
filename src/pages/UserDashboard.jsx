@@ -23,6 +23,7 @@ const UserDashboard = () => {
   const [referrals, setReferrals] = useState([]);
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(false);
+  const [investments, setInvestments] = useState([]);
 
   const userData = JSON.parse(localStorage.getItem("user"));
 
@@ -50,9 +51,18 @@ const UserDashboard = () => {
         }
       );
 
+      const investmentRes = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/investments`,
+        {
+          withCredentials: true,
+        }
+      );
+
       setTransactions(res.data.transactions);
       setUser(userRes.data);
       setReferrals(referralRes.data.referrals);
+      setInvestments(investmentRes.data.investments);
+
       setLoading(false);
     } catch (error) {
       const message =
@@ -126,7 +136,7 @@ const UserDashboard = () => {
   console.log(user);
   return (
     <div>
-      <h1 className=" font-bold text-green-600 text-2xl lg:text-4xl capitalize  mt-9 lg:mt-11">
+      <h1 className=" font-extrabold text-green-600 text-2xl lg:text-4xl capitalize  mt-9 lg:mt-11">
         welcome {userData?.name.split(" ")[0]}
       </h1>
 
@@ -161,7 +171,11 @@ const UserDashboard = () => {
             <UserCard user={user} />
           </div>
           <div className=" w-[50%]">
-            <UserStatCard user={user} referrals={referrals.length} />
+            <UserStatCard
+              user={user}
+              referrals={referrals.length}
+              investments={investments}
+            />
           </div>
         </div>
 
@@ -370,40 +384,17 @@ const UserDashboard = () => {
             </div>
           </div>
         </div>
-
-        {/* <div className=" flex flex-col lg:flex-row lg:justify-between">
-          <div className=" lg:w-[30%]  ">
-            <UserStatCard />
-          </div>
-
-          <div className=" my-10 lg:my-0 lg:w-[32%] ">
-            <UserLinearGraph />
-          </div>
-
-          <div className=" lg:w-[35%] ">
-            <UserTransactions />
-          </div>
-        </div> */}
-
-        {/* <div className="hidden lg:flex flex-col lg:flex-row lg:justify-between my-10">
-          line graph
-          <div className=" lg:w-[60%] bg-white shadow-lg pb-3 rounded">
-            <UserLineGraph />
-          </div>
-          barchat
-          <div className=" lg:w-[35%] bg-white shadow-lg pb-3 rounded">
-            <UserAreaChart />
-          </div>
-
-          notification
-        </div> */}
       </div>
 
       <div className="lg:hidden">
         <UserCard user={user} />
 
         <div className=" my-6 ">
-          <UserStatCard user={user} referrals={referrals.length} />
+          <UserStatCard
+            user={user}
+            referrals={referrals.length}
+            investments={investments}
+          />
         </div>
 
         <div className="my-6  ">

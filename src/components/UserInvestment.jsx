@@ -10,9 +10,9 @@ const UserInvestment = ({ transactions, withdraw, handleSubmit }) => {
           {transactions?.length} Investments
         </p>
       </div>
-      {transactions?.length < 1 && (
+      {/* {transactions?.length < 1 && (
         <p className=" text-sm text-gray-500">No Investments</p>
-      )}
+      )} */}
 
       <div>
         {transactions?.length >= 1 &&
@@ -26,6 +26,12 @@ const UserInvestment = ({ transactions, withdraw, handleSubmit }) => {
                   <p className=" text-xs lg:text-base"> {transaction?.type}</p>
                   <p className=" text-gray-700 text-[11px] lg:text-sm">
                     {moment(transaction?.createdAt).format("MMM Do YYYY")}
+                  </p>
+                </div>
+
+                <div className=" flex flex-col items-center justify-center">
+                  <p className=" font-medium text-xs lg:text-base">
+                    {new Intl.NumberFormat().format(transaction?.amount)}
                   </p>
                 </div>
 

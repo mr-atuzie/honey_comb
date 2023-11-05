@@ -67,8 +67,8 @@ const Kyc = () => {
 
   return (
     <div className=" w-full  h-screen ">
-      <form onSubmit={handleSubmit} className="w-[85%] lg:w-[50%] mx-auto">
-        <div className=" my-16">
+      <form onSubmit={handleSubmit} className=" lg:w-[50%] mx-auto">
+        <div className=" my-10 lg:my-16">
           {/* <p className=" uppercase font-semibold text-yellow-600 mb-4">
               Honey comb fxd
             </p> */}
@@ -77,13 +77,13 @@ const Kyc = () => {
             Add Document
           </h2>
 
-          <p className=" text-gray-500 text-xs  lg:text-sm my-4">
+          {/* <p className=" text-gray-500 text-xs  lg:text-sm my-4">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi
             quasi, dolorem saepe sapiente culpa illum.
-          </p>
+          </p> */}
         </div>
 
-        <div className="relative my-7">
+        <div className="relative mb-7">
           <select
             name="type"
             id="type"
@@ -106,7 +106,7 @@ const Kyc = () => {
         </div>
 
         {imagePreview != null ? (
-          <div className="  h-[300px] mb-5 rounded-sm mt-12">
+          <div className="  h-[300px] mb-5 rounded-sm lg:mt-12">
             <img
               src={imagePreview}
               className=" w-full h-full object-cover"
@@ -114,14 +114,14 @@ const Kyc = () => {
             />
           </div>
         ) : (
-          <div className=" border-2 bg-gray-100 rounded-sm  mt-12 flex justify-center items-center  border-dashed h-52 mb-5">
+          <div className=" border-2 bg-gray-100 rounded-sm  lg:mt-12 flex justify-center items-center  border-dashed h-52 mb-5">
             <label
               htmlFor="image"
               className=" cursor-pointer flex justify-center items-center flex-col"
             >
               <BsUpload className=" text-gray-400 text-center" size={30} />
-              <p className=" text-gray-500 text-sm mt-2 text-center">
-                click to upload file
+              <p className=" text-gray-500 text-xs lg:text-sm mt-2 text-center">
+                Click to upload file
               </p>
             </label>
 
@@ -140,7 +140,7 @@ const Kyc = () => {
         </p>
         <button
           disabled={loading}
-          className=" w-full text-center py-3.5 my-10  bg-green-600 rounded-lg text-white disabled:opacity-95 "
+          className=" w-full text-center py-3.5 my-10  bg-[#08432d] rounded-lg text-white disabled:opacity-95 "
           type="submit"
         >
           {loading ? "Loading" : "Submit"}

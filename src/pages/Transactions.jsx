@@ -93,7 +93,7 @@ const Transactions = () => {
   }
 
   return (
-    <div>
+    <div className="h-screen">
       <h1 className=" font-bold text-green-600 text-2xl lg:text-4xl  my-9 lg:my-11">
         Transactions History
       </h1>
@@ -144,16 +144,16 @@ const Transactions = () => {
                 <th scope="col" className="px-6 py-3">
                   Date
                 </th>
-                {/* <th scope="col" className="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                   Type
-                </th>
+                </th>{" "}
+                {/*
                 <th scope="col" className="px-6 py-3">
                   Plan
                 </th> */}
                 <th scope="col" className="px-6 py-3">
                   Amount
                 </th>
-
                 <th scope="col" className="px-6 py-3">
                   Status
                 </th>
@@ -195,6 +195,18 @@ const Transactions = () => {
                       {" "}
                       {moment(transaction.createdAt).format("MMM Do YYYY")}
                     </td>
+
+                    {transaction.type === "payout" ? (
+                      <td className="px-6 py-4 font-medium capitalize text-red-600">
+                        {" "}
+                        {transaction.type}
+                      </td>
+                    ) : (
+                      <td className="px-6 py-4 font-medium capitalize text-green-600">
+                        {" "}
+                        {transaction.type}
+                      </td>
+                    )}
 
                     <td className="px-6 py-4">
                       {" "}

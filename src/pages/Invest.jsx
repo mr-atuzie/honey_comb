@@ -8,6 +8,7 @@ import axios from "axios";
 const Invest = () => {
   const { type } = useParams();
   const [amount, setAmout] = useState(0);
+  const [intrest, setIntrest] = useState(0);
   const [duration, setDuration] = useState(1);
 
   const durations = [
@@ -75,8 +76,8 @@ const Invest = () => {
     const initialInvest = parseInt(amount) / 4;
 
     const payout = intrest + initialInvest;
-
-    setAmout(payout);
+    setIntrest(payout);
+    setAmout(amount);
   };
 
   return (
@@ -90,7 +91,7 @@ const Invest = () => {
           <h2 className=" text-green-600 text-4xl lg:text-5xl font-bold">
             {type === "Low Risk Investment"
               ? new Intl.NumberFormat().format(amount * duration * 0.03)
-              : new Intl.NumberFormat().format(amount)}
+              : new Intl.NumberFormat().format(intrest)}
           </h2>
         </div>
 

@@ -6,13 +6,37 @@ import {
   BiTransfer,
 } from "react-icons/bi";
 import { IoNotificationsSharp } from "react-icons/io5";
-import { GiGraduateCap } from "react-icons/gi";
-import { NavLink } from "react-router-dom";
+// import { GiGraduateCap } from "react-icons/gi";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../assets/honeycomb logo.png";
 import { FaMoneyBillTransfer } from "react-icons/fa6";
+import axios from "axios";
+import { toast } from "react-toastify";
 // import { FaUsers } from "react-icons/fa6";
 
 const UserDashboardNav = ({ user }) => {
+  const navigate = useNavigate();
+  const logout = async () => {
+    try {
+      await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/logout`,
+        {
+          withCredentials: true,
+        }
+      );
+      localStorage.clear();
+      navigate("/login");
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+
+      toast.error(message);
+    }
+  };
   return (
     <div>
       <div>
@@ -76,19 +100,7 @@ const UserDashboardNav = ({ user }) => {
             <p className="font-medium text-lg  ">Transactions</p>
           </div>
         </NavLink>
-        {/* <NavLink
-          to={"/user/referrals"}
-          className={({ isActive }) =>
-            isActive ? "rounded-lg bg-yellow-400 text-white w-full" : ""
-          }
-        >
-          <div className="flex gap-3 text-white items-center px-6  py-3">
-            <div className="">
-              <FaUsers size={24} />
-            </div>
-            <p className="font-medium text-lg  ">Referrals</p>
-          </div>
-        </NavLink> */}
+
         <NavLink
           to={"/user/notifications"}
           className={({ isActive }) =>
@@ -116,7 +128,7 @@ const UserDashboardNav = ({ user }) => {
           </div>
         </NavLink>
 
-        {user?.admin && (
+        {/* {user?.admin && (
           <NavLink
             to={"/admin/dashboard"}
             className={({ isActive }) =>
@@ -130,9 +142,12 @@ const UserDashboardNav = ({ user }) => {
               <p className="font-medium text-lg  ">Admin</p>
             </div>
           </NavLink>
-        )}
+        )} */}
 
-        <button className=" border-2 border-yellow-500 text-lg rounded-lg bg-green-500 text-white w-full py-3  mt-14">
+        <button
+          onClick={logout}
+          className=" border-2 border-yellow-500 text-lg rounded-lg bg-green-500 text-white w-full py-3  mt-14"
+        >
           Logout
         </button>
       </div>

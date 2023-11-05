@@ -11,9 +11,9 @@ const UserTransactions = ({ transactions }) => {
           {transactions?.length} Transactions
         </p>
       </div>
-      {transactions?.length < 1 && (
+      {/* {transactions?.length < 1 && (
         <p className=" text-sm text-gray-500">No transactions</p>
-      )}
+      )} */}
 
       <div>
         {transactions?.length >= 1 &&
@@ -29,7 +29,7 @@ const UserTransactions = ({ transactions }) => {
                       <BsArrowBarDown size={25} />
                     </div>
                     <div>
-                      <p className=" text-xs lg:text-base">
+                      <p className=" text-red-500  capitalize font-medium  text-xs lg:text-base">
                         {transaction.type}
                       </p>
                       <p className=" text-gray-700 text-xs lg:text-sm">
@@ -43,7 +43,7 @@ const UserTransactions = ({ transactions }) => {
                       <BsArrowBarUp size={25} />
                     </div>
                     <div>
-                      <p className=" text-sm lg:text-base">
+                      <p className="capitalize text-green-500 font-medium text-sm lg:text-base">
                         {transaction.type}
                       </p>
                       <p className=" text-gray-700 text-xs lg:text-sm">

@@ -55,6 +55,15 @@ const UserInvestments = () => {
         }
       );
 
+      const res = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/investments`,
+        {
+          withCredentials: true,
+        }
+      );
+
+      setInvestments(res.data.investments);
+
       toast.success("Transaction in Progress");
       setWithdraw(false);
     } catch (error) {
