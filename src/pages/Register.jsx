@@ -101,7 +101,6 @@ const Register = () => {
         error.message ||
         error.toString();
 
-      console.log(error);
       setLoading(false);
       toast.error(message);
     }
