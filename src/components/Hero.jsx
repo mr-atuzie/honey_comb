@@ -64,7 +64,7 @@ const Hero = () => {
                 </div>
 
                 <img
-                  className=" h-[250px] lg:h-full  lg:w-[35%]  object-cover "
+                  className=" h-[350px] lg:h-full  lg:w-[35%]  object-cover "
                   src={slide.img}
                   alt=""
                 />
