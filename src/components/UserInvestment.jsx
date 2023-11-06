@@ -5,7 +5,7 @@ const UserInvestment = ({ transactions, withdraw, handleSubmit }) => {
   return (
     <div className=" p-3 lg:p-5 bg-white shadow-lg rounded mb-10 lg:mb-0">
       <div className=" mb-6 ">
-        {/* <p className=" font-medium  lg:text-xl ">Transactions</p> */}
+        <p className=" font-medium  lg:text-xl ">Investments</p>
         <p className=" text-xs text-gray-500 ">
           {transactions?.length} Investments
         </p>

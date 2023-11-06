@@ -84,9 +84,9 @@ const UserInvestments = () => {
         Investment
       </h1>
 
-      {investments?.length < 1 && (
+      {/* {investments?.length < 1 && (
         <p className=" text-gray-500">No Investment</p>
-      )}
+      )} */}
 
       <div className="lg:hidden bg-white lg:mx-auto">
         <UserInvestment
