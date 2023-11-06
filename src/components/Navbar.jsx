@@ -125,7 +125,7 @@ const Navbar = () => {
           </ShowOnLogOut>
 
           <ShowOnLogIn>
-            <Link to={"/user/dashbaord"}>
+            <Link to={"/user/dashboard"}>
               <button className=" border-2 border-yellow-500 text-sm lg:text-base rounded bg-green-700 mt-3 text-white px-6 py-2.5 lg:py-3 capitalize hover:bg-white hover:text-black hover:border-2 hover:border-black ">
                 Dashboard
               </button>
