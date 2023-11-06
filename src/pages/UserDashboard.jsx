@@ -305,7 +305,7 @@ const UserDashboard = () => {
                           </div>
                         </th>
                         <th scope="col" className="px-6 py-3">
-                          ID
+                          Type
                         </th>
                         <th scope="col" className="px-6 py-3">
                           Date
@@ -344,11 +344,11 @@ const UserDashboard = () => {
                               scope="row"
                               className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white"
                             >
-                              {transaction._id}
+                              {transaction?.plan}
                             </th>
                             <td className="px-6 py-4">
                               {" "}
-                              {moment(transaction.createdAt).format(
+                              {moment(transaction?.createdAt).format(
                                 "Do MMM YYYY"
                               )}
                             </td>

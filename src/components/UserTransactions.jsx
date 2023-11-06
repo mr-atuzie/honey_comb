@@ -29,11 +29,11 @@ const UserTransactions = ({ transactions }) => {
                       <BsArrowBarDown size={25} />
                     </div>
                     <div>
-                      <p className=" text-red-500  capitalize font-medium  text-xs lg:text-base">
-                        {transaction.type}
+                      <p className=" text-red-500  capitalize font-medium  text-sm lg:text-base">
+                        {transaction?.plan}
                       </p>
                       <p className=" text-gray-700 text-xs lg:text-sm">
-                        {moment(transaction.createdAt).format("MMM Do YYYY")}
+                        {moment(transaction?.createdAt).format("MMM Do YYYY")}
                       </p>
                     </div>
                   </div>
@@ -43,8 +43,8 @@ const UserTransactions = ({ transactions }) => {
                       <BsArrowBarUp size={25} />
                     </div>
                     <div>
-                      <p className="capitalize text-green-500 font-medium text-sm lg:text-base">
-                        {transaction.type}
+                      <p className="capitalize  font-medium text-sm lg:text-base">
+                        {transaction?.plan}
                       </p>
                       <p className=" text-gray-700 text-xs lg:text-sm">
                         {moment(transaction.createdAt).format("MMM Do YYYY")}

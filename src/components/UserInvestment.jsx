@@ -31,12 +31,6 @@ const UserInvestment = ({ transactions, withdraw, handleSubmit }) => {
 
                 <div className=" flex flex-col items-center justify-center">
                   <p className=" font-medium text-xs lg:text-base">
-                    {new Intl.NumberFormat().format(transaction?.amount)}
-                  </p>
-                </div>
-
-                <div className=" flex flex-col items-center justify-center">
-                  <p className=" font-medium text-xs lg:text-base">
                     {new Intl.NumberFormat().format(transaction?.payout)}
                   </p>
                   <p className=" text-gray-700  text-[11px] lg:text-sm">
@@ -48,7 +42,7 @@ const UserInvestment = ({ transactions, withdraw, handleSubmit }) => {
                   <button
                     onClick={() => handleSubmit(transaction?._id)}
                     disabled={withdraw}
-                    className=" bg-green-700 text-white text-xs py-2 px-2 rounded disabled:bg-green-300 "
+                    className=" bg-green-700 text-white w-[90px] text-xs py-2 px-2 rounded disabled:bg-green-300 "
                   >
                     {withdraw ? "Processing" : "Withdraw"}
                   </button>
@@ -56,7 +50,7 @@ const UserInvestment = ({ transactions, withdraw, handleSubmit }) => {
                 {transaction.status === "approved" && (
                   <button
                     disabled={withdraw}
-                    className=" bg-green-700 text-white text-xs py-2 px-2 rounded disabled:bg-green-300 "
+                    className=" bg-green-400 w-[90px] text-white text-xs py-2 px-2 rounded disabled:bg-green-300 "
                   >
                     Paid
                   </button>
@@ -64,7 +58,7 @@ const UserInvestment = ({ transactions, withdraw, handleSubmit }) => {
                 {transaction.status === "withdraw" && (
                   <button
                     disabled={withdraw}
-                    className=" bg-yellow-400 text-white text-xs py-2 px-2 rounded disabled:bg-green-300 "
+                    className=" bg-yellow-400 w-[90px] text-white text-xs py-2 px-2 rounded disabled:bg-green-300 "
                   >
                     Pending
                   </button>
