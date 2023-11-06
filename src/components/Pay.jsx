@@ -33,7 +33,7 @@ const Pay = ({ handleInvest, amount }) => {
       if (response.status === "completed") {
         handleInvest();
         toast.success("Transaction successfull");
-        navigate("/user/investments");
+        navigate("/user/dashboard");
       } else {
         toast.error("Transaction failed");
       }
