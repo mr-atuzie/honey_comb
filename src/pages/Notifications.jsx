@@ -48,7 +48,7 @@ const Notifications = () => {
         </h1>
 
         {notifications?.length < 1 && (
-          <p className=" text-gray-500">No Referrals found</p>
+          <p className=" text-gray-500">No Notification</p>
         )}
 
         <div>
