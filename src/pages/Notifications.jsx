@@ -42,15 +42,16 @@ const Notifications = () => {
   }
   return (
     <div>
-      <div className="mx-auto">
+      <div className="mx-auto h-screen">
         <h1 className=" font-bold text-green-600 text-2xl lg:text-4xl  my-9 lg:my-11">
           Notifications
         </h1>
 
+        {notifications?.length < 1 && (
+          <p className=" text-gray-500">No Referrals found</p>
+        )}
+
         <div>
-          {/* <div className="lg:w-[75%] lg:mx-auto font-medium my-4">
-            <h2 className=" font-semibold lg:text-xl">Today</h2>
-          </div> */}
           {notifications?.map((not) => {
             return (
               <NotificationCard

@@ -14,8 +14,8 @@ const Hero = () => {
       img: "https://img.freepik.com/premium-vector/money-tree-concept_118813-7216.jpg?size=626&ext=jpg&uid=R105802964&ga=GA1.1.795360759.1692018039&semt=ais",
     },
     {
-      text: "Unleash Potentials through and",
-      sub: "geting double",
+      text: "Unleash Potentials",
+      sub: "invest and make profit",
       img: "https://img.freepik.com/free-vector/investing-concept-illustration_114360-6492.jpg?size=626&ext=jpg&uid=R105802964&ga=GA1.1.795360759.1692018039&semt=ais",
     },
     {

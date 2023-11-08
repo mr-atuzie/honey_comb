@@ -8,9 +8,6 @@ const UserReferral = ({ referrals }) => {
         <p className=" font-medium  lg:text-xl ">Referrals</p>
         <p className=" text-xs text-gray-500 ">{referrals?.length} Referrals</p>
       </div>
-      {referrals?.length < 1 && (
-        <p className=" text-sm text-gray-500">No referral</p>
-      )}
 
       <div>
         {referrals?.length >= 1 &&

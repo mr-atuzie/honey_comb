@@ -21,9 +21,8 @@ const Packages = ({ homePage }) => {
         "0% risk",
         "3% Monthly Returns paid upfront",
         "7.5% VAT charged on withdrawal",
-        "Minimum Investment is 100,000",
-        "Investment spans across 3 months (Basic), 6 months (Standard), 1 year (Professional)",
-        "Enjoy 2% referral bonus",
+        "100,000 naira Minimum Investment",
+        "2% referral bonus",
       ],
     },
     {

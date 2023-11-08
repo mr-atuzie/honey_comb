@@ -107,7 +107,7 @@ const Navbar = () => {
                 <Link to={link} onClick={() => setNav(!nav)}>
                   <li
                     key={id}
-                    className=" text-sm lg:text-base cursor-pointer  capitalize py-4   hover:scale-105 duration-200"
+                    className=" text-sm lg:text-base cursor-pointer  capitalize py-3   hover:scale-105 duration-200"
                   >
                     {name}
                   </li>
@@ -126,7 +126,7 @@ const Navbar = () => {
 
           <ShowOnLogIn>
             <Link to={"/user/dashboard"}>
-              <button className=" border-2 border-yellow-500 text-sm lg:text-base rounded bg-green-700 mt-3 text-white px-6 py-2.5 lg:py-3 capitalize hover:bg-white hover:text-black hover:border-2 hover:border-black ">
+              <button className=" text-sm lg:text-base rounded bg-green-700 mt-3 text-white px-6 py-2.5 lg:py-3 capitalize hover:bg-white hover:text-black hover:border-2 hover:border-black ">
                 Dashboard
               </button>
             </Link>
