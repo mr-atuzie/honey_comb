@@ -1,4 +1,5 @@
 import React from "react";
+import terms from "../assets/tc.pdf";
 
 const Terms = () => {
   return (
@@ -17,9 +18,13 @@ const Terms = () => {
           </p>
         </div>
         <div className=" flex justify-center items-center mt-6">
-          <button className=" text-sm  bg-white text-green-700 py-2 lg:py-3 px-5 rounded-md  ">
+          <a
+            href={terms}
+            download
+            className=" text-sm  bg-white text-green-700 py-2 lg:py-3 px-5 rounded-md  "
+          >
             Download File
-          </button>
+          </a>
         </div>
       </div>
     </div>
