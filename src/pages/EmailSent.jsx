@@ -69,7 +69,7 @@ const EmailSent = () => {
         <img className=" w-28 lg:w-40" src={logo} alt="" />
 
         <div className=" lg:max-w-2xl mx-auto mt-28  lg:mt-56 ">
-          <h2 className=" text-green-600 font-bold mb-2 text-xl lg:text-2xl">
+          <h2 className=" text-green-600 capitalize font-bold mb-2 text-xl lg:text-2xl">
             Hi {user.name}
           </h2>
 
