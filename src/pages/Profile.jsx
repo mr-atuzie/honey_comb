@@ -6,7 +6,8 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { banks } from "../data";
 import Loader from "../components/Loader";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { BiLogOut } from "react-icons/bi";
 
 const Profile = () => {
   const [user, setUser] = useState({});
@@ -16,6 +17,8 @@ const Profile = () => {
   const [uploading, setUpLoading] = useState(false);
   const [productImage, setProductImage] = useState("");
   const [imagePreview, setImagePreview] = useState(null);
+
+  const navigate = useNavigate();
 
   const getUser = async () => {
     setLoading(true);
@@ -139,7 +142,27 @@ const Profile = () => {
     }
   };
 
-  console.log(productImage);
+  const logout = async () => {
+    try {
+      await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/logout`,
+        {
+          withCredentials: true,
+        }
+      );
+      localStorage.clear();
+      navigate("/login");
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+
+      toast.error(message);
+    }
+  };
 
   if (loading) {
     return <Loader />;
@@ -378,6 +401,16 @@ const Profile = () => {
               {formLoader ? "Loading" : "Submit"}
             </button>
           </form>
+
+          <div className=" flex justify-center items-center mx-auto">
+            <button
+              onClick={logout}
+              className=" bg-yellow-500 my-6 flex justify-center items-center gap-2 text-white rounded-lg text-sm w-[40%] p-3 text-center font-medium disabled:bg-green-300"
+            >
+              <BiLogOut />
+              <span>Logout</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
