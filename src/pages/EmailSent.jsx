@@ -23,13 +23,13 @@ const EmailSent = () => {
     }
     try {
       const res = await axios.post(
-        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/verify-email}`,
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/verify-email`,
         userData
       );
 
       console.log(res.data);
       setLoading(false);
-      navigate("/login");
+      navigate("/user/dashboard");
     } catch (error) {
       const message =
         (error.response &&
