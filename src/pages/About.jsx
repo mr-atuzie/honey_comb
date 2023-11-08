@@ -51,6 +51,7 @@ const About = () => {
   if (loading) {
     return <Loader />;
   }
+
   return (
     <div>
       <Navbar />

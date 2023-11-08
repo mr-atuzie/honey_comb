@@ -53,36 +53,45 @@ const Profile = () => {
   };
 
   const handleUpload = async () => {
-    if (productImage) {
-      setUpLoading(true);
+    setUpLoading(true);
+
+    try {
       const formData = new FormData();
       formData.append("image", productImage);
-      try {
-        await axios.put(
-          `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/upload-picture`,
-          formData
-        );
 
-        setUpLoading(false);
+      const res = await axios.put(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/upload-picture`,
+        formData
+      );
+      const data = res.data;
 
-        toast.success("Image uploaded");
-        getUser();
-        setImagePreview(null);
-      } catch (error) {
-        const message =
-          (error.response &&
-            error.response.data &&
-            error.response.data.message) ||
-          error.message ||
-          error.response.statusText ||
-          error.toString();
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          id: data?._id,
+          name: `${data?.firstname} ${data?.lastname}`,
+          email: data?.email,
+          photo: data?.photo,
+          abv: `${data?.firstname.charAt(0)}${data?.lastname.charAt(0)}`,
+        })
+      );
 
-        setUpLoading(false);
-        toast.error(message);
-        setImagePreview(null);
-      }
-    } else {
-      toast.error("Please select an image");
+      setUpLoading(false);
+      toast.success("Image uploaded");
+      getUser();
+      setImagePreview(null);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.response.statusText ||
+        error.toString();
+
+      setUpLoading(false);
+      toast.error(message);
+      setImagePreview(null);
     }
   };
 
@@ -130,6 +139,8 @@ const Profile = () => {
     }
   };
 
+  console.log(productImage);
+
   if (loading) {
     return <Loader />;
   }
@@ -169,7 +180,7 @@ const Profile = () => {
             {/* image change */}
             <div className=" flex  justify-center items-center mt-6 ">
               {imagePreview != null ? (
-                <div>
+                <div className="flex justify-center flex-col items-center">
                   <div className="w-28 h-28 lg:w-40 lg:h-40  rounded-full flex justify-center items-center object-cover ">
                     <img
                       src={imagePreview}
@@ -180,14 +191,14 @@ const Profile = () => {
                   {uploading ? (
                     <button
                       disabled={uploading}
-                      className=" bg-green-600 text-white py-2.5 w-40 ml-5 rounded-md disabled:bg-green-300"
+                      className=" bg-green-600 flex justify-center items-center mt-2  text-white py-2.5 w-40 ml-5 rounded-md disabled:bg-green-300"
                     >
                       Uploading
                     </button>
                   ) : (
                     <button
                       onClick={handleUpload}
-                      className=" bg-green-600 text-white py-2.5 w-40 ml-5 rounded-md"
+                      className=" bg-green-600 flex justify-center items-center mt-2 text-white py-2.5 w-40 ml-5 rounded-md"
                     >
                       Upload Image
                     </button>

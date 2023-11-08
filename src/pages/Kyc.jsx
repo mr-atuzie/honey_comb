@@ -67,22 +67,15 @@ const Kyc = () => {
 
   return (
     <div className=" w-full  h-screen ">
-      <form onSubmit={handleSubmit} className=" lg:w-[50%] mx-auto">
-        <div className=" my-10 lg:my-16">
-          {/* <p className=" uppercase font-semibold text-yellow-600 mb-4">
-              Honey comb fxd
-            </p> */}
-
-          <h2 className="text-xl lg:text-4xl font-bold text-green-600 ">
-            Add Document
-          </h2>
-
-          {/* <p className=" text-gray-500 text-xs  lg:text-sm my-4">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi
-            quasi, dolorem saepe sapiente culpa illum.
-          </p> */}
-        </div>
-
+      <div className=" my-10 lg:my-16">
+        <h2 className="text-xl lg:text-4xl font-bold text-green-600 ">
+          Add Document
+        </h2>
+      </div>
+      <form
+        onSubmit={handleSubmit}
+        className=" bg-white p-5 lg:w-[50%] mx-auto"
+      >
         <div className="relative mb-7">
           <select
             name="type"
@@ -140,7 +133,7 @@ const Kyc = () => {
         </p>
         <button
           disabled={loading}
-          className=" w-full text-center py-3.5 my-10  bg-[#08432d] rounded-lg text-white disabled:opacity-95 "
+          className=" w-full text-center py-3.5 my-10  bg-[#08432d] rounded-lg text-white disabled:bg-green-300 "
           type="submit"
         >
           {loading ? "Loading" : "Submit"}

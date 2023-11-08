@@ -147,7 +147,7 @@ const Register = () => {
             </label>
 
             <input
-              className="border p-2.5 lg:p-3.5  block w-full placeholder:text-sm lg:placeholder:text-base"
+              className="border p-2.5 lg:p-3.5 rounded  block w-full placeholder:text-sm lg:placeholder:text-base"
               type="text"
               placeholder="Enter your firstname"
               name="firstname"
@@ -163,7 +163,7 @@ const Register = () => {
             </label>
 
             <input
-              className="border p-2.5 lg:p-3.5  block w-full placeholder:text-sm lg:placeholder:text-base"
+              className="border p-2.5 lg:p-3.5  rounded   block w-full placeholder:text-sm lg:placeholder:text-base"
               type="text"
               placeholder="Enter your lastname"
               name="lastname"
@@ -179,7 +179,7 @@ const Register = () => {
             </label>
 
             <input
-              className="border p-2.5 lg:p-3.5 block w-full  placeholder:text-sm lg:placeholder:text-base"
+              className="border p-2.5 lg:p-3.5  rounded  block w-full  placeholder:text-sm lg:placeholder:text-base"
               type="email"
               name="email"
               placeholder="Enter your email"
@@ -195,7 +195,7 @@ const Register = () => {
             </label>
 
             <input
-              className="border p-2.5 lg:p-3.5  block w-full placeholder:text-sm lg:placeholder:text-base"
+              className="border p-2.5 lg:p-3.5  rounded   block w-full placeholder:text-sm lg:placeholder:text-base"
               type="text"
               placeholder="Enter referral code"
               name="referral"
@@ -210,7 +210,7 @@ const Register = () => {
               Password
             </label>
             <input
-              className="border p-2.5 lg:p-3.5 block w-full  placeholder:text-sm lg:placeholder:text-base"
+              className="border p-2.5 lg:p-3.5 block w-full  rounded   placeholder:text-sm lg:placeholder:text-base"
               type="password"
               name="password"
               placeholder="Enter your password"
@@ -225,7 +225,7 @@ const Register = () => {
               Confirm Password
             </label>
             <input
-              className="border p-2.5 lg:p-3.5  block w-full placeholder:text-sm lg:placeholder:text-base"
+              className="border p-2.5 lg:p-3.5  rounded   block w-full placeholder:text-sm lg:placeholder:text-base"
               type="password"
               name="confirmPassword"
               placeholder="Retype password"
@@ -248,7 +248,7 @@ const Register = () => {
 
           <button
             disabled={loading}
-            className="border-2 text-sm lg:text-base border-yellow-500 rounded w-full text-center py-2.5 lg:py-3.5 my-4 bg-[#08432d] disabled:bg-green-300 text-white "
+            className=" text-sm lg:text-base rounded w-full text-center py-2.5 lg:py-3.5 my-4 bg-[#08432d] disabled:bg-green-300 text-white "
             type="submit"
           >
             {loading ? "Loading" : "Sign up"}
