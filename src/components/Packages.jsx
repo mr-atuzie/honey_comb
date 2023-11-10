@@ -30,10 +30,9 @@ const Packages = ({ homePage }) => {
       payout: "Weekly Cash Out",
       investments: "(Betting, Casino, Crypto, Forex Trading)",
       list: [
-        "100,000 naira Minimum Investment ",
         "15% weekly payout",
         "2% Referral Bonus",
-        "Minimum Investment is 100,000",
+        "Minimum Investment is 100,000 naira",
         "5% Registration Fee",
         "7.5% VAT Charged on Withdrawal",
       ],
