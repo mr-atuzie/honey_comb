@@ -72,8 +72,11 @@ const Invest = () => {
   };
 
   const calHighInvestment = (amount) => {
-    const intrest = parseInt(amount) * 0.15;
-    const initialInvest = parseInt(amount) / 4;
+    const regFee = parseInt(amount) * 0.05;
+    const currentAmount = parseInt(amount) - regFee;
+
+    const intrest = currentAmount * 0.15;
+    const initialInvest = currentAmount / 4;
 
     const payout = intrest + initialInvest;
     setIntrest(payout);
