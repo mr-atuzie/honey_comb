@@ -354,7 +354,8 @@ const UserDashboard = () => {
                             </td>
                             <td
                               className={`${
-                                transaction?.type === "withdrawal"
+                                transaction?.type === "payout" ||
+                                "registration fee"
                                   ? "text-red-500"
                                   : "text-gray-900"
                               }   px-6 py-4 font-medium capitalize`}
@@ -363,7 +364,8 @@ const UserDashboard = () => {
                             </td>
                             <td
                               className={`${
-                                transaction?.type === "withdrawal"
+                                transaction?.type === "payout" ||
+                                "registration fee"
                                   ? "text-red-500"
                                   : "text-green-500"
                               }   px-6 py-4 font-medium`}
