@@ -139,7 +139,7 @@ const Transactions = () => {
                   </div>
                 </th>
                 <th scope="col" className="px-6 py-3">
-                  id
+                  Investment
                 </th>
                 <th scope="col" className="px-6 py-3">
                   Date
@@ -187,7 +187,7 @@ const Transactions = () => {
                     >
                       <div className="pl-3">
                         <div className="text-base font-semibold">
-                          {transaction._id}
+                          {transaction.plan}
                         </div>
                       </div>
                     </th>
@@ -196,12 +196,21 @@ const Transactions = () => {
                       {moment(transaction.createdAt).format("MMM Do YYYY")}
                     </td>
 
-                    {transaction.type === "payout" ? (
+                    {transaction.type === "payout" && (
                       <td className="px-6 py-4 font-medium capitalize text-red-600">
                         {" "}
                         {transaction.type}
                       </td>
-                    ) : (
+                    )}
+
+                    {transaction.type === "registration fee" && (
+                      <td className="px-6 py-4 font-medium capitalize text-red-600">
+                        {" "}
+                        {transaction.type}
+                      </td>
+                    )}
+
+                    {transaction.type === "credit" && (
                       <td className="px-6 py-4 font-medium capitalize text-green-600">
                         {" "}
                         {transaction.type}

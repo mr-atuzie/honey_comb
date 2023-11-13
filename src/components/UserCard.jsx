@@ -19,7 +19,7 @@ const UserCard = ({ user }) => {
           <h2 className=" text-xl font-semibold lg:text-5xl ">
             {" "}
             &#8358;
-            {new Intl.NumberFormat().format(user?.intrest)}
+            {new Intl.NumberFormat().format(user?.accountBalance)}
           </h2>
         </div>
 

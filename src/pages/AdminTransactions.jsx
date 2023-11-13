@@ -194,19 +194,21 @@ const AdminTransactions = () => {
                     </td>
                     <td
                       className={`${
-                        transaction?.type === "payout"
+                        transaction?.type === "payout" || "registration fee"
                           ? "text-red-500"
                           : "text-green-500"
                       }   px-6 py-4 font-medium capitalize`}
                     >
                       {transaction?.type}
                     </td>
+
                     <td className="px-6 py-4 capitalize">
                       {transaction?.plan}{" "}
                     </td>
+
                     <td
                       className={`${
-                        transaction?.type === "payout"
+                        transaction?.type === "payout" || "registration fee"
                           ? "text-red-500"
                           : "text-green-500"
                       }   px-6 py-4 font-medium`}
@@ -214,6 +216,7 @@ const AdminTransactions = () => {
                       &#8358;{" "}
                       {new Intl.NumberFormat().format(transaction.amount)}
                     </td>
+
                     <td className="px-6 py-4">
                       <div class="flex items-center  text-green-600">
                         <div className="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div>{" "}

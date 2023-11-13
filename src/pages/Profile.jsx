@@ -182,7 +182,7 @@ const Profile = () => {
               isActive ? " text-green-600" : "text-gray-600"
             }
           >
-            <p className="font-medium text-sm  ">Add Kyc</p>
+            <p className="font-medium text-sm  ">Update Profile</p>
           </NavLink>
 
           <NavLink

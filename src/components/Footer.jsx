@@ -1,20 +1,29 @@
 import React from "react";
 import { MdVerified } from "react-icons/md";
-import { BsFacebook, BsLinkedin } from "react-icons/bs";
-import { AiFillTwitterCircle } from "react-icons/ai";
 import logo from "../assets/honeycomb full logo.png";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useState } from "react";
+import { FaEnvelope, FaTelegram, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
-  const F1 = ["About Us", "Terms and Condition", "Learn more"];
-  // const F2 = [
-  //   "Forex Trading",
-  //   "Cryptocurrency Investments",
-  //   "Agriculture Investments",
-  //   "Investment Security",
-  //   "Foreign Investment",
-  //   "Low investment minimums",
-  //   "Expert Financial Guidance",
-  // ];
+  // const F1 = ["About Us", "Terms and Condition", "Learn more"];
+  const [email, setEmail] = useState("");
+
+  const F2 = [
+    "Forex Trading",
+    "Cryptocurrency Investments",
+    "Agriculture Investments",
+    "Investment Security",
+    "Foreign Investment",
+    "Low investment minimums",
+    "Expert Financial Guidance",
+  ];
+
+  const subscribe = () => {
+    toast.success("subscribtion successfull");
+    setEmail("");
+  };
   return (
     <div className="h-full lg:h-[60vh] bg-white  py-10 ">
       <div className=" w-[90%] md:w-[80%] mx-auto ">
@@ -31,8 +40,13 @@ const Footer = () => {
                 className=" py-2 lg:py-3 px-6 w-full   rounded-md border-none outline-none"
                 type="email"
                 placeholder="Your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
-              <button className="  text-sm lg:text-base  py-3 px-6 bg-[#08432d]  text-white">
+              <button
+                onClick={subscribe}
+                className="  text-sm lg:text-base  py-3 px-6 bg-[#08432d]  text-white"
+              >
                 Subscribe
               </button>
             </div>
@@ -43,20 +57,25 @@ const Footer = () => {
               <div className="uppercase font-medium text-sm lg:text-base mb-2">
                 LEARN MORE
               </div>
-              {F1.map((data, index) => {
-                return (
-                  <div className=" flex mb-2 " key={index}>
-                    <MdVerified size={20} className="text-sky-900" />
-                    <span className=" ml-3 text-gray-600 capitalize text-xs lg:text-base">
-                      {data}
-                    </span>
-                  </div>
-                );
-              })}
+
+              <div className=" flex mb-2 ">
+                <MdVerified size={20} className="text-sky-900" />
+                <span className=" ml-3 text-gray-600 capitalize text-xs lg:text-base">
+                  About Us
+                </span>
+              </div>
+              <div className=" flex mb-2 ">
+                <MdVerified size={20} className="text-sky-900" />
+                <Link to={"/terms-and-condition"}>
+                  <span className=" ml-3 text-gray-600 capitalize text-xs lg:text-base">
+                    Terms and Condition
+                  </span>
+                </Link>
+              </div>
             </div>
-            {/* <div>
+            <div>
               <div className="uppercase font-medium text-sm lg:text-base mb-2">
-                more about us;
+                What we do;
               </div>
               {F2.map((data, index) => {
                 return (
@@ -67,18 +86,18 @@ const Footer = () => {
                   </div>
                 );
               })}
-            </div> */}
+            </div>
 
             <div>
               <div className=" uppercase font-medium  text-sm lg:text-base    mb-2">
                 Let's continue the conversation
               </div>
-              <div className="flex gap-4 lg:gap-8 items-center">
-                <AiFillTwitterCircle color="#00acee" size={30} />
+              <div className="flex gap-3 lg:gap-8 items-center">
+                <FaWhatsapp className=" text-[#075e54]" size={30} />
 
-                <BsFacebook className=" text-[#3b5998]" size={30} />
+                <FaTelegram className=" text-[#0072b1]" size={30} />
 
-                <BsLinkedin className=" text-[#0072b1]" size={30} />
+                <FaEnvelope className=" text-red-400 " size={30} />
               </div>
               <div className=" text-xs lg:text-sm text-gray-700 font-medium mt-8">
                 &copy; 2023 Honey comb fxd farm
