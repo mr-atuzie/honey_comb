@@ -52,56 +52,55 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className=" mt-6 lg:mt-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
-            <div>
-              <div className="uppercase font-medium text-sm lg:text-base mb-2">
-                LEARN MORE
-              </div>
+          <div>
+            <div className="uppercase font-medium text-sm lg:text-base mb-2">
+              LEARN MORE
+            </div>
 
-              <div className=" flex mb-2 ">
-                <MdVerified size={20} className="text-sky-900" />
+            <div className=" flex mb-2 ">
+              <MdVerified size={20} className="text-sky-900" />
+              <span className=" ml-3 text-gray-600 capitalize text-xs lg:text-base">
+                About Us
+              </span>
+            </div>
+            <div className=" flex mb-2 ">
+              <MdVerified size={20} className="text-sky-900" />
+              <Link to={"/terms-and-condition"}>
                 <span className=" ml-3 text-gray-600 capitalize text-xs lg:text-base">
-                  About Us
+                  Terms and Condition
                 </span>
-              </div>
-              <div className=" flex mb-2 ">
-                <MdVerified size={20} className="text-sky-900" />
-                <Link to={"/terms-and-condition"}>
-                  <span className=" ml-3 text-gray-600 capitalize text-xs lg:text-base">
-                    Terms and Condition
+              </Link>
+            </div>
+          </div>
+
+          <div>
+            <div className="uppercase font-medium text-sm lg:text-base mb-2">
+              What we do;
+            </div>
+            {F2.map((data, index) => {
+              return (
+                <div className=" mb-2 " key={index}>
+                  <span className=" text-gray-600 capitalize text-xs lg:text-base">
+                    {data}
                   </span>
-                </Link>
-              </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div>
+            <div className=" uppercase font-medium  text-sm lg:text-base    mb-2">
+              Let's continue the conversation
             </div>
-            <div>
-              <div className="uppercase font-medium text-sm lg:text-base mb-2">
-                What we do;
-              </div>
-              {F2.map((data, index) => {
-                return (
-                  <div className=" mb-2 " key={index}>
-                    <span className=" text-gray-600 capitalize text-xs lg:text-base">
-                      {data}
-                    </span>
-                  </div>
-                );
-              })}
+            <div className="flex gap-3 lg:gap-8 items-center">
+              <FaWhatsapp className=" text-[#075e54]" size={30} />
+
+              <FaTelegram className=" text-[#0072b1]" size={30} />
+
+              <FaEnvelope className=" text-red-400 " size={30} />
             </div>
-
-            <div>
-              <div className=" uppercase font-medium  text-sm lg:text-base    mb-2">
-                Let's continue the conversation
-              </div>
-              <div className="flex gap-3 lg:gap-8 items-center">
-                <FaWhatsapp className=" text-[#075e54]" size={30} />
-
-                <FaTelegram className=" text-[#0072b1]" size={30} />
-
-                <FaEnvelope className=" text-red-400 " size={30} />
-              </div>
-              <div className=" text-xs lg:text-sm text-gray-700 font-medium mt-8">
-                &copy; 2023 Honey comb fxd farm
-              </div>
+            <div className=" text-xs lg:text-sm text-gray-700 font-medium mt-8">
+              &copy; 2023 Honey comb fxd farm
             </div>
           </div>
         </div>
