@@ -153,9 +153,7 @@ const InvestDetails = () => {
             </h1>
 
             <p className=" text-sm lg:text-base ">
-              Your capital is at risk. You should not spend more than you can
-              afford to lose and should ensure that you fully understand the
-              risks involved.
+              Kindly reinvest to withdrawal at this stage
             </p>
 
             <div className=" flex gap-4 mt-5">
