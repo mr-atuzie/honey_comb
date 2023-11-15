@@ -23,7 +23,7 @@ const UserTransactions = ({ transactions }) => {
                 key={transaction._id}
                 className=" flex justify-between items-center mb-3 border-b-2 border-gray-100 pb-2"
               >
-                {transaction?.type === "payout" || "registration fee" ? (
+                {transaction?.type === "payout" && (
                   <div className=" flex items-center gap-2">
                     <div className=" w-10 h-10 lg:w-12 lg:h-12 bg-red-100 text-red-600 flex justify-center items-center">
                       <BsArrowBarDown size={25} />
@@ -37,7 +37,9 @@ const UserTransactions = ({ transactions }) => {
                       </p>
                     </div>
                   </div>
-                ) : (
+                )}
+
+                {transaction?.type === "registration fee" && (
                   <div className=" flex items-center gap-2">
                     <div className=" w-10 h-10 lg:w-12 lg:h-12 bg-green-100 text-green-600 flex justify-center items-center">
                       <BsArrowBarUp size={25} />
@@ -53,13 +55,39 @@ const UserTransactions = ({ transactions }) => {
                   </div>
                 )}
 
-                {transaction?.type === "payout" ? (
+                {transaction?.type === "credit" && (
+                  <div className=" flex items-center gap-2">
+                    <div className=" w-10 h-10 lg:w-12 lg:h-12 bg-green-100 text-green-600 flex justify-center items-center">
+                      <BsArrowBarUp size={25} />
+                    </div>
+                    <div>
+                      <p className="capitalize  font-medium text-sm lg:text-base">
+                        {transaction?.plan}
+                      </p>
+                      <p className=" text-gray-700 text-xs lg:text-sm">
+                        {moment(transaction.createdAt).format("MMM Do YYYY")}
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {transaction?.type === "payout" && (
                   <p className=" text-red-600 font-medium text-sm lg:text-base">
                     {" "}
                     <span className=" m">-</span> &#8358;
                     {new Intl.NumberFormat().format(transaction?.amount)}
                   </p>
-                ) : (
+                )}
+
+                {transaction?.type === "registration fee" && (
+                  <p className=" text-red-600 font-medium text-sm lg:text-base">
+                    {" "}
+                    <span className=" m">-</span> &#8358;
+                    {new Intl.NumberFormat().format(transaction?.amount)}
+                  </p>
+                )}
+
+                {transaction?.type === "credit" && (
                   <p className=" text-green-600 font-medium text-sm lg:text-base">
                     {" "}
                     <span className=" m">+</span> &#8358;

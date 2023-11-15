@@ -1,7 +1,8 @@
 import React from "react";
 import moment from "moment";
+import { Link } from "react-router-dom";
 
-const UserInvestment = ({ transactions, withdraw, handleSubmit }) => {
+const UserInvestment = ({ transactions }) => {
   return (
     <div className=" p-3 lg:p-5 bg-white shadow-lg rounded mb-10 lg:mb-0">
       <div className=" mb-6 ">
@@ -38,14 +39,15 @@ const UserInvestment = ({ transactions, withdraw, handleSubmit }) => {
                   </p>
                 </div>
 
-                {transaction.status === "" && (
-                  <button
-                    onClick={() => handleSubmit(transaction?._id)}
-                    disabled={withdraw}
-                    className=" bg-green-700 text-white w-[90px] text-xs py-2 px-2 rounded disabled:bg-green-300 "
-                  >
-                    {withdraw ? "Processing" : "Withdraw"}
+                <Link to={`/user/investment/${transaction?._id}`}>
+                  {" "}
+                  <button className=" bg-green-700 text-white w-[90px] text-xs py-2 px-2 rounded disabled:bg-green-300 ">
+                    View
                   </button>
+                </Link>
+
+                {/* {transaction.status === "" && (
+                  
                 )}
                 {transaction.status === "approved" && (
                   <button
@@ -62,7 +64,7 @@ const UserInvestment = ({ transactions, withdraw, handleSubmit }) => {
                   >
                     Pending
                   </button>
-                )}
+                )} */}
               </div>
             );
           })}

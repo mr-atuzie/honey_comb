@@ -1,20 +1,20 @@
 import { BsEyeSlash } from "react-icons/bs";
-import { FaRegCopy } from "react-icons/fa";
+// import { FaRegCopy } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 
 const UserCard = ({ user }) => {
-  const handleCopy = (referralCode) => {
-    navigator.clipboard.writeText(referralCode);
-    toast.success(`Copied referral code ${referralCode} to clipboard`);
-  };
+  // const handleCopy = (referralCode) => {
+  //   navigator.clipboard.writeText(referralCode);
+  //   toast.success(`Copied referral code ${referralCode} to clipboard`);
+  // };
 
   return (
     <div className=" h-full  bg-white shadow-lg flex flex-col justify-between  px-4 py-6 lg:p-8 rounded">
       <div className=" mb-4 flex justify-between items-center">
         <div>
           <p className=" text-xs lg:text-sm  text-gray-500 ">
-            Current Balanace
+            Total Investments
           </p>
           <h2 className=" text-xl font-semibold lg:text-5xl ">
             {" "}
@@ -28,7 +28,7 @@ const UserCard = ({ user }) => {
         </div>
       </div>
 
-      <div
+      {/* <div
         onClick={() => handleCopy(user?._id)}
         className=" mb-4 flex justify-between items-center cursor-pointer"
       >
@@ -38,7 +38,7 @@ const UserCard = ({ user }) => {
         </div>
 
         <FaRegCopy className=" text-gray-500" />
-      </div>
+      </div> */}
 
       <div className=" mt-8 flex gap-2  ">
         <Link to={"/user/packages"}>

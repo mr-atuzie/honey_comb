@@ -22,12 +22,11 @@ const EmailSent = () => {
       return toast.error("Please enter verification code");
     }
     try {
-      const res = await axios.post(
+      await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/verify-email`,
         userData
       );
 
-      console.log(res.data);
       setLoading(false);
       navigate("/user/dashboard");
     } catch (error) {

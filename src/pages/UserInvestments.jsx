@@ -6,11 +6,12 @@ import { useEffect } from "react";
 import Loader from "../components/Loader";
 import axios from "axios";
 import moment from "moment";
+import { Link } from "react-router-dom";
+// import ReInvest from "../components/ReInvest";
 
 const UserInvestments = () => {
   const [investments, setInvestments] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [withdraw, setWithdraw] = useState(false);
 
   const getInvestments = async () => {
     setLoading(true);
@@ -45,55 +46,18 @@ const UserInvestments = () => {
     return <Loader />;
   }
 
-  const handleWithdraw = async (id) => {
-    setWithdraw(true);
-    try {
-      await axios.get(
-        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/withdraw/${id}`,
-        {
-          withCredentials: true,
-        }
-      );
-
-      const res = await axios.get(
-        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/investments`,
-        {
-          withCredentials: true,
-        }
-      );
-
-      setInvestments(res.data.investments);
-
-      toast.success("Transaction in Progress");
-      setWithdraw(false);
-    } catch (error) {
-      setWithdraw(false);
-      const message =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.message ||
-        error.toString();
-
-      toast.error(message);
-    }
-  };
   return (
     <div className=" h-screen">
       <h1 className=" font-bold text-green-600 text-2xl lg:text-4xl  my-9 lg:my-11">
         Investment
       </h1>
 
-      {/* {investments?.length < 1 && (
+      {investments?.length < 1 && (
         <p className=" text-gray-500">No Investment</p>
-      )} */}
+      )}
 
       <div className="lg:hidden bg-white lg:mx-auto">
-        <UserInvestment
-          transactions={investments}
-          withdraw={withdraw}
-          handleSubmit={handleWithdraw}
-        />
+        <UserInvestment transactions={investments} />
       </div>
 
       {investments?.length >= 1 && (
@@ -164,6 +128,9 @@ const UserInvestments = () => {
                         <div className="text-base font-semibold">
                           {investment?.type}
                         </div>
+                        <div className="font-normal text-gray-500">
+                          {investment?._id}
+                        </div>
                       </div>
                     </th>
                     <td className="px-6 py-4">
@@ -185,20 +152,31 @@ const UserInvestments = () => {
                       {/* {moment(D).format("MMM Do YYYY")} */}
                     </td>
 
-                    {investment.status === "" && (
-                      <td
-                        onClick={() => handleWithdraw(investment._id)}
-                        className="px-6 py-4"
-                      >
-                        <button
-                          disabled={withdraw}
-                          className=" bg-green-700 text-white py-2.5  rounded w-full disabled:bg-green-300"
-                        >
-                          {withdraw ? "Processing" : "Withdraw"}
+                    <td className="px-6 py-4 ">
+                      <Link to={`/user/investment/${investment?._id}`}>
+                        <button className=" bg-green-700 text-white py-2.5  rounded w-full disabled:bg-green-300">
+                          View
                         </button>
-                      </td>
-                    )}
-                    {investment.status === "approved" && (
+                      </Link>
+                    </td>
+
+                    {/* {investment.status === "" &&
+                      (investment?.type === "Low Risk Investment" ? (
+                        
+                      ) : (
+                        <td
+                          onClick={() => highWithdraw(investment._id)}
+                          className="px-6 py-4"
+                        >
+                          <button
+                            disabled={withdraw}
+                            className=" bg-green-700 text-white py-2.5  rounded w-full disabled:bg-green-300"
+                          >
+                            {withdraw ? "Processing" : "Withdraw"}
+                          </button>
+                        </td>
+                      ))} */}
+                    {/* {investment.status === "approved" && (
                       <td className="px-6 py-4">
                         <button
                           disabled={true}
@@ -207,20 +185,14 @@ const UserInvestments = () => {
                           Paid
                         </button>
                       </td>
-                    )}
-                    {investment.status === "withdraw" && (
-                      <td
-                        // onClick={() => handleWithdraw(investment._id)}
-                        className="px-6 py-4"
-                      >
-                        <button
-                          // disabled={true}
-                          className=" bg-yellow-500 text-white py-2.5  rounded w-full disabled:bg-green-300"
-                        >
+                    )} */}
+                    {/* {investment.status === "withdraw" && (
+                      <td className="px-6 py-4">
+                        <button className=" bg-yellow-500 text-white py-2.5  rounded w-full disabled:bg-green-300">
                           Pending
                         </button>
                       </td>
-                    )}
+                    )} */}
                   </tr>
                 );
               })}

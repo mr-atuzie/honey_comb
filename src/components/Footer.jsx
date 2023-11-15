@@ -95,7 +95,13 @@ const Footer = () => {
             <div className="flex gap-3 lg:gap-8 items-center">
               <FaWhatsapp className=" text-[#075e54]" size={30} />
 
-              <FaTelegram className=" text-[#0072b1]" size={30} />
+              <a
+                href="https://t.me/+-y-Y5qDIRtE5MTJk"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaTelegram className=" text-[#0072b1]" size={30} />
+              </a>
 
               <FaEnvelope className=" text-red-400 " size={30} />
             </div>

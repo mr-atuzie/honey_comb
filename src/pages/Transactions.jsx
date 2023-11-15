@@ -118,9 +118,9 @@ const Transactions = () => {
       <div className="lg:hidden bg-white lg:mx-auto">
         <UserTransactions transactions={transactions} />
       </div>
-      {/* {transactions?.length < 1 && (
-        <p className=" text-gray-500">No Transaction found</p>
-      )} */}
+      {transactions?.length < 1 && (
+        <p className=" text-gray-500">No Transactions</p>
+      )}
       {transactions?.length >= 1 && (
         <div className="hidden lg:block relative overflow-x-auto shadow-md sm:rounded-lg">
           <table className="w-full text-sm text-left text-gray-900 dark:text-gray-400">

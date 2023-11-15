@@ -257,10 +257,13 @@ const Profile = () => {
             </div>
 
             <div className=" my-3 justify-center items-center text-center ">
+              <h2 className=" text-xs lg:text-sm font-medium  ">
+                {" "}
+                {user?.firstname} {user?.lastname}
+              </h2>
               <p className=" text-xs lg:text-sm  text-gray-500 ">
-                Referral Code
+                {user?.email}
               </p>
-              <h2 className=" text-xs lg:text-sm font-medium  ">{user?._id}</h2>
             </div>
           </div>
 

@@ -133,7 +133,6 @@ const UserDashboard = () => {
     return <Loader />;
   }
 
-  console.log(user);
   return (
     <div>
       <h1 className=" font-extrabold text-green-600 text-2xl lg:text-4xl capitalize  mt-9 lg:mt-11">
@@ -352,20 +351,51 @@ const UserDashboard = () => {
                                 "Do MMM YYYY"
                               )}
                             </td>
-                            <td
+
+                            {transaction?.type === "registration fee" && (
+                              <td
+                                className={
+                                  "text-red-500  px-6 py-4 font-medium capitalize"
+                                }
+                              >
+                                {transaction?.type}
+                              </td>
+                            )}
+
+                            {transaction?.type === "payout" && (
+                              <td
+                                className={
+                                  "text-red-500  px-6 py-4 font-medium capitalize"
+                                }
+                              >
+                                {transaction?.type}
+                              </td>
+                            )}
+
+                            {transaction?.type === "credit" && (
+                              <td
+                                className={
+                                  "text-green-500  px-6 py-4 font-medium capitalize"
+                                }
+                              >
+                                {transaction?.type}
+                              </td>
+                            )}
+
+                            {/* <td
                               className={`${
-                                transaction?.type === "payout" ||
-                                "registration fee"
+                                transaction?.type === "registration fee" ||
+                                "payout"
                                   ? "text-red-500"
                                   : "text-gray-900"
                               }   px-6 py-4 font-medium capitalize`}
                             >
                               {transaction?.type}
-                            </td>
-                            <td
+                            </td> */}
+
+                            {/* <td
                               className={`${
-                                transaction?.type === "payout" ||
-                                "registration fee"
+                                transaction?.type === "registration fee"
                                   ? "text-red-500"
                                   : "text-green-500"
                               }   px-6 py-4 font-medium`}
@@ -375,7 +405,46 @@ const UserDashboard = () => {
                               {new Intl.NumberFormat().format(
                                 transaction?.amount
                               )}
-                            </td>
+                            </td> */}
+
+                            {transaction?.type === "registration fee" && (
+                              <td
+                                className={
+                                  "text-red-500  px-6 py-4 font-medium capitalize"
+                                }
+                              >
+                                -{" "}
+                                {new Intl.NumberFormat().format(
+                                  transaction?.amount
+                                )}
+                              </td>
+                            )}
+
+                            {transaction?.type === "credit" && (
+                              <td
+                                className={
+                                  "text-green-500  px-6 py-4 font-medium capitalize"
+                                }
+                              >
+                                +{" "}
+                                {new Intl.NumberFormat().format(
+                                  transaction?.amount
+                                )}
+                              </td>
+                            )}
+
+                            {transaction?.type === "payout" && (
+                              <td
+                                className={
+                                  "text-red-500  px-6 py-4 font-medium capitalize"
+                                }
+                              >
+                                -{" "}
+                                {new Intl.NumberFormat().format(
+                                  transaction?.amount
+                                )}
+                              </td>
+                            )}
                           </tr>
                         );
                       })}

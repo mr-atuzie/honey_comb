@@ -46,6 +46,8 @@ import UserInvestments from "./pages/UserInvestments";
 import ForgotPassword from "./pages/ForgotPassword";
 // import Payout from "./pages/Payout";
 import ScrollTop from "./components/ScrollTop";
+import ReInvest from "./components/ReInvest";
+import InvestDetails from "./pages/InvestDetails";
 
 function App() {
   axios.defaults.withCredentials = true;
@@ -102,6 +104,8 @@ function App() {
             <Route path="dashboard" element={<UserDashboard />} />
             <Route path="notifications" element={<Notifications />} />
             <Route path="notification/:id" element={<Notification />} />
+            <Route path="investment/:id" element={<InvestDetails />} />
+            <Route path="reinvest/:id" element={<ReInvest />} />
             <Route path="packages" element={<Packages />} />
             <Route path="profile" element={<Profile />} />
             <Route path="transactions" element={<Transactions />} />
