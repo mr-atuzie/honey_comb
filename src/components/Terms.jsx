@@ -1,5 +1,6 @@
 import React from "react";
-import terms from "../assets/tc.pdf";
+// import terms from "../assets/tc.pdf";
+import { Link } from "react-router-dom";
 
 const Terms = () => {
   return (
@@ -18,13 +19,12 @@ const Terms = () => {
           </p>
         </div>
         <div className=" flex justify-center items-center mt-6">
-          <a
-            href={terms}
-            download
+          <Link
+            to={"/terms-and-condition"}
             className=" text-sm  bg-white text-green-700 py-2 lg:py-3 px-5 rounded-md  "
           >
-            Download File
-          </a>
+            Read more
+          </Link>
         </div>
       </div>
     </div>

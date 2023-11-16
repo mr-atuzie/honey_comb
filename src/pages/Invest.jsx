@@ -1,13 +1,16 @@
 import React from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import Pay from "../components/Pay";
+// import Pay from "../components/Pay";
 import { toast } from "react-toastify";
 import axios from "axios";
+import AccountModal from "../components/AccountModal";
 
 const Invest = () => {
   const { type } = useParams();
   const [amount, setAmout] = useState(0);
+  const [modal, setModal] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [intrest, setIntrest] = useState(0);
   const [duration, setDuration] = useState(1);
 
@@ -19,9 +22,9 @@ const Invest = () => {
 
   const LRI = async () => {
     const userData = { amount, type, duration };
-
+    setLoading(true);
     try {
-      const res = await axios.post(
+      await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/low-risk-investment`,
         userData,
         {
@@ -29,7 +32,9 @@ const Invest = () => {
         }
       );
 
-      console.log(res.data);
+      setModal(true);
+      setLoading(false);
+      toast.success("Successfull");
     } catch (error) {
       const message =
         (error.response &&
@@ -38,17 +43,17 @@ const Invest = () => {
         error.message ||
         error.toString();
 
-      console.log(error);
-
       toast.error(message);
+      setLoading(false);
     }
   };
 
   const HRI = async () => {
     const userData = { amount, type };
+    setLoading(true);
 
     try {
-      const res = await axios.post(
+      await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/high-risk-investment`,
         userData,
         {
@@ -56,7 +61,9 @@ const Invest = () => {
         }
       );
 
-      console.log(res.data);
+      setModal(true);
+      setLoading(false);
+      toast.success("successfull");
     } catch (error) {
       const message =
         (error.response &&
@@ -65,9 +72,8 @@ const Invest = () => {
         error.message ||
         error.toString();
 
-      console.log(error);
-
       toast.error(message);
+      setLoading(false);
     }
   };
 
@@ -85,6 +91,7 @@ const Invest = () => {
 
   return (
     <div className=" w-full h-screen ">
+      {modal && <AccountModal setModal={setModal} />}
       <div className=" w-full lg:w-[50%] mx-auto bg-white shadow-lg rounded mt-20 p-5 flex flex-col justify-center items-center">
         <h1 className=" text-red-500 lg:text-lg font-semibold tracking-wide uppercase">
           {type}
@@ -165,10 +172,24 @@ const Invest = () => {
         )}
 
         {type === "Low Risk Investment" && (
-          <Pay handleInvest={LRI} amount={amount} />
+          <button
+            onClick={LRI}
+            disabled={loading}
+            className="text-white text-sm lg:text-lg bg-[#08432d] disabled:bg-green-300  rounded py-2.5 lg:p-4 w-full capitalize font-medium my-4"
+          >
+            {loading ? "Loading" : "Invest now"}
+          </button>
+          // <Pay handleInvest={LRI} amount={amount} />
         )}
         {type === "High Risk Investment" && (
-          <Pay handleInvest={HRI} amount={amount} />
+          <button
+            onClick={HRI}
+            disabled={loading}
+            className="text-white text-sm lg:text-lg bg-[#08432d] disabled:bg-green-300  rounded py-2.5 lg:p-4 w-full capitalize font-medium my-4"
+          >
+            {loading ? "Loading" : "Invest now"}
+          </button>
+          // <Pay handleInvest={HRI} amount={amount} />
         )}
       </div>
     </div>

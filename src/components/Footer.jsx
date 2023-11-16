@@ -10,15 +10,7 @@ const Footer = () => {
   // const F1 = ["About Us", "Terms and Condition", "Learn more"];
   const [email, setEmail] = useState("");
 
-  const F2 = [
-    "Forex Trading",
-    "Cryptocurrency Investments",
-    "Agriculture Investments",
-    "Investment Security",
-    "Foreign Investment",
-    "Low investment minimums",
-    "Expert Financial Guidance",
-  ];
+  const F2 = ["Real Estate Investments", "Agro Investments ", "Forex Trading"];
 
   const subscribe = () => {
     toast.success("subscribtion successfull");
@@ -27,7 +19,7 @@ const Footer = () => {
   return (
     <div className="h-full lg:h-[60vh] bg-white  py-10 ">
       <div className=" w-[90%] md:w-[80%] mx-auto ">
-        <div className=" flex flex-col lg:flex-row justify-between items-start  mt-12">
+        <div className=" flex flex-col lg:flex-row justify-between items-start  mt-8 lg:mt-12">
           <div>
             <img className=" w-28 lg:w-40" src={logo} alt="" />
 
@@ -52,7 +44,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
+          <div className=" mt-4">
             <div className="uppercase font-medium text-sm lg:text-base mb-2">
               LEARN MORE
             </div>
@@ -73,7 +65,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
+          <div className=" mt-4">
             <div className="uppercase font-medium text-sm lg:text-base mb-2">
               What we do;
             </div>
@@ -88,22 +80,22 @@ const Footer = () => {
             })}
           </div>
 
-          <div>
+          <div className=" mt-4">
             <div className=" uppercase font-medium  text-sm lg:text-base    mb-2">
               Let's continue the conversation
             </div>
             <div className="flex gap-3 lg:gap-8 items-center">
-              <FaWhatsapp className=" text-[#075e54]" size={30} />
+              <FaWhatsapp className=" text-[#075e54]" size={25} />
 
               <a
                 href="https://t.me/+-y-Y5qDIRtE5MTJk"
                 target="_blank"
                 rel="noreferrer"
               >
-                <FaTelegram className=" text-[#0072b1]" size={30} />
+                <FaTelegram className=" text-[#0072b1]" size={25} />
               </a>
 
-              <FaEnvelope className=" text-red-400 " size={30} />
+              <FaEnvelope className=" text-red-400 " size={25} />
             </div>
             <div className=" text-xs lg:text-sm text-gray-700 font-medium mt-8">
               &copy; 2023 Honey comb fxd farm

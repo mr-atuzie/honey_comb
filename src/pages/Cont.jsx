@@ -3,11 +3,12 @@ import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
-import { FaEnvelopeOpenText, FaFacebookF, FaWhatsapp } from "react-icons/fa";
+import { FaEnvelopeOpenText, FaWhatsapp } from "react-icons/fa";
 import { BiSupport } from "react-icons/bi";
 import Faq from "../components/Faq";
 import Terms from "../components/Terms";
 import Ready from "../components/Ready";
+import { FaTelegram } from "react-icons/fa6";
 
 const Cont = () => {
   return (
@@ -20,17 +21,26 @@ const Cont = () => {
         heading={"Contact  us"}
         text={"farae lorem ipseume maximo maximus"}
       />
+
       <div className=" lg:w-[50%] bg-white p-3 mx-auto">
         <h1 className=" text-sm lg:text-base text-green-600 font-medium mb-5">
           Social Media
         </h1>
 
-        <div className=" flex gap-3 border-b-2 border-gray-100 items-center py-3">
-          <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
-            <FaFacebookF size={30} />
+        <a
+          href="https://t.me/+-y-Y5qDIRtE5MTJk"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <div className=" flex gap-3 border-b-2 border-gray-100 items-center py-3">
+            <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
+              <FaTelegram size={30} />
+            </div>
+            <div className=" font-medium text-sm lg:text-base">
+              Honeycomb FXD Farm
+            </div>
           </div>
-          <div className=" font-medium text-sm lg:text-base">HoneyCombFxd</div>
-        </div>
+        </a>
 
         <div className=" flex gap-3   items-center py-3">
           <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
@@ -49,21 +59,21 @@ const Cont = () => {
           <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
             <BiSupport size={30} />
           </div>
-          <div className=" font-medium text-sm lg:text-base">060 12345</div>
+          <div className=" font-medium text-sm lg:text-base">09119136523</div>
         </div>
 
         <div className=" flex gap-3 border-b-2 border-gray-100 items-center py-3">
           <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
             <BiSupport size={30} />
           </div>
-          <div className=" font-medium text-sm lg:text-base">02-000999-00</div>
+          <div className=" font-medium text-sm lg:text-base">09119379576</div>
         </div>
 
         <div className=" flex gap-3  items-center py-3">
           <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
             <BiSupport size={30} />
           </div>
-          <div className=" font-medium text-sm lg:text-base">0702 000 1000</div>
+          <div className=" font-medium text-sm lg:text-base">09119576755</div>
         </div>
       </div>
 
@@ -77,7 +87,15 @@ const Cont = () => {
             <FaEnvelopeOpenText size={30} />
           </div>
           <div className=" font-medium text-sm lg:text-base">
-            honeycomFxd@gmail.com
+            support@honeycombfxd.com
+          </div>
+        </div>
+        <div className=" flex gap-3 items-center py-3">
+          <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
+            <FaEnvelopeOpenText size={30} />
+          </div>
+          <div className=" font-medium text-sm lg:text-base">
+            honeycombfxd@gmail.com
           </div>
         </div>
       </div>

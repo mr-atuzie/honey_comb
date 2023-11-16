@@ -1,6 +1,6 @@
 import React from "react";
 import { FaTelegram } from "react-icons/fa";
-// import { BiSupport } from "react-icons/bi";
+import { BiSupport } from "react-icons/bi";
 import { FaEnvelopeOpenText, FaWhatsapp } from "react-icons/fa6";
 
 const Support = () => {
@@ -38,7 +38,7 @@ const Support = () => {
         </div>
       </div>
 
-      {/* <div className=" lg:w-[50%] bg-white p-3 mx-auto my-6">
+      <div className=" lg:w-[50%] bg-white p-3 mx-auto my-6">
         <h1 className=" text-sm lg:text-base text-green-600 font-medium mb-5">
           Call Us
         </h1>
@@ -47,23 +47,23 @@ const Support = () => {
           <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
             <BiSupport size={30} />
           </div>
-          <div className=" font-medium text-sm lg:text-base">060 12345</div>
+          <div className=" font-medium text-sm lg:text-base">09119136523</div>
         </div>
 
         <div className=" flex gap-3 border-b-2 border-gray-100 items-center py-3">
           <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
             <BiSupport size={30} />
           </div>
-          <div className=" font-medium text-sm lg:text-base">02-000999-00</div>
+          <div className=" font-medium text-sm lg:text-base">09119379576</div>
         </div>
 
         <div className=" flex gap-3  items-center py-3">
           <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
             <BiSupport size={30} />
           </div>
-          <div className=" font-medium text-sm lg:text-base">0702 000 1000</div>
+          <div className=" font-medium text-sm lg:text-base">09119576755</div>
         </div>
-      </div> */}
+      </div>
 
       <div className=" lg:w-[50%] bg-white p-3 mx-auto my-6">
         <h1 className=" text-sm lg:text-base text-green-600 font-medium mb-5">
@@ -76,6 +76,14 @@ const Support = () => {
           </div>
           <div className=" font-medium text-sm lg:text-base">
             support@honeycombfxd.com
+          </div>
+        </div>
+        <div className=" flex gap-3 items-center py-3">
+          <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
+            <FaEnvelopeOpenText size={30} />
+          </div>
+          <div className=" font-medium text-sm lg:text-base">
+            honeycombfxd@gmail.com
           </div>
         </div>
       </div>

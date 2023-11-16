@@ -139,7 +139,7 @@ const InvestDetails = () => {
 
   const handleCopy = (referralCode) => {
     navigator.clipboard.writeText(referralCode);
-    toast.success(` referral code  to clipboard`);
+    toast.success(` referral code copied  to clipboard`);
   };
 
   return (
@@ -181,99 +181,128 @@ const InvestDetails = () => {
       </div>
 
       <div className=" bg-white md:w-[45%] shadow-lg mx-auto p-3 lg:p-5">
-        <div className=" font-semibold text-green-700 lg:text-2xl">
+        <div className=" font-bold text-green-700 lg:text-2xl">
           {investment?.type}
         </div>
 
-        <div
-          onClick={() => handleCopy(investment?._id)}
-          className=" mt-3 flex justify-between cursor-pointer"
-        >
-          <div>
-            <p className=" text-xs lg:text-sm font-medium capitalize">
-              referral code
-            </p>
-            <p className=" text-gray-700 text-sm lg:text-base font-medium">
-              {investment?._id}
-            </p>
-          </div>
+        {investment?.activated && (
+          <div
+            onClick={() => handleCopy(investment?._id)}
+            className=" mt-3 flex justify-between cursor-pointer"
+          >
+            <div>
+              <p className=" text-green-700 text-xs lg:text-sm font-medium capitalize">
+                referral code
+              </p>
+              <p className=" text-gray-700 text-sm lg:text-lg font-medium">
+                {investment?._id}
+              </p>
+            </div>
 
-          <FaRegCopy className=" text-gray-500" />
-        </div>
+            <FaRegCopy className=" text-gray-500" />
+          </div>
+        )}
 
         <div className=" mt-3">
-          <p className=" text-xs lg:text-sm  font-medium capitalize">Amount</p>
-          <p className=" text-gray-700  text-sm lg:text-base font-medium">
+          <p className=" text-xs lg:text-sm text-green-700  font-medium capitalize">
+            Amount
+          </p>
+          <p className=" text-gray-700  text-sm lg:text-lg font-medium">
             &#8358; {new Intl.NumberFormat().format(investment?.amount)}
           </p>
         </div>
 
         <div className=" mt-3">
-          <p className="text-xs lg:text-sm font-medium capitalize">Date</p>
-          <p className=" text-gray-700  text-sm lg:text-base font-medium">
+          <p className="text-xs text-green-700 lg:text-sm font-medium capitalize">
+            Date
+          </p>
+          <p className=" text-gray-700  text-sm lg:text-lg font-medium">
             {moment(investment?.createdAt).format("MMM Do YYYY")}
           </p>
         </div>
 
         <div className=" mt-3">
-          <p className="text-xs lg:text-sm font-medium capitalize">Payout</p>
-          <p className=" text-gray-700 text-sm lg:text-base font-medium">
+          <p className="text-xs text-green-700 lg:text-sm font-medium capitalize">
+            Payout
+          </p>
+          <p className=" text-gray-700 text-sm lg:text-lg font-medium">
             &#8358; {new Intl.NumberFormat().format(investment?.payout)}
           </p>
         </div>
 
         <div className=" mt-3">
-          <p className="text-xs lg:text-sm font-medium capitalize">Maturity</p>
-          <p className=" text-gray-700 text-sm lg:text-base font-medium">
+          <p className="text-xs text-green-700 lg:text-sm font-medium capitalize">
+            Maturity
+          </p>
+          <p className=" text-gray-700 text-sm lg:text-lg font-medium">
             {moment(investment?.maturity).format("MMM Do YYYY")}
           </p>
         </div>
 
-        <div className=" mt-6">
-          {investment.status === "" &&
-            (investment?.type === "Low Risk Investment" ? (
-              <div
-                onClick={() => handleWithdraw(investment._id)}
-                className="px-6 py-4"
-              >
-                <button
-                  disabled={withdraw}
-                  className=" bg-green-700 text-white py-2.5  rounded w-full disabled:bg-green-300"
-                >
-                  {withdraw ? "Processing" : "Withdraw"}
-                </button>
-              </div>
-            ) : (
-              <div
-                onClick={() => highWithdraw(investment._id)}
-                className="px-6 py-4"
-              >
-                <button
-                  disabled={withdraw}
-                  className=" bg-green-700 text-white py-2.5  rounded w-full disabled:bg-green-300"
-                >
-                  {withdraw ? "Processing" : "Withdraw"}
-                </button>
-              </div>
-            ))}
-          {investment.status === "approved" && (
-            <div className="px-6 py-4">
-              <button
-                disabled={true}
-                className=" bg-green-700 text-white py-2.5  rounded w-full disabled:bg-green-300"
-              >
-                Paid
-              </button>
-            </div>
-          )}
-          {investment.status === "withdraw" && (
-            <div className="px-6 py-4">
-              <button className=" bg-yellow-500 text-white py-2.5  rounded w-full disabled:bg-green-300">
-                Pending
-              </button>
-            </div>
-          )}
+        <div className=" mt-3">
+          <p className="text-xs text-green-700 lg:text-sm font-medium capitalize">
+            Maturity
+          </p>
+          <p className=" text-gray-700 text-sm lg:text-lg font-medium">
+            {moment(investment?.maturity).format("MMM Do YYYY")}
+          </p>
         </div>
+
+        {!investment?.activated && (
+          <div className=" mt-5 bg-yellow-200 w-full p-3 text-center flex justify-center items-center rounded">
+            <p className="text-xs text-yellow-700 lg:text-sm font-medium capitalize">
+              Pending Validation
+            </p>
+          </div>
+        )}
+
+        {investment?.activated && (
+          <div className=" mt-6">
+            {investment.status === "" &&
+              (investment?.type === "Low Risk Investment" ? (
+                <div
+                  onClick={() => handleWithdraw(investment._id)}
+                  className="px-6 py-4"
+                >
+                  <button
+                    disabled={withdraw}
+                    className=" bg-green-700 text-white py-2.5  rounded w-full disabled:bg-green-300"
+                  >
+                    {withdraw ? "Processing" : "Withdraw"}
+                  </button>
+                </div>
+              ) : (
+                <div
+                  onClick={() => highWithdraw(investment._id)}
+                  className="px-6 py-4"
+                >
+                  <button
+                    disabled={withdraw}
+                    className=" bg-green-700 text-white py-2.5  rounded w-full disabled:bg-green-300"
+                  >
+                    {withdraw ? "Processing" : "Withdraw"}
+                  </button>
+                </div>
+              ))}
+            {investment.status === "approved" && (
+              <div className="px-6 py-4">
+                <button
+                  disabled={true}
+                  className=" bg-green-700 text-white py-2.5  rounded w-full disabled:bg-green-300"
+                >
+                  Paid
+                </button>
+              </div>
+            )}
+            {investment.status === "withdraw" && (
+              <div className="px-6 py-4">
+                <button className=" bg-yellow-500 text-white py-2.5  rounded w-full disabled:bg-green-300">
+                  Pending
+                </button>
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

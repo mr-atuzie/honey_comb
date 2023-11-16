@@ -17,6 +17,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Loader from "../components/Loader";
 import UserReferral from "../components/UserReferral";
+import { Link } from "react-router-dom";
 
 const UserDashboard = () => {
   const [transactions, setTransactions] = useState([]);
@@ -135,11 +136,21 @@ const UserDashboard = () => {
 
   return (
     <div>
-      <h1 className=" font-extrabold text-green-600 text-2xl lg:text-4xl capitalize  mt-9 lg:mt-11">
+      {!user?.kycStatus !== "approved" && (
+        <Link to={"/user/add-kyc"}>
+          <div className=" mt-5 bg-yellow-200  w-full p-3  flex rounded">
+            <p className="text-xs text-yellow-700 lg:text-sm font-medium capitalize">
+              Pending KYC, Uplaod a valid ID Card
+            </p>
+          </div>
+        </Link>
+      )}
+
+      <h1 className=" font-extrabold text-green-600 text-2xl lg:text-4xl capitalize mt-4  lg:mt-9">
         welcome {userData?.name.split(" ")[0]}
       </h1>
 
-      <div className="mb-9 lg:mb-11 mt-2">
+      <div className=" lg:mb-9  mt-1">
         <Swiper
           modules={[Autoplay]}
           autoplay={{
@@ -151,7 +162,7 @@ const UserDashboard = () => {
             return (
               <SwiperSlide key={index}>
                 <div>
-                  <p className=" text-sm lg:text-lg capitalize font-medium text-yellow-500">
+                  <p className=" text-sm lg:text-base capitalize font-medium text-yellow-600">
                     {slide.text}
                   </p>
                   <p className=" text-xs lg:text-sm  text-gray-600">

@@ -26,6 +26,7 @@ const Hero = () => {
   ];
 
   const isLoggedIn = useSelector(selectIsLoggedIn);
+
   return (
     <div className=" min-h-[65vh] lg:h-[75vh] -mt-2   bg-[#08432d] w-full flex justify-center items-center ">
       <Swiper

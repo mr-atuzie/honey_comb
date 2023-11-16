@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 const Faq = () => {
   const [f1, setF1] = useState(false);
-  const [f2, setF2] = useState(false);
+  // const [f2, setF2] = useState(false);
   const [f3, setF3] = useState(false);
   const [f4, setF4] = useState(false);
-  const [f5, setF5] = useState(false);
+  // const [f5, setF5] = useState(false);
   const [f6, setF6] = useState(false);
   const [f7, setF7] = useState(false);
   return (
@@ -47,39 +47,6 @@ const Faq = () => {
                 <p>
                   We offer different investment options to suit your needs and
                   budget, including forex, crypto, and agriculture.
-                </p>
-              </div>
-            )}
-          </div>
-
-          <div className="w-full shadow-md mb-6 lg:mb-9">
-            <div className=" bg-green-50 w-full p-3 lg:p-5 flex items-center justify-between">
-              <h2 className=" text-xs font-medium lg:text-base text-green-700 lg:tracking-wide  capitalize">
-                What is the minimum investment amount?
-              </h2>
-
-              {f2 ? (
-                <button
-                  onClick={() => setF2(!f2)}
-                  className=" text-lg font-medium "
-                >
-                  -
-                </button>
-              ) : (
-                <button
-                  onClick={() => setF2(!f2)}
-                  className=" text-lg font-medium "
-                >
-                  +
-                </button>
-              )}
-            </div>
-            {f2 && (
-              <div className=" p-3 lg:p-5 text-xs lg:text-base">
-                <p>
-                  The minimum investment amount varies depending on the
-                  investment option you choose. Please visit our website for
-                  more information.
                 </p>
               </div>
             )}
@@ -145,40 +112,6 @@ const Faq = () => {
                 <p>
                   We offer competitive fees on all of our investments.5%
                   mandatory registration fee upon deposit
-                </p>
-              </div>
-            )}
-          </div>
-
-          <div className="w-full shadow-md mb-6 lg:mb-9">
-            <div className=" bg-green-50 w-full p-3 lg:p-5 flex items-center justify-between">
-              <h2 className=" text-xs font-medium lg:text-base text-green-700 lg:tracking-wide  capitalize">
-                What are the risks involved in investing?
-              </h2>
-
-              {f5 ? (
-                <button
-                  onClick={() => setF5(!f5)}
-                  className=" text-lg font-medium "
-                >
-                  -
-                </button>
-              ) : (
-                <button
-                  onClick={() => setF5(!f5)}
-                  className=" text-lg font-medium "
-                >
-                  +
-                </button>
-              )}
-            </div>
-            {f5 && (
-              <div className=" p-3 lg:p-5 text-xs lg:text-base">
-                <p>
-                  Investing is always associated with risk. Your investment's
-                  value can go down and up, and you may lose some or all of your
-                  investment. Please carefully consider your financial situation
-                  and investment objectives before investing.
                 </p>
               </div>
             )}

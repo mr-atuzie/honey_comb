@@ -1,4 +1,4 @@
-import { BsEyeSlash } from "react-icons/bs";
+// import { BsEyeSlash } from "react-icons/bs";
 // import { FaRegCopy } from "react-icons/fa";
 import { Link } from "react-router-dom";
 // import { toast } from "react-toastify";
@@ -23,9 +23,14 @@ const UserCard = ({ user }) => {
           </h2>
         </div>
 
-        <div className="bg-green-100 text-green-600  p-1  rounded-full">
-          <BsEyeSlash size={18} />
-        </div>
+        {/* <div>
+          <p className=" text-xs lg:text-sm  text-gray-500 ">Profit</p>
+          <h2 className=" text-xl font-semibold lg:text-5xl ">
+            {" "}
+            &#8358;
+            {new Intl.NumberFormat().format(user?.accountBalance)}
+          </h2>
+        </div> */}
       </div>
 
       {/* <div
