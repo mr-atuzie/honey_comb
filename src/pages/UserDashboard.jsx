@@ -18,6 +18,7 @@ import "swiper/css/navigation";
 import Loader from "../components/Loader";
 import UserReferral from "../components/UserReferral";
 import { Link } from "react-router-dom";
+import UserInvestment from "../components/UserInvestment";
 
 const UserDashboard = () => {
   const [transactions, setTransactions] = useState([]);
@@ -477,6 +478,10 @@ const UserDashboard = () => {
             referrals={referrals.length}
             investments={investments}
           />
+        </div>
+
+        <div>
+          <UserInvestment transactions={investments.slice(0, 7)} />
         </div>
 
         <div className="my-6  ">
