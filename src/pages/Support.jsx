@@ -39,7 +39,9 @@ const Support = () => {
             <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
               <FaWhatsapp size={30} />
             </div>
-            <div className=" font-medium text-sm lg:text-base">09119136523</div>
+            <div className=" font-medium text-sm lg:text-base">
+              0911 913 6523
+            </div>
           </div>
         </a>
       </div>
@@ -53,21 +55,21 @@ const Support = () => {
           <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
             <BiSupport size={30} />
           </div>
-          <div className=" font-medium text-sm lg:text-base">09119136523</div>
+          <div className=" font-medium text-sm lg:text-base">0911 913 6523</div>
         </div>
 
         <div className=" flex gap-3 border-b-2 border-gray-100 items-center py-3">
           <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
             <BiSupport size={30} />
           </div>
-          <div className=" font-medium text-sm lg:text-base">09119379576</div>
+          <div className=" font-medium text-sm lg:text-base">0911 937 9576</div>
         </div>
 
         <div className=" flex gap-3  items-center py-3">
           <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
             <BiSupport size={30} />
           </div>
-          <div className=" font-medium text-sm lg:text-base">09119576755</div>
+          <div className=" font-medium text-sm lg:text-base">0911 957 6755</div>
         </div>
       </div>
 
