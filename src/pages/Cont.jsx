@@ -42,12 +42,18 @@ const Cont = () => {
           </div>
         </a>
 
-        <div className=" flex gap-3   items-center py-3">
-          <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
-            <FaWhatsapp size={30} />
+        <a
+          href="https://wa.me/message/7K3EHYGPVIICP1"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <div className=" flex gap-3   items-center py-3">
+            <div className=" w-fit p-4 bg-green-100 text-green-500 flex justify-center items-center rounded-md">
+              <FaWhatsapp size={30} />
+            </div>
+            <div className=" font-medium text-sm lg:text-base">09119136523</div>
           </div>
-          <div className=" font-medium text-sm lg:text-base">0801 234 5678</div>
-        </div>
+        </a>
       </div>
 
       <div className=" lg:w-[50%] bg-white p-3 mx-auto my-6">

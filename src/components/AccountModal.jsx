@@ -22,10 +22,19 @@ const AccountModal = ({ setModal }) => {
 
         <div className=" mt-3">
           <p className=" text-xs lg:text-sm font-medium text-green-700 uppercase">
+            Bank
+          </p>
+          <p className=" text-gray-800 text-sm lg:text-lg font-medium">
+            MONIEPOINT
+          </p>
+        </div>
+
+        <div className=" mt-3">
+          <p className=" text-xs lg:text-sm font-medium text-green-700 uppercase">
             Account Name
           </p>
           <p className=" text-gray-800 text-sm lg:text-lg font-medium">
-            HONEYCOMB FXD FARM LTD
+            Honeycomb FXD FARM LIMITED
           </p>
         </div>
 
@@ -38,20 +47,11 @@ const AccountModal = ({ setModal }) => {
               Account Number
             </p>
             <p className=" text-gray-800 text-sm lg:text-lg font-medium">
-              1026682128
+              5427630237
             </p>
           </div>
 
           <FaRegCopy className=" text-gray-500" />
-        </div>
-
-        <div className=" mt-3">
-          <p className=" text-xs lg:text-sm font-medium text-green-700 uppercase">
-            Bank
-          </p>
-          <p className=" text-gray-800 text-sm lg:text-lg font-medium">
-            United Bank for Africa
-          </p>
         </div>
       </div>
     </div>
