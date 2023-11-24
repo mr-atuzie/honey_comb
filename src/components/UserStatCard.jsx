@@ -15,9 +15,9 @@ const UserStatCard = ({ user, referrals, investments }) => {
         <div className="">
           <h2 className="  lg:text-xl font-semibold ">
             {" "}
-            &#8358; {new Intl.NumberFormat().format(user?.intrest)}
+            &#8358; {new Intl.NumberFormat().format(user?.profit)}
           </h2>
-          <p className="text-xs lg:text-sm  text-gray-500 ">Total Intrest</p>
+          <p className="text-xs lg:text-sm  text-gray-500 ">Total Profit</p>
         </div>
       </div>
 
