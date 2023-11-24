@@ -81,7 +81,7 @@ const Invest = () => {
     const regFee = parseInt(amount) * 0.05;
     const currentAmount = parseInt(amount) - regFee;
 
-    const intrest = currentAmount * 0.15;
+    const intrest = currentAmount * 0.05;
     const initialInvest = currentAmount / 4;
 
     const payout = intrest + initialInvest;
