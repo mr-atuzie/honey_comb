@@ -223,21 +223,25 @@ const InvestDetails = () => {
 
         <div className=" mt-3">
           <p className="text-xs text-green-700 lg:text-sm font-medium capitalize">
-            Payout
+            {investment?.type === "Diamond Investment"
+              ? "Weekly Payout"
+              : "Payout"}
           </p>
           <p className=" text-gray-700 text-sm lg:text-lg font-medium">
             &#8358; {new Intl.NumberFormat().format(investment?.payout)}
           </p>
         </div>
 
-        <div className=" mt-3">
-          <p className="text-xs text-green-700 lg:text-sm font-medium capitalize">
-            Maturity
-          </p>
-          <p className=" text-gray-700 text-sm lg:text-lg font-medium">
-            {moment(investment?.maturity).format("MMM Do YYYY")}
-          </p>
-        </div>
+        {investment?.regFee && (
+          <div className=" mt-3">
+            <p className="text-xs text-green-700 lg:text-sm font-medium capitalize">
+              Registration Fee
+            </p>
+            <p className=" text-gray-700 text-sm lg:text-lg font-medium">
+              &#8358; {new Intl.NumberFormat().format(investment?.regFee)}
+            </p>
+          </div>
+        )}
 
         <div className=" mt-3">
           <p className="text-xs text-green-700 lg:text-sm font-medium capitalize">
