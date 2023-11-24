@@ -8,7 +8,7 @@ const Terms = () => {
         <img className=" w-[80%] " src={logo} alt="" />
 
         <div className="text-center   lg:text-2xl font-semibold capitalize ">
-          Terms & Conditions of Investment - HIGH RISK INVESTMENT
+          Terms & Conditions of Investment
         </div>
       </div>
 
@@ -62,14 +62,14 @@ const Terms = () => {
           <p className=" m-2">
             4.1 While efforts will be made to minimize risks, all investments
             carry inherent risks. The Company does not guarantee the performance
-            or safety of the investment especially the high risk investment
+            or safety of the investment especially the Diamond investment
             package.
           </p>
           <p className=" m-2">
             4.2{" "}
             <strong>
               {" "}
-              High Risk Investent (forex trading, betting, and cryptocurrency):
+              Diamond Investment(forex trading, betting, and cryptocurrency):
             </strong>{" "}
             Trading FX involves a high level of risk, and may not be suitable
             for all investors. The high degree of leverage can work against you
@@ -87,13 +87,13 @@ const Terms = () => {
               In the event of any unfavorable market conditions, the company and
               the investor will bear the brunt of the losses. Please carefully
               consider your financial situation and investment objectives before
-              investing in the premium package.
+              investing in the diamond package.
             </strong>
           </p>
 
           <p className=" m-2">
-            4.3 <strong>Low Risk Investment: </strong>This investment is risk
-            free (ie: 0% risk) and is suitable for investors above 18 years.
+            4.3 <strong>Gold Investment: </strong>This investment is risk free
+            (ie: 0% risk) and is suitable for investors above 18 years.
           </p>
         </div>
 
@@ -102,7 +102,7 @@ const Terms = () => {
             <strong>5. Withdrawal:</strong>
           </h3>
           <p className=" m-2">
-            5.1 <strong>High Risk Investment:</strong> Investors may request
+            5.1 <strong>Diamond Investment:</strong> Investors may request
             withdrawal of funds weekly.
           </p>
           <span className=" m-2">
@@ -137,17 +137,16 @@ const Terms = () => {
           </p>
 
           <p className=" m-2">
-            5.2 <strong>Low Risk Investment: </strong>Investors will be paid 3%
+            5.2 <strong>Gold Investment: </strong>Investors will be paid 3%
             upfront of their total investment and will be able to withdraw their
             total investment at the end of the specified duration.
           </p>
 
           <p className=" m-2">
             5.3 A compulsory <strong> 5% registration fee </strong>is required
-            for the <strong> High-Risk Investment</strong> and an additional
-            7.5% VAT deduction on all packages{" "}
-            <strong>(High-Risk and Low Risk)</strong> will be applied to
-            interest withdrawals from all packages.
+            for the <strong> Diamond Investment</strong> and an additional 7.5%
+            VAT deduction on all packages <strong>(Diamond and Gold)</strong>{" "}
+            will be applied to interest withdrawals from all packages.
           </p>
         </div>
 

@@ -14,24 +14,24 @@ const Packages = ({ homePage }) => {
 
   const packages = [
     {
-      name: "Low Risk Investment",
+      name: "Gold Investment ",
       payout: " Basic (3 Months)| Standard (6 Months)| Premium (1 Year)",
       investments: "(SME Loans, Real Estate, Agriculture)",
       list: [
-        "0% risk",
-        "3% Monthly Returns paid upfront",
+        "3% ROI paid upfront",
+        "Enjoy 2% referral bonus",
         "7.5% VAT charged on withdrawal",
-        "100,000 naira Minimum Investment",
+        "Minimum Investment is 100,000 naira",
         "2% referral bonus",
       ],
     },
     {
-      name: "High Risk Investment",
+      name: "Diamond Investment",
       payout: "Weekly Cash Out",
       investments: "(Betting, Casino, Crypto, Forex Trading)",
       list: [
-        "15% weekly payout",
-        "2% Referral Bonus",
+        "5% weekly payout",
+        "Enjoy 2% referral bonus",
         "Minimum Investment is 100,000 naira",
         "5% Registration Fee",
         "7.5% VAT Charged on Withdrawal",
@@ -40,7 +40,7 @@ const Packages = ({ homePage }) => {
   ];
 
   const handleInvest = (name) => {
-    if (name === "High Risk Investment") {
+    if (name === "Diamond Investment") {
       setWarning(true);
       setType(name);
     } else {

@@ -259,7 +259,7 @@ const InvestDetails = () => {
         {investment?.activated && (
           <div className=" mt-6">
             {investment.status === "" &&
-              (investment?.type === "Low Risk Investment" ? (
+              (investment?.type === "Gold Investment" ? (
                 <div
                   onClick={() => handleWithdraw(investment._id)}
                   className="px-6 py-4"

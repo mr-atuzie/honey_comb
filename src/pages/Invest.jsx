@@ -105,7 +105,7 @@ const Invest = () => {
           </h2>
         </div>
 
-        {type === "Low Risk Investment" ? (
+        {type === "Gold Investment" ? (
           <div className="relative w-full mt-7">
             <input
               type="text"
@@ -141,7 +141,7 @@ const Invest = () => {
           </div>
         )}
 
-        {type === "Low Risk Investment" && (
+        {type === "Gold Investment" && (
           <div className="relative w-full mt-7">
             <select
               name="duration"
@@ -171,7 +171,7 @@ const Invest = () => {
           </div>
         )}
 
-        {type === "Low Risk Investment" && (
+        {type === "Gold Investment" && (
           <button
             onClick={LRI}
             disabled={loading}
@@ -181,7 +181,7 @@ const Invest = () => {
           </button>
           // <Pay handleInvest={LRI} amount={amount} />
         )}
-        {type === "High Risk Investment" && (
+        {type === "Diamond Investment" && (
           <button
             onClick={HRI}
             disabled={loading}
