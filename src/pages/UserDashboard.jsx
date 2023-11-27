@@ -137,7 +137,7 @@ const UserDashboard = () => {
 
   return (
     <div>
-      {!user?.kycStatus !== "approved" && (
+      {user?.kycStatus !== "approved" && (
         <Link to={"/user/add-kyc"}>
           <div className=" mt-5 bg-yellow-200  w-full p-3  flex rounded">
             <p className="text-xs text-yellow-700 lg:text-sm font-medium capitalize">
