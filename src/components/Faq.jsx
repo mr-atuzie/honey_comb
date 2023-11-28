@@ -173,7 +173,7 @@ const Faq = () => {
                 <p>
                   Withdrawal requests are typically processed within 1-3
                   business days. For First-time investors, withdrawals are
-                  processed in 7 days r
+                  processed in 7 days
                 </p>
               </div>
             )}
