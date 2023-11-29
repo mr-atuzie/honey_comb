@@ -137,20 +137,38 @@ const UserDashboard = () => {
 
   return (
     <div>
-      {user?.kycStatus !== "approved" && (
+      {user?.kycStatus === "" && (
         <Link to={"/user/add-kyc"}>
           <div className=" mt-5 bg-yellow-200  w-full p-3  flex rounded">
             <p className="text-xs text-yellow-700 lg:text-sm font-medium capitalize">
-              Pending KYC, Uplaod a valid ID Card
+              Please Uplaod a valid ID Card
             </p>
           </div>
         </Link>
       )}
 
+      {user?.kycStatus === "disapprove" && (
+        <Link to={"/user/add-kyc"}>
+          <div className=" mt-5 bg-red-200  w-full p-3  flex rounded">
+            <p className="text-xs text-red-500 lg:text-sm font-medium capitalize">
+              Invalid document, Please Uplaod a valid ID Card
+            </p>
+          </div>
+        </Link>
+      )}
+
+      {user?.kycStatus === "pending" && (
+        <Link to={"/user/add-kyc"}>
+          <div className=" mt-5 bg-blue-100  w-full p-3  flex rounded">
+            <p className="text-xs text-blue-500 lg:text-sm font-medium capitalize">
+              Document uploaded , Pending verification
+            </p>
+          </div>
+        </Link>
+      )}
       <h1 className=" font-extrabold text-green-600 text-2xl lg:text-4xl capitalize mt-4  lg:mt-9">
         welcome {userData?.name.split(" ")[0]}
       </h1>
-
       <div className=" lg:mb-9  mt-1">
         <Swiper
           modules={[Autoplay]}
@@ -175,7 +193,6 @@ const UserDashboard = () => {
           })}
         </Swiper>
       </div>
-
       <div className=" hidden lg:block">
         <div className=" flex justify-between ">
           <div className=" w-[45%]">
@@ -468,7 +485,6 @@ const UserDashboard = () => {
           </div>
         </div>
       </div>
-
       <div className="lg:hidden">
         <UserCard user={user} />
 

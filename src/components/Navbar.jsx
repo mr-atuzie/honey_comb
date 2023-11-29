@@ -38,6 +38,15 @@ const Navbar = () => {
                 </li>
               );
             })}
+            <a
+              href="https://forms.gle/5tZBQuNS8Du6o5iVA"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <li className=" capitalize px-4 cursor-pointer over:scale-105 duration-200">
+                webinar
+              </li>
+            </a>
           </ul>
         </div>
 

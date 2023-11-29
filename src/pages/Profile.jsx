@@ -404,17 +404,16 @@ const Profile = () => {
               {formLoader ? "Loading" : "Submit"}
             </button>
           </form>
-
-          <div className=" flex justify-center items-center mx-auto">
-            <button
-              onClick={logout}
-              className=" bg-yellow-500 my-6 flex justify-center items-center gap-2 text-white rounded-lg text-sm w-[40%] p-3 text-center font-medium disabled:bg-green-300"
-            >
-              <BiLogOut />
-              <span>Logout</span>
-            </button>
-          </div>
         </div>
+      </div>
+      <div className=" flex justify-center items-center mx-auto">
+        <button
+          onClick={logout}
+          className=" bg-yellow-500 my-8 flex justify-center items-center gap-2 text-white rounded-lg text-sm w-[40%] p-3 text-center font-medium disabled:bg-green-300"
+        >
+          <BiLogOut />
+          <span>Logout</span>
+        </button>
       </div>
     </div>
   );
