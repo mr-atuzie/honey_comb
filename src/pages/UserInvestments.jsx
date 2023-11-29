@@ -128,9 +128,6 @@ const UserInvestments = () => {
                         <div className="text-base font-semibold">
                           {investment?.type}
                         </div>
-                        <div className="font-normal text-gray-500">
-                          {investment?._id}
-                        </div>
                       </div>
                     </th>
                     <td className="px-6 py-4">
