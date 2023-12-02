@@ -88,7 +88,7 @@ const Footer = () => {
               <FaWhatsapp className=" text-[#075e54]" size={25} />
 
               <a
-                href="https://t.me/+-y-Y5qDIRtE5MTJk"
+                href="https://t.me/+pwHNsjyGq804Nzdk"
                 target="_blank"
                 rel="noreferrer"
               >
